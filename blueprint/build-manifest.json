@@ -8,10 +8,10 @@
     "all blueprint declarations exist",
     "standard axioms only"
   ],
-  "source_sha256": "e0b2c6ab565433277dfbc4ae7b7350769cc2fccaf5297c92dfabbdfef0573462",
+  "source_sha256": "d2dfc846d9239706e74302ea41b21d2bee721e049f5e55b94aaf7f7ab18cabf8",
   "blueprint_inputs_sha256": {
-    "blueprint/src/content.tex": "e0b2c6ab565433277dfbc4ae7b7350769cc2fccaf5297c92dfabbdfef0573462",
-    "blueprint/src/introduction.tex": "948d01194e2f02f154a4bdecc5e3559d953ffdcebf1bba1a21d6ab2c40fe8973",
+    "blueprint/src/content.tex": "d2dfc846d9239706e74302ea41b21d2bee721e049f5e55b94aaf7f7ab18cabf8",
+    "blueprint/src/introduction.tex": "c52501754f1a0a8f1335821d17af63f7623c6448a9ee78819721dfe6aedbfb3d",
     "blueprint/src/web.tex": "7d1fd0dac351db42f61d960fd72f86555c4dc422112d48b0dcf008072436c103",
     "blueprint/src/references.tex": "123fcb8c15f2ac164b5ce290033a92c212a8e2b68b4ff44bd14fbbde03233ccf",
     "blueprint/src/contexts.json": "a16c548a63483b99cd6c6c3f202583375787e950ef9df82c742dd5d1fb0dadf4",

@@ -43,6 +43,10 @@ def main():
     for path in html_files:
         parser = Links()
         content = path.read_text()
+        if path.name == 'dep_graph_document.html':
+            dot = content.split('.renderDot(', 1)[-1]
+            if re.search(r'\ba[0-9]{6,}\s*\[', dot):
+                errors.append('Anonymous theorem node in the dependency graph')
         parser.feed(content)
         parsed[path.resolve()] = parser
         if '/find/#doc/' in content:

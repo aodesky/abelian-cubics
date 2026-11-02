@@ -22,7 +22,9 @@ rational-point correspondence used in counting; the assertion over general
 bases is not formalized. .
 
 The \href{dep_graph_document.html}{dependency graph} is extracted from
-the Lean proofs. Green nodes have formalized statements and proofs,
+the Lean proofs. It records references between the final registered declarations.
+Some proofs use shared helper lemmas directly, so an isolated node need not
+represent mathematics unused elsewhere. Green nodes have formalized statements and proofs,
 relative to any literature inputs shown. Nodes for assumed inputs have
 formalized statements and no proofs. The
 \href{https://github.com/aodesky/abelian-cubics/blob/main/CORRESPONDENCE.md}{correspondence record}

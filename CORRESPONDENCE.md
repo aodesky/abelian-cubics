@@ -41,6 +41,10 @@ The dependency graph follows elaborated Lean proofs through their helper
 lemmas, stopping at the next registered result. It records formal proof
 dependencies, not merely imports. Some paper displays are consequences of a
 larger theorem in Lean, so their graph positions need not follow printed order.
+Conversely, two results may use the same helper lemmas without either proof
+calling the other's final registered declaration. Those shared calculations
+do not produce an edge in this graph. Isolated nodes therefore need not be
+mathematically independent or unused in the rest of the paper.
 
 The release checks compile the full project, check every project declaration
 for nonstandard axioms, check the registered target types and proof files,

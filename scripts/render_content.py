@@ -14,6 +14,9 @@ def safe_label(label):
 
 
 def clean(text):
+    # plasTeX misparses nested dollar math inside \text in an outer math span.
+    # This equivalent spelling keeps the split-algebra example in one node.
+    text = text.replace(r'\text{$\QQ$-alg}', r'\QQ\text{-alg}')
     text = re.sub(r'\\label\{[^}]*\}', '', text)
     # Number statements once, in the blueprint wrapper.
     text = re.sub(r'\\(begin|end)\{(equation|align|multline|gather)\*?\}',
@@ -83,8 +86,17 @@ def main():
                 text.append('The linked Lean proof establishes this statement.')
             assumptions = entry.get('target', {}).get('black_box_assumptions', [])
             if assumptions:
-                text.append('The proof uses the literature inputs ' +
-                            ', '.join(r'\ref{' + safe_label(k) + '}' for k in assumptions) + '.')
+                names = {
+                    'eqn:poissonae': 'Poisson summation',
+                    'cite:chandrasekharanNarasimhan1963-thm4':
+                        'the Chandrasekharan--Narasimhan estimate',
+                    'cite:santens2023integral-toric-counting': 'Santens\\textquotesingle s theorem',
+                    'cite:kuehleitnerNowak2004-cor2': r'the K\"uhleitner--Nowak estimate',
+                }
+                text.append('The proof assumes ' +
+                            ' and '.join(r'\hyperref[' + safe_label(k) + ']{' +
+                                         names[k].replace(r'\textquotesingle s', "'s") + '}'
+                                         for k in assumptions) + '.')
             text.append(r'\end{proof}')
         else:
             text.append('This is an explicit hypothesis in the formalization.')

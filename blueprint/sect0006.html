@@ -82,10 +82,10 @@
 <div class="main-text">
 <h1 id="a0000000007">7 Counting arbitrary trace</h1>
 <p>Let \(F_s\) be the monic integral cubics of trace \(s\) and Galois group \(C_3\), and put \(n(f)=a_1^2-3a_2\). We use </p>
-<div class="displaymath" id="a0000000150">
+<div class="displaymath" id="a0000000149">
   \[ A_1(X)=\# \{ t^3-t^2+at+b\in F_1:1-3a\leq X\} , \]
 </div>
-<div class="displaymath" id="a0000000151">
+<div class="displaymath" id="a0000000150">
   \[ A_0(X)=\# \{ t^3-Nt+c\in F_0:1\leq N\leq X\} . \]
 </div>
 <p> For \(N\geq 1\), let \(r(N)=\# \{ c\in \mathbb {Z}:4N^3-27c^2\text{ is a square}\} \). The polynomial \(Q\) is as in Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a>. Summing the trace-zero and trace-one counts over \(s\) proves Theorem&#160;<a href="sect0001.html#thm:generalMonicCount">1</a>. </p>
@@ -105,7 +105,7 @@
 
     <a class="icon proof" href="sect0006.html#lemma:generalHeightReduction">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000152"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000151"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -138,18 +138,18 @@
 
 
 <p>For \(s\in \mathbb {Z}\), define \(\phi _s\) on \(F_s\) by </p>
-<div class="displaymath" id="a0000000153">
+<div class="displaymath" id="a0000000152">
   \[  \phi _s(f)(t)= \begin{cases}  f(t+\tfrac {s}{3}),& s\equiv 0\pmod3,\\ f(t+\tfrac {s-1}{3}),& s\equiv 1\pmod3,\\ -f(-t+\tfrac {s+1}{3}),& s\equiv -1\pmod3. \end{cases}  \]
 </div>
 <p> Then \(\phi _s\) is a bijection from \(F_s\) to \(F_0\) if \(3\mid s\), and from \(F_s\) to \(F_1\) if \(3\nmid s\), and it preserves \(n\). For \(f\in F_s\), put \(n=n(f)\). Then \(n{\gt}0\), and </p>
-<div class="displaymath" id="a0000000154">
+<div class="displaymath" id="a0000000153">
   \[  H(f)\leq H \quad \Longleftrightarrow \quad |s|\leq H\  \text{ and }\  n\leq s^2+3H^2.  \]
 </div>
 <p> If \(3\nmid s\), then \(H_{\mathrm{tor}}(\phi _s(f))^2=n\). If \(3\mid s\), then \(\phi _s(f)=t^3-\frac n3t+c\) for some \(c\in \mathbb {Z}\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000152">
+<div class="proof_wrapper" id="a0000000151">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -177,7 +177,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:A1asymptotic">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000155"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000154"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -210,13 +210,13 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
-<div class="displaymath" id="a0000000156">
+<div class="displaymath" id="a0000000155">
   \begin{equation*}  A_1(X) =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000155">
+<div class="proof_wrapper" id="a0000000154">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -227,7 +227,7 @@
   
 
 <p>The linked Lean proof establishes this statement. </p>
-<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>, <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+<p>The proof assumes <a href="#." >Poisson summation</a> and <a href="#." >the Chandrasekharan–Narasimhan estimate</a>. </p>
 
   </div>
 </div>
@@ -247,7 +247,7 @@
 
     <a class="icon proof" href="sect0006.html#lemma:traceZeroCoefficients">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000157"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000156"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -280,13 +280,13 @@
 
 
 <p>Let \(e\) be the exponent of \(3\) in \(N\), and write \(N=3^eM\) with \(3\nmid M\). Then </p>
-<div class="displaymath" id="a0000000158">
+<div class="displaymath" id="a0000000157">
   \[  r(N)= \begin{cases}  d_M,& e=0,\\ 3d_M+1,& N=3u^2\text{ for some }u\in \mathbb {Z}_{{\gt}0},\\ 3d_M,& \text{otherwise}. \end{cases}  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000157">
+<div class="proof_wrapper" id="a0000000156">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -297,7 +297,7 @@
   
 
 <p>Factor in the Eisenstein integers and separate the valuation at \(1-\zeta \). Count the allowed unit multiples. The vanishing-discriminant cases contribute the extra term when \(N=3u^2\). </p>
-<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+<p>The proof assumes <a href="#." >Poisson summation</a>. </p>
 
   </div>
 </div>
@@ -317,7 +317,7 @@
 
     <a class="icon proof" href="sect0006.html#prop:traceZeroAsymptotic">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000159"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000158"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -350,13 +350,13 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), </p>
-<div class="displaymath" id="a0000000160">
+<div class="displaymath" id="a0000000159">
   \[  A_0(X) =\frac52XQ\left(\tfrac 12\log X\right) -\left(\frac{\alpha }{4}\log 3+\frac{\pi }{3\sqrt3}\right)X +O_\varepsilon (X^{1/2+\varepsilon }).  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000159">
+<div class="proof_wrapper" id="a0000000158">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -367,7 +367,7 @@
   
 
 <p>Sum the coefficient formula over the powers of \(3\), apply the asymptotic for the \(d_M\), and remove the reducible cubics. The geometric series in the powers of \(3\) gives the stated constants. </p>
-<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>, <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+<p>The proof assumes <a href="#." >Poisson summation</a> and <a href="#." >the Chandrasekharan–Narasimhan estimate</a>. </p>
 
   </div>
 </div>
@@ -386,7 +386,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:generalTraceDecomposition">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000161"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000160"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -418,7 +418,7 @@
   
 
 
-<div class="displaymath" id="a0000000162">
+<div class="displaymath" id="a0000000161">
   \begin{align*}  \# \{ f\in F_{\mathrm{mon}}:H(f)\leq H\}  =\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ \begin{bgroup} 3\nmid s
 
 \end{bgroup}}} A_1(3H^2+s^2) +\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ \begin{bgroup} 3\mid s
@@ -428,7 +428,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000161">
+<div class="proof_wrapper" id="a0000000160">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -457,7 +457,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:monicArchimedeanMoments">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000163"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000162"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -489,13 +489,13 @@
   
 
 
-<div class="displaymath" id="a0000000164">
+<div class="displaymath" id="a0000000163">
   \begin{equation*} \begin{aligned}  \int _{-1}^1(3+u^2)\, du& =\frac{20}{3},\\ \int _{-1}^1(3+u^2)\log (3+u^2)\, du & =\frac{40}{3}\log 2+\frac{4\pi \sqrt3}{3}-\frac{76}{9}. \end{aligned}\end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000163">
+<div class="proof_wrapper" id="a0000000162">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -523,7 +523,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:monicConstantsFromTraceCounts">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000165"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000164"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -555,13 +555,13 @@
   
 
 
-<div class="displaymath" id="a0000000166">
+<div class="displaymath" id="a0000000165">
   \begin{equation*}  P(X) =\frac{110}{27}Q(X) +\frac{220\alpha }{243}\left(\log 2-\frac{19}{44}\log 3 -\frac{19}{30}+\frac{\pi \sqrt3}{10}\right) -\frac{20\pi \sqrt3}{81}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000165">
+<div class="proof_wrapper" id="a0000000164">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
