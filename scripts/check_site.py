@@ -93,7 +93,7 @@ def main():
         parsed[path.resolve()] = parser
         if '/find/#doc/' in content:
             errors.append(f'Unresolved Lean documentation URL: {path.relative_to(ROOT)}')
-        if 'project-links' not in content or 'theme-select' not in content:
+        if 'project-links' not in content or 'theme-picker' not in content:
             errors.append(f'Missing navigation: {path.relative_to(ROOT)}')
     count = 0
     for page, parser in parsed.items():
