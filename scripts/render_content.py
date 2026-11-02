@@ -17,6 +17,8 @@ def clean(text):
     # plasTeX misparses nested dollar math inside \text in an outer math span.
     # This equivalent spelling keeps the split-algebra example in one node.
     text = text.replace(r'\text{$\QQ$-alg}', r'\QQ\text{-alg}')
+    # Correct the duplicated font command in the paper's torus notation.
+    text = text.replace(r'\mathcal \GG_m', r'\GG_m')
     text = re.sub(r'\\label\{[^}]*\}', '', text)
     # Number statements once, in the blueprint wrapper.
     text = re.sub(r'\\(begin|end)\{(equation|align|multline|gather)\*?\}',
