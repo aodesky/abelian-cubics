@@ -8,9 +8,9 @@
     "all blueprint declarations exist",
     "standard axioms only"
   ],
-  "source_sha256": "d2dfc846d9239706e74302ea41b21d2bee721e049f5e55b94aaf7f7ab18cabf8",
+  "source_sha256": "0e1b406e3fc6d16a3dc4794503c4347e935553b44dfb8c51d6d7055c8602da3a",
   "blueprint_inputs_sha256": {
-    "blueprint/src/content.tex": "d2dfc846d9239706e74302ea41b21d2bee721e049f5e55b94aaf7f7ab18cabf8",
+    "blueprint/src/content.tex": "0e1b406e3fc6d16a3dc4794503c4347e935553b44dfb8c51d6d7055c8602da3a",
     "blueprint/src/introduction.tex": "c52501754f1a0a8f1335821d17af63f7623c6448a9ee78819721dfe6aedbfb3d",
     "blueprint/src/web.tex": "7d1fd0dac351db42f61d960fd72f86555c4dc422112d48b0dcf008072436c103",
     "blueprint/src/references.tex": "123fcb8c15f2ac164b5ce290033a92c212a8e2b68b4ff44bd14fbbde03233ccf",

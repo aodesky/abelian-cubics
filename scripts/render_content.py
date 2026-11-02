@@ -94,8 +94,9 @@ def main():
                     'cite:kuehleitnerNowak2004-cor2': r'the K\"uhleitner--Nowak estimate',
                 }
                 text.append('The proof assumes ' +
-                            ' and '.join(r'\hyperref[' + safe_label(k) + ']{' +
-                                         names[k].replace(r'\textquotesingle s', "'s") + '}'
+                            ' and '.join(names[k].replace(r'\textquotesingle s', "'s") +
+                                         ' (' + ('Equation' if k.startswith('eqn:') else 'Cited theorem') +
+                                         r'~\ref{' + safe_label(k) + '})'
                                          for k in assumptions) + '.')
             text.append(r'\end{proof}')
         else:
