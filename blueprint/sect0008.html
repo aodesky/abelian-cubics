@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Comparison with Santens</title>
+<link rel="next" href="sect0009.html" title="Literature inputs" />
+<link rel="prev" href="sect0007.html" title="Geometry of the quotient surface" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000009">9 Comparison with Santens</h1>
+<p>We use the minimal resolution \(\pi :X\to S\) of the preceding chapter. The proposition first specifies the integral points and height. Its proof verifies the hypotheses of Santens’s theorem and then computes the leading constant. </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:santensConstant">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">12</span>
+    <span class="proposition_thmtitle">The Santens constant</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#prop:santensConstant">#</a>
+    
+    <a class="icon proof" href="sect0008.html#a0000000190"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensConstant.lean#L17" class="lean_decl">CubicTargets.SantensComparison.SantensConstant.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensConstant.lean#L20" class="lean_decl">Cubic.SantensComparison.SantensConstant.«prop:santensConstant»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>Let \(\pi \colon X\to S\) be the minimal resolution, let \(D\subset X\) be the reduced preimage of \(D_0\), and put \(U=X\setminus D\). The coordinate ring of the affine chart \(\mathscr {S}\setminus \mathscr {D}_0\) pulls back to a finitely generated \(\mathbb {Z}\)-subalgebra </p>
+<div class="displaymath" id="a0000000191">
+  \[  A:=\pi ^*\Gamma (\mathscr {S}\setminus \mathscr {D}_0,\mathcal O) \subset \Gamma (U,\mathcal O).  \]
+</div>
+<p> A point \(P\in U(\mathbb {Q})\) is integral if \(g(P)\in \mathbb {Z}\) for every \(g\in A\). With this integral condition and the height \(H(\pi (-),1)\), <span class="cite">
+	[
+	<a href="sect0009.html#santens2023integral" >28</a>
+	, 
+	Theorem
+	
+	8.7
+	]
+</span> gives </p>
+<div class="displaymath" id="a0000000192">
+  \[  \# \{ P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z}):H(P,1)\leq B\}  \sim cB^2\log B,\qquad c=\frac{2\alpha }{9}.  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000190">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Use the pullback of the affine coordinate ring to express the integral condition. Verify the fan, divisor, and positivity hypotheses, then evaluate the dual-cone volume and the normalized local integrals. Their product is \(2\alpha /9\). </p>
+<p>The proof uses the literature inputs <a href="sect0009.html#cite:santens2023integral-toric-counting">1</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:santensTau">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">47</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#eqn:santensTau">#</a>
+    
+    <a class="icon proof" href="sect0008.html#a0000000193"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensTau.lean#L14" class="lean_decl">CubicTargets.SantensComparison.SantensTau.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensTau.lean#L9" class="lean_decl">Cubic.SantensComparison.SantensTau.«eqn:santensTau»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>For this surface the exponents are \(a=b=2\) and the dual-cone factor is \(\theta =2\). Write \(\rho _E=\operatorname {Res}_{s=1}\xi (s)\). For a finite prime \(p\), \(\tau _p^\prime \) is the local volume of the integral points multiplied by \(L_p(1,\operatorname {Pic}U_{\overline\mathbb {Q}})^{-1}\); \(\tau _\infty ^\prime \) is the residue volume of the real boundary component. The Brauer factor is one. </p>
+<div class="displaymath" id="a0000000194">
+  \begin{equation*}  c=\frac{\theta }{a(b-1)!}\, \tau =\tau ,\qquad \tau =2\rho _E\prod _v\tau ’_v, \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000193">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:santensLocalHeight">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">48</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#eqn:santensLocalHeight">#</a>
+    
+    <a class="icon proof" href="sect0008.html#a0000000195"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensLocalHeight.lean#L11" class="lean_decl">CubicTargets.SantensComparison.SantensLocalHeight.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensLocalHeight.lean#L56" class="lean_decl">Cubic.SantensComparison.SantensLocalHeight.«eqn:santensLocalHeight»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>For \(P\in T(\mathbb {Q}_v)\), put \(\nu =\iota (P)\in (E\otimes _\mathbb {Q}\mathbb {Q}_v)^\times \) and \(n=\nu \overline\nu \). Each \(|\cdot |_w\) is applied to the \(w\)-component. The height for \(3D_0\) is given by the following formula. </p>
+<div class="displaymath" id="a0000000196">
+  \begin{equation*}  H_v(P,3)=\prod _{w\mid v} \max \bigl(1,|n|_w,|\nu ^2\overline\nu |_w, |\nu \overline\nu ^2|_w\bigr)^{1/2}. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000195">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0007.html" title="Geometry of the quotient surface"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0009.html" title="Literature inputs"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

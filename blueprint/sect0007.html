@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Geometry of the quotient surface</title>
+<link rel="next" href="sect0008.html" title="Comparison with Santens" />
+<link rel="prev" href="sect0006.html" title="Counting arbitrary trace" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000008">8 Geometry of the quotient surface</h1>
+<p>Let \(e_1,e_2,e_3\) be the elementary symmetric polynomials in \(X,Y,Z\), and put \(\delta =X^2Y+Y^2Z+Z^2X\). The integral quotient is \(\mathscr {S}=\operatorname {Proj}(\mathbb {Z}[X,Y,Z]^{C_3})\), with generic fiber \(S\). We describe its cubic embedding and its minimal resolution. </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:surfaceIntegralCubic">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">9</span>
+    <span class="proposition_thmtitle">The invariant cubic model</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#prop:surfaceIntegralCubic">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000167"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceIntegralCubic.lean#L15" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceIntegralCubic.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceIntegralCubic.lean#L11" class="lean_decl">Cubic.SurfaceGeometry.SurfaceIntegralCubic.«prop:surfaceIntegralCubic»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>The invariant cubics </p>
+<div class="displaymath" id="a0000000168">
+  \[  A=e_1^3,\qquad B=e_1e_2,\qquad C=e_3,\qquad D=\delta  \]
+</div>
+<p> identify \(\mathscr {S}\) with the cubic hypersurface in \(\mathbb {P}^3_\mathbb {Z}\) defined by </p>
+<div class="displaymath" id="a0000000169">
+  \begin{equation*}  F(A,B,C,D):=B^3+AD^2-ABD+3ACD+A^2C-6ABC+9AC^2=0. \end{equation*}
+</div>
+<p> The divisor \(\mathscr {D}_0=\{ e_1=0\} \) corresponds to the line \(\{ A=B=0\} \) in these coordinates. On the generic fiber, </p>
+<div class="displaymath" id="a0000000170">
+  \begin{equation*}  3D_0\sim -K,\qquad \mathcal{O}(3D_0)\cong \mathcal{O}(1),\qquad (-K)^2=3. \end{equation*}
+</div>
+<p> In particular, this cubic embedding is anticanonical. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000167">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Compute the cyclic invariant ring and its third Veronese. The resulting cubic relation gives the embedding. Adjunction gives the anticanonical class, and the hyperplane intersection has degree three. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceIntegralCubic">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">40</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceIntegralCubic">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000171"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceIntegralEquation.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceIntegralEquation.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceIntegralEquation.lean#L8" class="lean_decl">Cubic.SurfaceGeometry.SurfaceIntegralEquation.«eqn:surfaceIntegralCubic»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000172">
+  \begin{equation*}  F(A,B,C,D):=B^3+AD^2-ABD+3ACD+A^2C-6ABC+9AC^2=0. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000171">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceAnticanonical">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">41</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceAnticanonical">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000173"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceAnticanonical.lean#L14" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceAnticanonical.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceAnticanonical.lean#L7" class="lean_decl">Cubic.SurfaceGeometry.SurfaceAnticanonical.«eqn:surfaceAnticanonical»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000174">
+  \begin{equation*}  3D_0\sim -K,\qquad \mathcal{O}(3D_0)\cong \mathcal{O}(1),\qquad (-K)^2=3. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000173">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceInvariantRelation">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">42</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceInvariantRelation">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000175"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceInvariantRelation.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceInvariantRelation.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceInvariantRelation.lean#L8" class="lean_decl">Cubic.SurfaceGeometry.SurfaceInvariantRelation.«eqn:surfaceInvariantRelation»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000176">
+  \begin{equation*}  \delta ^2-(e_1e_2-3e_3)\delta +e_2^3+e_1^3e_3-6e_1e_2e_3+9e_3^2=0. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000175">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:surfaceRationalForm">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">10</span>
+    <span class="proposition_thmtitle">The standard rational form</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#prop:surfaceRationalForm">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000177"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceRationalForm.lean#L16" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceRationalForm.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceRationalForm.lean#L13" class="lean_decl">Cubic.SurfaceGeometry.SurfaceRationalForm.«prop:surfaceRationalForm»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>Over \(\mathbb {Z}[1/6]\), \(\mathscr {S}\) is isomorphic to the cubic hypersurface </p>
+<div class="displaymath" id="a0000000178">
+  \begin{equation*}  x_0(x_1^2+3x_2^2)=x_3^3 \end{equation*}
+</div>
+<p> in \(\mathbb {P}_{\mathbb {Z}[1/6]}^3\). Its generic fiber \(S\) is a del Pezzo surface of degree \(3\) and geometric Picard rank \(1\). Its three geometric singularities are of type \(\mathbf A_2\): one is rational, and the other two are conjugate over \(E=\mathbb {Q}(\sqrt{-3})\). Over \(E\), the coordinates \(x_1'=x_1+\sqrt{-3}x_2\) and \(x_2'=x_1-\sqrt{-3}x_2\) give the split toric cubic \(x_0x_1'x_2'=x_3^3\). In these coordinates, \(D_0=\{ x_0=x_3=0\} \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000177">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Apply the explicit change of coordinates over \(\mathbb {Z}[1/6]\). Split the norm over \(E\), and compute the singular points and their local equations. The toric lattice gives the Picard rank. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceNormCubic">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">43</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceNormCubic">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000179"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceNormCubic.lean#L10" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceNormCubic.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceNormCubic.lean#L7" class="lean_decl">Cubic.SurfaceGeometry.SurfaceNormCubic.«eqn:surfaceNormCubic»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000180">
+  \begin{equation*}  x_0(x_1^2+3x_2^2)=x_3^3 \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000179">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceCoordinateChange">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">44</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceCoordinateChange">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000181"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceCoordinateChange.lean#L9" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceCoordinateChange.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceCoordinateChange.lean#L24" class="lean_decl">Cubic.SurfaceGeometry.SurfaceCoordinateChange.«eqn:surfaceCoordinateChange»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000182">
+  \begin{equation*} \begin{aligned}  x_0& =A,&  x_3& =A-3B,\\ x_1& =A-\tfrac 92B+\tfrac {27}{2}C,&  x_2& =3D-\tfrac 32B+\tfrac 92C. \end{aligned}\end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000181">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:surfaceResolvedBoundary">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">11</span>
+    <span class="proposition_thmtitle">The resolution and boundary</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#prop:surfaceResolvedBoundary">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000183"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceResolvedBoundary.lean#L12" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceResolvedBoundary.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceResolvedBoundary.lean#L12" class="lean_decl">Cubic.SurfaceGeometry.SurfaceResolvedBoundary.«prop:surfaceResolvedBoundary»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>The surface \(S\) admits a minimal resolution \(\pi \colon X\to S\) over \(\mathbb {Q}\). Put \(D_{\mathrm{red}}=(\pi ^{-1}D_0)_{\mathrm{red}}\). Then \(X\) is a weak del Pezzo surface of degree \(3\), of geometric Picard rank \(7\). The geometric components of \(D_{\mathrm{red}}\) form a chain with self-intersections </p>
+<div class="displaymath" id="a0000000184">
+  \begin{equation*}  (-2)-(-2)-(-1)-(-2)-(-2). \end{equation*}
+</div>
+<p> The divisor \(L=-K_X-D_{\mathrm{red}}\) is nef and not numerically zero, but is not big. More precisely, </p>
+<div class="displaymath" id="a0000000185">
+  \begin{equation*}  K_X\cdot D_{\mathrm{red}}=-1,\qquad D_{\mathrm{red}}^2=-1,\qquad L^2=0. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000183">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Subdivide the three singular cones to obtain the minimal smooth fan. Compute the exceptional chain, divisor classes, and intersections in that fan. The intersection numbers establish the assertions about \(L\). </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceBoundaryChain">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">45</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceBoundaryChain">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000186"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceBoundaryChain.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceBoundaryChain.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceBoundaryChain.lean#L6" class="lean_decl">Cubic.SurfaceGeometry.SurfaceBoundaryChain.«eqn:surfaceBoundaryChain»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000187">
+  \begin{equation*}  (-2)-(-2)-(-1)-(-2)-(-2). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000186">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:surfaceLogIntersections">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">46</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0007.html#eqn:surfaceLogIntersections">#</a>
+    
+    <a class="icon proof" href="sect0007.html#a0000000188"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceLogIntersections.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceLogIntersections.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceLogIntersections.lean#L6" class="lean_decl">Cubic.SurfaceGeometry.SurfaceLogIntersections.«eqn:surfaceLogIntersections»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000189">
+  \begin{equation*}  K_X\cdot D_{\mathrm{red}}=-1,\qquad D_{\mathrm{red}}^2=-1,\qquad L^2=0. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000188">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0006.html" title="Counting arbitrary trace"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0008.html" title="Comparison with Santens"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

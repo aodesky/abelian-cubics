@@ -1,0 +1,4231 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="a0000000037_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="a0000000037" style="display: none">
+    <div class="thm_thmheading">
+      <span class="example_thmcaption">
+      Example
+      </span>
+      </div>
+    <div class="thm_thmcontent"></div>
+
+    <a class="latex_link" href="sect0002.html#a0000000037">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cite:chandrasekharanNarasimhan1963-thm4_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cite:chandrasekharanNarasimhan1963-thm4" style="display: none">
+    <div class="thm_thmheading">
+      <span class="citedtheorem_thmcaption">
+      Cited theorem
+      </span>
+      <span class="citedtheorem_thmlabel">2</span><span class="citedtheorem_thmtitle">Chandrasekharan–Narasimhan</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For \(E=\mathbb {Q}(\sqrt{-3})\) and \(\xi =\zeta _E\), </p>
+<div class="displaymath" id="a0000000197">
+  \[ \frac1T\int _1^T|\xi (1/2+it)|^2\, dt=O((\log T)^2)\qquad (T\to \infty ). \]
+</div>
+<p>This is <span class="cite">
+	[
+	<a href="sect0009.html#chandrasekharanNarasimhan1963" >7</a>
+	, 
+	Theorem
+	
+	4, (80)
+	]
+</span>, with \([E:\mathbb {Q}]=2\) and \(\sigma =1/2\). </p>
+</div>
+
+    <a class="latex_link" href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/ChandrasekharanNarasimhanMeanSquare.lean#L21">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cite:kuehleitnerNowak2004-cor2_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cite:kuehleitnerNowak2004-cor2" style="display: none">
+    <div class="thm_thmheading">
+      <span class="citedtheorem_thmcaption">
+      Cited theorem
+      </span>
+      <span class="citedtheorem_thmlabel">3</span><span class="citedtheorem_thmtitle">Kühleitner–Nowak</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(a_K(n)\) count integral ideals of norm \(n^3\) in a fixed quadratic field \(K\). If \(F\) is analytic at \(1\) and agrees with \((s-1)^2\sum _{n\geq 1}a_K(n)n^{-s}\) to its right, then </p>
+<div class="displaymath" id="a0000000198">
+  \[ \sum _{n\leq X}a_K(n)=F(1)X\log X+(F^\prime (1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log \log X)^2\bigr). \]
+</div>
+<p>This is the residue form of <span class="cite">
+	[
+	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	, 
+	Corollary
+	
+	2
+	]
+</span>. The removal of the factor at \(3\) and the comparison with the original count are proved in Lean. </p>
+</div>
+
+    <a class="latex_link" href="sect0009.html#cite:kuehleitnerNowak2004-cor2">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/KuehleitnerNowakCubeIdealSum.lean#L29">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cite:santens2023integral-toric-counting_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cite:santens2023integral-toric-counting" style="display: none">
+    <div class="thm_thmheading">
+      <span class="citedtheorem_thmcaption">
+      Cited theorem
+      </span>
+      <span class="citedtheorem_thmlabel">1</span><span class="citedtheorem_thmtitle">Santens</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The integral-point counting theorem <span class="cite">
+	[
+	<a href="sect0009.html#santens2023integral" >28</a>
+	, 
+	Theorem
+	
+	8.7
+	]
+</span>, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and compatible metrics. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input. </p>
+</div>
+
+    <a class="latex_link" href="sect0009.html#cite:santens2023integral-toric-counting">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensInput.lean#L39">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cor:integralPointCount_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:integralPointCount" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1</span><span class="corollary_thmtitle">Integral points</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), </p>
+<div class="displaymath" id="a0000000028">
+  \[  \# \{ P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z}):H(P)\leq H\}  =H^2Q(\log H)+O_\varepsilon (H^{1+\varepsilon }),  \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000029">
+  \begin{equation*}  Q(X)=\frac{2\alpha }{9} \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)} +\beta +\frac38\log 3-\frac12\biggr). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#cor:integralPointCount">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IntegralPointCount.lean#L24" class="lean_decl">CubicTargets.Counting.IntegralPointCount.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IntegralPointCount.lean#L134" class="lean_decl">Cubic.Counting.IntegralPointCount.«cor:integralPointCount»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:A1asymptotic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:A1asymptotic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">36</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000156">
+  \begin{equation*}  A_1(X) =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#eqn:A1asymptotic">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L200" class="lean_decl">CubicTargets.Counting.GeneralMonic.A1Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/A1Asymptotic.lean#L145" class="lean_decl">Cubic.Counting.A1Asymptotic.«eqn:A1asymptotic»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:affineC3invariants_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:affineC3invariants" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">9</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000057">
+  \begin{equation*}  \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3} =\mathbb {Z}[e_2,e_3,\delta ]. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:affineC3invariants">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineC3Invariants.lean#L16" class="lean_decl">CubicTargets.ToricHeights.AffineC3Invariants.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineC3Invariants.lean#L63" class="lean_decl">Cubic.ToricHeights.AffineC3Invariants.«eqn:affineC3invariants»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:archimedeanSpectralFactor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:archimedeanSpectralFactor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">23</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000112">
+  \begin{equation*} \begin{aligned}  \widehat{H_\infty }(\chi _{m,\infty },-s,D_0) & =\frac1{s_0+2\pi it}+\frac1{2\sigma -2\pi it}\\ & =\frac{s_0+2\sigma }{(s_0+2\pi it)(2\sigma -2\pi it)}. \end{aligned}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:archimedeanSpectralFactor">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ArchimedeanSpectralFactor.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.ArchimedeanSpectralFactor.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ArchimedeanSpectralFactor.lean#L16" class="lean_decl">Cubic.PoissonSummation.«eqn:archimedeanSpectralFactor»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:C3invariants_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:C3invariants" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">10</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000059">
+  \begin{equation*}  \mathbb {Z}[X,Y,Z]^{C_3} =\mathbb {Z}[e_1,e_2,e_3,X^2Y+Y^2Z+Z^2X] \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:C3invariants">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/C3Invariants.lean#L17" class="lean_decl">CubicTargets.ToricHeights.C3Invariants.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/C3Invariants.lean#L37" class="lean_decl">Cubic.ToricHeights.C3Invariants.«eqn:C3invariants»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:chimdefn_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:chimdefn" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">20</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000102">
+  \begin{equation*}  \chi _m(x)=e(\langle m,\ell (x)\rangle ), \qquad m\in \mathfrak t^\vee . \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:chimdefn">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ChimDefn.lean#L57" class="lean_decl">CubicTargets.PoissonSummation.ChimDefn.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ChimDefn.lean#L75" class="lean_decl">Cubic.PoissonSummation.ChimDefn.«eqn:chimdefn»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:criticalMeanSquare_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:criticalMeanSquare" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">32</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000143">
+  \begin{equation*}  \int _1^T|\xi (1/2+it)|^2\, dt \ll T\log ^2T. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:criticalMeanSquare">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/CriticalMeanSquare.lean#L7" class="lean_decl">CubicTargets.Counting.CriticalMeanSquare.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/CriticalMeanSquare.lean#L12" class="lean_decl">Cubic.Counting.CriticalMeanSquare.«eqn:criticalMeanSquare»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:dSummatoryForGeneralTrace_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:dSummatoryForGeneralTrace" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">33</span><span class="equationnode_thmtitle">The coefficient sum</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000145">
+  \begin{equation*}  \sum _{n\leq X}d_n =XQ\left(\tfrac 12\log X\right) +O_\varepsilon (X^{1/2+\varepsilon }), \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:dSummatoryForGeneralTrace">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L195" class="lean_decl">CubicTargets.Counting.GeneralMonic.DSummatoryClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/DSummatory.lean#L55" class="lean_decl">Cubic.Counting.DSummatory.«eqn:dSummatoryForGeneralTrace»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:eulerCorrectionFactor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:eulerCorrectionFactor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">26</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000120">
+  \begin{equation*}  R(z)=\prod _{q\equiv 2\pmod3}\left(1-q^{-2z}\right) \prod _{p\equiv 1\pmod3}\left(1-3p^{-2z}+2p^{-3z}\right). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:eulerCorrectionFactor">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/EulerCorrectionFactor.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.EulerCorrectionFactor.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/EulerCorrectionFactor.lean#L21" class="lean_decl">Cubic.PoissonSummation.EulerCorrectionFactor.«eqn:eulerCorrectionFactor»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:finiteEulerBound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:finiteEulerBound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">22</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000109">
+  \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:finiteEulerBound">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteEulerBound.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteEulerBound.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteEulerBound.lean#L14" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteEulerBound»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:finiteHeightFourierTransform_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:finiteHeightFourierTransform" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">17</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000091">
+  \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:finiteHeightFourierTransform">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteHeightFourierTransform.lean#L25" class="lean_decl">CubicTargets.PoissonSummation.FiniteHeightFourierTransform.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteHeightFourierTransform.lean#L23" class="lean_decl">Cubic.PoissonSummation.FiniteHeightFourierTransform.«eqn:finiteHeightFourierTransform»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:finiteSpectralProduct_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:finiteSpectralProduct" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">21</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000107">
+  \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:finiteSpectralProduct">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteSpectralProduct.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteSpectralProduct»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:formulaForNormCharacter_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:formulaForNormCharacter" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">7</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000050">
+  \begin{equation*}  \chi ^{a'+b'}(uv_0’ + vv_1’+wv_2’) = \frac{vw}{u^2} = \frac{(X+\zeta Y+\zeta ^2 Z)(X+\zeta ^2 Y+\zeta Z)}{(X+Y+Z)^2} = \frac{e_1^2-3e_2}{e_1^2} \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:formulaForNormCharacter">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter.lean#L82" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter.lean#L103" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter.«eqn:formulaForNormCharacter»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:formulaForNormCharacter2_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:formulaForNormCharacter2" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">8</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000052">
+  \begin{equation*}  \chi ^{2b'+a'}(uv_0’ + vv_1’+wv_2’) =\frac{w^3}{u^3} = \frac{e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}}{e_1^3} \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:formulaForNormCharacter2">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter2.lean#L33" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter2.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter2.lean#L26" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter2.«eqn:formulaForNormCharacter2»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:generalTraceDecomposition_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:generalTraceDecomposition" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">37</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000162">
+  \begin{align*}  \# \{ f\in F_{\mathrm{mon}}:H(f)\leq H\}  =\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ \begin{bgroup} 3\nmid s
+
+\end{bgroup}}} A_1(3H^2+s^2) +\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ \begin{bgroup} 3\mid s
+
+\end{bgroup}}} A_0\left(H^2+\frac{s^2}{3}\right). \end{align*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#eqn:generalTraceDecomposition">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L83" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralTraceDecompositionClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/GeneralTraceDecomposition.lean#L114" class="lean_decl">Cubic.Counting.GeneralTraceDecomposition.«eqn:generalTraceDecomposition»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:heightExtraFactor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:heightExtraFactor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">12</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000065">
+  \begin{align*}  \max \left( 1, |1-3e_2|^2, \left|1-\tfrac 92 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}\right|^2 \right)^{1/2}. \end{align*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:heightExtraFactor">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightExtraFactor.lean#L45" class="lean_decl">CubicTargets.ToricHeights.HeightExtraFactor.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightExtraFactor.lean#L46" class="lean_decl">Cubic.ToricHeights.HeightExtraFactor.«eqn:heightExtraFactor»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:heightforrationaladeles_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:heightforrationaladeles" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">5</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000043">
+  \begin{equation*}  H(x,\varphi ) = \prod _{v \in Pl_\mathbb {Q}} q_v^{-\frac{1}{e_v}\varphi (\ell _w(x_v)) } \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:heightforrationaladeles">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightForRationalAdeles.lean#L64" class="lean_decl">CubicTargets.ToricHeights.HeightForRationalAdeles.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightForRationalAdeles.lean#L105" class="lean_decl">Cubic.ToricHeights.HeightForRationalAdeles.«eqn:heightforrationaladeles»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:heightMeanBound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:heightMeanBound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">34</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For each \(\eta {\gt}0\) there is a constant \(A_\eta \), depending only on \(\eta \), such that the following holds for all \(\sigma \geq 1/2+\eta \). </p>
+<div class="displaymath" id="a0000000147">
+  \begin{equation*}  \int _U^{2U}|Z_0(\sigma +it)|\, dt \leq A_\eta \int _U^{2U}|\xi (\sigma +it)|^2\, dt \qquad (U \geq 2). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:heightMeanBound">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/HeightMeanBound.lean#L11" class="lean_decl">CubicTargets.Counting.HeightMeanBound.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/HeightMeanBound.lean#L11" class="lean_decl">Cubic.Counting.HeightMeanBound.«eqn:heightMeanBound»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:infiniteHeightFourierTransform_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:infiniteHeightFourierTransform" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">16</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000089">
+  \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:infiniteHeightFourierTransform">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/InfiniteHeightFourierTransform.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.InfiniteHeightFourierTransform.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/InfiniteHeightFourierTransform.lean#L19" class="lean_decl">Cubic.PoissonSummation.InfiniteHeightFourierTransform.«eqn:infiniteHeightFourierTransform»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:integralityConditionsUsingCyclo_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:integralityConditionsUsingCyclo" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">14</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000076">
+  \begin{equation*} \begin{cases}  u^2+v^2-uv \in 1+3 \mathbb {Z}\text{ and }\\ (u^2+v^2-uv)(3-2u+v) \in 1+27 \mathbb {Z}. \end{cases}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sec-quadraticParametrization.html#eqn:integralityConditionsUsingCyclo">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/IntegralityConditions.lean#L22" class="lean_decl">CubicTargets.QuadraticCorrespondence.IntegralityConditions.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/IntegralityConditions.lean#L8" class="lean_decl">Cubic.QuadraticCorrespondence.IntegralityConditions.«eqn:integralityConditionsUsingCyclo»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:introConstants_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:introConstants" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">1</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000012">
+  \begin{equation*}  \mu =\lim _{s\to 1} \left(\frac{\xi '(s)}{\xi (s)}+\frac{1}{s-1}\right), \quad \alpha =\prod _{p\equiv 1\pmod3}\left(1-\frac{2}{p(p+1)}\right), \quad \beta =\sum _{p\equiv 1\pmod3}\frac{(2p+1)\log p}{(p^2-1)(p+2)}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#eqn:introConstants">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IntroConstants.lean#L11" class="lean_decl">CubicTargets.Counting.IntroConstants.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IntroConstants.lean#L6" class="lean_decl">Cubic.Counting.IntroConstants.«eqn:introConstants»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:irrPolys_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:irrPolys" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">35</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000149">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:irrPolys">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IrrPolys.lean#L31" class="lean_decl">CubicTargets.Counting.IrrPolys.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IrrPolys.lean#L91" class="lean_decl">Cubic.Counting.IrrPolys.«eqn:irrPolys»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:isoCocharLattices_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:isoCocharLattices" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">13</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000070">
+  \begin{equation*}  N_E=\mathbb {Z}\langle \omega ,\gamma \omega \rangle \to N_E’=\mathbb {Z}\langle v_1,v_2\rangle \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sec-quadraticParametrization.html#eqn:isoCocharLattices">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/IsoCocharLattices.lean#L45" class="lean_decl">CubicTargets.QuadraticCorrespondence.IsoCocharLattices.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/IsoCocharLattices.lean#L130" class="lean_decl">Cubic.QuadraticCorrespondence.IsoCocharLattices.«eqn:isoCocharLattices»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:LAsNorm_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:LAsNorm" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">19</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000096">
+  \begin{equation*}  \ell (x)(\mathrm{N}) = -\log |\mathrm{N}(x)|_{\mathbb {A}} \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:LAsNorm">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LAsNorm.lean#L56" class="lean_decl">CubicTargets.PoissonSummation.LAsNorm.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LAsNorm.lean#L52" class="lean_decl">Cubic.PoissonSummation.LAsNorm.«eqn:LAsNorm»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:localfourierassumovern_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:localfourierassumovern" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">18</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000094">
+  \begin{equation*}  \int _{T(\mathbb {Q}_v)} H_v(x,s)^{-1}1_v^{D_0}(x)\chi (x)^{-1}\, d^\times x_v =\sum _{n \in N_w} q_v^{\frac{1}{e_v}\varphi (n)} 1_v^{D_0}(n) \chi (n)^{-1} = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:localfourierassumovern">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalFourierAsSumOverN.lean#L45" class="lean_decl">CubicTargets.PoissonSummation.LocalFourierAsSumOverN.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalFourierAsSumOverN.lean#L40" class="lean_decl">Cubic.PoissonSummation.LocalFourierAsSumOverN.«eqn:localfourierassumovern»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:localHeight_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:localHeight" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">11</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000063">
+  \begin{align*}  \max \Bigg( 1, |1-3e_2|_w, & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w, \\ & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w \Bigg)^{\frac{1}{[E:\mathbb {Q}]}} \end{align*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:localHeight">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/LocalHeightFormula.lean#L96" class="lean_decl">CubicTargets.ToricHeights.LocalHeightFormula.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/LocalHeightFormula.lean#L132" class="lean_decl">Cubic.ToricHeights.LocalHeightFormula.«eqn:localHeight»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:monicArchimedeanMoments_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:monicArchimedeanMoments" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">38</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000164">
+  \begin{equation*} \begin{aligned}  \int _{-1}^1(3+u^2)\, du& =\frac{20}{3},\\ \int _{-1}^1(3+u^2)\log (3+u^2)\, du & =\frac{40}{3}\log 2+\frac{4\pi \sqrt3}{3}-\frac{76}{9}. \end{aligned}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#eqn:monicArchimedeanMoments">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L105" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicArchimedeanMomentsClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/MonicArchimedeanMoments.lean#L96" class="lean_decl">Cubic.Counting.MonicArchimedeanMoments.«eqn:monicArchimedeanMoments»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:monicConstantsFromTraceCounts_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:monicConstantsFromTraceCounts" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">39</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000166">
+  \begin{equation*}  P(X) =\frac{110}{27}Q(X) +\frac{220\alpha }{243}\left(\log 2-\frac{19}{44}\log 3 -\frac{19}{30}+\frac{\pi \sqrt3}{10}\right) -\frac{20\pi \sqrt3}{81}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#eqn:monicConstantsFromTraceCounts">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L214" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicConstantsFromTraceCountsClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/MonicConstantsFromTraceCounts.lean#L54" class="lean_decl">Cubic.Counting.MonicConstantsFromTraceCounts.«eqn:monicConstantsFromTraceCounts»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:normCharacterDivisor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:normCharacterDivisor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">25</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000118">
+  \begin{equation*}  \operatorname {div}(\chi ^{a'+b'}) =\sum _{i=0}^2\langle a’+b’,v_i\rangle D_i =-2D_0+D_1+D_2. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:normCharacterDivisor">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/NormCharacterDivisor.lean#L40" class="lean_decl">CubicTargets.PoissonSummation.NormCharacterDivisor.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/NormCharacterDivisor.lean#L17" class="lean_decl">Cubic.PoissonSummation.NormCharacterDivisor.«eqn:normCharacterDivisor»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:poissonae_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:poissonae" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">15</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(f\in L^1(T(\mathbb {A}))\) and suppose \(\widehat f|_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). With counting measure on \(T(\mathbb {Q})\) and the normalized dual measure, the following equality holds for almost every \(y\in T(\mathbb {A})\). </p>
+<div class="displaymath" id="a0000000083">
+  \begin{equation*}  \int _{T(\mathbb {Q})} f(xy)\,  dx = \int _{T(\mathbb {Q})^\perp } \widehat{f}(\chi ) \chi (y) \, d\chi \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:poissonae">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonWithDualMeasure.lean#L30">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:poissonEulerIntegral_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:poissonEulerIntegral" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">24</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000116">
+  \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:poissonEulerIntegral">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonEulerIntegral.lean#L18" class="lean_decl">CubicTargets.PoissonSummation.PoissonEulerIntegral.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonEulerIntegral.lean#L8" class="lean_decl">Cubic.PoissonSummation.PoissonEulerIntegral.«eqn:poissonEulerIntegral»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:polynomialWeights_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:polynomialWeights" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">4</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000033">
+  \begin{equation*}  w_f=\frac{|\mathrm{Aut}(C_3)|}{|\mathrm{Aut}(K_f,x_f)|}= \begin{cases}  1 & \text{if $f$ has a double root,}\\ 2 & \text{otherwise,} \end{cases}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#eqn:polynomialWeights">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/PolynomialWeights.lean#L32" class="lean_decl">CubicTargets.Introduction.PolynomialWeights.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/PolynomialWeights.lean#L48" class="lean_decl">Cubic.QuadraticCorrespondence.PolynomialWeights.«eqn:polynomialWeights»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:santensLocalHeight_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:santensLocalHeight" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">48</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For \(P\in T(\mathbb {Q}_v)\), put \(\nu =\iota (P)\in (E\otimes _\mathbb {Q}\mathbb {Q}_v)^\times \) and \(n=\nu \overline\nu \). Each \(|\cdot |_w\) is applied to the \(w\)-component. The height for \(3D_0\) is given by the following formula. </p>
+<div class="displaymath" id="a0000000196">
+  \begin{equation*}  H_v(P,3)=\prod _{w\mid v} \max \bigl(1,|n|_w,|\nu ^2\overline\nu |_w, |\nu \overline\nu ^2|_w\bigr)^{1/2}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#eqn:santensLocalHeight">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensLocalHeight.lean#L11" class="lean_decl">CubicTargets.SantensComparison.SantensLocalHeight.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensLocalHeight.lean#L56" class="lean_decl">Cubic.SantensComparison.SantensLocalHeight.«eqn:santensLocalHeight»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:santensTau_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:santensTau" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">47</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For this surface the exponents are \(a=b=2\) and the dual-cone factor is \(\theta =2\). Write \(\rho _E=\operatorname {Res}_{s=1}\xi (s)\). For a finite prime \(p\), \(\tau _p^\prime \) is the local volume of the integral points multiplied by \(L_p(1,\operatorname {Pic}U_{\overline\mathbb {Q}})^{-1}\); \(\tau _\infty ^\prime \) is the residue volume of the real boundary component. The Brauer factor is one. </p>
+<div class="displaymath" id="a0000000194">
+  \begin{equation*}  c=\frac{\theta }{a(b-1)!}\, \tau =\tau ,\qquad \tau =2\rho _E\prod _v\tau ’_v, \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#eqn:santensTau">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensTau.lean#L14" class="lean_decl">CubicTargets.SantensComparison.SantensTau.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensTau.lean#L9" class="lean_decl">Cubic.SantensComparison.SantensTau.«eqn:santensTau»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:splitForm_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:splitForm" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">2</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000022">
+  \begin{equation*}  x_0x_1x_2=x_3^3. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#eqn:splitForm">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/SplitForm.lean#L12" class="lean_decl">CubicTargets.Introduction.SplitForm.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/SplitForm.lean#L12" class="lean_decl">Cubic.Introduction.SplitForm.«eqn:splitForm»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceAnticanonical_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceAnticanonical" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">41</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000174">
+  \begin{equation*}  3D_0\sim -K,\qquad \mathcal{O}(3D_0)\cong \mathcal{O}(1),\qquad (-K)^2=3. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceAnticanonical">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceAnticanonical.lean#L14" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceAnticanonical.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceAnticanonical.lean#L7" class="lean_decl">Cubic.SurfaceGeometry.SurfaceAnticanonical.«eqn:surfaceAnticanonical»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceBoundaryChain_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceBoundaryChain" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">45</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000187">
+  \begin{equation*}  (-2)-(-2)-(-1)-(-2)-(-2). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceBoundaryChain">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceBoundaryChain.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceBoundaryChain.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceBoundaryChain.lean#L6" class="lean_decl">Cubic.SurfaceGeometry.SurfaceBoundaryChain.«eqn:surfaceBoundaryChain»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceCoordinateChange_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceCoordinateChange" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">44</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000182">
+  \begin{equation*} \begin{aligned}  x_0& =A,&  x_3& =A-3B,\\ x_1& =A-\tfrac 92B+\tfrac {27}{2}C,&  x_2& =3D-\tfrac 32B+\tfrac 92C. \end{aligned}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceCoordinateChange">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceCoordinateChange.lean#L9" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceCoordinateChange.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceCoordinateChange.lean#L24" class="lean_decl">Cubic.SurfaceGeometry.SurfaceCoordinateChange.«eqn:surfaceCoordinateChange»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceIntegralCubic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceIntegralCubic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">40</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000172">
+  \begin{equation*}  F(A,B,C,D):=B^3+AD^2-ABD+3ACD+A^2C-6ABC+9AC^2=0. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceIntegralCubic">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceIntegralEquation.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceIntegralEquation.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceIntegralEquation.lean#L8" class="lean_decl">Cubic.SurfaceGeometry.SurfaceIntegralEquation.«eqn:surfaceIntegralCubic»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceInvariantRelation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceInvariantRelation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">42</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000176">
+  \begin{equation*}  \delta ^2-(e_1e_2-3e_3)\delta +e_2^3+e_1^3e_3-6e_1e_2e_3+9e_3^2=0. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceInvariantRelation">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceInvariantRelation.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceInvariantRelation.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceInvariantRelation.lean#L8" class="lean_decl">Cubic.SurfaceGeometry.SurfaceInvariantRelation.«eqn:surfaceInvariantRelation»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceLogIntersections_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceLogIntersections" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">46</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000189">
+  \begin{equation*}  K_X\cdot D_{\mathrm{red}}=-1,\qquad D_{\mathrm{red}}^2=-1,\qquad L^2=0. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceLogIntersections">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceLogIntersections.lean#L7" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceLogIntersections.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceLogIntersections.lean#L6" class="lean_decl">Cubic.SurfaceGeometry.SurfaceLogIntersections.«eqn:surfaceLogIntersections»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceNormCubic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceNormCubic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">43</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000180">
+  \begin{equation*}  x_0(x_1^2+3x_2^2)=x_3^3 \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#eqn:surfaceNormCubic">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceNormCubic.lean#L10" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceNormCubic.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceNormCubic.lean#L7" class="lean_decl">Cubic.SurfaceGeometry.SurfaceNormCubic.«eqn:surfaceNormCubic»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:surfaceQuadraticTwist_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:surfaceQuadraticTwist" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">3</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000024">
+  \begin{equation*}  S^{(d)}\colon x_0(x_1^2-dx_2^2)=x_3^3. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#eqn:surfaceQuadraticTwist">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/SurfaceQuadraticTwist.lean#L10" class="lean_decl">CubicTargets.Introduction.SurfaceQuadraticTwist.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/SurfaceQuadraticTwist.lean#L46" class="lean_decl">Cubic.Introduction.SurfaceQuadraticTwist.«eqn:surfaceQuadraticTwist»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:weightedPolynomialCount_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:weightedPolynomialCount" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">30</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000137">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:weightedPolynomialCount">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/WeightedPolynomialCount.lean#L36" class="lean_decl">CubicTargets.Counting.WeightedPolynomialCount.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/WeightedCount.lean#L340" class="lean_decl">Cubic.Counting.WeightedCount.«eqn:weightedPolynomialCount»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:weightVectors_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:weightVectors" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">6</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000048">
+  \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#eqn:weightVectors">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/WeightVectorsDisplay.lean#L24" class="lean_decl">CubicTargets.ToricHeights.WeightVectorsDisplay.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/WeightVectorsDisplay.lean#L22" class="lean_decl">Cubic.ToricHeights.WeightVectorsDisplay.«eqn:weightVectors»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:xiMeanBound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:xiMeanBound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">31</span><span class="equationnode_thmtitle">The strip bound</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000141">
+  \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#eqn:xiMeanBound">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanBound.lean#L9" class="lean_decl">CubicTargets.Counting.XiMeanBound.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanBound.lean#L9" class="lean_decl">Cubic.Counting.XiMeanBound.«eqn:xiMeanBound»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:Z0factorization_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:Z0factorization" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">27</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000124">
+  \begin{equation*}  Z_0(z)=\left(1-3^{-z}\right)^2\xi (z)^2R(z). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:Z0factorization">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Factorization.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.Z0Factorization.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Factorization.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0Factorization.«eqn:Z0factorization»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:Z0Laurent_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:Z0Laurent" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">28</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000130">
+  \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:Z0Laurent">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Laurent.lean#L11" class="lean_decl">CubicTargets.PoissonSummation.Z0Laurent.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Laurent.lean#L32" class="lean_decl">Cubic.PoissonSummation.Z0Laurent.«eqn:Z0Laurent»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eqn:Z0LaurentR_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eqn:Z0LaurentR" style="display: none">
+    <div class="thm_thmheading">
+      <span class="equationnode_thmcaption">
+      Equation
+      </span>
+      <span class="equationnode_thmlabel">29</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Here \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\) and \(\mu \) is the Euler–Kronecker constant defined above. </p>
+<div class="displaymath" id="a0000000132">
+  \begin{equation*}  Z_0(z)=\frac{a}{(z-1)^2} +2a\left(\mu +\frac12\log 3+\frac{R'(1)}{2R(1)}\right)\frac{1}{z-1} +O(1), \qquad a=\frac49r^2R(1). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#eqn:Z0LaurentR">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.Z0LaurentR.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0LaurentR.«eqn:Z0LaurentR»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="example:splitAlgebra_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="example:splitAlgebra" style="display: none">
+    <div class="thm_thmheading">
+      <span class="example_thmcaption">
+      Example
+      </span>
+      <span class="example_thmlabel">2</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(K_{\text{spl}} = \mathbb {Q}^3\), the split cubic algebra. Then \(C_3\subset S_3 = \mathrm{Aut}\)</p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#example:splitAlgebra">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitAlgebraTwist.lean#L29" class="lean_decl">CubicTargets.OrbitParametrization.SplitAlgebraTwist.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitAlgebraTwist.lean#L81" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebra»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="example:splitAlgebraNormalElement_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="example:splitAlgebraNormalElement" style="display: none">
+    <div class="thm_thmheading">
+      <span class="example_thmcaption">
+      Example
+      </span>
+      <span class="example_thmlabel">3</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>An element \(x\) of trace one in the split \(C_3\)-algebra \(K_{\text{spl}}\) is normal if and only if \(x\) either has distinct coordinates or exactly two identical coordinates. For such a normal element \(x\), the pairs \((K_{\text{spl}},x)\) and \((K_{\text{spl}}',x)\) are equivalent if and only if \(x\) has exactly two identical coordinates (swapping the identical coordinates gives the required isomorphism); in particular, if \(x\) has distinct coordinates then \((K_{\text{spl}},x)\) and \((K_{\text{spl}}',x)\) determine different rational points of \(\mathcal G_1/C_3\), even though \(K_{\text{spl}}\) and \(K_{\text{spl}}'\) are isomorphic as \(C_3\)-algebras. </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#example:splitAlgebraNormalElement">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitNormalElements.lean#L48" class="lean_decl">CubicTargets.OrbitParametrization.SplitNormalElements.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitNormalElements.lean#L206" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebraNormalElement»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="example:twoRationalPointsSamePoly_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="example:twoRationalPointsSamePoly" style="display: none">
+    <div class="thm_thmheading">
+      <span class="example_thmcaption">
+      Example
+      </span>
+      <span class="example_thmlabel">1</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(K\) be a cubic abelian number field. Then \(K\), equipped with its canonical Galois action, is a \(C_3\)-algebra. The twist \(K'\) of the \(C_3\)-algebra \(K\) by the outer automorphism \(g \mapsto g^{-1}\) of \(C_3\) (with twisted action \(g \ast x = g^{-1}x\)) is not isomorphic to \(K\) as a \(C_3\)-algebra.<a class="footnote" href="#a0000000036">
+  <sup class="footnotemark">1</sup>
+</a> </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#example:twoRationalPointsSamePoly">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/TwistedCubicField.lean#L42" class="lean_decl">CubicTargets.OrbitParametrization.TwistedCubicField.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/TwistedCubicField.lean#L63" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:twoRationalPointsSamePoly»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:affineIntegrality_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:affineIntegrality" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2</span><span class="lemma_thmtitle">Integral points in the affine chart</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Write \(e_2,e_3,\delta \) for the dehomogenized invariants </p>
+<div class="displaymath" id="a0000000054">
+  \[  e_2=\frac{XY+YZ+ZX}{\varepsilon ^2},\qquad e_3=\frac{XYZ}{\varepsilon ^3},\qquad \delta =\frac{X^2Y+Y^2Z+Z^2X}{\varepsilon ^3}.  \]
+</div>
+<p> Then </p>
+<div class="displaymath" id="a0000000055">
+  \begin{equation*}  \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3} =\mathbb {Z}[e_2,e_3,\delta ]. \end{equation*}
+</div>
+<p> A rational point \(P\) of \(S\setminus D_0\) is integral if and only if \(e_2(P),e_3(P)\in \mathbb {Z}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lemma:affineIntegrality">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineIntegrality.lean#L18" class="lean_decl">CubicTargets.ToricHeights.AffineIntegrality.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineIntegrality.lean#L43" class="lean_decl">Cubic.ToricHeights.AffineIntegrality.«lemma:affineIntegrality»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:finiteFourierProduct_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:finiteFourierProduct" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">5</span><span class="lemma_thmtitle">The finite Fourier product</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For \(\operatorname {Re}(\sigma ){\gt}1\) and \(t\in \mathbb {R}\), put \(\lambda =\sigma -\pi it\). Then </p>
+<div class="displaymath" id="a0000000104">
+  \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000105">
+  \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
+</div>
+<p> Here \(\chi _0\) is the trivial character, corresponding to \(m=0\). The Euler product converges absolutely and locally uniformly for \(\operatorname {Re}(\lambda ){\gt}1\) and is bounded on every half-plane \(\operatorname {Re}(\lambda )\geq \tau {\gt}1\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lemma:finiteFourierProduct">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicFiniteFourierProduct.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.AdelicFiniteFourierProduct.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicFiniteFourierProduct.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:finiteFourierProduct»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:generalHeightReduction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:generalHeightReduction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">12</span><span class="lemma_thmtitle">Reducing the trace</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For \(s\in \mathbb {Z}\), define \(\phi _s\) on \(F_s\) by </p>
+<div class="displaymath" id="a0000000153">
+  \[  \phi _s(f)(t)= \begin{cases}  f(t+\tfrac {s}{3}),& s\equiv 0\pmod3,\\ f(t+\tfrac {s-1}{3}),& s\equiv 1\pmod3,\\ -f(-t+\tfrac {s+1}{3}),& s\equiv -1\pmod3. \end{cases}  \]
+</div>
+<p> Then \(\phi _s\) is a bijection from \(F_s\) to \(F_0\) if \(3\mid s\), and from \(F_s\) to \(F_1\) if \(3\nmid s\), and it preserves \(n\). For \(f\in F_s\), put \(n=n(f)\). Then \(n{\gt}0\), and </p>
+<div class="displaymath" id="a0000000154">
+  \[  H(f)\leq H \quad \Longleftrightarrow \quad |s|\leq H\  \text{ and }\  n\leq s^2+3H^2.  \]
+</div>
+<p> If \(3\nmid s\), then \(H_{\mathrm{tor}}(\phi _s(f))^2=n\). If \(3\mid s\), then \(\phi _s(f)=t^3-\frac n3t+c\) for some \(c\in \mathbb {Z}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0006.html#lemma:generalHeightReduction">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L66" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralHeightReductionClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/GeneralHeightReduction.lean#L235" class="lean_decl">Cubic.Counting.GeneralHeightReduction.«lemma:generalHeightReduction»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:heightformula_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:heightformula" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1</span><span class="lemma_thmtitle">Weight vectors</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(\mathbf1\) denote the global section in \(H^0(S_E,\mathcal O(3D_0))\) associated to the effective Cartier divisor \(3D_0\), namely the image of \(1\) under the natural inclusion \(\mathcal O_{S_E}\hookrightarrow \mathcal O_{S_E}(3D_0)\). The space \(H^0(S_E,\mathcal O(3D_0))\) is spanned over \(E\) by the following four weight vectors: </p>
+<div class="displaymath" id="a0000000045">
+  \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
+</div>
+<p> where \(\sqrt{\mathrm{disc}} \mathrel {:=}(X-Z)(Y-X)(Z-Y)\). The associated characters of \(T_E\) are, respectively, </p>
+<div class="displaymath" id="a0000000046">
+  \begin{equation*}  1,\quad \chi ^{a'+b'},\quad \chi ^{2a'+b'},\quad \chi ^{2b'+a'} \end{equation*}
+</div>
+<p> where \(a' = 2v_1^\vee - v_2^\vee \) and \(b' = 2v_2^\vee - v_1^\vee \) in the character lattice \(M_E = X^\ast T_E\) and \((v_1^\vee ,v_2^\vee )\) is the dual basis to \((v_1,v_2)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lemma:heightformula">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightFormula.lean#L123" class="lean_decl">CubicTargets.ToricHeights.HeightFormula.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightFormula.lean#L642" class="lean_decl">Cubic.ToricHeights.HeightFormula.«lemma:heightformula»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:heightZetaConvergence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:heightZetaConvergence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">6</span><span class="lemma_thmtitle">Convergence before Poisson summation</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(s=(s_0,\sigma ,\sigma )\in (\mathbb {C}^{\Sigma (1)})^\Gamma \) with \(\operatorname {Re}(s_0){\gt}0\) and \(\operatorname {Re}(\sigma ){\gt}1\), and put \(f=H(\cdot ,-s,D_0)\). Then \(f\in L^1(T(\mathbb {A}))\) and \(\widehat f\, |_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lemma:heightZetaConvergence">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicHeightZetaConvergence.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.AdelicHeightZetaConvergence.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicHeightZetaConvergence.lean#L21" class="lean_decl">Cubic.PoissonSummation.«lemma:heightZetaConvergence»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:KprimeGroup_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:KprimeGroup" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">4</span><span class="lemma_thmtitle">The quotient by the integral level</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}\) be the subgroup of \(K^{\mathrm{max}}\) fixing \(1^{D_0}\), as in Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>. The map \(\ell \) induces an isomorphism </p>
+<div class="displaymath" id="a0000000100">
+  \begin{equation*}  T(\mathbb {Q})\backslash T(\mathbb {A})/K^{D_0} \xrightarrow {\sim } \mathfrak t. \end{equation*}
+</div>
+<p> Let \(a(u)\in T(\mathbb {A})\) have infinite component \(\iota ^{-1}(e^u)\) and all finite components one, so \(\ell (a(u))=uv_0\). In this coordinate, the pushforward of the quotient measure is \(du/6\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lemma:KprimeGroup">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/KprimeGroup.lean#L21" class="lean_decl">CubicTargets.PoissonSummation.KprimeGroup.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/KprimeGroup.lean#L14" class="lean_decl">Cubic.PoissonSummation.«lemma:KprimeGroup»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:normalityCriterion_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:normalityCriterion" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">9</span><span class="lemma_thmtitle">Normality</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(K/\mathbb {Q}\) be a \(C_3\)-algebra and let \(x\in K\) have characteristic polynomial \(t^3-e_1t^2+e_2t-e_3\). Then \(x\) is normal if and only if \(e_1(e_1^2-3e_2)\neq 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0005.html#lemma:normalityCriterion">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/NormalityCriterion.lean#L10" class="lean_decl">CubicTargets.Counting.NormalityCriterion.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/NormalityCriterion.lean#L55" class="lean_decl">Cubic.Counting.NormalityCriterion.«lemma:normalityCriterion»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:poissonIntegral_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:poissonIntegral" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">7</span><span class="lemma_thmtitle">Applying Poisson summation</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For \(s\) as in Lemma&#160;<a href="sect0004.html#lemma:heightZetaConvergence">6</a>, we have </p>
+<div class="displaymath" id="a0000000114">
+  \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
+</div>
+<p> where both the series defining \(Z(s)\) and the integral converge absolutely. </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lemma:poissonIntegral">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonIntegral.lean#L17" class="lean_decl">CubicTargets.PoissonSummation.PoissonIntegral.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonIntegral.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:poissonIntegral»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:reducibles_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:reducibles" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">10</span><span class="lemma_thmtitle">Removing split polynomials</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(d_n\) be the coefficients of \(Z_0(z)=\sum _{n\geq 1}d_n n^{-z}\). For \(X\geq 1\), </p>
+<div class="displaymath" id="a0000000135">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#lemma:reducibles">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/Reducibles.lean#L13" class="lean_decl">CubicTargets.Counting.Reducibles.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/Reducibles.lean#L8" class="lean_decl">Cubic.Counting.Reducibles.«lemma:reducibles»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:rootVsToric_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:rootVsToric" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">3</span><span class="lemma_thmtitle">Comparing heights</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(P=(K/\mathbb {Q},x)\) be an integral rational point of \(T\) with characteristic polynomial \(f=t^3-t^2+at+b\in \mathbb {Z}[t]\). Write \(H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))\) for its toric height and set \(h(f)=\max (|a|^{1/2},|b|^{1/3})\), so that \(H(f)=\max \{ 1,h(f)\} \). Then \(a\leq 0\) and </p>
+<div class="displaymath" id="a0000000067">
+  \begin{equation*}  h(f)^2=-a, \qquad H_{\mathrm{tor}}(f)^2=1+3h(f)^2, \end{equation*}
+</div>
+<p> so for every \(B\geq 0\), </p>
+<div class="displaymath" id="a0000000068">
+  \begin{equation*}  h(f)\leq B \quad \Longleftrightarrow \quad H_{\mathrm{tor}}(f)\leq \sqrt{1+3B^2}. \end{equation*}
+</div>
+<p> In particular, \(H_{\mathrm{tor}}(f)\asymp H(f)\). The only polynomial here with \(h(f)=0\) is \(t^3-t^2\), for which \(H_{\mathrm{tor}}(f)=1\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lemma:rootVsToric">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/RootVsToric.lean#L32" class="lean_decl">CubicTargets.ToricHeights.RootVsToric.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/RootVsToric.lean#L113" class="lean_decl">Cubic.ToricHeights.«lemma:rootVsToric»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:simplifiedZ-s_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:simplifiedZ-s" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">8</span><span class="lemma_thmtitle">Dedekind zeta factorization</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The height zeta function is also given by </p>
+<div class="displaymath" id="a0000000122">
+  \begin{align*}  Z(s)=\left(1-3^{-z}\right)^2\xi (z)^2R(z),\qquad z=\tfrac 12(s_0+s_1+s_2), \end{align*}
+</div>
+<p> where \(\xi \) is the Dedekind zeta function of the cyclotomic field \(\mathbb {Q}(\sqrt{-3})\). The height zeta function has meromorphic continuation to the region \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lemma:simplifiedZ-s">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/SimplifiedHeightZeta.lean#L51" class="lean_decl">CubicTargets.PoissonSummation.SimplifiedHeightZeta.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/SimplifiedHeightZeta.lean#L52" class="lean_decl">Cubic.PoissonSummation.«lemma:simplifiedZ(s)»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:traceZeroCoefficients_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:traceZeroCoefficients" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">13</span><span class="lemma_thmtitle">Trace-zero coefficients</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(e\) be the exponent of \(3\) in \(N\), and write \(N=3^eM\) with \(3\nmid M\). Then </p>
+<div class="displaymath" id="a0000000158">
+  \[  r(N)= \begin{cases}  d_M,& e=0,\\ 3d_M+1,& N=3u^2\text{ for some }u\in \mathbb {Z}_{{\gt}0},\\ 3d_M,& \text{otherwise}. \end{cases}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#lemma:traceZeroCoefficients">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L46" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroCoefficientsClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/TraceZeroCoefficients.lean#L32" class="lean_decl">Cubic.Counting.TraceZeroCoefficients.«lemma:traceZeroCoefficients»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lemma:xiMeanValue_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lemma:xiMeanValue" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">11</span><span class="lemma_thmtitle">A uniform mean-square estimate</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(\eta {\gt}0\). For \(1/2\leq \sigma \leq 2\) and \(U\geq 2\), </p>
+<div class="displaymath" id="a0000000139">
+  \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#lemma:xiMeanValue">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanValue.lean#L4" class="lean_decl">CubicTargets.Counting.XiMeanValue.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanValue.lean#L6" class="lean_decl">Cubic.Counting.XiMeanValue.«lemma:xiMeanValue»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:basicfacts_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:basicfacts" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1</span><span class="proposition_thmtitle">The local logarithm</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(w\) be a place of \(E\) lying over a place \(v\) of \(\mathbb {Q}\). There is an exact sequence </p>
+<div class="displaymath" id="a0000000041">
+  \begin{equation*}  1 \longrightarrow K_v^{\mathrm{max}} \longrightarrow T(\mathbb {Q}_v) \xrightarrow {\ell _w} \mathfrak t_w. \end{equation*}
+</div>
+<p> If \(w\) is infinite then \(\ell _w\) is surjective, and if \(w\) is finite then the image of \(\ell _w\) is the lattice \(X_\ast (T_{E})^{\Gamma (w/v)}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#prop:basicfacts">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/BasicFacts.lean#L152" class="lean_decl">CubicTargets.ToricHeights.BasicFacts.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/BasicFacts.lean#L1072" class="lean_decl">Cubic.ToricHeights.BasicFacts.«prop:basicfacts»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:canonicalHeight_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:canonicalHeight" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">2</span><span class="proposition_thmtitle">Integral coefficients and toric height</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The characteristic polynomial \(f = t^3-t^2+at+b \in \mathbb {Q}[t]\) of a rational point \((K/\mathbb Q,x) \in T(\mathbb Q)\) has integer coefficients if and only if \((K/\mathbb Q,x)\) is integral. For any integral rational point \((K/\mathbb {Q},x)\) on \(T\), </p>
+<div class="displaymath" id="a0000000061">
+  \begin{equation*}  H((K/\mathbb Q,x),\mathcal O(D_0)) = \sqrt{1-3a}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#prop:canonicalHeight">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/CanonicalHeight.lean#L23" class="lean_decl">CubicTargets.ToricHeights.CanonicalHeight.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/CanonicalHeight.lean#L193" class="lean_decl">Cubic.ToricHeights.CanonicalHeight.«prop:canonicalHeight»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:cyclotomicParametrization_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:cyclotomicParametrization" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">3</span><span class="proposition_thmtitle">The Eisenstein parametrization</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The tori \(T\) and \(\mathcal G_1 = R^E_\mathbb {Q}\mathcal\mathbb {G}_m\) are isomorphic as algebraic groups over \(\mathbb {Q}\). Every rational point \((K/\mathbb {Q},x)\) of \(T\) thereby determines an element of \(\mathbb {Q}(\sqrt{-3})^\times \) which is canonically determined up to the action of \(\mathrm{Aut}(\mathcal G_1)\). For integral rational points of \(T\), the toric height \(H_{\mathrm{tor}}(f)\mathrel {:=}\sqrt{1-3a}\) is identified with the square-root of the norm on \(\mathbb {Q}(\sqrt{-3})^\times \). Let \(\zeta \) be a primitive cube root of unity. If \(u+v\zeta \in \mathbb {Q}(\sqrt{-3})^\times \) has norm \(N\) and trace \(T\), then the characteristic polynomial of the corresponding rational point \((K/\mathbb {Q},x)\) is </p>
+<div class="displaymath" id="a0000000072">
+  \begin{equation*}  f=t^3-t^2+\tfrac {1}{3}(1 - N)t+\tfrac {1}{27}(N(3-T)-1) \in \mathbb {Q}[t]. \end{equation*}
+</div>
+<p> Such a polynomial either has Galois group \(C_3\) or splits into three linear factors over \(\mathbb {Q}\), with at most two linear factors being the same. Conversely, a monic trace-one polynomial \(f=t^3-t^2+at+b \in \mathbb {Q}[t]\) which either has Galois group \(C_3\) or splits into three linear factors over \(\mathbb {Q}\), with at most two linear factors being the same, can be expressed in this way for precisely two rational points of \(T\) if \(f\) has no repeated roots, or for precisely one rational point of \(T\) if \(f\) has a double root which is not a triple root. The elements \(u+v\zeta \in \mathbb {Q}(\sqrt{-3})^\times \) corresponding to \(f=t^3-t^2+at+b\) will be the roots of the quadratic polynomial </p>
+<div class="displaymath" id="a0000000073">
+  \begin{equation*}  g = t^2 - \left(3-\frac{1+27b}{1-3a}\right)t + 1-3a \in \mathbb {Q}[t]. \end{equation*}
+</div>
+<p> The polynomial \(f\) will have integral coefficients if and only if </p>
+<div class="displaymath" id="a0000000074">
+  \begin{equation*} \begin{cases}  u^2+v^2-uv \in 1+3 \mathbb {Z}\text{ and }\\ (u^2+v^2-uv)(3-2u+v) \in 1+27 \mathbb {Z}. \end{cases}\end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sec-quadraticParametrization.html#prop:cyclotomicParametrization">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/CyclotomicParametrizationConcrete.lean#L42" class="lean_decl">CubicTargets.QuadraticCorrespondence.CyclotomicParametrizationConcrete.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/CyclotomicParametrizationAssembly.lean#L63" class="lean_decl">Cubic.QuadraticCorrespondence.CyclotomicParametrizationAssembly.«prop:cyclotomicParametrization»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:heightFourierTransform_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:heightFourierTransform" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">5</span><span class="proposition_thmtitle">Local Fourier transforms</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) and assume \(\mathrm{Re}(s_e){\gt}0\) for each \(e \in \{ 0,1,2\} \). Let \(w\) be the infinite place of \(E\). Let \(\chi \in T(\mathbb {R})^\vee \) be a unitary character. If \(\chi \) is ramified then \(\widehat{H_\infty }(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified, then \(\chi (x)= e(\langle \ell _w(x) ,m\rangle )\) for all \(x \in T(\mathbb {R})\) for a unique \(m \in \mathfrak t^\vee \), and </p>
+<div class="displaymath" id="a0000000085">
+  \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
+</div>
+<p> Next let \(v\) be a finite place of \(\mathbb {Q}\). For any unitary character \(\chi \in T(\mathbb {Q}_v)^\vee \), the integral defining \(\widehat{H_v}(\chi ,-s,D_0)\) converges absolutely to a holomorphic function of \(s\) in the region </p>
+<div class="displaymath" id="a0000000086">
+  \[ \{ s \in (\mathbb {C}^{\Sigma (1)})^\Gamma : \mathrm{Re}(s_1),\mathrm{Re}(s_2){\gt}0 \} . \]
+</div>
+<p> Assume \(v \neq 3\). Let \(w\) be any place of \(E\) lying over \(v\). The local characteristic function \(1_v^{D_0}\) is \(K_v^{\mathrm{max}}\)-invariant. If \(\chi \) is ramified, then \(\widehat{H_v}(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified then we may regard \(\chi \) as a character on \(X_\ast (T_{E})^{\Gamma (w/v)}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) and </p>
+<div class="displaymath" id="a0000000087">
+  \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+<p> If \(v = 3\) then the support of \(x \mapsto H_3(x,-s,D_0)\) is the congruence subgroup \(K_{3,2}\) of \(K_3^{\mathrm{max}}\) of index six. Under the isomorphism \(\iota :T(\mathbb {Q}_3)\to E_w^\times \) the support corresponds to the subgroup \(1+3O_{E,w}\) of \(O_{E,w}^\times \) where \(w\) is the unique place of \(E\) lying over \(3\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#prop:heightFourierTransform">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightFourierTransform.lean#L176" class="lean_decl">CubicTargets.PoissonSummation.HeightFourierTransform.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightFourierTransform.lean#L48" class="lean_decl">Cubic.PoissonSummation.HeightFourierTransform.«prop:heightFourierTransform»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:leadingTerms_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:leadingTerms" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">7</span><span class="proposition_thmtitle">Laurent coefficients</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The only pole of \(Z_0(z)\) in the half-plane \(\mathrm{Re}(z){\gt}1/2\) is a double pole at \(z=1\). Its Laurent expansion there is </p>
+<div class="displaymath" id="a0000000128">
+  \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
+</div>
+<p> where \(\alpha \) and \(\beta \) are as in <a href="sect0001.html#eqn:introConstants" class="eqref">1</a>. </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#prop:leadingTerms">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LeadingTermsNormalized.lean#L15" class="lean_decl">CubicTargets.PoissonSummation.LeadingTermsNormalized.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LeadingTerms.lean#L31" class="lean_decl">Cubic.PoissonSummation.«prop:leadingTerms»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:Lmap_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:Lmap" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">6</span><span class="proposition_thmtitle">The adelic logarithm</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>There is an exact sequence </p>
+<div class="displaymath" id="a0000000098">
+  \begin{equation*}  1 \longrightarrow K^{\mathrm{max}}/\mu ^{\mathrm{max}} \longrightarrow T(\mathbb Q)\backslash T(\mathbb {A}) \xrightarrow {\ell } \mathfrak t \longrightarrow 0 \end{equation*}
+</div>
+<p> where \(K^{\mathrm{max}}\) is the maximal compact subgroup of \(T(\mathbb {A})\) and \(\mu ^{\mathrm{max}} = T(\mathbb {Q}) \cap K^{\mathrm{max}}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#prop:Lmap">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">CubicTargets.PoissonSummation.LogarithmExactSequence.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">Cubic.PoissonSummation.«prop:Lmap»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:localIntegrality_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:localIntegrality" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">4</span><span class="proposition_thmtitle">The local integral condition</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(v\) be a finite place of \(\mathbb {Q}\) and let \(w\) be a place of \(E\) lying over \(v\). </p>
+<ol class="enumerate">
+  <li><p>If \(v \neq 3\), then \(1_v^{D_0}(x) = 1\) if and only if \(\ell _w(x) \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2\). In particular \(K_v^{D_0}=K_v^{\mathrm{max}}\). </p>
+</li>
+  <li><p>Let \(v = 3\), let \(w\) be the unique place of \(E\) over \(3\), and let \(\mathfrak w = (1-\zeta )O_{E,w}\) be the maximal ideal of \(O_{E,w}\), so that \(3O_{E,w} = \mathfrak w^2\). The support of \(1_3^{D_0}\) is the subgroup </p>
+<div class="displaymath" id="a0000000081">
+  \begin{equation*}  K_{3,2}\mathrel {:=}\iota ^{-1}(1+\mathfrak w^2) =\iota ^{-1}(1+3O_{E,w})\subset K_3^{\mathrm{max}}. \end{equation*}
+</div>
+</li>
+  <li><p>Let \(K^{\mathrm{max}}=\prod _v K_v^{\mathrm{max}}\) and \(K^{D_0}=\prod _v K_v^{D_0}\subset K^{\mathrm{max}}\). The latter is the subgroup which fixes the characteristic function \(1^{D_0}=\otimes _v1_v^{D_0}\) for integral points in \(T(\mathbb {A})\), with \(1_\infty ^{D_0}=1\). Then </p>
+<div class="displaymath" id="a0000000082">
+  \[  K_3^{D_0}=K_{3,2},\qquad K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}.  \]
+</div>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0004.html#prop:localIntegrality">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalIntegrality.lean#L36" class="lean_decl">CubicTargets.PoissonSummation.LocalIntegrality.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalIntegrality.lean#L902" class="lean_decl">Cubic.PoissonSummation.LocalIntegrality.«prop:localIntegrality»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:santensConstant_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:santensConstant" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">12</span><span class="proposition_thmtitle">The Santens constant</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Let \(\pi \colon X\to S\) be the minimal resolution, let \(D\subset X\) be the reduced preimage of \(D_0\), and put \(U=X\setminus D\). The coordinate ring of the affine chart \(\mathscr {S}\setminus \mathscr {D}_0\) pulls back to a finitely generated \(\mathbb {Z}\)-subalgebra </p>
+<div class="displaymath" id="a0000000191">
+  \[  A:=\pi ^*\Gamma (\mathscr {S}\setminus \mathscr {D}_0,\mathcal O) \subset \Gamma (U,\mathcal O).  \]
+</div>
+<p> A point \(P\in U(\mathbb {Q})\) is integral if \(g(P)\in \mathbb {Z}\) for every \(g\in A\). With this integral condition and the height \(H(\pi (-),1)\), <span class="cite">
+	[
+	<a href="sect0009.html#santens2023integral" >28</a>
+	, 
+	Theorem
+	
+	8.7
+	]
+</span> gives </p>
+<div class="displaymath" id="a0000000192">
+  \[  \# \{ P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z}):H(P,1)\leq B\}  \sim cB^2\log B,\qquad c=\frac{2\alpha }{9}.  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0008.html#prop:santensConstant">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensConstant.lean#L17" class="lean_decl">CubicTargets.SantensComparison.SantensConstant.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SantensComparison/SantensConstant.lean#L20" class="lean_decl">Cubic.SantensComparison.SantensConstant.«prop:santensConstant»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:surfaceIntegralCubic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:surfaceIntegralCubic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">9</span><span class="proposition_thmtitle">The invariant cubic model</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The invariant cubics </p>
+<div class="displaymath" id="a0000000168">
+  \[  A=e_1^3,\qquad B=e_1e_2,\qquad C=e_3,\qquad D=\delta  \]
+</div>
+<p> identify \(\mathscr {S}\) with the cubic hypersurface in \(\mathbb {P}^3_\mathbb {Z}\) defined by </p>
+<div class="displaymath" id="a0000000169">
+  \begin{equation*}  F(A,B,C,D):=B^3+AD^2-ABD+3ACD+A^2C-6ABC+9AC^2=0. \end{equation*}
+</div>
+<p> The divisor \(\mathscr {D}_0=\{ e_1=0\} \) corresponds to the line \(\{ A=B=0\} \) in these coordinates. On the generic fiber, </p>
+<div class="displaymath" id="a0000000170">
+  \begin{equation*}  3D_0\sim -K,\qquad \mathcal{O}(3D_0)\cong \mathcal{O}(1),\qquad (-K)^2=3. \end{equation*}
+</div>
+<p> In particular, this cubic embedding is anticanonical. </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#prop:surfaceIntegralCubic">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceIntegralCubic.lean#L15" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceIntegralCubic.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceIntegralCubic.lean#L11" class="lean_decl">Cubic.SurfaceGeometry.SurfaceIntegralCubic.«prop:surfaceIntegralCubic»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:surfaceRationalForm_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:surfaceRationalForm" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">10</span><span class="proposition_thmtitle">The standard rational form</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Over \(\mathbb {Z}[1/6]\), \(\mathscr {S}\) is isomorphic to the cubic hypersurface </p>
+<div class="displaymath" id="a0000000178">
+  \begin{equation*}  x_0(x_1^2+3x_2^2)=x_3^3 \end{equation*}
+</div>
+<p> in \(\mathbb {P}_{\mathbb {Z}[1/6]}^3\). Its generic fiber \(S\) is a del Pezzo surface of degree \(3\) and geometric Picard rank \(1\). Its three geometric singularities are of type \(\mathbf A_2\): one is rational, and the other two are conjugate over \(E=\mathbb {Q}(\sqrt{-3})\). Over \(E\), the coordinates \(x_1'=x_1+\sqrt{-3}x_2\) and \(x_2'=x_1-\sqrt{-3}x_2\) give the split toric cubic \(x_0x_1'x_2'=x_3^3\). In these coordinates, \(D_0=\{ x_0=x_3=0\} \). </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#prop:surfaceRationalForm">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceRationalForm.lean#L16" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceRationalForm.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceRationalForm.lean#L13" class="lean_decl">Cubic.SurfaceGeometry.SurfaceRationalForm.«prop:surfaceRationalForm»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:surfaceResolvedBoundary_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:surfaceResolvedBoundary" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">11</span><span class="proposition_thmtitle">The resolution and boundary</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The surface \(S\) admits a minimal resolution \(\pi \colon X\to S\) over \(\mathbb {Q}\). Put \(D_{\mathrm{red}}=(\pi ^{-1}D_0)_{\mathrm{red}}\). Then \(X\) is a weak del Pezzo surface of degree \(3\), of geometric Picard rank \(7\). The geometric components of \(D_{\mathrm{red}}\) form a chain with self-intersections </p>
+<div class="displaymath" id="a0000000184">
+  \begin{equation*}  (-2)-(-2)-(-1)-(-2)-(-2). \end{equation*}
+</div>
+<p> The divisor \(L=-K_X-D_{\mathrm{red}}\) is nef and not numerically zero, but is not big. More precisely, </p>
+<div class="displaymath" id="a0000000185">
+  \begin{equation*}  K_X\cdot D_{\mathrm{red}}=-1,\qquad D_{\mathrm{red}}^2=-1,\qquad L^2=0. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0007.html#prop:surfaceResolvedBoundary">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SurfaceGeometry/SurfaceResolvedBoundary.lean#L12" class="lean_decl">CubicTargets.SurfaceGeometry.SurfaceResolvedBoundary.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/SurfaceResolvedBoundary.lean#L12" class="lean_decl">Cubic.SurfaceGeometry.SurfaceResolvedBoundary.«prop:surfaceResolvedBoundary»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:traceZeroAsymptotic_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:traceZeroAsymptotic" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">8</span><span class="proposition_thmtitle">The trace-zero count</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), </p>
+<div class="displaymath" id="a0000000160">
+  \[  A_0(X) =\frac52XQ\left(\tfrac 12\log X\right) -\left(\frac{\alpha }{4}\log 3+\frac{\pi }{3\sqrt3}\right)X +O_\varepsilon (X^{1/2+\varepsilon }).  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#prop:traceZeroAsymptotic">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L207" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroAsymptoticClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/TraceZeroAsymptotic.lean#L52" class="lean_decl">Cubic.Counting.TraceZeroAsymptotic.«prop:traceZeroAsymptotic»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="rem:heightCoefficients_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="rem:heightCoefficients" style="display: none">
+    <div class="thm_thmheading">
+      <span class="remarknode_thmcaption">
+      Remark
+      </span>
+      <span class="remarknode_thmlabel">3</span><span class="remarknode_thmtitle">The coefficients</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Comparing Euler factors in <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> gives the coefficients explicitly: \(d_n=0\) if \(3\mid n\), and if \(3\nmid n\) then </p>
+<div class="displaymath" id="a0000000126">
+  \[  d_n=\sum _{d\mid n}3^{\omega (d_1)}(-1)^{\Omega (d_2)},  \]
+</div>
+<p> where \(d=d_1d_2\) with \(d_1\) divisible only by primes \(p\equiv 1\pmod3\) and \(d_2\) only by primes \(q\equiv 2\pmod3\). Equivalently, \(d_n\) is the product of \(3k+1\) over prime powers \(p^k\parallel n\) with \(p\equiv 1\pmod3\) if every prime \(q\equiv 2\pmod3\) divides \(n\) to an even power, and \(d_n=0\) otherwise. </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#rem:heightCoefficients">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightCoefficients.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.HeightCoefficients.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightCoefficients.lean#L47" class="lean_decl">Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="rem:idealParametrization_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="rem:idealParametrization" style="display: none">
+    <div class="thm_thmheading">
+      <span class="remarknode_thmcaption">
+      Remark
+      </span>
+      <span class="remarknode_thmlabel">1</span><span class="remarknode_thmtitle">The alternative ideal count</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>We prompted GPT-\(6.1\) with the contents of an earlier version of this paper and asked it to identify the Dirichlet series in Theorem&#160;<a href="sect0001.html#thm:heightZetaFunctionFormula">4</a>. Using our Eisenstein parametrization (§<a href="sec-quadraticParametrization.html">4</a>) it proved that </p>
+<div class="displaymath" id="a0000000031">
+  \[  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \sum _{\substack {0\ne J\subseteq \mathcal{O}_E\\ J+3\mathcal{O}_E=\mathcal{O}_E\\ \mathrm N J\text{ a cube}}} N^E_\mathbb {Q}(J)^{-s/6}  \]
+</div>
+<p> where \(J \subset \mathcal{O}_E\) runs over integral nonzero ideals. With the help of this description using ideals, we found another result in the literature <span class="cite">
+	[
+	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	]
+</span> that we previously missed. After translating the \(C_3\)-polynomial counting problem into an integral Diophantine problem on \(S^{(-3)}\) (explained in the next section), Kühleitner–Nowak’s&#160;<span class="cite">
+	[
+	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	, 
+	Corollary
+	
+	2
+	]
+</span> can be used to obtain an alternative proof of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> and Theorem&#160;<a href="sect0001.html#thm:asymptoticPolynomialCount">2</a> without using toric harmonic analysis, and with an error term \(O\bigl(H(\log H)^3(\log \log H)^2\bigr)\). We did not incorporate this argument as the toric approach of this paper has the merit of generalizing readily to other abelian groups where there is no analogue of <span class="cite">
+	[
+	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	]
+</span>. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#rem:idealParametrization">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/IdealRemark.lean#L49" class="lean_decl">CubicTargets.Introduction.IdealRemark.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/IdealRemark.lean#L8" class="lean_decl">Cubic.Introduction.IdealRemark.«rem:idealParametrization»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="rem:localNonintegrability_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="rem:localNonintegrability" style="display: none">
+    <div class="thm_thmheading">
+      <span class="remarknode_thmcaption">
+      Remark
+      </span>
+      <span class="remarknode_thmlabel">2</span><span class="remarknode_thmtitle">Why the parameters are kept separate</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>The local Fourier transforms — and therefore the entire Poisson summation argument — must be computed <em>before</em> restricting to the line in \(\mathrm{Pic}^T(S) \otimes \mathbb {C}\) spanned by the \(T_E\)-line bundle \(\mathcal O(D_0)\) of interest since \(x \mapsto H_v(x,-s,D_0)\) will not be integrable for any place \(v \neq 3,\infty \) once either of \(s_1\) or \(s_2\) vanishes, no matter how large and positive \(\mathrm{Re}(s_0)\) is. </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#rem:localNonintegrability">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalNonintegrability.lean#L14" class="lean_decl">CubicTargets.PoissonSummation.LocalNonintegrability.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalNonintegrability.lean#L69" class="lean_decl">Cubic.PoissonSummation.LocalNonintegrability.«rem:localNonintegrability»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:asymptoticPolynomialCount_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:asymptoticPolynomialCount" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2</span><span class="theorem_thmtitle">Trace-one cubics</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), the number of monic integral trace-one cubic polynomials with Galois group \(C_3\) and root height at most \(H\) is </p>
+<div class="displaymath" id="a0000000017">
+  \[  H^2P_1(\log H)+O_\varepsilon (H^{1+\varepsilon })  \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000018">
+  \begin{equation*}  P_1(X)=\frac\alpha 3 \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)} + \beta +\frac78\log 3-\frac12\biggr) -\frac{\pi }{3\sqrt3}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:asymptoticPolynomialCount">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/AsymptoticPolynomialCount.lean#L62" class="lean_decl">CubicTargets.Counting.AsymptoticPolynomialCount.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/AsymptoticPolynomialCount.lean#L163" class="lean_decl">Cubic.Counting.AsymptoticPolynomialCount.«thm:asymptoticPolynomialCount»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:exactFormula_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:exactFormula" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">3</span><span class="theorem_thmtitle">An exact count</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For any \(H \geq 1\) let \(E_H \subset \mathbb {R}^2\) be the ellipse defined by \(E_{H} : x^2+y^2+xy-x-y = \tfrac {1}{3}(H^2-1)\). If \(t^3-t^2+at+b\in \mathbb {Z}[t]\) has Galois group \(C_3\), then \(a\leq 0\). Fix \(a \in \mathbb {Z}_{\leq 0}\). The number of polynomials of the form \(t^3 -t^2 + at + b \in \mathbb {Z}[t]\) with Galois group \(C_3\) is equal to </p>
+<div class="displaymath" id="a0000000020">
+  \begin{equation*}  \frac12\sum _{d|(1-3a)} 3^{\omega (Q_1(d))} (-1)^{\Omega (Q_2(d))} -\frac16 \# E_{\sqrt{1-3a}}(\mathbb {Z}) \end{equation*}
+</div>
+<p> where \(Q_j(d)\) denotes the largest divisor of \(d\) only divisible by primes \(\equiv j \pmod3\), and \(\omega (n)\) (resp.&#160;\(\Omega (n)\)) denotes the number of prime factors of a positive integer \(n\) counted without (resp.&#160;with) multiplicity. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:exactFormula">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/ExactFormula.lean#L43" class="lean_decl">CubicTargets.Counting.ExactFormula.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/ExactFormula.lean#L269" class="lean_decl">Cubic.Counting.ExactFormula.«thm:exactFormula»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:generalMonicCount_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:generalMonicCount" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1</span><span class="theorem_thmtitle">All monic cubics</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), the number of monic integral cubic polynomials with Galois group \(C_3\) and root height at most \(H\) is </p>
+<div class="displaymath" id="a0000000014">
+  \[  H^3P(\log H)+O_\varepsilon (H^{2+\varepsilon }),  \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000015">
+  \begin{equation*}  P(X)=\frac{220\alpha }{243} \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)}+ \beta +\log 2-\frac{5}{88}\log 3 +\frac{\pi \sqrt3}{10}-\frac{17}{15}\biggr) -\frac{20\pi \sqrt3}{81}. \end{equation*}
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:generalMonicCount">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L146" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralMonicCountClaim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/GeneralMonicCount.lean#L439" class="lean_decl">Cubic.Counting.GeneralMonicCount.«thm:generalMonicCount»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:heightZetaFunctionFormula_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:heightZetaFunctionFormula" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">4</span><span class="theorem_thmtitle">The one-variable height zeta function</span></div>
+    <div class="thm_thmcontent">
+
+
+<div class="displaymath" id="a0000000026">
+  \begin{equation*}  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \left(1-\frac{1}{3^{s/2}}\right)^2 \xi \left(\frac s2\right)^2 \prod _{q\equiv 2\pmod{3}}\left(1-\frac{1}{q^{s}}\right) \prod _{p\equiv 1\pmod{3}}\left(1-\frac{3}{p^{s}}+\frac{2}{p^{3s/2}}\right) \end{equation*}
+</div>
+<p> where \(\xi \) is the Dedekind zeta function of \(E\). This height zeta function can be meromorphically continued to the half-plane \(\mathrm{Re}(s){\gt}1\) and its only pole in this region is at \(s = 2\) with order \(2\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:heightZetaFunctionFormula">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaCountingFormula.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:heightZetaFunctionFormula2_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:heightZetaFunctionFormula2" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">6</span><span class="theorem_thmtitle">The multivariate height zeta function</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>Fix any \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) with \(\mathrm{Re}(s_0+s_1+s_2) {\gt} 2\). Then the multivariate Dirichlet series </p>
+<div class="displaymath" id="a0000000078">
+  \begin{equation*}  Z(s)= \sum _{\substack {P \in T(\mathbb Q)\\ \begin{bgroup} \text{\emph{integral}}
+
+\end{bgroup}}} H(P,s)^{-1} \end{equation*}
+</div>
+<p> is absolutely convergent and equals </p>
+<div class="displaymath" id="a0000000079">
+  \begin{align*}  \left({1-3^{-z}}\right) \zeta (z) \prod _{q\equiv 2\pmod{3}} \left(1+\frac{1}{q^{z}}\right)^{-1} \prod _{p\equiv 1\pmod{3}} \left(1+\frac{3}{p^z}\left(1-\frac{1}{p^z}\right)^{-1}\right) \end{align*}
+</div>
+<p> where \(z = \frac{1}{2}(s_0+s_1+s_2)\). This multivariate Dirichlet series admits a meromorphic continuation to \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#thm:heightZetaFunctionFormula2">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightZetaFunctionFormula.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaFunctionFormula.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaFunctionFormula.lean#L21" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula2»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:modularInterpretation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:modularInterpretation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">5</span><span class="theorem_thmtitle">Rational points of the moduli space</span></div>
+    <div class="thm_thmcontent">
+
+
+<p>There is a bijection between rational points of \(T\) and equivalence classes of \(C_3\)-algebras \(K/\mathbb {Q}\) equipped with a trace-one normal element \(x\in K\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#thm:modularInterpretation">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/ModularInterpretation.lean#L26" class="lean_decl">CubicTargets.OrbitParametrization.ModularInterpretation.Claim</a></li>
+        
+           <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/ModularInterpretation.lean#L137" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«thm:modularInterpretation»</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"eqn:surfaceIntegralCubic"	[color=green,		fillcolor="#1CAC78",		label=surfaceIntegralCubic,		shape=ellipse,		style=filled];	"prop:surfaceIntegralCubic"	[color=green,		fillcolor="#1CAC78",		label=surfaceIntegralCubic,		shape=ellipse,		style=filled];	"eqn:surfaceIntegralCubic" -> "prop:surfaceIntegralCubic";	"prop:surfaceRationalForm"	[color=green,		fillcolor="#1CAC78",		label=surfaceRationalForm,		shape=ellipse,		style=filled];	"prop:surfaceIntegralCubic" -> "prop:surfaceRationalForm";	"prop:leadingTerms"	[color=green,		fillcolor="#9CEC8B",		label=leadingTerms,		shape=ellipse,		style=filled];	"eqn:A1asymptotic"	[color=green,		fillcolor="#9CEC8B",		label=A1asymptotic,		shape=ellipse,		style=filled];	"cite:chandrasekharanNarasimhan1963-thm4"	[color=green,		label="chandrasekharanNarasimhan1963-thm4",		shape=ellipse];	"eqn:criticalMeanSquare"	[color=green,		fillcolor="#9CEC8B",		label=criticalMeanSquare,		shape=ellipse,		style=filled];	"cite:chandrasekharanNarasimhan1963-thm4" -> "eqn:criticalMeanSquare";	"eqn:xiMeanBound"	[color=green,		fillcolor="#9CEC8B",		label=xiMeanBound,		shape=ellipse,		style=filled];	"eqn:criticalMeanSquare" -> "eqn:xiMeanBound";	"eqn:irrPolys"	[color=green,		fillcolor="#9CEC8B",		label=irrPolys,		shape=ellipse,		style=filled];	"lemma:xiMeanValue"	[color=green,		fillcolor="#9CEC8B",		label=xiMeanValue,		shape=ellipse,		style=filled];	"eqn:xiMeanBound" -> "lemma:xiMeanValue";	"lemma:xiMeanValue" -> "eqn:irrPolys";	"thm:asymptoticPolynomialCount"	[color=green,		fillcolor="#9CEC8B",		label=asymptoticPolynomialCount,		shape=ellipse,		style=filled];	"lemma:xiMeanValue" -> "thm:asymptoticPolynomialCount";	"cor:integralPointCount"	[color=green,		fillcolor="#9CEC8B",		label=integralPointCount,		shape=ellipse,		style=filled];	"lemma:xiMeanValue" -> "cor:integralPointCount";	"prop:traceZeroAsymptotic"	[color=green,		fillcolor="#9CEC8B",		label=traceZeroAsymptotic,		shape=ellipse,		style=filled];	"lemma:xiMeanValue" -> "prop:traceZeroAsymptotic";	"eqn:dSummatoryForGeneralTrace"	[color=green,		fillcolor="#9CEC8B",		label=dSummatoryForGeneralTrace,		shape=ellipse,		style=filled];	"lemma:xiMeanValue" -> "eqn:dSummatoryForGeneralTrace";	"thm:asymptoticPolynomialCount" -> "eqn:A1asymptotic";	"thm:generalMonicCount"	[color=green,		fillcolor="#9CEC8B",		label=generalMonicCount,		shape=ellipse,		style=filled];	"thm:asymptoticPolynomialCount" -> "thm:generalMonicCount";	"lemma:poissonIntegral"	[color=green,		fillcolor="#9CEC8B",		label=poissonIntegral,		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula2"	[color=green,		fillcolor="#9CEC8B",		label=heightZetaFunctionFormula2,		shape=ellipse,		style=filled];	"lemma:poissonIntegral" -> "thm:heightZetaFunctionFormula2";	"eqn:poissonEulerIntegral"	[color=green,		fillcolor="#9CEC8B",		label=poissonEulerIntegral,		shape=ellipse,		style=filled];	"lemma:poissonIntegral" -> "eqn:poissonEulerIntegral";	"thm:heightZetaFunctionFormula2" -> "prop:leadingTerms";	"thm:heightZetaFunctionFormula2" -> "eqn:irrPolys";	"thm:heightZetaFunctionFormula2" -> "thm:asymptoticPolynomialCount";	"thm:heightZetaFunctionFormula2" -> "cor:integralPointCount";	"thm:heightZetaFunctionFormula2" -> "eqn:dSummatoryForGeneralTrace";	"lemma:traceZeroCoefficients"	[color=green,		fillcolor="#9CEC8B",		label=traceZeroCoefficients,		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula2" -> "lemma:traceZeroCoefficients";	"rem:heightCoefficients"	[color=green,		fillcolor="#9CEC8B",		label=heightCoefficients,		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula2" -> "rem:heightCoefficients";	"lemma:simplifiedZ-s"	[color=green,		fillcolor="#9CEC8B",		label="simplifiedZ-s",		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula2" -> "lemma:simplifiedZ-s";	"thm:heightZetaFunctionFormula"	[color=green,		fillcolor="#9CEC8B",		label=heightZetaFunctionFormula,		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula2" -> "thm:heightZetaFunctionFormula";	"lemma:traceZeroCoefficients" -> "prop:traceZeroAsymptotic";	"lemma:traceZeroCoefficients" -> "thm:generalMonicCount";	"eqn:Z0factorization"	[color=green,		fillcolor="#9CEC8B",		label=Z0factorization,		shape=ellipse,		style=filled];	"lemma:simplifiedZ-s" -> "eqn:Z0factorization";	"thm:exactFormula"	[color=green,		fillcolor="#9CEC8B",		label=exactFormula,		shape=ellipse,		style=filled];	"thm:heightZetaFunctionFormula" -> "thm:exactFormula";	"eqn:surfaceBoundaryChain"	[color=green,		fillcolor="#1CAC78",		label=surfaceBoundaryChain,		shape=ellipse,		style=filled];	"example:twoRationalPointsSamePoly"	[color=green,		fillcolor="#1CAC78",		label=twoRationalPointsSamePoly,		shape=ellipse,		style=filled];	"thm:modularInterpretation"	[color=green,		fillcolor="#1CAC78",		label=modularInterpretation,		shape=ellipse,		style=filled];	"prop:heightFourierTransform"	[color=green,		fillcolor="#1CAC78",		label=heightFourierTransform,		shape=ellipse,		style=filled];	"prop:surfaceResolvedBoundary"	[color=green,		fillcolor="#1CAC78",		label=surfaceResolvedBoundary,		shape=ellipse,		style=filled];	"prop:santensConstant"	[color=green,		fillcolor="#9CEC8B",		label=santensConstant,		shape=ellipse,		style=filled];	"prop:surfaceResolvedBoundary" -> "prop:santensConstant";	"eqn:weightedPolynomialCount"	[color=green,		fillcolor="#1CAC78",		label=weightedPolynomialCount,		shape=ellipse,		style=filled];	"rem:idealParametrization"	[color=green,		fillcolor="#9CEC8B",		label=idealParametrization,		shape=ellipse,		style=filled];	"eqn:weightedPolynomialCount" -> "rem:idealParametrization";	"lemma:reducibles"	[color=green,		fillcolor="#1CAC78",		label=reducibles,		shape=ellipse,		style=filled];	"eqn:weightedPolynomialCount" -> "lemma:reducibles";	"eqn:C3invariants"	[color=green,		fillcolor="#1CAC78",		label=C3invariants,		shape=ellipse,		style=filled];	"eqn:affineC3invariants"	[color=green,		fillcolor="#1CAC78",		label=affineC3invariants,		shape=ellipse,		style=filled];	"eqn:C3invariants" -> "eqn:affineC3invariants";	"eqn:affineC3invariants" -> "cor:integralPointCount";	"eqn:affineC3invariants" -> "prop:santensConstant";	"eqn:affineC3invariants" -> "rem:idealParametrization";	"eqn:santensTau"	[color=green,		fillcolor="#1CAC78",		label=santensTau,		shape=ellipse,		style=filled];	"eqn:affineC3invariants" -> "eqn:santensTau";	"lemma:affineIntegrality"	[color=green,		fillcolor="#1CAC78",		label=affineIntegrality,		shape=ellipse,		style=filled];	"eqn:affineC3invariants" -> "lemma:affineIntegrality";	"eqn:generalTraceDecomposition"	[color=green,		fillcolor="#1CAC78",		label=generalTraceDecomposition,		shape=ellipse,		style=filled];	"eqn:generalTraceDecomposition" -> "thm:generalMonicCount";	"prop:localIntegrality"	[color=green,		fillcolor="#1CAC78",		label=localIntegrality,		shape=ellipse,		style=filled];	"eqn:finiteHeightFourierTransform"	[color=green,		fillcolor="#1CAC78",		label=finiteHeightFourierTransform,		shape=ellipse,		style=filled];	"prop:localIntegrality" -> "eqn:finiteHeightFourierTransform";	"rem:localNonintegrability"	[color=green,		fillcolor="#1CAC78",		label=localNonintegrability,		shape=ellipse,		style=filled];	"prop:localIntegrality" -> "rem:localNonintegrability";	"eqn:localfourierassumovern"	[color=green,		fillcolor="#1CAC78",		label=localfourierassumovern,		shape=ellipse,		style=filled];	"prop:localIntegrality" -> "eqn:localfourierassumovern";	"eqn:finiteHeightFourierTransform" -> "prop:heightFourierTransform";	"eqn:localHeight"	[color=green,		fillcolor="#1CAC78",		label=localHeight,		shape=ellipse,		style=filled];	"prop:Lmap"	[color=green,		fillcolor="#1CAC78",		label=Lmap,		shape=ellipse,		style=filled];	"prop:Lmap" -> "lemma:poissonIntegral";	"lemma:KprimeGroup"	[color=green,		fillcolor="#1CAC78",		label=KprimeGroup,		shape=ellipse,		style=filled];	"prop:Lmap" -> "lemma:KprimeGroup";	"lemma:heightZetaConvergence"	[color=green,		fillcolor="#1CAC78",		label=heightZetaConvergence,		shape=ellipse,		style=filled];	"prop:Lmap" -> "lemma:heightZetaConvergence";	"eqn:chimdefn"	[color=green,		fillcolor="#1CAC78",		label=chimdefn,		shape=ellipse,		style=filled];	"prop:Lmap" -> "eqn:chimdefn";	"lemma:heightZetaConvergence" -> "thm:heightZetaFunctionFormula2";	"lemma:heightZetaConvergence" -> "eqn:weightedPolynomialCount";	"lemma:heightZetaConvergence" -> "eqn:generalTraceDecomposition";	"lemma:heightformula"	[color=green,		fillcolor="#1CAC78",		label=heightformula,		shape=ellipse,		style=filled];	"eqn:Z0Laurent"	[color=green,		fillcolor="#1CAC78",		label=Z0Laurent,		shape=ellipse,		style=filled];	"eqn:Z0Laurent" -> "prop:leadingTerms";	"eqn:monicConstantsFromTraceCounts"	[color=green,		fillcolor="#1CAC78",		label=monicConstantsFromTraceCounts,		shape=ellipse,		style=filled];	"eqn:surfaceCoordinateChange"	[color=green,		fillcolor="#1CAC78",		label=surfaceCoordinateChange,		shape=ellipse,		style=filled];	"eqn:surfaceCoordinateChange" -> "prop:surfaceRationalForm";	"eqn:splitForm"	[color=green,		fillcolor="#1CAC78",		label=splitForm,		shape=ellipse,		style=filled];	"eqn:surfaceCoordinateChange" -> "eqn:splitForm";	"example:splitAlgebra"	[color=green,		label=splitAlgebra,		shape=ellipse];	"example:splitAlgebraNormalElement"	[color=green,		fillcolor="#9CEC8B",		label=splitAlgebraNormalElement,		shape=ellipse,		style=filled];	"example:splitAlgebra" -> "example:splitAlgebraNormalElement";	"eqn:Z0LaurentR"	[color=green,		fillcolor="#1CAC78",		label=Z0LaurentR,		shape=ellipse,		style=filled];	"prop:basicfacts"	[color=green,		fillcolor="#1CAC78",		label=basicfacts,		shape=ellipse,		style=filled];	"prop:basicfacts" -> "prop:localIntegrality";	"prop:canonicalHeight"	[color=green,		fillcolor="#1CAC78",		label=canonicalHeight,		shape=ellipse,		style=filled];	"prop:canonicalHeight" -> "eqn:irrPolys";	"prop:canonicalHeight" -> "cor:integralPointCount";	"prop:canonicalHeight" -> "eqn:weightedPolynomialCount";	"prop:canonicalHeight" -> "eqn:generalTraceDecomposition";	"prop:cyclotomicParametrization"	[color=green,		fillcolor="#1CAC78",		label=cyclotomicParametrization,		shape=ellipse,		style=filled];	"prop:canonicalHeight" -> "prop:cyclotomicParametrization";	"lemma:rootVsToric"	[color=green,		fillcolor="#1CAC78",		label=rootVsToric,		shape=ellipse,		style=filled];	"prop:canonicalHeight" -> "lemma:rootVsToric";	"lemma:rootVsToric" -> "thm:asymptoticPolynomialCount";	"lemma:rootVsToric" -> "rem:idealParametrization";	"lemma:rootVsToric" -> "thm:exactFormula";	"eqn:isoCocharLattices"	[color=green,		fillcolor="#1CAC78",		label=isoCocharLattices,		shape=ellipse,		style=filled];	"eqn:isoCocharLattices" -> "prop:basicfacts";	"eqn:surfaceAnticanonical"	[color=green,		fillcolor="#1CAC78",		label=surfaceAnticanonical,		shape=ellipse,		style=filled];	"eqn:surfaceAnticanonical" -> "prop:surfaceIntegralCubic";	a0000000037	[color=blue,		label=a0000000037,		shape=ellipse];	"eqn:surfaceInvariantRelation"	[color=green,		fillcolor="#1CAC78",		label=surfaceInvariantRelation,		shape=ellipse,		style=filled];	"eqn:surfaceInvariantRelation" -> "eqn:surfaceIntegralCubic";	"eqn:surfaceLogIntersections"	[color=green,		fillcolor="#1CAC78",		label=surfaceLogIntersections,		shape=ellipse,		style=filled];	"eqn:poissonae"	[color=green,		label=poissonae,		shape=ellipse];	"eqn:poissonae" -> "lemma:poissonIntegral";	"eqn:formulaForNormCharacter"	[color=green,		fillcolor="#1CAC78",		label=formulaForNormCharacter,		shape=ellipse,		style=filled];	"eqn:infiniteHeightFourierTransform"	[color=green,		fillcolor="#1CAC78",		label=infiniteHeightFourierTransform,		shape=ellipse,		style=filled];	"eqn:infiniteHeightFourierTransform" -> "prop:heightFourierTransform";	"eqn:introConstants"	[color=green,		fillcolor="#1CAC78",		label=introConstants,		shape=ellipse,		style=filled];	"eqn:finiteSpectralProduct"	[color=green,		fillcolor="#1CAC78",		label=finiteSpectralProduct,		shape=ellipse,		style=filled];	"eqn:archimedeanSpectralFactor"	[color=green,		fillcolor="#1CAC78",		label=archimedeanSpectralFactor,		shape=ellipse,		style=filled];	"eqn:monicArchimedeanMoments"	[color=green,		fillcolor="#1CAC78",		label=monicArchimedeanMoments,		shape=ellipse,		style=filled];	"eqn:monicArchimedeanMoments" -> "thm:generalMonicCount";	"eqn:monicArchimedeanMoments" -> "eqn:monicConstantsFromTraceCounts";	"eqn:heightforrationaladeles"	[color=green,		fillcolor="#1CAC78",		label=heightforrationaladeles,		shape=ellipse,		style=filled];	"lemma:finiteFourierProduct"	[color=green,		fillcolor="#1CAC78",		label=finiteFourierProduct,		shape=ellipse,		style=filled];	"lemma:finiteFourierProduct" -> "eqn:finiteSpectralProduct";	"eqn:finiteEulerBound"	[color=green,		fillcolor="#1CAC78",		label=finiteEulerBound,		shape=ellipse,		style=filled];	"lemma:finiteFourierProduct" -> "eqn:finiteEulerBound";	"lemma:normalityCriterion"	[color=green,		fillcolor="#1CAC78",		label=normalityCriterion,		shape=ellipse,		style=filled];	"lemma:normalityCriterion" -> "eqn:irrPolys";	"lemma:normalityCriterion" -> "thm:asymptoticPolynomialCount";	"lemma:normalityCriterion" -> "eqn:weightedPolynomialCount";	"lemma:normalityCriterion" -> "eqn:generalTraceDecomposition";	"lemma:normalityCriterion" -> "thm:exactFormula";	"eqn:surfaceQuadraticTwist"	[color=green,		fillcolor="#1CAC78",		label=surfaceQuadraticTwist,		shape=ellipse,		style=filled];	"eqn:weightVectors"	[color=green,		fillcolor="#1CAC78",		label=weightVectors,		shape=ellipse,		style=filled];	"eqn:heightMeanBound"	[color=green,		fillcolor="#1CAC78",		label=heightMeanBound,		shape=ellipse,		style=filled];	"cite:santens2023integral-toric-counting"	[color=green,		label="santens2023integral-toric-counting",		shape=ellipse];	"cite:santens2023integral-toric-counting" -> "prop:santensConstant";	"lemma:generalHeightReduction"	[color=green,		fillcolor="#1CAC78",		label=generalHeightReduction,		shape=ellipse,		style=filled];	"lemma:generalHeightReduction" -> "eqn:generalTraceDecomposition";	"eqn:formulaForNormCharacter2"	[color=green,		fillcolor="#1CAC78",		label=formulaForNormCharacter2,		shape=ellipse,		style=filled];	"eqn:normCharacterDivisor"	[color=green,		fillcolor="#1CAC78",		label=normCharacterDivisor,		shape=ellipse,		style=filled];	"eqn:eulerCorrectionFactor"	[color=green,		fillcolor="#1CAC78",		label=eulerCorrectionFactor,		shape=ellipse,		style=filled];	"eqn:polynomialWeights"	[color=green,		fillcolor="#1CAC78",		label=polynomialWeights,		shape=ellipse,		style=filled];	"eqn:heightExtraFactor"	[color=green,		fillcolor="#1CAC78",		label=heightExtraFactor,		shape=ellipse,		style=filled];	"eqn:integralityConditionsUsingCyclo"	[color=green,		fillcolor="#1CAC78",		label=integralityConditionsUsingCyclo,		shape=ellipse,		style=filled];	"eqn:santensLocalHeight"	[color=green,		fillcolor="#1CAC78",		label=santensLocalHeight,		shape=ellipse,		style=filled];	"cite:kuehleitnerNowak2004-cor2"	[color=green,		label="kuehleitnerNowak2004-cor2",		shape=ellipse];	"cite:kuehleitnerNowak2004-cor2" -> "rem:idealParametrization";	"eqn:LAsNorm"	[color=green,		fillcolor="#1CAC78",		label=LAsNorm,		shape=ellipse,		style=filled];	"eqn:surfaceNormCubic"	[color=green,		fillcolor="#1CAC78",		label=surfaceNormCubic,		shape=ellipse,		style=filled];	"eqn:surfaceNormCubic" -> "prop:surfaceRationalForm";}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

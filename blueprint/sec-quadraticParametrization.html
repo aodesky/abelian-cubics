@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Eisenstein parametrization</title>
+<link rel="next" href="sect0004.html" title="Poisson summation" />
+<link rel="prev" href="sect0003.html" title="Toric heights" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:quadraticParametrization">4 The Eisenstein parametrization</h1>
+
+<p>Write \(E=\mathbb {Q}(\zeta )\), where \(\zeta \) is a primitive cube root of unity. The isomorphism \(T\cong \operatorname {Res}_{E/\mathbb {Q}}\mathbb {G}_m\) turns rational torus points into elements \(u+v\zeta \in E^\times \). Their norm is \(u^2+v^2-uv\), and their trace is \(2u-v\). </p>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:isoCocharLattices">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">13</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-quadraticParametrization.html#eqn:isoCocharLattices">#</a>
+    
+    <a class="icon proof" href="sec-quadraticParametrization.html#a0000000069"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/IsoCocharLattices.lean#L45" class="lean_decl">CubicTargets.QuadraticCorrespondence.IsoCocharLattices.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/IsoCocharLattices.lean#L130" class="lean_decl">Cubic.QuadraticCorrespondence.IsoCocharLattices.«eqn:isoCocharLattices»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000070">
+  \begin{equation*}  N_E=\mathbb {Z}\langle \omega ,\gamma \omega \rangle \to N_E’=\mathbb {Z}\langle v_1,v_2\rangle \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000069">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:cyclotomicParametrization">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">3</span>
+    <span class="proposition_thmtitle">The Eisenstein parametrization</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-quadraticParametrization.html#prop:cyclotomicParametrization">#</a>
+    
+    <a class="icon proof" href="sec-quadraticParametrization.html#a0000000071"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/CyclotomicParametrizationConcrete.lean#L42" class="lean_decl">CubicTargets.QuadraticCorrespondence.CyclotomicParametrizationConcrete.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/CyclotomicParametrizationAssembly.lean#L63" class="lean_decl">Cubic.QuadraticCorrespondence.CyclotomicParametrizationAssembly.«prop:cyclotomicParametrization»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>The tori \(T\) and \(\mathcal G_1 = R^E_\mathbb {Q}\mathcal\mathbb {G}_m\) are isomorphic as algebraic groups over \(\mathbb {Q}\). Every rational point \((K/\mathbb {Q},x)\) of \(T\) thereby determines an element of \(\mathbb {Q}(\sqrt{-3})^\times \) which is canonically determined up to the action of \(\mathrm{Aut}(\mathcal G_1)\). For integral rational points of \(T\), the toric height \(H_{\mathrm{tor}}(f)\mathrel {:=}\sqrt{1-3a}\) is identified with the square-root of the norm on \(\mathbb {Q}(\sqrt{-3})^\times \). Let \(\zeta \) be a primitive cube root of unity. If \(u+v\zeta \in \mathbb {Q}(\sqrt{-3})^\times \) has norm \(N\) and trace \(T\), then the characteristic polynomial of the corresponding rational point \((K/\mathbb {Q},x)\) is </p>
+<div class="displaymath" id="a0000000072">
+  \begin{equation*}  f=t^3-t^2+\tfrac {1}{3}(1 - N)t+\tfrac {1}{27}(N(3-T)-1) \in \mathbb {Q}[t]. \end{equation*}
+</div>
+<p> Such a polynomial either has Galois group \(C_3\) or splits into three linear factors over \(\mathbb {Q}\), with at most two linear factors being the same. Conversely, a monic trace-one polynomial \(f=t^3-t^2+at+b \in \mathbb {Q}[t]\) which either has Galois group \(C_3\) or splits into three linear factors over \(\mathbb {Q}\), with at most two linear factors being the same, can be expressed in this way for precisely two rational points of \(T\) if \(f\) has no repeated roots, or for precisely one rational point of \(T\) if \(f\) has a double root which is not a triple root. The elements \(u+v\zeta \in \mathbb {Q}(\sqrt{-3})^\times \) corresponding to \(f=t^3-t^2+at+b\) will be the roots of the quadratic polynomial </p>
+<div class="displaymath" id="a0000000073">
+  \begin{equation*}  g = t^2 - \left(3-\frac{1+27b}{1-3a}\right)t + 1-3a \in \mathbb {Q}[t]. \end{equation*}
+</div>
+<p> The polynomial \(f\) will have integral coefficients if and only if </p>
+<div class="displaymath" id="a0000000074">
+  \begin{equation*} \begin{cases}  u^2+v^2-uv \in 1+3 \mathbb {Z}\text{ and }\\ (u^2+v^2-uv)(3-2u+v) \in 1+27 \mathbb {Z}. \end{cases}\end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000071">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Identify the character lattices, then evaluate the invariant functions in \(u+v\zeta \). The norm and trace determine the cubic coefficients. Solving the displayed quadratic gives the fibers, including the repeated-root case, and the coefficient formulas give the integral conditions. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:integralityConditionsUsingCyclo">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">14</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-quadraticParametrization.html#eqn:integralityConditionsUsingCyclo">#</a>
+    
+    <a class="icon proof" href="sec-quadraticParametrization.html#a0000000075"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/QuadraticCorrespondence/IntegralityConditions.lean#L22" class="lean_decl">CubicTargets.QuadraticCorrespondence.IntegralityConditions.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/IntegralityConditions.lean#L8" class="lean_decl">Cubic.QuadraticCorrespondence.IntegralityConditions.«eqn:integralityConditionsUsingCyclo»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000076">
+  \begin{equation*} \begin{cases}  u^2+v^2-uv \in 1+3 \mathbb {Z}\text{ and }\\ (u^2+v^2-uv)(3-2u+v) \in 1+27 \mathbb {Z}. \end{cases}\end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000075">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0003.html" title="Toric heights"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0004.html" title="Poisson summation"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

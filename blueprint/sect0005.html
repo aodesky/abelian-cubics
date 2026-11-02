@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The trace-one counts</title>
+<link rel="next" href="sect0006.html" title="Counting arbitrary trace" />
+<link rel="prev" href="sect0004.html" title="Poisson summation" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000006">6 The trace-one counts</h1>
+<p>Let \(F=F_1\) consist of the monic integral trace-one cubics with Galois group \(C_3\). The coefficients \(d_n\) are those of \(Z_0(z)=\sum _{n\geq 1}d_n n^{-z}\). First we remove the split polynomials from the torus-point count. We then estimate the sum of the coefficients and change from toric height to root height. The polynomial \(Q\) is the one in Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a>. </p>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:normalityCriterion">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">9</span>
+    <span class="lemma_thmtitle">Normality</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#lemma:normalityCriterion">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000133"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/NormalityCriterion.lean#L10" class="lean_decl">CubicTargets.Counting.NormalityCriterion.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/NormalityCriterion.lean#L55" class="lean_decl">Cubic.Counting.NormalityCriterion.«lemma:normalityCriterion»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(K/\mathbb {Q}\) be a \(C_3\)-algebra and let \(x\in K\) have characteristic polynomial \(t^3-e_1t^2+e_2t-e_3\). Then \(x\) is normal if and only if \(e_1(e_1^2-3e_2)\neq 0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000133">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The Gram determinant of the trace pairing on the conjugates of \(x\) is the square of the group determinant. Use its factorization \(\Delta =e_1(e_1^2-3e_2)\) and nondegeneracy of the trace form. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:reducibles">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">10</span>
+    <span class="lemma_thmtitle">Removing split polynomials</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#lemma:reducibles">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000134"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/Reducibles.lean#L13" class="lean_decl">CubicTargets.Counting.Reducibles.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/Reducibles.lean#L8" class="lean_decl">Cubic.Counting.Reducibles.«lemma:reducibles»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(d_n\) be the coefficients of \(Z_0(z)=\sum _{n\geq 1}d_n n^{-z}\). For \(X\geq 1\), </p>
+<div class="displaymath" id="a0000000135">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000134">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Use the multiplicities of the characteristic-polynomial map. Count the split points by cyclic orbits of integer triples and compare the corresponding ellipse lattice count with its area. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:weightedPolynomialCount">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">30</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:weightedPolynomialCount">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000136"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/WeightedPolynomialCount.lean#L36" class="lean_decl">CubicTargets.Counting.WeightedPolynomialCount.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/WeightedCount.lean#L340" class="lean_decl">Cubic.Counting.WeightedCount.«eqn:weightedPolynomialCount»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000137">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000136">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:xiMeanValue">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11</span>
+    <span class="lemma_thmtitle">A uniform mean-square estimate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#lemma:xiMeanValue">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000138"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanValue.lean#L4" class="lean_decl">CubicTargets.Counting.XiMeanValue.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanValue.lean#L6" class="lean_decl">Cubic.Counting.XiMeanValue.«lemma:xiMeanValue»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(\eta {\gt}0\). For \(1/2\leq \sigma \leq 2\) and \(U\geq 2\), </p>
+<div class="displaymath" id="a0000000139">
+  \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000138">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Apply the residue theorem to an exponentially decaying kernel. A reflected kernel keeps the estimate uniform as \(\sigma \) approaches \(1/2\). Integrate over the height interval and apply the critical-line mean-square bound. The paper instead uses Titchmarsh, <span class="cite">
+	[
+	<a href="sect0009.html#titchmarsh1986" >30</a>
+	, 
+	§
+	7.8, (7.8.3)
+	]
+</span>. </p>
+<p>The proof uses the literature inputs <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:xiMeanBound">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">31</span>
+    <span class="equationnode_thmtitle">The strip bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:xiMeanBound">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000140"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanBound.lean#L9" class="lean_decl">CubicTargets.Counting.XiMeanBound.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanBound.lean#L9" class="lean_decl">Cubic.Counting.XiMeanBound.«eqn:xiMeanBound»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000141">
+  \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000140">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>This is the bound proved in Lemma&#160;<a href="sect0005.html#lemma:xiMeanValue">11</a>, with the same uniformity in \(\sigma \). </p>
+<p>The proof uses the literature inputs <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:criticalMeanSquare">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">32</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:criticalMeanSquare">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000142"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/CriticalMeanSquare.lean#L7" class="lean_decl">CubicTargets.Counting.CriticalMeanSquare.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/CriticalMeanSquare.lean#L12" class="lean_decl">Cubic.Counting.CriticalMeanSquare.«eqn:criticalMeanSquare»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000143">
+  \begin{equation*}  \int _1^T|\xi (1/2+it)|^2\, dt \ll T\log ^2T. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000142">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+<p>The proof uses the literature inputs <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:dSummatoryForGeneralTrace">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">33</span>
+    <span class="equationnode_thmtitle">The coefficient sum</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:dSummatoryForGeneralTrace">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000144"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L195" class="lean_decl">CubicTargets.Counting.GeneralMonic.DSummatoryClaim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/DSummatory.lean#L55" class="lean_decl">Cubic.Counting.DSummatory.«eqn:dSummatoryForGeneralTrace»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000145">
+  \begin{equation*}  \sum _{n\leq X}d_n =XQ\left(\tfrac 12\log X\right) +O_\varepsilon (X^{1/2+\varepsilon }), \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000144">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Apply truncated Perron at a half-integer, move the contour across the double pole at \(1\), and estimate the new contour using the strip mean-square bound. The residue supplies the main term. This is the direct argument retained in Lean in place of <span class="cite">
+	[
+	<a href="sect0009.html#alberts2025" >1</a>
+	, 
+	Theorem
+	
+	1.1
+	]
+</span>. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>, <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:heightMeanBound">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">34</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:heightMeanBound">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000146"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/HeightMeanBound.lean#L11" class="lean_decl">CubicTargets.Counting.HeightMeanBound.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/HeightMeanBound.lean#L11" class="lean_decl">Cubic.Counting.HeightMeanBound.«eqn:heightMeanBound»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>For each \(\eta {\gt}0\) there is a constant \(A_\eta \), depending only on \(\eta \), such that the following holds for all \(\sigma \geq 1/2+\eta \). </p>
+<div class="displaymath" id="a0000000147">
+  \begin{equation*}  \int _U^{2U}|Z_0(\sigma +it)|\, dt \leq A_\eta \int _U^{2U}|\xi (\sigma +it)|^2\, dt \qquad (U \geq 2). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000146">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:irrPolys">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">35</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#eqn:irrPolys">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000148"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IrrPolys.lean#L31" class="lean_decl">CubicTargets.Counting.IrrPolys.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IrrPolys.lean#L91" class="lean_decl">Cubic.Counting.IrrPolys.«eqn:irrPolys»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000149">
+  \begin{equation*}  \sum _{\substack {f\in F\\ \begin{bgroup} H_{\mathrm{tor}}(f)\leq \sqrt X
+
+\end{bgroup}}}1 =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000148">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>, <a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0004.html" title="Poisson summation"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0006.html" title="Counting arbitrary trace"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

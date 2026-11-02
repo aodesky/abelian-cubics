@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>On monic abelian cubic polynomials</title>
+<link rel="next" href="sect0001.html" title="Introduction" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<div class="titlepage">
+<h1>On monic abelian cubic polynomials</h1>
+<p class="authors">
+<span class="author">Shubhrajit Bhattacharya and Andrew O’Desky</span>
+</p>
+</div>
+<p>This blueprint accompanies the Lean formalization of <em>On monic abelian cubic polynomials</em>, by Shubhrajit Bhattacharya and Andrew O’Desky. It follows our November 2026 revision, which extends the trace-one results of <a href ="https://arxiv.org/abs/2310.17831">the arXiv version</a> to arbitrary trace. </p>
+<p>The statements below are taken from the revised paper. Each has links to its Lean statement and proof, followed by a short explanation of the argument. The numbering here is local to the blueprint; the TeX labels retained in the source identify the corresponding results in the paper. </p>
+<p>Our proof uses Poisson summation and the critical-line mean-square estimate of Chandrasekharan and Narasimhan. Both are explicit hypotheses in Lean. The comparison with Santens’s theorem and the alternative ideal count use the additional inputs listed in the last chapter. </p>
+<p>For the strip estimate, Lean uses the residue theorem in place of Titchmarsh’s result. For the coefficient sum, it uses Perron’s formula and contour shifting in place of Alberts’s theorem. We describe these arguments at the corresponding places. For the moduli theorem, we formalize the rational-point correspondence used in counting; the assertion over general bases is not formalized. . </p>
+<p>The <a href ="dep_graph_document.html">dependency graph</a> is extracted from the Lean proofs. Green nodes have formalized statements and proofs, relative to any literature inputs shown. Nodes for assumed inputs have formalized statements and no proofs. The <a href ="https://github.com/aodesky/abelian-cubics/blob/main/CORRESPONDENCE.md">correspondence record</a> gives further details.  </p>
+
+</div> <!--main-text -->
+<nav class=local_toc>
+<ul>
+  <li>	
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+  </li>
+  <li>	
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+  </li>
+  <li>	
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+  </li>
+  <li>	
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+  </li>
+  <li>	
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+  </li>
+  <li>	
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+  </li>
+  <li>	
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+  </li>
+  <li>	
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+  </li>
+  <li>	
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+  </li>
+  <li>	
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  </li>
+</ul>
+</nav>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0001.html" title="Introduction"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

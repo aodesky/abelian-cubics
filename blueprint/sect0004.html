@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poisson summation</title>
+<link rel="next" href="sect0005.html" title="The trace-one counts" />
+<link rel="prev" href="sec-quadraticParametrization.html" title="The Eisenstein parametrization" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000005">5 Poisson summation</h1>
+<p>For \(s=(s_0,s_1,s_2)\) invariant under Galois, let \(H(P,s)\) be the toric height and \(Z(s)\) the sum of \(H(P,s)^{-1}\) over integral rational torus points. The function \(1^{D_0}\) imposes integrality at the finite places. Fourier transforms use the Haar measures of the paper, and \(e(t)=\exp (2\pi it)\). The computation starts with the local factors and then applies Poisson summation. Later, \(Z_0(z)=Z(2z,0,0)=\sum _{n\geq 1}d_n n^{-z}\) and \(R(z)\) denotes the correction Euler product. In the spectral formulas write \(s=(s_0,\sigma ,\sigma )\), \(t=m(v_0)\), and \(\lambda =\sigma -\pi it\). </p>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:heightZetaFunctionFormula2">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6</span>
+    <span class="theorem_thmtitle">The multivariate height zeta function</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm:heightZetaFunctionFormula2">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000077"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightZetaFunctionFormula.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaFunctionFormula.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaFunctionFormula.lean#L21" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula2»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+
+
+<p>Fix any \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) with \(\mathrm{Re}(s_0+s_1+s_2) {\gt} 2\). Then the multivariate Dirichlet series </p>
+<div class="displaymath" id="a0000000078">
+  \begin{equation*}  Z(s)= \sum _{\substack {P \in T(\mathbb Q)\\ \begin{bgroup} \text{\emph{integral}}
+
+\end{bgroup}}} H(P,s)^{-1} \end{equation*}
+</div>
+<p> is absolutely convergent and equals </p>
+<div class="displaymath" id="a0000000079">
+  \begin{align*}  \left({1-3^{-z}}\right) \zeta (z) \prod _{q\equiv 2\pmod{3}} \left(1+\frac{1}{q^{z}}\right)^{-1} \prod _{p\equiv 1\pmod{3}} \left(1+\frac{3}{p^z}\left(1-\frac{1}{p^z}\right)^{-1}\right) \end{align*}
+</div>
+<p> where \(z = \frac{1}{2}(s_0+s_1+s_2)\). This multivariate Dirichlet series admits a meromorphic continuation to \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000077">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Compute the local Fourier transforms, apply Poisson summation, and evaluate the resulting real integral by residues. Shift the height parameters to obtain the full convergence region, then identify the continued Euler product. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:localIntegrality">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">4</span>
+    <span class="proposition_thmtitle">The local integral condition</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#prop:localIntegrality">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000080"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalIntegrality.lean#L36" class="lean_decl">CubicTargets.PoissonSummation.LocalIntegrality.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalIntegrality.lean#L902" class="lean_decl">Cubic.PoissonSummation.LocalIntegrality.«prop:localIntegrality»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>Let \(v\) be a finite place of \(\mathbb {Q}\) and let \(w\) be a place of \(E\) lying over \(v\). </p>
+<ol class="enumerate">
+  <li><p>If \(v \neq 3\), then \(1_v^{D_0}(x) = 1\) if and only if \(\ell _w(x) \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2\). In particular \(K_v^{D_0}=K_v^{\mathrm{max}}\). </p>
+</li>
+  <li><p>Let \(v = 3\), let \(w\) be the unique place of \(E\) over \(3\), and let \(\mathfrak w = (1-\zeta )O_{E,w}\) be the maximal ideal of \(O_{E,w}\), so that \(3O_{E,w} = \mathfrak w^2\). The support of \(1_3^{D_0}\) is the subgroup </p>
+<div class="displaymath" id="a0000000081">
+  \begin{equation*}  K_{3,2}\mathrel {:=}\iota ^{-1}(1+\mathfrak w^2) =\iota ^{-1}(1+3O_{E,w})\subset K_3^{\mathrm{max}}. \end{equation*}
+</div>
+</li>
+  <li><p>Let \(K^{\mathrm{max}}=\prod _v K_v^{\mathrm{max}}\) and \(K^{D_0}=\prod _v K_v^{D_0}\subset K^{\mathrm{max}}\). The latter is the subgroup which fixes the characteristic function \(1^{D_0}=\otimes _v1_v^{D_0}\) for integral points in \(T(\mathbb {A})\), with \(1_\infty ^{D_0}=1\). Then </p>
+<div class="displaymath" id="a0000000082">
+  \[  K_3^{D_0}=K_{3,2},\qquad K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}.  \]
+</div>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000080">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Away from \(3\), evaluate the invariant functions in local coordinates to obtain the cone condition. At \(3\), the same computation gives the subgroup \(1+3O_{E,w}\). Its stabilizer determines the global compact level. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:poissonae">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">15</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:poissonae">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonWithDualMeasure.lean#L30" class="lean_decl">CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>Let \(f\in L^1(T(\mathbb {A}))\) and suppose \(\widehat f|_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). With counting measure on \(T(\mathbb {Q})\) and the normalized dual measure, the following equality holds for almost every \(y\in T(\mathbb {A})\). </p>
+<div class="displaymath" id="a0000000083">
+  \begin{equation*}  \int _{T(\mathbb {Q})} f(xy)\,  dx = \int _{T(\mathbb {Q})^\perp } \widehat{f}(\chi ) \chi (y) \, d\chi \end{equation*}
+</div>
+
+  </div>
+</div>
+<p>This is an explicit hypothesis in the formalization. </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:heightFourierTransform">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">5</span>
+    <span class="proposition_thmtitle">Local Fourier transforms</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#prop:heightFourierTransform">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000084"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightFourierTransform.lean#L176" class="lean_decl">CubicTargets.PoissonSummation.HeightFourierTransform.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightFourierTransform.lean#L48" class="lean_decl">Cubic.PoissonSummation.HeightFourierTransform.«prop:heightFourierTransform»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>Let \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) and assume \(\mathrm{Re}(s_e){\gt}0\) for each \(e \in \{ 0,1,2\} \). Let \(w\) be the infinite place of \(E\). Let \(\chi \in T(\mathbb {R})^\vee \) be a unitary character. If \(\chi \) is ramified then \(\widehat{H_\infty }(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified, then \(\chi (x)= e(\langle \ell _w(x) ,m\rangle )\) for all \(x \in T(\mathbb {R})\) for a unique \(m \in \mathfrak t^\vee \), and </p>
+<div class="displaymath" id="a0000000085">
+  \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
+</div>
+<p> Next let \(v\) be a finite place of \(\mathbb {Q}\). For any unitary character \(\chi \in T(\mathbb {Q}_v)^\vee \), the integral defining \(\widehat{H_v}(\chi ,-s,D_0)\) converges absolutely to a holomorphic function of \(s\) in the region </p>
+<div class="displaymath" id="a0000000086">
+  \[ \{ s \in (\mathbb {C}^{\Sigma (1)})^\Gamma : \mathrm{Re}(s_1),\mathrm{Re}(s_2){\gt}0 \} . \]
+</div>
+<p> Assume \(v \neq 3\). Let \(w\) be any place of \(E\) lying over \(v\). The local characteristic function \(1_v^{D_0}\) is \(K_v^{\mathrm{max}}\)-invariant. If \(\chi \) is ramified, then \(\widehat{H_v}(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified then we may regard \(\chi \) as a character on \(X_\ast (T_{E})^{\Gamma (w/v)}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) and </p>
+<div class="displaymath" id="a0000000087">
+  \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+<p> If \(v = 3\) then the support of \(x \mapsto H_3(x,-s,D_0)\) is the congruence subgroup \(K_{3,2}\) of \(K_3^{\mathrm{max}}\) of index six. Under the isomorphism \(\iota :T(\mathbb {Q}_3)\to E_w^\times \) the support corresponds to the subgroup \(1+3O_{E,w}\) of \(O_{E,w}^\times \) where \(w\) is the unique place of \(E\) lying over \(3\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000084">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>At infinity and at finite places other than \(3\), ramified characters vanish after integration over the maximal compact subgroup. For unramified characters, integrate the archimedean support function on its two cones and sum the finite valuation lattices. At \(3\), integrate over the congruence subgroup of index six. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:infiniteHeightFourierTransform">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">16</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:infiniteHeightFourierTransform">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/InfiniteHeightFourierTransform.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.InfiniteHeightFourierTransform.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/InfiniteHeightFourierTransform.lean#L19" class="lean_decl">Cubic.PoissonSummation.InfiniteHeightFourierTransform.«eqn:infiniteHeightFourierTransform»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000089">
+  \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000088">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:finiteHeightFourierTransform">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">17</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:finiteHeightFourierTransform">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000090"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteHeightFourierTransform.lean#L25" class="lean_decl">CubicTargets.PoissonSummation.FiniteHeightFourierTransform.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteHeightFourierTransform.lean#L23" class="lean_decl">Cubic.PoissonSummation.FiniteHeightFourierTransform.«eqn:finiteHeightFourierTransform»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000091">
+  \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000090">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="remarknode_thmwrapper theorem-style-plain" id="rem:localNonintegrability">
+  <div class="remarknode_thmheading">
+    <span class="remarknode_thmcaption">
+    Remark
+    </span>
+    <span class="remarknode_thmlabel">2</span>
+    <span class="remarknode_thmtitle">Why the parameters are kept separate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#rem:localNonintegrability">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000092"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalNonintegrability.lean#L14" class="lean_decl">CubicTargets.PoissonSummation.LocalNonintegrability.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalNonintegrability.lean#L69" class="lean_decl">Cubic.PoissonSummation.LocalNonintegrability.«rem:localNonintegrability»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="remarknode_thmcontent">
+  
+
+
+<p>The local Fourier transforms — and therefore the entire Poisson summation argument — must be computed <em>before</em> restricting to the line in \(\mathrm{Pic}^T(S) \otimes \mathbb {C}\) spanned by the \(T_E\)-line bundle \(\mathcal O(D_0)\) of interest since \(x \mapsto H_v(x,-s,D_0)\) will not be integrable for any place \(v \neq 3,\infty \) once either of \(s_1\) or \(s_2\) vanishes, no matter how large and positive \(\mathrm{Re}(s_0)\) is. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000092">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Along a boundary ray where a height exponent vanishes, the local valuation series has terms of constant absolute value. It therefore fails to converge. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:localfourierassumovern">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">18</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:localfourierassumovern">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000093"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalFourierAsSumOverN.lean#L45" class="lean_decl">CubicTargets.PoissonSummation.LocalFourierAsSumOverN.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalFourierAsSumOverN.lean#L40" class="lean_decl">Cubic.PoissonSummation.LocalFourierAsSumOverN.«eqn:localfourierassumovern»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000094">
+  \begin{equation*}  \int _{T(\mathbb {Q}_v)} H_v(x,s)^{-1}1_v^{D_0}(x)\chi (x)^{-1}\, d^\times x_v =\sum _{n \in N_w} q_v^{\frac{1}{e_v}\varphi (n)} 1_v^{D_0}(n) \chi (n)^{-1} = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
+
+\end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000093">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:LAsNorm">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">19</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:LAsNorm">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000095"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LAsNorm.lean#L56" class="lean_decl">CubicTargets.PoissonSummation.LAsNorm.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LAsNorm.lean#L52" class="lean_decl">Cubic.PoissonSummation.LAsNorm.«eqn:LAsNorm»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000096">
+  \begin{equation*}  \ell (x)(\mathrm{N}) = -\log |\mathrm{N}(x)|_{\mathbb {A}} \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000095">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:Lmap">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">6</span>
+    <span class="proposition_thmtitle">The adelic logarithm</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#prop:Lmap">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">CubicTargets.PoissonSummation.LogarithmExactSequence.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">Cubic.PoissonSummation.«prop:Lmap»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>There is an exact sequence </p>
+<div class="displaymath" id="a0000000098">
+  \begin{equation*}  1 \longrightarrow K^{\mathrm{max}}/\mu ^{\mathrm{max}} \longrightarrow T(\mathbb Q)\backslash T(\mathbb {A}) \xrightarrow {\ell } \mathfrak t \longrightarrow 0 \end{equation*}
+</div>
+<p> where \(K^{\mathrm{max}}\) is the maximal compact subgroup of \(T(\mathbb {A})\) and \(\mu ^{\mathrm{max}} = T(\mathbb {Q}) \cap K^{\mathrm{max}}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000097">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The product formula makes the logarithm descend to the adelic quotient. Principalize the finite valuations to identify its kernel with the compact quotient; the infinite component supplies surjectivity. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:KprimeGroup">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4</span>
+    <span class="lemma_thmtitle">The quotient by the integral level</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lemma:KprimeGroup">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000099"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/KprimeGroup.lean#L21" class="lean_decl">CubicTargets.PoissonSummation.KprimeGroup.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/KprimeGroup.lean#L14" class="lean_decl">Cubic.PoissonSummation.«lemma:KprimeGroup»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}\) be the subgroup of \(K^{\mathrm{max}}\) fixing \(1^{D_0}\), as in Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>. The map \(\ell \) induces an isomorphism </p>
+<div class="displaymath" id="a0000000100">
+  \begin{equation*}  T(\mathbb {Q})\backslash T(\mathbb {A})/K^{D_0} \xrightarrow {\sim } \mathfrak t. \end{equation*}
+</div>
+<p> Let \(a(u)\in T(\mathbb {A})\) have infinite component \(\iota ^{-1}(e^u)\) and all finite components one, so \(\ell (a(u))=uv_0\). In this coordinate, the pushforward of the quotient measure is \(du/6\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000099">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The six Eisenstein units represent the residue classes at the ramified place. They identify the quotient by the integral level with the logarithm line. Tracking the normalized Haar measure gives \(du/6\). </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:chimdefn">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">20</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:chimdefn">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000101"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ChimDefn.lean#L57" class="lean_decl">CubicTargets.PoissonSummation.ChimDefn.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ChimDefn.lean#L75" class="lean_decl">Cubic.PoissonSummation.ChimDefn.«eqn:chimdefn»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000102">
+  \begin{equation*}  \chi _m(x)=e(\langle m,\ell (x)\rangle ), \qquad m\in \mathfrak t^\vee . \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000101">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:finiteFourierProduct">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5</span>
+    <span class="lemma_thmtitle">The finite Fourier product</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lemma:finiteFourierProduct">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicFiniteFourierProduct.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.AdelicFiniteFourierProduct.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicFiniteFourierProduct.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:finiteFourierProduct»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>For \(\operatorname {Re}(\sigma ){\gt}1\) and \(t\in \mathbb {R}\), put \(\lambda =\sigma -\pi it\). Then </p>
+<div class="displaymath" id="a0000000104">
+  \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000105">
+  \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
+</div>
+<p> Here \(\chi _0\) is the trivial character, corresponding to \(m=0\). The Euler product converges absolutely and locally uniformly for \(\operatorname {Re}(\lambda ){\gt}1\) and is bounded on every half-plane \(\operatorname {Re}(\lambda )\geq \tau {\gt}1\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000103">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Sum the local valuation series separately at split and inert primes and include the factor \(1/6\) at \(3\). A convergent positive Euler product bounds the absolute values and proves locally uniform convergence. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:finiteSpectralProduct">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">21</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:finiteSpectralProduct">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteSpectralProduct.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteSpectralProduct»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000107">
+  \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000106">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:finiteEulerBound">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">22</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:finiteEulerBound">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000108"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteEulerBound.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteEulerBound.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteEulerBound.lean#L14" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteEulerBound»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000109">
+  \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000108">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:heightZetaConvergence">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6</span>
+    <span class="lemma_thmtitle">Convergence before Poisson summation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lemma:heightZetaConvergence">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000110"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicHeightZetaConvergence.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.AdelicHeightZetaConvergence.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicHeightZetaConvergence.lean#L21" class="lean_decl">Cubic.PoissonSummation.«lemma:heightZetaConvergence»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(s=(s_0,\sigma ,\sigma )\in (\mathbb {C}^{\Sigma (1)})^\Gamma \) with \(\operatorname {Re}(s_0){\gt}0\) and \(\operatorname {Re}(\sigma ){\gt}1\), and put \(f=H(\cdot ,-s,D_0)\). Then \(f\in L^1(T(\mathbb {A}))\) and \(\widehat f\, |_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000110">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The positive local factors give spatial integrability. The finite Euler-product bound and quadratic decay of the archimedean factor give integrability on the annihilator of \(T(\mathbb {Q})\). </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:archimedeanSpectralFactor">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">23</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:archimedeanSpectralFactor">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000111"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ArchimedeanSpectralFactor.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.ArchimedeanSpectralFactor.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ArchimedeanSpectralFactor.lean#L16" class="lean_decl">Cubic.PoissonSummation.«eqn:archimedeanSpectralFactor»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000112">
+  \begin{equation*} \begin{aligned}  \widehat{H_\infty }(\chi _{m,\infty },-s,D_0) & =\frac1{s_0+2\pi it}+\frac1{2\sigma -2\pi it}\\ & =\frac{s_0+2\sigma }{(s_0+2\pi it)(2\sigma -2\pi it)}. \end{aligned}\end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000111">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:poissonIntegral">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">7</span>
+    <span class="lemma_thmtitle">Applying Poisson summation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lemma:poissonIntegral">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000113"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonIntegral.lean#L17" class="lean_decl">CubicTargets.PoissonSummation.PoissonIntegral.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonIntegral.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:poissonIntegral»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>For \(s\) as in Lemma&#160;<a href="sect0004.html#lemma:heightZetaConvergence">6</a>, we have </p>
+<div class="displaymath" id="a0000000114">
+  \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
+</div>
+<p> where both the series defining \(Z(s)\) and the integral converge absolutely. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000113">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Apply the general Poisson formula with the normalized quotient measure. Identify the characters trivial on the integral level with the real logarithm coordinate; the dual measure contributes the factor six. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:poissonEulerIntegral">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">24</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:poissonEulerIntegral">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000115"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonEulerIntegral.lean#L18" class="lean_decl">CubicTargets.PoissonSummation.PoissonEulerIntegral.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonEulerIntegral.lean#L8" class="lean_decl">Cubic.PoissonSummation.PoissonEulerIntegral.«eqn:poissonEulerIntegral»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000116">
+  \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000115">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:normCharacterDivisor">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">25</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:normCharacterDivisor">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000117"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/NormCharacterDivisor.lean#L40" class="lean_decl">CubicTargets.PoissonSummation.NormCharacterDivisor.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/NormCharacterDivisor.lean#L17" class="lean_decl">Cubic.PoissonSummation.NormCharacterDivisor.«eqn:normCharacterDivisor»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000118">
+  \begin{equation*}  \operatorname {div}(\chi ^{a'+b'}) =\sum _{i=0}^2\langle a’+b’,v_i\rangle D_i =-2D_0+D_1+D_2. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000117">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:eulerCorrectionFactor">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">26</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:eulerCorrectionFactor">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000119"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/EulerCorrectionFactor.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.EulerCorrectionFactor.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/EulerCorrectionFactor.lean#L21" class="lean_decl">Cubic.PoissonSummation.EulerCorrectionFactor.«eqn:eulerCorrectionFactor»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000120">
+  \begin{equation*}  R(z)=\prod _{q\equiv 2\pmod3}\left(1-q^{-2z}\right) \prod _{p\equiv 1\pmod3}\left(1-3p^{-2z}+2p^{-3z}\right). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000119">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:simplifiedZ-s">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8</span>
+    <span class="lemma_thmtitle">Dedekind zeta factorization</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lemma:simplifiedZ-s">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/SimplifiedHeightZeta.lean#L51" class="lean_decl">CubicTargets.PoissonSummation.SimplifiedHeightZeta.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/SimplifiedHeightZeta.lean#L52" class="lean_decl">Cubic.PoissonSummation.«lemma:simplifiedZ(s)»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>The height zeta function is also given by </p>
+<div class="displaymath" id="a0000000122">
+  \begin{align*}  Z(s)=\left(1-3^{-z}\right)^2\xi (z)^2R(z),\qquad z=\tfrac 12(s_0+s_1+s_2), \end{align*}
+</div>
+<p> where \(\xi \) is the Dedekind zeta function of the cyclotomic field \(\mathbb {Q}(\sqrt{-3})\). The height zeta function has meromorphic continuation to the region \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000121">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Compare the Euler factors with \(\xi (z)^2\) and the correction product \(R(z)\). The factorization and convergence of the correction product give the continuation. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:Z0factorization">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">27</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:Z0factorization">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Factorization.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.Z0Factorization.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Factorization.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0Factorization.«eqn:Z0factorization»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000124">
+  \begin{equation*}  Z_0(z)=\left(1-3^{-z}\right)^2\xi (z)^2R(z). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000123">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="remarknode_thmwrapper theorem-style-plain" id="rem:heightCoefficients">
+  <div class="remarknode_thmheading">
+    <span class="remarknode_thmcaption">
+    Remark
+    </span>
+    <span class="remarknode_thmlabel">3</span>
+    <span class="remarknode_thmtitle">The coefficients</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#rem:heightCoefficients">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightCoefficients.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.HeightCoefficients.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightCoefficients.lean#L47" class="lean_decl">Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="remarknode_thmcontent">
+  
+
+
+<p>Comparing Euler factors in <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> gives the coefficients explicitly: \(d_n=0\) if \(3\mid n\), and if \(3\nmid n\) then </p>
+<div class="displaymath" id="a0000000126">
+  \[  d_n=\sum _{d\mid n}3^{\omega (d_1)}(-1)^{\Omega (d_2)},  \]
+</div>
+<p> where \(d=d_1d_2\) with \(d_1\) divisible only by primes \(p\equiv 1\pmod3\) and \(d_2\) only by primes \(q\equiv 2\pmod3\). Equivalently, \(d_n\) is the product of \(3k+1\) over prime powers \(p^k\parallel n\) with \(p\equiv 1\pmod3\) if every prime \(q\equiv 2\pmod3\) divides \(n\) to an even power, and \(d_n=0\) otherwise. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000125">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Expand the split, inert, and ramified Euler factors and multiply the prime-power coefficients. </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:leadingTerms">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">7</span>
+    <span class="proposition_thmtitle">Laurent coefficients</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#prop:leadingTerms">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000127"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LeadingTermsNormalized.lean#L15" class="lean_decl">CubicTargets.PoissonSummation.LeadingTermsNormalized.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LeadingTerms.lean#L31" class="lean_decl">Cubic.PoissonSummation.«prop:leadingTerms»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>The only pole of \(Z_0(z)\) in the half-plane \(\mathrm{Re}(z){\gt}1/2\) is a double pole at \(z=1\). Its Laurent expansion there is </p>
+<div class="displaymath" id="a0000000128">
+  \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
+</div>
+<p> where \(\alpha \) and \(\beta \) are as in <a href="sect0001.html#eqn:introConstants" class="eqref">1</a>. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000127">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Expand the Dedekind zeta factor at \(1\) and logarithmically differentiate the convergent correction product. Simplifying the prime factors yields \(\alpha \), \(\beta \), and the Euler–Kronecker constant \(\mu \). </p>
+<p>The proof uses the literature inputs <a href="sect0004.html#eqn:poissonae">15</a>. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:Z0Laurent">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">28</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:Z0Laurent">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000129"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Laurent.lean#L11" class="lean_decl">CubicTargets.PoissonSummation.Z0Laurent.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Laurent.lean#L32" class="lean_decl">Cubic.PoissonSummation.Z0Laurent.«eqn:Z0Laurent»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000130">
+  \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000129">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:Z0LaurentR">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">29</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#eqn:Z0LaurentR">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000131"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.Z0LaurentR.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0LaurentR.«eqn:Z0LaurentR»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<p>Here \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\) and \(\mu \) is the Euler–Kronecker constant defined above. </p>
+<div class="displaymath" id="a0000000132">
+  \begin{equation*}  Z_0(z)=\frac{a}{(z-1)^2} +2a\left(\mu +\frac12\log 3+\frac{R'(1)}{2R(1)}\right)\frac{1}{z-1} +O(1), \qquad a=\frac49r^2R(1). \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000131">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sec-quadraticParametrization.html" title="The Eisenstein parametrization"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0005.html" title="The trace-one counts"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

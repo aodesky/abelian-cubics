@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toric heights</title>
+<link rel="next" href="sec-quadraticParametrization.html" title="The Eisenstein parametrization" />
+<link rel="prev" href="sect0002.html" title="The orbit parametrization" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000004">3 Toric heights</h1>
+<p>The height is defined from the fan of \(S\). We retain the paper’s notation: \(v_0,v_1,v_2\) are its primitive rays, \(M_E\) is the character lattice, and \(\ell _w\) is the local logarithm map. At a finite place, this map records the normalized valuations of characters; at the infinite place it records their logarithmic absolute values. The local height is the exponential of the corresponding piecewise linear support function. We write \(e_1=X+Y+Z\), \(e_2=XY+YZ+ZX\), and \(e_3=XYZ\). In the affine chart, \(\varepsilon =e_1=X+Y+Z\). </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:basicfacts">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1</span>
+    <span class="proposition_thmtitle">The local logarithm</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#prop:basicfacts">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/BasicFacts.lean#L152" class="lean_decl">CubicTargets.ToricHeights.BasicFacts.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/BasicFacts.lean#L1072" class="lean_decl">Cubic.ToricHeights.BasicFacts.«prop:basicfacts»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>Let \(w\) be a place of \(E\) lying over a place \(v\) of \(\mathbb {Q}\). There is an exact sequence </p>
+<div class="displaymath" id="a0000000041">
+  \begin{equation*}  1 \longrightarrow K_v^{\mathrm{max}} \longrightarrow T(\mathbb {Q}_v) \xrightarrow {\ell _w} \mathfrak t_w. \end{equation*}
+</div>
+<p> If \(w\) is infinite then \(\ell _w\) is surjective, and if \(w\) is finite then the image of \(\ell _w\) is the lattice \(X_\ast (T_{E})^{\Gamma (w/v)}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Express torus points by characters over the splitting field. Applying the normalized valuation gives the finite-place image lattice and compact kernel. The logarithmic absolute value gives the analogous statement at infinity. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:heightforrationaladeles">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">5</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:heightforrationaladeles">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightForRationalAdeles.lean#L64" class="lean_decl">CubicTargets.ToricHeights.HeightForRationalAdeles.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightForRationalAdeles.lean#L105" class="lean_decl">Cubic.ToricHeights.HeightForRationalAdeles.«eqn:heightforrationaladeles»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000043">
+  \begin{equation*}  H(x,\varphi ) = \prod _{v \in Pl_\mathbb {Q}} q_v^{-\frac{1}{e_v}\varphi (\ell _w(x_v)) } \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000042">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:heightformula">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1</span>
+    <span class="lemma_thmtitle">Weight vectors</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#lemma:heightformula">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000044"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightFormula.lean#L123" class="lean_decl">CubicTargets.ToricHeights.HeightFormula.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightFormula.lean#L642" class="lean_decl">Cubic.ToricHeights.HeightFormula.«lemma:heightformula»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(\mathbf1\) denote the global section in \(H^0(S_E,\mathcal O(3D_0))\) associated to the effective Cartier divisor \(3D_0\), namely the image of \(1\) under the natural inclusion \(\mathcal O_{S_E}\hookrightarrow \mathcal O_{S_E}(3D_0)\). The space \(H^0(S_E,\mathcal O(3D_0))\) is spanned over \(E\) by the following four weight vectors: </p>
+<div class="displaymath" id="a0000000045">
+  \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
+</div>
+<p> where \(\sqrt{\mathrm{disc}} \mathrel {:=}(X-Z)(Y-X)(Z-Y)\). The associated characters of \(T_E\) are, respectively, </p>
+<div class="displaymath" id="a0000000046">
+  \begin{equation*}  1,\quad \chi ^{a'+b'},\quad \chi ^{2a'+b'},\quad \chi ^{2b'+a'} \end{equation*}
+</div>
+<p> where \(a' = 2v_1^\vee - v_2^\vee \) and \(b' = 2v_2^\vee - v_1^\vee \) in the character lattice \(M_E = X^\ast T_E\) and \((v_1^\vee ,v_2^\vee )\) is the dual basis to \((v_1,v_2)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000044">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Compute the invariant cubic forms, divide by \(e_1^3\), and diagonalize the torus action. The four displayed forms and their characters give the required basis of sections. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:weightVectors">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">6</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:weightVectors">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000047"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/WeightVectorsDisplay.lean#L24" class="lean_decl">CubicTargets.ToricHeights.WeightVectorsDisplay.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/WeightVectorsDisplay.lean#L22" class="lean_decl">Cubic.ToricHeights.WeightVectorsDisplay.«eqn:weightVectors»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000048">
+  \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000047">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:formulaForNormCharacter">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">7</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:formulaForNormCharacter">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000049"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter.lean#L82" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter.lean#L103" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter.«eqn:formulaForNormCharacter»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000050">
+  \begin{equation*}  \chi ^{a'+b'}(uv_0’ + vv_1’+wv_2’) = \frac{vw}{u^2} = \frac{(X+\zeta Y+\zeta ^2 Z)(X+\zeta ^2 Y+\zeta Z)}{(X+Y+Z)^2} = \frac{e_1^2-3e_2}{e_1^2} \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000049">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:formulaForNormCharacter2">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">8</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:formulaForNormCharacter2">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000051"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter2.lean#L33" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter2.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter2.lean#L26" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter2.«eqn:formulaForNormCharacter2»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000052">
+  \begin{equation*}  \chi ^{2b'+a'}(uv_0’ + vv_1’+wv_2’) =\frac{w^3}{u^3} = \frac{e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}}{e_1^3} \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000051">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:affineIntegrality">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2</span>
+    <span class="lemma_thmtitle">Integral points in the affine chart</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#lemma:affineIntegrality">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000053"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineIntegrality.lean#L18" class="lean_decl">CubicTargets.ToricHeights.AffineIntegrality.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineIntegrality.lean#L43" class="lean_decl">Cubic.ToricHeights.AffineIntegrality.«lemma:affineIntegrality»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Write \(e_2,e_3,\delta \) for the dehomogenized invariants </p>
+<div class="displaymath" id="a0000000054">
+  \[  e_2=\frac{XY+YZ+ZX}{\varepsilon ^2},\qquad e_3=\frac{XYZ}{\varepsilon ^3},\qquad \delta =\frac{X^2Y+Y^2Z+Z^2X}{\varepsilon ^3}.  \]
+</div>
+<p> Then </p>
+<div class="displaymath" id="a0000000055">
+  \begin{equation*}  \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3} =\mathbb {Z}[e_2,e_3,\delta ]. \end{equation*}
+</div>
+<p> A rational point \(P\) of \(S\setminus D_0\) is integral if and only if \(e_2(P),e_3(P)\in \mathbb {Z}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000053">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Compute the cyclic invariants in the affine chart. The invariant relation makes \(\delta \) integral over \(\mathbb {Z}[e_2,e_3]\), so integral values of \(e_2,e_3\) force the rational value of \(\delta \) to be integral. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:affineC3invariants">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">9</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:affineC3invariants">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000056"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineC3Invariants.lean#L16" class="lean_decl">CubicTargets.ToricHeights.AffineC3Invariants.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineC3Invariants.lean#L63" class="lean_decl">Cubic.ToricHeights.AffineC3Invariants.«eqn:affineC3invariants»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000057">
+  \begin{equation*}  \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3} =\mathbb {Z}[e_2,e_3,\delta ]. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000056">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:C3invariants">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">10</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:C3invariants">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000058"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/C3Invariants.lean#L17" class="lean_decl">CubicTargets.ToricHeights.C3Invariants.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/C3Invariants.lean#L37" class="lean_decl">Cubic.ToricHeights.C3Invariants.«eqn:C3invariants»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000059">
+  \begin{equation*}  \mathbb {Z}[X,Y,Z]^{C_3} =\mathbb {Z}[e_1,e_2,e_3,X^2Y+Y^2Z+Z^2X] \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000058">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:canonicalHeight">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">2</span>
+    <span class="proposition_thmtitle">Integral coefficients and toric height</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#prop:canonicalHeight">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000060"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/CanonicalHeight.lean#L23" class="lean_decl">CubicTargets.ToricHeights.CanonicalHeight.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/CanonicalHeight.lean#L193" class="lean_decl">Cubic.ToricHeights.CanonicalHeight.«prop:canonicalHeight»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  
+
+
+<p>The characteristic polynomial \(f = t^3-t^2+at+b \in \mathbb {Q}[t]\) of a rational point \((K/\mathbb Q,x) \in T(\mathbb Q)\) has integer coefficients if and only if \((K/\mathbb Q,x)\) is integral. For any integral rational point \((K/\mathbb {Q},x)\) on \(T\), </p>
+<div class="displaymath" id="a0000000061">
+  \begin{equation*}  H((K/\mathbb Q,x),\mathcal O(D_0)) = \sqrt{1-3a}. \end{equation*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000060">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Apply the invariant-ring criterion to the characteristic polynomial. Evaluate the local height factors; their product reduces to \(\sqrt{1-3a}\). </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:localHeight">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">11</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:localHeight">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000062"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/LocalHeightFormula.lean#L96" class="lean_decl">CubicTargets.ToricHeights.LocalHeightFormula.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/LocalHeightFormula.lean#L132" class="lean_decl">Cubic.ToricHeights.LocalHeightFormula.«eqn:localHeight»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000063">
+  \begin{align*}  \max \Bigg( 1, |1-3e_2|_w, & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w, \\ & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w \Bigg)^{\frac{1}{[E:\mathbb {Q}]}} \end{align*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000062">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="equationnode_thmwrapper theorem-style-plain" id="eqn:heightExtraFactor">
+  <div class="equationnode_thmheading">
+    <span class="equationnode_thmcaption">
+    Equation
+    </span>
+    <span class="equationnode_thmlabel">12</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#eqn:heightExtraFactor">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000064"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightExtraFactor.lean#L45" class="lean_decl">CubicTargets.ToricHeights.HeightExtraFactor.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightExtraFactor.lean#L46" class="lean_decl">Cubic.ToricHeights.HeightExtraFactor.«eqn:heightExtraFactor»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="equationnode_thmcontent">
+  
+
+
+<div class="displaymath" id="a0000000065">
+  \begin{align*}  \max \left( 1, |1-3e_2|^2, \left|1-\tfrac 92 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}\right|^2 \right)^{1/2}. \end{align*}
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000064">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The linked Lean proof establishes this statement. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lemma:rootVsToric">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">3</span>
+    <span class="lemma_thmtitle">Comparing heights</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0003.html#lemma:rootVsToric">#</a>
+    
+    <a class="icon proof" href="sect0003.html#a0000000066"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/RootVsToric.lean#L32" class="lean_decl">CubicTargets.ToricHeights.RootVsToric.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/RootVsToric.lean#L113" class="lean_decl">Cubic.ToricHeights.«lemma:rootVsToric»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  
+
+
+<p>Let \(P=(K/\mathbb {Q},x)\) be an integral rational point of \(T\) with characteristic polynomial \(f=t^3-t^2+at+b\in \mathbb {Z}[t]\). Write \(H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))\) for its toric height and set \(h(f)=\max (|a|^{1/2},|b|^{1/3})\), so that \(H(f)=\max \{ 1,h(f)\} \). Then \(a\leq 0\) and </p>
+<div class="displaymath" id="a0000000067">
+  \begin{equation*}  h(f)^2=-a, \qquad H_{\mathrm{tor}}(f)^2=1+3h(f)^2, \end{equation*}
+</div>
+<p> so for every \(B\geq 0\), </p>
+<div class="displaymath" id="a0000000068">
+  \begin{equation*}  h(f)\leq B \quad \Longleftrightarrow \quad H_{\mathrm{tor}}(f)\leq \sqrt{1+3B^2}. \end{equation*}
+</div>
+<p> In particular, \(H_{\mathrm{tor}}(f)\asymp H(f)\). The only polynomial here with \(h(f)=0\) is \(t^3-t^2\), for which \(H_{\mathrm{tor}}(f)=1\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000066">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>The three roots are real. The resulting coefficient inequalities give \(a\leq 0\) and \(|b|^{2/3}\leq -a\). Substitute this into the root-height definition and use the toric-height formula. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0002.html" title="The orbit parametrization"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-quadraticParametrization.html" title="The Eisenstein parametrization"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

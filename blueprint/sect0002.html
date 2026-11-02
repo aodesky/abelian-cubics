@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The orbit parametrization</title>
+<link rel="next" href="sect0003.html" title="Toric heights" />
+<link rel="prev" href="sect0001.html" title="Introduction" />
+<link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+<link rel="stylesheet" href="../assets/project-nav.css?v=7">
+<script src="../assets/theme.js"></script>
+</head>
+
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="../" class="project-name">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="../blueprint/" aria-current="page">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="../assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="../assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">On monic abelian cubic polynomials</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">The orbit parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Toric heights</span></a>
+ </li>
+<li class="">
+  <a href="sec-quadraticParametrization.html"><span class="toc_ref">4</span> <span class="toc_entry">The Eisenstein parametrization</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Poisson summation</span></a>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">6</span> <span class="toc_entry">The trace-one counts</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">7</span> <span class="toc_entry">Counting arbitrary trace</span></a>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">8</span> <span class="toc_entry">Geometry of the quotient surface</span></a>
+ </li>
+<li class="">
+  <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
+ </li>
+<li class="">
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000003">2 The orbit parametrization</h1>
+<p>A \(C_3\)-algebra is either a cyclic cubic field with a specified \(C_3\)-action, or \(\mathbb {Q}^3\) with cyclic permutation of its factors. An element is normal when its three conjugates form a \(\mathbb {Q}\)-basis. We identify pairs \((K,x)\) up to \(C_3\)-equivariant \(\mathbb {Q}\)-algebra isomorphism taking one distinguished element to the other. </p>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:modularInterpretation">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5</span>
+    <span class="theorem_thmtitle">Rational points of the moduli space</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#thm:modularInterpretation">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/ModularInterpretation.lean#L26" class="lean_decl">CubicTargets.OrbitParametrization.ModularInterpretation.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/ModularInterpretation.lean#L137" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«thm:modularInterpretation»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  
+
+
+<p>There is a bijection between rational points of \(T\) and equivalence classes of \(C_3\)-algebras \(K/\mathbb {Q}\) equipped with a trace-one normal element \(x\in K\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000034">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Construct the algebra and normal element from a rational quotient point, and recover the quotient point from the conjugates of the normal element. These constructions are inverse on isomorphism classes. This node states the rational-point part of the paper’s theorem. </p>
+
+  </div>
+</div>
+<div class="example_thmwrapper theorem-style-plain" id="example:twoRationalPointsSamePoly">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <span class="example_thmlabel">1</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#example:twoRationalPointsSamePoly">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/TwistedCubicField.lean#L42" class="lean_decl">CubicTargets.OrbitParametrization.TwistedCubicField.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/TwistedCubicField.lean#L63" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:twoRationalPointsSamePoly»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  
+
+
+<p>Let \(K\) be a cubic abelian number field. Then \(K\), equipped with its canonical Galois action, is a \(C_3\)-algebra. The twist \(K'\) of the \(C_3\)-algebra \(K\) by the outer automorphism \(g \mapsto g^{-1}\) of \(C_3\) (with twisted action \(g \ast x = g^{-1}x\)) is not isomorphic to \(K\) as a \(C_3\)-algebra.<a class="footnote" href="#a0000000036">
+  <sup class="footnotemark">1</sup>
+</a> </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The Galois group of a cyclic cubic field is abelian. An isomorphism to the inverse-action twist would therefore force a generator to equal its inverse, a contradiction. The cocycles describe the two rational points. </p>
+
+  </div>
+</div>
+<div class="example_thmwrapper theorem-style-plain" id="example:splitAlgebra">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <span class="example_thmlabel">2</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#example:splitAlgebra">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitAlgebraTwist.lean#L29" class="lean_decl">CubicTargets.OrbitParametrization.SplitAlgebraTwist.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitAlgebraTwist.lean#L81" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebra»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  
+
+
+<p>Let \(K_{\text{spl}} = \mathbb {Q}^3\), the split cubic algebra. Then \(C_3\subset S_3 = \mathrm{Aut}\)</p>
+
+  </div>
+</div>
+<p><sub>\(\)Q\(-alg\)</sub>(K_spl)\(\) and \(K_{\text{spl}}\), equipped with its canonical \(C_3\)-action, is a \(C_3\)-algebra. Any transposition gives an isomorphism of \(C_3\)-algebras from \(K_{\text{spl}}\) to its twist \(K_{\text{spl}}'\). </p>
+<div class="example_thmwrapper theorem-style-plain" id="a0000000037">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#a0000000037">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Every algebra automorphism of \(\mathbb {Q}^3\) permutes its three coordinate idempotents. A transposition conjugates cyclic translation to its inverse, giving the asserted isomorphism with the twist. </p>
+
+  </div>
+</div>
+<div class="example_thmwrapper theorem-style-plain" id="example:splitAlgebraNormalElement">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <span class="example_thmlabel">3</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#example:splitAlgebraNormalElement">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitNormalElements.lean#L48" class="lean_decl">CubicTargets.OrbitParametrization.SplitNormalElements.Claim</a></li>
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitNormalElements.lean#L206" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebraNormalElement»</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  
+
+
+<p>An element \(x\) of trace one in the split \(C_3\)-algebra \(K_{\text{spl}}\) is normal if and only if \(x\) either has distinct coordinates or exactly two identical coordinates. For such a normal element \(x\), the pairs \((K_{\text{spl}},x)\) and \((K_{\text{spl}}',x)\) are equivalent if and only if \(x\) has exactly two identical coordinates (swapping the identical coordinates gives the required isomorphism); in particular, if \(x\) has distinct coordinates then \((K_{\text{spl}},x)\) and \((K_{\text{spl}}',x)\) determine different rational points of \(\mathcal G_1/C_3\), even though \(K_{\text{spl}}\) and \(K_{\text{spl}}'\) are isomorphic as \(C_3\)-algebras. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Evaluate the explicit algebra and cyclic action, then compute the characteristic polynomial and the normality condition. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000036"> In terms of Galois cohomology, the non-cohomologous \(1\)-cocycles in \(H^1(\mathbb {Q},C_3)\) corresponding to the \(C_3\)-algebras \(K\) and \(K'\) have the same image under the canonical map \(H^1(\mathbb {Q},C_3) \to H^1(\mathbb {Q},S_3)\) because the outer automorphism of \(C_3\) is realized by \(S_3\)-conjugation.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="sect0001.html" title="Introduction"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0003.html" title="Toric heights"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
