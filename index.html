@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On monic abelian cubic polynomials · Lean formalization</title>
+<meta name="description" content="Lean formalization and blueprint of the paper On monic abelian cubic polynomials.">
+<link rel="canonical" href="https://aodesky.github.io/abelian-cubics/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  body { margin: 0; font: 16px/1.55 var(--project-font); color: var(--project-text); }
+  main { max-width: 46rem; margin: 2rem auto; padding: 0 1.25rem; overflow-x: auto; }
+  h1 { font-size: 1.6rem; font-weight: normal; margin-bottom: 0.2rem; }
+  h2 { font-size: 1.2rem; font-weight: normal; margin-top: 2rem; }
+  p.sub { color: var(--project-muted); margin-top: 0; }
+  a { color: var(--project-link); }
+  code { font-size: 0.95em; }
+  .formula { margin: 1.25rem 0; overflow-x: auto; }
+  .note { color: var(--project-muted); font-size: 0.9rem; }
+</style>
+<link rel="stylesheet" href="assets/project-nav.css?v=7">
+<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script src="./assets/theme.js"></script>
+</head>
+<body>
+<nav class="project-links" aria-label="Project navigation">
+  <a href="./" class="project-name" aria-current="page">Abelian<span class="nav-long"> cubics</span></a>
+  <a href="./blueprint/">Blueprint</a>
+  <a href="https://github.com/aodesky/abelian-cubics" aria-label="GitHub" title="GitHub"><img src="./assets/github.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">GitHub</span></a>
+  <a href="https://arxiv.org/abs/2310.17831" aria-label="arXiv" title="arXiv"><img src="./assets/arxiv.svg" class="nav-icon" width="14" height="14" alt="" aria-hidden="true"><span class="nav-label">arXiv</span></a>
+  <a href="https://andrewodesky.com" class="author-link">Andrew O’Desky</a>
+  <button type="button" class="theme-toggle" title="Switch between dark and light mode"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm14 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM6.3 6.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm9.3 9.3a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4zm2.1-9.3a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zM8.4 15.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0z"/></svg></button>
+</nav>
+<main>
+<h1>On monic abelian cubic polynomials</h1>
+<p class="sub">Shubhrajit Bhattacharya and Andrew O’Desky</p>
+<p>Lean formalization of our count of monic integral cubic polynomials with
+Galois group \(C_3\), ordered by root height. The number of such polynomials
+of height at most \(H\) is</p>
+<div class="formula">\[
+H^3P(\log H)+O_\varepsilon(H^{2+\varepsilon}),
+\]</div>
+<p>where \(P\) is an explicit linear polynomial. The proof passes through
+integral points on a toric cubic surface and the Fourier expansion of its
+height zeta function.</p>
+<p><a href="blueprint/">Read the blueprint</a> ·
+<a href="blueprint/dep_graph_document.html">Explore the dependency graph</a> ·
+<a href="https://github.com/aodesky/abelian-cubics">Browse the Lean source</a></p>
+
+<h2>The paper and the formalization</h2>
+<p>This project follows our November 2026 revision, including the results for
+arbitrary trace and Appendices A and B. The
+<a href="https://arxiv.org/abs/2310.17831">arXiv version</a> has the older title
+<i>On monic abelian trace-one cubic polynomials</i>.</p>
+<p>The main counting proofs use Poisson summation and the critical-line
+mean-square estimate of Chandrasekharan and Narasimhan as explicit hypotheses.
+For the strip estimate and coefficient sum, Lean retains direct proofs by
+the residue theorem and Perron’s formula. For the moduli theorem, we formalize
+the rational-point correspondence used in counting.</p>
+<p>The <a href="https://github.com/aodesky/abelian-cubics/blob/main/CORRESPONDENCE.md">correspondence record</a>
+describes these choices and the separate literature inputs used in the
+Santens comparison and the alternative ideal count.</p>
+
+<h2>Build</h2>
+<p>The project uses Lean 4.28.0 and Mathlib. From <code>formalization/</code>, run
+<code>lake exe cache get</code> followed by <code>python3 scripts/check.py</code>.
+The check compiles the library, checks the registered statements and proof
+files, and verifies that all project declarations use only Lean’s standard axioms.</p>
+</main>
+</body>
+</html>

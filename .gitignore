@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Lean build output
+formalization/.lake/
+
+# blueprint renderer virtual environment and temporary output
+# (the static site is copied into blueprint/)
+.venv-blueprint/
+blueprint/web/
+blueprint/src/*.paux
+blueprint/src/*.log
+
+_site/
+.env
+.env.*
+*.pem
+*.key

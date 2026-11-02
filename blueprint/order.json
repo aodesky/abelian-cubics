@@ -1,0 +1,432 @@
+[
+  {
+    "label": "eqn:introConstants",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "thm:generalMonicCount",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "thm:asymptoticPolynomialCount",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "thm:exactFormula",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "eqn:splitForm",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "eqn:surfaceQuadraticTwist",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "thm:heightZetaFunctionFormula",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "cor:integralPointCount",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "rem:idealParametrization",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "eqn:polynomialWeights",
+    "chapter": "intro",
+    "chapter_title": "Introduction"
+  },
+  {
+    "label": "thm:modularInterpretation",
+    "chapter": "orbit",
+    "chapter_title": "The orbit parametrization"
+  },
+  {
+    "label": "example:twoRationalPointsSamePoly",
+    "chapter": "orbit",
+    "chapter_title": "The orbit parametrization"
+  },
+  {
+    "label": "example:splitAlgebra",
+    "chapter": "orbit",
+    "chapter_title": "The orbit parametrization"
+  },
+  {
+    "label": "example:splitAlgebraNormalElement",
+    "chapter": "orbit",
+    "chapter_title": "The orbit parametrization"
+  },
+  {
+    "label": "prop:basicfacts",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:heightforrationaladeles",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "lemma:heightformula",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:weightVectors",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:formulaForNormCharacter",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:formulaForNormCharacter2",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "lemma:affineIntegrality",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:affineC3invariants",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:C3invariants",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "prop:canonicalHeight",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:localHeight",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:heightExtraFactor",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "lemma:rootVsToric",
+    "chapter": "heights",
+    "chapter_title": "Toric heights"
+  },
+  {
+    "label": "eqn:isoCocharLattices",
+    "chapter": "quadratic",
+    "chapter_title": "The Eisenstein parametrization"
+  },
+  {
+    "label": "prop:cyclotomicParametrization",
+    "chapter": "quadratic",
+    "chapter_title": "The Eisenstein parametrization"
+  },
+  {
+    "label": "eqn:integralityConditionsUsingCyclo",
+    "chapter": "quadratic",
+    "chapter_title": "The Eisenstein parametrization"
+  },
+  {
+    "label": "thm:heightZetaFunctionFormula2",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "prop:localIntegrality",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:poissonae",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "prop:heightFourierTransform",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:infiniteHeightFourierTransform",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:finiteHeightFourierTransform",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "rem:localNonintegrability",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:localfourierassumovern",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:LAsNorm",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "prop:Lmap",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:KprimeGroup",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:chimdefn",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:finiteFourierProduct",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:finiteSpectralProduct",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:finiteEulerBound",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:heightZetaConvergence",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:archimedeanSpectralFactor",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:poissonIntegral",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:poissonEulerIntegral",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:normCharacterDivisor",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:eulerCorrectionFactor",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:simplifiedZ(s)",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:Z0factorization",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "rem:heightCoefficients",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "prop:leadingTerms",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:Z0Laurent",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "eqn:Z0LaurentR",
+    "chapter": "poisson",
+    "chapter_title": "Poisson summation"
+  },
+  {
+    "label": "lemma:normalityCriterion",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "lemma:reducibles",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:weightedPolynomialCount",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "lemma:xiMeanValue",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:xiMeanBound",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:criticalMeanSquare",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:dSummatoryForGeneralTrace",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:heightMeanBound",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "eqn:irrPolys",
+    "chapter": "traceone",
+    "chapter_title": "The trace-one counts"
+  },
+  {
+    "label": "lemma:generalHeightReduction",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "eqn:A1asymptotic",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "lemma:traceZeroCoefficients",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "prop:traceZeroAsymptotic",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "eqn:generalTraceDecomposition",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "eqn:monicArchimedeanMoments",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "eqn:monicConstantsFromTraceCounts",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "prop:surfaceIntegralCubic",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceIntegralCubic",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceAnticanonical",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceInvariantRelation",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "prop:surfaceRationalForm",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceNormCubic",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceCoordinateChange",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "prop:surfaceResolvedBoundary",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceBoundaryChain",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "eqn:surfaceLogIntersections",
+    "chapter": "surface",
+    "chapter_title": "Geometry of the quotient surface"
+  },
+  {
+    "label": "prop:santensConstant",
+    "chapter": "santens",
+    "chapter_title": "Comparison with Santens"
+  },
+  {
+    "label": "eqn:santensTau",
+    "chapter": "santens",
+    "chapter_title": "Comparison with Santens"
+  },
+  {
+    "label": "eqn:santensLocalHeight",
+    "chapter": "santens",
+    "chapter_title": "Comparison with Santens"
+  }
+]

@@ -1,0 +1,49 @@
+\documentclass{book}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{hyperref}
+\usepackage[dep_graph,thms=theorem+proposition+lemma+corollary+example+remarknode+equationnode+citedtheorem]{blueprint}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{equationnode}{Equation}
+\newtheorem{citedtheorem}{Cited theorem}
+\newtheorem{remarknode}{Remark}
+\newcommand{\theoremname}{Theorem}
+\newcommand{\propositionname}{Proposition}
+\newcommand{\lemmaname}{Lemma}
+\newcommand{\corollaryname}{Corollary}
+\newcommand{\examplename}{Example}
+\newcommand{\equationnodename}{Equation}
+\newcommand{\citedtheoremname}{Cited theorem}
+\newcommand{\remarknodename}{Remark}
+% Notation of the paper.
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\Ad}{\mathbb{A}}
+\renewcommand{\AA}{\mathbb{A}}
+\newcommand{\SSS}{\mathscr{S}}
+\newcommand{\DDD}{\mathscr{D}}
+\newcommand{\coloneq}{\mathrel{:=}}
+\newcommand{\coloneqq}{\mathrel{:=}}
+\newcommand{\xlongrightarrow}[1]{\xrightarrow{#1}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\bparen}[1]{\left(#1\right)}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\defeq}{\mathrel{:=}}
+\home{https://aodesky.github.io/abelian-cubics/}
+\github{https://github.com/aodesky/abelian-cubics}
+\dochome{https://aodesky.github.io/abelian-cubics/blueprint/lean}
+\title{On monic abelian cubic polynomials}
+\author{Shubhrajit Bhattacharya and Andrew O'Desky}
+\begin{document}
+\maketitle
+\input{content}
+\end{document}

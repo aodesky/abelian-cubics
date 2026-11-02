@@ -1,0 +1,275 @@
+{
+  "thm:generalMonicCount": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:generalTraceDecomposition",
+    "eqn:monicArchimedeanMoments",
+    "eqn:poissonae",
+    "lemma:generalHeightReduction",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:rootVsToric",
+    "lemma:traceZeroCoefficients",
+    "lemma:xiMeanValue",
+    "prop:canonicalHeight",
+    "thm:asymptoticPolynomialCount",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "thm:asymptoticPolynomialCount": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:rootVsToric",
+    "lemma:xiMeanValue",
+    "prop:canonicalHeight",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "thm:exactFormula": [
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:rootVsToric",
+    "prop:canonicalHeight",
+    "thm:heightZetaFunctionFormula"
+  ],
+  "eqn:splitForm": [
+    "eqn:surfaceCoordinateChange"
+  ],
+  "eqn:surfaceQuadraticTwist": [],
+  "thm:heightZetaFunctionFormula": [
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "cor:integralPointCount": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:affineC3invariants",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:xiMeanValue",
+    "prop:canonicalHeight",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "eqn:polynomialWeights": [],
+  "thm:modularInterpretation": [],
+  "example:twoRationalPointsSamePoly": [],
+  "example:splitAlgebra": [],
+  "example:splitAlgebraNormalElement": [
+    "example:splitAlgebra"
+  ],
+  "prop:basicfacts": [
+    "eqn:isoCocharLattices"
+  ],
+  "eqn:heightforrationaladeles": [],
+  "lemma:heightformula": [],
+  "eqn:weightVectors": [],
+  "eqn:formulaForNormCharacter": [],
+  "eqn:formulaForNormCharacter2": [],
+  "lemma:affineIntegrality": [
+    "eqn:affineC3invariants"
+  ],
+  "eqn:affineC3invariants": [
+    "eqn:C3invariants"
+  ],
+  "eqn:C3invariants": [],
+  "prop:canonicalHeight": [],
+  "eqn:localHeight": [],
+  "eqn:heightExtraFactor": [],
+  "lemma:rootVsToric": [
+    "prop:canonicalHeight"
+  ],
+  "eqn:isoCocharLattices": [],
+  "prop:cyclotomicParametrization": [
+    "prop:canonicalHeight"
+  ],
+  "eqn:integralityConditionsUsingCyclo": [],
+  "thm:heightZetaFunctionFormula2": [
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:poissonIntegral"
+  ],
+  "prop:localIntegrality": [
+    "prop:basicfacts"
+  ],
+  "eqn:poissonae": [],
+  "prop:heightFourierTransform": [
+    "eqn:finiteHeightFourierTransform",
+    "eqn:infiniteHeightFourierTransform",
+    "prop:basicfacts",
+    "prop:localIntegrality"
+  ],
+  "eqn:infiniteHeightFourierTransform": [],
+  "eqn:finiteHeightFourierTransform": [
+    "prop:basicfacts",
+    "prop:localIntegrality"
+  ],
+  "eqn:localfourierassumovern": [
+    "prop:basicfacts",
+    "prop:localIntegrality"
+  ],
+  "eqn:LAsNorm": [],
+  "prop:Lmap": [],
+  "lemma:KprimeGroup": [
+    "prop:Lmap"
+  ],
+  "eqn:chimdefn": [
+    "prop:Lmap"
+  ],
+  "lemma:finiteFourierProduct": [],
+  "eqn:finiteSpectralProduct": [
+    "lemma:finiteFourierProduct"
+  ],
+  "eqn:finiteEulerBound": [
+    "lemma:finiteFourierProduct"
+  ],
+  "lemma:heightZetaConvergence": [
+    "prop:Lmap"
+  ],
+  "eqn:archimedeanSpectralFactor": [],
+  "lemma:poissonIntegral": [
+    "eqn:poissonae",
+    "prop:Lmap"
+  ],
+  "eqn:poissonEulerIntegral": [
+    "eqn:poissonae",
+    "lemma:poissonIntegral"
+  ],
+  "eqn:normCharacterDivisor": [],
+  "eqn:eulerCorrectionFactor": [],
+  "lemma:simplifiedZ(s)": [
+    "eqn:poissonae",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "eqn:Z0factorization": [
+    "eqn:poissonae",
+    "lemma:simplifiedZ(s)"
+  ],
+  "prop:leadingTerms": [
+    "eqn:Z0Laurent",
+    "eqn:poissonae",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "lemma:reducibles": [
+    "eqn:weightedPolynomialCount"
+  ],
+  "eqn:weightedPolynomialCount": [
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "prop:canonicalHeight"
+  ],
+  "eqn:heightMeanBound": [],
+  "eqn:irrPolys": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:xiMeanValue",
+    "prop:canonicalHeight",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "lemma:generalHeightReduction": [],
+  "eqn:A1asymptotic": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:rootVsToric",
+    "prop:canonicalHeight",
+    "thm:asymptoticPolynomialCount"
+  ],
+  "eqn:dSummatoryForGeneralTrace": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:xiMeanValue",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "lemma:traceZeroCoefficients": [
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "prop:traceZeroAsymptotic": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "lemma:traceZeroCoefficients",
+    "lemma:xiMeanValue",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "eqn:monicArchimedeanMoments": [],
+  "eqn:generalTraceDecomposition": [
+    "lemma:generalHeightReduction",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "prop:canonicalHeight"
+  ],
+  "eqn:monicConstantsFromTraceCounts": [
+    "eqn:monicArchimedeanMoments"
+  ],
+  "prop:surfaceIntegralCubic": [
+    "eqn:surfaceAnticanonical",
+    "eqn:surfaceIntegralCubic",
+    "eqn:surfaceInvariantRelation"
+  ],
+  "eqn:surfaceIntegralCubic": [
+    "eqn:surfaceInvariantRelation"
+  ],
+  "eqn:surfaceAnticanonical": [],
+  "eqn:surfaceInvariantRelation": [],
+  "prop:surfaceRationalForm": [
+    "eqn:surfaceCoordinateChange",
+    "eqn:surfaceNormCubic",
+    "prop:surfaceIntegralCubic"
+  ],
+  "eqn:surfaceNormCubic": [],
+  "eqn:surfaceCoordinateChange": [],
+  "prop:surfaceResolvedBoundary": [],
+  "eqn:surfaceBoundaryChain": [],
+  "eqn:surfaceLogIntersections": [],
+  "prop:santensConstant": [
+    "cite:santens2023integral-toric-counting",
+    "eqn:affineC3invariants",
+    "prop:surfaceResolvedBoundary"
+  ],
+  "eqn:santensLocalHeight": [],
+  "eqn:santensTau": [
+    "eqn:affineC3invariants"
+  ],
+  "eqn:introConstants": [],
+  "eqn:Z0Laurent": [],
+  "eqn:Z0LaurentR": [],
+  "lemma:normalityCriterion": [],
+  "rem:heightCoefficients": [
+    "eqn:poissonae",
+    "lemma:heightZetaConvergence",
+    "thm:heightZetaFunctionFormula2"
+  ],
+  "lemma:xiMeanValue": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:xiMeanBound"
+  ],
+  "eqn:xiMeanBound": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:criticalMeanSquare"
+  ],
+  "eqn:criticalMeanSquare": [
+    "cite:chandrasekharanNarasimhan1963-thm4"
+  ],
+  "rem:localNonintegrability": [
+    "prop:basicfacts",
+    "prop:localIntegrality"
+  ],
+  "rem:idealParametrization": [
+    "cite:kuehleitnerNowak2004-cor2",
+    "eqn:affineC3invariants",
+    "eqn:weightedPolynomialCount",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "lemma:rootVsToric",
+    "prop:canonicalHeight"
+  ],
+  "cite:santens2023integral-toric-counting": [],
+  "cite:chandrasekharanNarasimhan1963-thm4": [],
+  "cite:kuehleitnerNowak2004-cor2": []
+}

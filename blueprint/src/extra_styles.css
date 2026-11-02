@@ -1,0 +1,41 @@
+.title { font-family: Georgia, 'Times New Roman', serif; }
+.theorem { scroll-margin-top: 1rem; }
+a.lean_decl { overflow-wrap: anywhere; }
+@media (max-width: 650px) {
+  .displaymath { overflow-x: auto; max-width: 100%; }
+}
+
+/* Follow the site's light/dark palette (assets/project-nav.css) instead of
+   the fixed colors of the plasTeX white theme. */
+:root { --bp-panel: #f2f2f2; --bp-hover: #e6e6e6; }
+:root[data-theme="dark"] { --bp-panel: #1d2126; --bp-hover: #262c33; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bp-panel: #1d2126; --bp-hover: #262c33; }
+}
+body, .wrapper, .content, table, .tabular { background: var(--project-bg); color: var(--project-text); }
+h1, h2, h3, h4, h1#doc_title, #doc_title a, #doc_title a:visited,
+nav.prev_up_next a, a.icon, .local_toc ul a, ul.breadcrumbs a,
+footer#footnotes h1, div.modal-content header h1 { color: var(--project-text); }
+body > header, nav.prev_up_next, div.modal-content header, pre.verbatim { background: var(--bp-panel); color: var(--project-text); }
+nav.toc, .toc ul li, .toc ul li.current { background: var(--project-bg); color: var(--project-text); }
+nav.toc { border-color: var(--project-rule); }
+.toc ul a:hover { background: var(--bp-hover); }
+span.expand-toc, svg.close-toc { color: var(--project-muted); }
+div.modal-content { background: var(--project-bg); border-color: var(--project-rule); }
+.fbox, .framebox, hr { border-color: var(--project-text); color: var(--project-text); }
+/* Dependency graph page. */
+div#statements, #Legend dl, div.dep-modal-content, ul.tooltip_list {
+  background: var(--bp-panel); color: var(--project-text);
+}
+div.bar { background: var(--project-text); }
+#graph svg > g > polygon { fill: transparent; stroke: transparent; }
+#graph svg .edge path, #graph svg .edge polygon { stroke: var(--project-muted); }
+#graph svg .edge polygon { fill: var(--project-muted); }
+
+/* Unnumbered sections inside a chapter render as h1; size them below the chapter title. */
+.main-text > h1:not(:first-child) { font-size: 1.35rem; margin-top: 1.6rem; }
+
+/* Lean declaration list in the dependency-graph popup: size it to the names
+   (which are long) rather than a narrow column, wrapping only at the edge. */
+ul.tooltip_list { width: max-content; max-width: min(60rem, 90vw); box-sizing: border-box; }
+ul.tooltip_list a.lean_decl { overflow-wrap: break-word; word-break: normal; }
