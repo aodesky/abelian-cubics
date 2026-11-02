@@ -1,0 +1,116 @@
+{
+  "helper:splittingCoordinates": {
+    "declaration": "Cubic.SurfaceGeometry.RationalFormSplitting.inverse_split",
+    "title": "Inverse splitting coordinates",
+    "statement": "For $r\\ne0$ in a field of characteristic zero, the substitution $x_1^\\prime=x_1+rx_2$, $x_2^\\prime=x_1-rx_2$ has the inverse $x_1=(x_1^\\prime+x_2^\\prime)/2$, $x_2=(x_1^\\prime-x_2^\\prime)/(2r)$. The linked lemma checks the composition in this direction.",
+    "proof": "Substitute the two inverse expressions into the original coordinates."
+  },
+  "helper:polynomialFibres": {
+    "declaration": "Cubic.QuadraticCorrespondence.QuotientPolynomialConverse.separable_fibre_card",
+    "title": "Fibres of the polynomial map",
+    "statement": "Let $f=t^3-t^2+at+b\\in\\QQ[t]$ be separable, and suppose that $f$ either has Galois group $C_3$ or splits over $\\QQ$. Exactly two rational torus points have characteristic polynomial $f$.",
+    "proof": "Use the two roots of the quadratic resolvent and their distinctness in the separable case."
+  },
+  "helper:moduliFibres": {
+    "declaration": "Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq",
+    "title": "Fibres of the moduli map",
+    "statement": "Two $C_3$-algebras with trace-one normal elements that give the same rational quotient point are isomorphic as pairs.",
+    "proof": "Identify both pairs with the fibre algebra over their common quotient point."
+  },
+  "helper:supportFunctionSymmetry": {
+    "declaration": "Cubic.ToricHeights.supportFunction_swap",
+    "title": "Galois symmetry of the support function",
+    "statement": "For the Galois-invariant parameter $(s_0,\\sigma,\\sigma)$, interchanging the two conjugate coordinates leaves the support function unchanged.",
+    "proof": "Compare its values on the cones interchanged by the coordinate swap."
+  },
+  "helper:weightCharacters": {
+    "declaration": "Cubic.ToricHeights.HeightFormula.weightVector_character",
+    "title": "Characters of the four weight vectors",
+    "statement": "Each of the four sections displayed in Lemma~\\ref{lemma:heightformula} is a weight vector for its listed character.",
+    "proof": "Identify the section with the corresponding eigen-monomial divided by $e_1^3$."
+  },
+  "helper:characterCoordinates": {
+    "declaration": "Cubic.ToricHeights.FormulaForNormCharacter.idempotent_values",
+    "title": "Character evaluations in idempotent coordinates",
+    "statement": "Over a field of characteristic zero containing a primitive cube root $\\zeta$, write $g=u e_0+v e_1+w e_2$ in the idempotent basis of the group algebra. The three character evaluations are $u,v,w$: \\[g_0+g_1+g_2=u,\\qquad g_0+\\zeta g_1+\\zeta^2g_2=v,\\qquad g_0+\\zeta^2g_1+\\zeta g_2=w.\\]",
+    "proof": "Evaluate the three characters on the three idempotents."
+  },
+  "helper:cubicCharacters": {
+    "declaration": "Cubic.ToricHeights.WeightVectors.eigenvalue_cubes_difference",
+    "title": "The difference of the cubic characters",
+    "statement": "In a commutative ring, if $\\zeta^2+\\zeta+1=0$, then \\[(x+y\\zeta+z\\zeta^2)^3-(x+y\\zeta^2+z\\zeta)^3=3(2\\zeta+1)(x-z)(y-x)(z-y).\\]",
+    "proof": "Expand the cubes and use the relation satisfied by $\\zeta$."
+  },
+  "helper:localWeightHeight": {
+    "declaration": "Cubic.ToricHeights.LocalWeightHeight.finite_localHeight",
+    "title": "Local height from the weights",
+    "statement": "At a finite place, the local height for $3D_0$ is the square root of the maximum of $1$ and the absolute values of the three nontrivial weight characters.",
+    "proof": "The support function is the minimum of the four weight pairings. Exponentiating turns this minimum into the stated maximum."
+  },
+  "helper:integralLocalHeight": {
+    "declaration": "Cubic.ToricHeights.FiniteWeightHeight.local_height_one",
+    "title": "Finite height factors at integral points",
+    "statement": "At each finite prime, the local height factor for $3D_0$ is one on the integral locus.",
+    "proof": "Apply the local integral conditions to the four weight values."
+  },
+  "helper:integralCoefficients": {
+    "declaration": "Cubic.QuadraticCorrespondence.RationalCorrespondence.integrality_iff",
+    "title": "Integral coefficients in Eisenstein coordinates",
+    "statement": "If a rational torus point has parameter $\\nu=u+v\\zeta$, its characteristic polynomial has integral coefficients exactly when \\[N(\\nu)\\in1+3\\ZZ,\\qquad N(\\nu)(3-\\operatorname{Tr}(\\nu))\\in1+27\\ZZ.\\]",
+    "proof": "Substitute the norm and trace in the formulas for the two cubic coefficients."
+  },
+  "helper:adelicLogarithm": {
+    "declaration": "Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum",
+    "title": "The finite adelic logarithm",
+    "statement": "If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, its finite logarithm is the sum of the local logarithms over $S$.",
+    "proof": "The logarithm vanishes on each maximal compact subgroup, so all other terms vanish."
+  },
+  "helper:finiteIntegralProduct": {
+    "declaration": "Cubic.PoissonSummation.AdelicFourierComponents.finite_integrals_product",
+    "title": "Evaluation of the finite Fourier product",
+    "statement": "For $\\operatorname{Re}(\\sigma)>1$ and $t\\in\\RR$, the product of the actual local Haar integrals equals the finite Euler product in Lemma~\\ref{lemma:finiteFourierProduct}, with parameter $\\lambda=\\sigma-\\pi it$.",
+    "proof": "Identify the local integrands with the evaluated Fourier factors and multiply the convergent factors."
+  },
+  "helper:archimedeanIntegral": {
+    "declaration": "Cubic.PoissonSummation.ArchimedeanFourier.fourier_eq_fraction",
+    "title": "Evaluation of the archimedean integral",
+    "statement": "For $\\operatorname{Re}(s_0)>0$ and $\\operatorname{Re}(\\sigma)>0$, the Fourier integral in the logarithm coordinate, with Lebesgue measure, is \\[\\frac{s_0+2\\sigma}{(s_0+2\\pi it)(2\\sigma-2\\pi it)}.\\]",
+    "proof": "Integrate separately on the two half-lines and combine the resulting fractions."
+  },
+  "helper:correctionProduct": {
+    "declaration": "Cubic.PoissonSummation.HeightZetaCorrectionProduct.absolute_split",
+    "title": "Convergence of the split correction factors",
+    "statement": "For $\\operatorname{Re}(z)>1/2$, \\[\\sum_{p\\equiv1\\pmod3}\\left|\\left(1-3p^{-2z}+2p^{-3z}\\right)-1\\right|<\\infty.\\]",
+    "proof": "Bound each deviation by a constant times $p^{-2\\operatorname{Re}(z)}$ and compare with a convergent Dirichlet series."
+  },
+  "helper:correctionBound": {
+    "declaration": "Cubic.Counting.HeightCoefficientBounds.correction_bounded",
+    "title": "A bound for the Euler correction",
+    "statement": "For every $\\beta>1/2$ there is a constant $C_\\beta$ such that \\[|(1-3^{-z})^2R(z)|\\leq C_\\beta\\qquad(\\operatorname{Re}(z)\\geq\\beta).\\]",
+    "proof": "Bound the correction products uniformly on the half-plane and bound the factor at $3$."
+  },
+  "helper:boundaryChain": {
+    "declaration": "Cubic.SurfaceGeometry.ResolutionIntersections.boundary_chain",
+    "title": "Self-intersections of the boundary components",
+    "statement": "The five components of the reduced boundary, in chain order, have self-intersections $-2,-2,-1,-2,-2$.",
+    "proof": "Compute the adjacent primitive rays in the resolved fan."
+  },
+  "helper:boundaryIntersection": {
+    "declaration": "Cubic.SurfaceGeometry.ResolutionIntersections.boundary_square",
+    "title": "The square of the reduced boundary",
+    "statement": "On the minimal resolution, $D_{\\mathrm{red}}^2=-1$.",
+    "proof": "Add the self-intersections and twice the intersections of adjacent components."
+  },
+  "helper:leadingConstants": {
+    "declaration": "Cubic.Counting.AsymptoticConstantsAssembly.constants",
+    "title": "Identities for the main-term constants",
+    "statement": "The Euler products and prime sums defining the main-term constants converge and agree with their simplified expressions.",
+    "proof": "Combine the product identities, logarithmic derivatives, and the evaluation of the Euler--Kronecker constant."
+  },
+  "helper:laurentRescaling": {
+    "declaration": "Cubic.PoissonSummation.LeadingTermsNormalization.laurent_z",
+    "title": "Rescaling the Laurent expansion",
+    "statement": "Substituting $s=2z$ in the Laurent expansion at $s=2$ changes its polar part to \\[\\frac{c_2}{4(z-1)^2}+\\frac{c_1}{2(z-1)}.\\]",
+    "proof": "Use $2z-2=2(z-1)$ in the Laurent expansion; the remainder stays bounded near $z=1$."
+  }
+}

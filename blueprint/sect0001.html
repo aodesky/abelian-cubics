@@ -69,7 +69,10 @@
   <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Shared supporting lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">11</span> <span class="toc_entry">Literature inputs</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -97,7 +100,7 @@
 
     <a class="icon proof" href="sect0001.html#eqn:introConstants">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000012"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -129,13 +132,13 @@
   
 
 
-<div class="displaymath" id="a0000000012">
+<div class="displaymath" id="a0000000013">
   \begin{equation*}  \mu =\lim _{s\to 1} \left(\frac{\xi '(s)}{\xi (s)}+\frac{1}{s-1}\right), \quad \alpha =\prod _{p\equiv 1\pmod3}\left(1-\frac{2}{p(p+1)}\right), \quad \beta =\sum _{p\equiv 1\pmod3}\frac{(2p+1)\log p}{(p^2-1)(p+2)}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000011">
+<div class="proof_wrapper" id="a0000000012">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -144,6 +147,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -164,7 +168,7 @@
 
     <a class="icon proof" href="sect0001.html#thm:generalMonicCount">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000013"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000014"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -197,17 +201,17 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), the number of monic integral cubic polynomials with Galois group \(C_3\) and root height at most \(H\) is </p>
-<div class="displaymath" id="a0000000014">
+<div class="displaymath" id="a0000000015">
   \[  H^3P(\log H)+O_\varepsilon (H^{2+\varepsilon }),  \]
 </div>
 <p> where </p>
-<div class="displaymath" id="a0000000015">
+<div class="displaymath" id="a0000000016">
   \begin{equation*}  P(X)=\frac{220\alpha }{243} \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)}+ \beta +\log 2-\frac{5}{88}\log 3 +\frac{\pi \sqrt3}{10}-\frac{17}{15}\biggr) -\frac{20\pi \sqrt3}{81}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000013">
+<div class="proof_wrapper" id="a0000000014">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -218,7 +222,7 @@
   
 
 <p>Reduce each trace class to trace zero or one. Substitute the asymptotic formulas for \(A_0\) and \(A_1\), approximate their main-term sums by integrals, and then sum the errors. The two real integrals give the displayed polynomial \(P\). </p>
-<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
+<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
 </div>
@@ -238,7 +242,7 @@
 
     <a class="icon proof" href="sect0001.html#thm:asymptoticPolynomialCount">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000016"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000017"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -271,17 +275,17 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), the number of monic integral trace-one cubic polynomials with Galois group \(C_3\) and root height at most \(H\) is </p>
-<div class="displaymath" id="a0000000017">
+<div class="displaymath" id="a0000000018">
   \[  H^2P_1(\log H)+O_\varepsilon (H^{1+\varepsilon })  \]
 </div>
 <p> where </p>
-<div class="displaymath" id="a0000000018">
+<div class="displaymath" id="a0000000019">
   \begin{equation*}  P_1(X)=\frac\alpha 3 \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)} + \beta +\frac78\log 3-\frac12\biggr) -\frac{\pi }{3\sqrt3}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000016">
+<div class="proof_wrapper" id="a0000000017">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -292,7 +296,7 @@
   
 
 <p>Estimate \(\sum _{n\leq X}d_n\) by truncated Perron’s formula and contour shifting. Subtract the split contribution and set \(X=1+3H^2\). The paper uses Alberts’s theorem for the coefficient estimate; Lean retains the direct proof. </p>
-<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
+<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
 </div>
@@ -312,7 +316,7 @@
 
     <a class="icon proof" href="sect0001.html#thm:exactFormula">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000020"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -345,14 +349,14 @@
 
 
 <p>For any \(H \geq 1\) let \(E_H \subset \mathbb {R}^2\) be the ellipse defined by \(E_{H} : x^2+y^2+xy-x-y = \tfrac {1}{3}(H^2-1)\). If \(t^3-t^2+at+b\in \mathbb {Z}[t]\) has Galois group \(C_3\), then \(a\leq 0\). Fix \(a \in \mathbb {Z}_{\leq 0}\). The number of polynomials of the form \(t^3 -t^2 + at + b \in \mathbb {Z}[t]\) with Galois group \(C_3\) is equal to </p>
-<div class="displaymath" id="a0000000020">
+<div class="displaymath" id="a0000000021">
   \begin{equation*}  \frac12\sum _{d|(1-3a)} 3^{\omega (Q_1(d))} (-1)^{\Omega (Q_2(d))} -\frac16 \# E_{\sqrt{1-3a}}(\mathbb {Z}) \end{equation*}
 </div>
 <p> where \(Q_j(d)\) denotes the largest divisor of \(d\) only divisible by primes \(\equiv j \pmod3\), and \(\omega (n)\) (resp.&#160;\(\Omega (n)\)) denotes the number of prime factors of a positive integer \(n\) counted without (resp.&#160;with) multiplicity. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000019">
+<div class="proof_wrapper" id="a0000000020">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -382,7 +386,7 @@
 
     <a class="icon proof" href="sect0001.html#eqn:splitForm">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -414,13 +418,13 @@
   
 
 
-<div class="displaymath" id="a0000000022">
+<div class="displaymath" id="a0000000023">
   \begin{equation*}  x_0x_1x_2=x_3^3. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000021">
+<div class="proof_wrapper" id="a0000000022">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -449,7 +453,7 @@
 
     <a class="icon proof" href="sect0001.html#eqn:surfaceQuadraticTwist">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -481,13 +485,13 @@
   
 
 
-<div class="displaymath" id="a0000000024">
+<div class="displaymath" id="a0000000025">
   \begin{equation*}  S^{(d)}\colon x_0(x_1^2-dx_2^2)=x_3^3. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000024">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -496,6 +500,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -516,7 +521,7 @@
 
     <a class="icon proof" href="sect0001.html#thm:heightZetaFunctionFormula">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -548,14 +553,14 @@
   
 
 
-<div class="displaymath" id="a0000000026">
+<div class="displaymath" id="a0000000027">
   \begin{equation*}  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \left(1-\frac{1}{3^{s/2}}\right)^2 \xi \left(\frac s2\right)^2 \prod _{q\equiv 2\pmod{3}}\left(1-\frac{1}{q^{s}}\right) \prod _{p\equiv 1\pmod{3}}\left(1-\frac{3}{p^{s}}+\frac{2}{p^{3s/2}}\right) \end{equation*}
 </div>
 <p> where \(\xi \) is the Dedekind zeta function of \(E\). This height zeta function can be meromorphically continued to the half-plane \(\mathrm{Re}(s){\gt}1\) and its only pole in this region is at \(s = 2\) with order \(2\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000025">
+<div class="proof_wrapper" id="a0000000026">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -586,7 +591,7 @@
 
     <a class="icon proof" href="sect0001.html#cor:integralPointCount">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -619,17 +624,17 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), as \(H\to \infty \), </p>
-<div class="displaymath" id="a0000000028">
+<div class="displaymath" id="a0000000029">
   \[  \# \{ P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z}):H(P)\leq H\}  =H^2Q(\log H)+O_\varepsilon (H^{1+\varepsilon }),  \]
 </div>
 <p> where </p>
-<div class="displaymath" id="a0000000029">
+<div class="displaymath" id="a0000000030">
   \begin{equation*}  Q(X)=\frac{2\alpha }{9} \biggl(X+\mu -\frac{\zeta '(2)}{\zeta (2)} +\beta +\frac38\log 3-\frac12\biggr). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000027">
+<div class="proof_wrapper" id="a0000000028">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -640,7 +645,7 @@
   
 
 <p>The coefficient sum counts the integral points with the prescribed height. Insert its asymptotic formula and the Laurent coefficients of \(Z_0\). </p>
-<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
+<p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
 </div>
@@ -660,7 +665,7 @@
 
     <a class="icon proof" href="sect0001.html#rem:idealParametrization">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -693,16 +698,16 @@
 
 
 <p>We prompted GPT-\(6.1\) with the contents of an earlier version of this paper and asked it to identify the Dirichlet series in Theorem&#160;<a href="sect0001.html#thm:heightZetaFunctionFormula">4</a>. Using our Eisenstein parametrization (§<a href="sec-quadraticParametrization.html">4</a>) it proved that </p>
-<div class="displaymath" id="a0000000031">
+<div class="displaymath" id="a0000000032">
   \[  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \sum _{\substack {0\ne J\subseteq \mathcal{O}_E\\ J+3\mathcal{O}_E=\mathcal{O}_E\\ \mathrm N J\text{ a cube}}} N^E_\mathbb {Q}(J)^{-s/6}  \]
 </div>
 <p> where \(J \subset \mathcal{O}_E\) runs over integral nonzero ideals. With the help of this description using ideals, we found another result in the literature <span class="cite">
 	[
-	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	<a href="sect0010.html#kuehleitnerNowak2004" >21</a>
 	]
 </span> that we previously missed. After translating the \(C_3\)-polynomial counting problem into an integral Diophantine problem on \(S^{(-3)}\) (explained in the next section), Kühleitner–Nowak’s&#160;<span class="cite">
 	[
-	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	<a href="sect0010.html#kuehleitnerNowak2004" >21</a>
 	, 
 	Corollary
 	
@@ -710,13 +715,13 @@
 	]
 </span> can be used to obtain an alternative proof of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> and Theorem&#160;<a href="sect0001.html#thm:asymptoticPolynomialCount">2</a> without using toric harmonic analysis, and with an error term \(O\bigl(H(\log H)^3(\log \log H)^2\bigr)\). We did not incorporate this argument as the toric approach of this paper has the merit of generalizing readily to other abelian groups where there is no analogue of <span class="cite">
 	[
-	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
+	<a href="sect0010.html#kuehleitnerNowak2004" >21</a>
 	]
 </span>. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000030">
+<div class="proof_wrapper" id="a0000000031">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -727,7 +732,7 @@
   
 
 <p>The Eisenstein parametrization identifies integral torus points with ideals of cube norm prime to \(3\). Apply the cube-ideal summatory estimate, remove the Euler factor at \(3\), and compare the constants and heights. </p>
-<p>The proof assumes the Kühleitner–Nowak estimate (Cited theorem&#160;<a href="sect0009.html#cite:kuehleitnerNowak2004-cor2">3</a>). </p>
+<p>The proof assumes the Kühleitner–Nowak estimate (Cited theorem&#160;<a href="sect0010.html#cite:kuehleitnerNowak2004-cor2">3</a>). </p>
 
   </div>
 </div>
@@ -746,7 +751,7 @@
 
     <a class="icon proof" href="sect0001.html#eqn:polynomialWeights">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -778,13 +783,13 @@
   
 
 
-<div class="displaymath" id="a0000000033">
+<div class="displaymath" id="a0000000034">
   \begin{equation*}  w_f=\frac{|\mathrm{Aut}(C_3)|}{|\mathrm{Aut}(K_f,x_f)|}= \begin{cases}  1 & \text{if $f$ has a double root,}\\ 2 & \text{otherwise,} \end{cases}\end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000032">
+<div class="proof_wrapper" id="a0000000033">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -793,6 +798,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>

@@ -66,7 +66,10 @@
   <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Shared supporting lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">11</span> <span class="toc_entry">Literature inputs</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -84,10 +87,10 @@
 </p>
 </div>
 <p>This blueprint accompanies the Lean formalization of <em>On monic abelian cubic polynomials</em>, by Shubhrajit Bhattacharya and Andrew O’Desky. It follows our November 2026 revision, which extends the trace-one results of <a href ="https://arxiv.org/abs/2310.17831">the arXiv version</a> to arbitrary trace. </p>
-<p>The statements below are taken from the revised paper. Each has links to its Lean statement and proof, followed by a short explanation of the argument. The numbering here is local to the blueprint; the TeX labels retained in the source identify the corresponding results in the paper. </p>
+<p>The paper’s labelled statements appear below. Each has links to its Lean statement and proof, followed by a short explanation of the argument. The numbering here is local to the blueprint; the TeX labels retained in the source identify the corresponding results in the paper. </p>
 <p>Our proof uses Poisson summation and the critical-line mean-square estimate of Chandrasekharan and Narasimhan. Both are explicit hypotheses in Lean. The comparison with Santens’s theorem and the alternative ideal count use the additional inputs listed in the last chapter. </p>
-<p>For the strip estimate, Lean uses the residue theorem in place of Titchmarsh’s result. For the coefficient sum, it uses Perron’s formula and contour shifting in place of Alberts’s theorem. We describe these arguments at the corresponding places. For the moduli theorem, we formalize the rational-point correspondence used in counting; the assertion over general bases is not formalized. . </p>
-<p>The <a href ="dep_graph_document.html">dependency graph</a> is extracted from the Lean proofs. It records references between the final registered declarations. Some proofs use shared helper lemmas directly, so an isolated node need not represent mathematics unused elsewhere. Green nodes have formalized statements and proofs, relative to any literature inputs shown. Nodes for assumed inputs have formalized statements and no proofs. The <a href ="https://github.com/aodesky/abelian-cubics/blob/main/CORRESPONDENCE.md">correspondence record</a> gives further details.  </p>
+<p>For the strip estimate, Lean uses the residue theorem in place of Titchmarsh’s result. For the coefficient sum, it uses Perron’s formula and contour shifting in place of Alberts’s theorem. We describe these arguments at the corresponding places. For the moduli theorem, we formalize the rational-point correspondence used in counting; the assertion over general bases is not formalized. </p>
+<p>The <a href ="dep_graph_document.html">dependency graph</a> is extracted from the Lean proofs. Alongside the paper’s results, it shows selected supporting lemmas used by several proofs. An arrow follows a dependency in Lean, possibly through other helpers omitted from the graph. Green nodes have formalized statements and proofs, relative to any literature inputs shown. Nodes for assumed inputs have formalized statements and no proofs. The <a href ="https://github.com/aodesky/abelian-cubics/blob/main/CORRESPONDENCE.md">correspondence record</a> gives further details.  </p>
 
 </div> <!--main-text -->
 <nav class=local_toc>
@@ -120,7 +123,10 @@
   <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
   </li>
   <li>	
-  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Shared supporting lemmas</span></a>
+  </li>
+  <li>	
+  <a href="sect0010.html"><span class="toc_ref">11</span> <span class="toc_entry">Literature inputs</span></a>
   </li>
 </ul>
 </nav>

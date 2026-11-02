@@ -22,6 +22,8 @@ We count $f(t)=t^3+a_1t^2+a_2t+a_3\in\ZZ[t]$ with Galois group $C_3$, ordered by
 
 \leanok
 
+\uses{helper:leadingConstants}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -44,7 +46,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:generalTraceDecomposition, eqn:monicArchimedeanMoments, eqn:poissonae, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:traceZeroCoefficients, lemma:xiMeanValue, prop:canonicalHeight, thm:asymptoticPolynomialCount, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:generalTraceDecomposition, eqn:monicArchimedeanMoments, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:traceZeroCoefficients, lemma:xiMeanValue, prop:canonicalHeight, thm:asymptoticPolynomialCount, thm:heightZetaFunctionFormula2}
 
 Reduce each trace class to trace zero or one. Substitute the asymptotic formulas for $A_0$ and $A_1$, approximate their main-term sums by integrals, and then sum the errors. The two real integrals give the displayed polynomial $P$.
 
@@ -70,7 +72,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
 Estimate $\sum_{n\leq X}d_n$ by truncated Perron's formula and contour shifting. Subtract the split contribution and set $X=1+3H^2$. The paper uses Alberts's theorem for the coefficient estimate; Lean retains the direct proof.
 
@@ -96,7 +98,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{eqn:poissonae, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:heightZetaFunctionFormula}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:heightZetaFunctionFormula}
 
 For $n=1-3a$, the torus points are counted by $d_n$. The split points are the free cyclic orbits of $E_{\sqrt n}(\ZZ)$, and each irreducible polynomial contributes two points. Thus the answer is $d_n/2-\#E_{\sqrt n}(\ZZ)/6$.
 
@@ -122,7 +124,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-\uses{eqn:surfaceCoordinateChange}
+\uses{eqn:surfaceCoordinateChange, helper:splittingCoordinates}
 
 The linked Lean proof establishes this statement.
 
@@ -146,6 +148,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:splittingCoordinates}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -168,7 +172,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{eqn:poissonae, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:correctionProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
 Restrict the multivariate formula to the height under consideration and identify its Euler factors with those of $\xi$. The correction product is holomorphic in the required half-plane; the Laurent expansion gives the unique double pole.
 
@@ -194,7 +198,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:affineC3invariants, eqn:poissonae, lemma:heightZetaConvergence, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:affineC3invariants, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
 The coefficient sum counts the integral points with the prescribed height. Insert its asymptotic formula and the Laurent coefficients of $Z_0$.
 
@@ -220,7 +224,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{cite:kuehleitnerNowak2004-cor2, eqn:affineC3invariants, eqn:weightedPolynomialCount, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight}
+\uses{cite:kuehleitnerNowak2004-cor2, eqn:affineC3invariants, eqn:weightedPolynomialCount, helper:adelicLogarithm, helper:correctionProduct, helper:cubicCharacters, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight}
 
 The Eisenstein parametrization identifies integral torus points with ideals of cube norm prime to $3$. Apply the cube-ideal summatory estimate, remove the Euler factor at $3$, and compare the constants and heights.
 
@@ -245,6 +249,8 @@ The proof assumes the K\"uhleitner--Nowak estimate (Cited theorem~\ref{cite:kueh
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:polynomialFibres}
 
 The linked Lean proof establishes this statement.
 
@@ -271,6 +277,8 @@ There is a bijection between rational points of $T$ and equivalence classes of $
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:moduliFibres}
 
 Construct the algebra and normal element from a rational quotient point, and recover the quotient point from the conjugates of the normal element. These constructions are inverse on isomorphism classes. This node states the rational-point part of the paper's theorem.
 
@@ -338,7 +346,7 @@ Every algebra automorphism of $\QQ^3$ permutes its three coordinate idempotents.
 
 \leanok
 
-\uses{example:splitAlgebra}
+\uses{example:splitAlgebra, helper:moduliFibres}
 
 Evaluate the explicit algebra and cyclic action, then compute the characteristic polynomial and the normality condition.
 
@@ -390,6 +398,8 @@ Express torus points by characters over the splitting field. Applying the normal
 
 \leanok
 
+\uses{helper:supportFunctionSymmetry}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -411,6 +421,8 @@ The linked Lean proof establishes this statement.
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:cubicCharacters, helper:weightCharacters}
 
 Compute the invariant cubic forms, divide by $e_1^3$, and diagonalize the torus action. The four displayed forms and their characters give the required basis of sections.
 
@@ -434,6 +446,8 @@ Compute the invariant cubic forms, divide by $e_1^3$, and diagonalize the torus 
 
 \leanok
 
+\uses{helper:cubicCharacters, helper:weightCharacters}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -456,6 +470,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:characterCoordinates}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -477,6 +493,8 @@ The linked Lean proof establishes this statement.
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:characterCoordinates, helper:cubicCharacters}
 
 The linked Lean proof establishes this statement.
 
@@ -570,6 +588,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:cubicCharacters, helper:integralLocalHeight, helper:supportFunctionSymmetry}
+
 Apply the invariant-ring criterion to the characteristic polynomial. Evaluate the local height factors; their product reduces to $\sqrt{1-3a}$.
 
 \end{proof}
@@ -591,6 +611,8 @@ Apply the invariant-ring criterion to the characteristic polynomial. Evaluate th
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:cubicCharacters, helper:localWeightHeight}
 
 The linked Lean proof establishes this statement.
 
@@ -614,6 +636,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:cubicCharacters, helper:integralLocalHeight}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -636,7 +660,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{prop:canonicalHeight}
+\uses{helper:cubicCharacters, prop:canonicalHeight}
 
 The three roots are real. The resulting coefficient inequalities give $a\leq0$ and $|b|^{2/3}\leq-a$. Substitute this into the root-height definition and use the toric-height formula.
 
@@ -688,7 +712,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{prop:canonicalHeight}
+\uses{helper:integralCoefficients, helper:polynomialFibres, prop:canonicalHeight}
 
 Identify the character lattices, then evaluate the invariant functions in $u+v\zeta$. The norm and trace determine the cubic coefficients. Solving the displayed quadratic gives the fibers, including the repeated-root case, and the coefficient formulas give the integral conditions.
 
@@ -711,6 +735,8 @@ Identify the character lattices, then evaluate the invariant functions in $u+v\z
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:integralCoefficients}
 
 The linked Lean proof establishes this statement.
 
@@ -738,7 +764,7 @@ For $s=(s_0,s_1,s_2)$ invariant under Galois, let $H(P,s)$ be the toric height a
 
 \leanok
 
-\uses{eqn:poissonae, lemma:heightZetaConvergence, lemma:poissonIntegral}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:archimedeanIntegral, helper:correctionProduct, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:poissonIntegral}
 
 Compute the local Fourier transforms, apply Poisson summation, and evaluate the resulting real integral by residues. Shift the height parameters to obtain the full convergence region, then identify the continued Euler product.
 
@@ -804,7 +830,7 @@ This is an explicit hypothesis in the formalization.
 
 \leanok
 
-\uses{eqn:finiteHeightFourierTransform, eqn:infiniteHeightFourierTransform, prop:basicfacts, prop:localIntegrality}
+\uses{eqn:finiteHeightFourierTransform, eqn:infiniteHeightFourierTransform, helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
 At infinity and at finite places other than $3$, ramified characters vanish after integration over the maximal compact subgroup. For unramified characters, integrate the archimedean support function on its two cones and sum the finite valuation lattices. At $3$, integrate over the congruence subgroup of index six.
 
@@ -828,6 +854,8 @@ At infinity and at finite places other than $3$, ramified characters vanish afte
 
 \leanok
 
+\uses{helper:archimedeanIntegral}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -850,7 +878,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{prop:basicfacts, prop:localIntegrality}
+\uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
 The linked Lean proof establishes this statement.
 
@@ -874,7 +902,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{prop:basicfacts, prop:localIntegrality}
+\uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
 Along a boundary ray where a height exponent vanishes, the local valuation series has terms of constant absolute value. It therefore fails to converge.
 
@@ -898,7 +926,7 @@ Along a boundary ray where a height exponent vanishes, the local valuation serie
 
 \leanok
 
-\uses{prop:basicfacts, prop:localIntegrality}
+\uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
 The linked Lean proof establishes this statement.
 
@@ -921,6 +949,8 @@ The linked Lean proof establishes this statement.
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:adelicLogarithm}
 
 The linked Lean proof establishes this statement.
 
@@ -1014,6 +1044,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:finiteIntegralProduct, helper:supportFunctionSymmetry}
+
 Sum the local valuation series separately at split and inert primes and include the factor $1/6$ at $3$. A convergent positive Euler product bounds the absolute values and proves locally uniform convergence.
 
 \end{proof}
@@ -1084,7 +1116,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{prop:Lmap}
+\uses{helper:adelicLogarithm, helper:archimedeanIntegral, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, prop:Lmap}
 
 The positive local factors give spatial integrability. The finite Euler-product bound and quadratic decay of the archimedean factor give integrability on the annihilator of $T(\QQ)$.
 
@@ -1108,6 +1140,8 @@ The positive local factors give spatial integrability. The finite Euler-product 
 
 \leanok
 
+\uses{helper:archimedeanIntegral, helper:supportFunctionSymmetry}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -1130,7 +1164,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{eqn:poissonae, prop:Lmap}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:archimedeanIntegral, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, prop:Lmap}
 
 Apply the general Poisson formula with the normalized quotient measure. Identify the characters trivial on the integral level with the real logarithm coordinate; the dual measure contributes the factor six.
 
@@ -1204,6 +1238,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:correctionProduct}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -1226,7 +1262,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{eqn:poissonae, thm:heightZetaFunctionFormula2}
+\uses{eqn:poissonae, helper:correctionProduct, thm:heightZetaFunctionFormula2}
 
 Compare the Euler factors with $\xi(z)^2$ and the correction product $R(z)$. The factorization and convergence of the correction product give the continuation.
 
@@ -1278,7 +1314,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-\uses{eqn:poissonae, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
 Expand the split, inert, and ramified Euler factors and multiply the prime-power coefficients.
 
@@ -1304,7 +1340,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-\uses{eqn:Z0Laurent, eqn:poissonae, thm:heightZetaFunctionFormula2}
+\uses{eqn:Z0Laurent, eqn:poissonae, helper:correctionProduct, thm:heightZetaFunctionFormula2}
 
 Expand the Dedekind zeta factor at $1$ and logarithmically differentiate the convergent correction product. Simplifying the prime factors yields $\alpha$, $\beta$, and the Euler--Kronecker constant $\mu$.
 
@@ -1330,6 +1366,8 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
+\uses{helper:laurentRescaling}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -1351,6 +1389,8 @@ Here $r=\operatorname{Res}_{z=1}\xi(z)=\pi/(3\sqrt3)$ and $\mu$ is the Euler--Kr
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:correctionProduct, helper:laurentRescaling}
 
 The linked Lean proof establishes this statement.
 
@@ -1424,7 +1464,7 @@ Use the multiplicities of the characteristic-polynomial map. Count the split poi
 
 \leanok
 
-\uses{lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
+\uses{helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
 
 The linked Lean proof establishes this statement.
 
@@ -1526,7 +1566,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, lemma:heightZetaConvergence, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
 
 Apply truncated Perron at a half-integer, move the contour across the double pole at $1$, and estimate the new contour using the strip mean-square bound. The residue supplies the main term. This is the direct argument retained in Lean in place of \cite[Theorem~1.1]{alberts2025}.
 
@@ -1552,6 +1592,8 @@ For each $\eta>0$ there is a constant $A_\eta$, depending only on $\eta$, such t
 
 \leanok
 
+\uses{helper:correctionBound, helper:correctionProduct}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -1574,7 +1616,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
 The linked Lean proof establishes this statement.
 
@@ -1626,7 +1668,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:asymptoticPolynomialCount}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:asymptoticPolynomialCount}
 
 The linked Lean proof establishes this statement.
 
@@ -1652,7 +1694,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{eqn:poissonae, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
 Factor in the Eisenstein integers and separate the valuation at $1-\zeta$. Count the allowed unit multiples. The vanishing-discriminant cases contribute the extra term when $N=3u^2$.
 
@@ -1678,7 +1720,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, lemma:heightZetaConvergence, lemma:traceZeroCoefficients, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:traceZeroCoefficients, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
 
 Sum the coefficient formula over the powers of $3$, apply the asymptotic for the $d_M$, and remove the reducible cubics. The geometric series in the powers of $3$ gives the stated constants.
 
@@ -1704,7 +1746,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
+\uses{helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
 
 The linked Lean proof establishes this statement.
 
@@ -1750,7 +1792,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{eqn:monicArchimedeanMoments}
+\uses{eqn:monicArchimedeanMoments, helper:correctionProduct, helper:leadingConstants}
 
 The linked Lean proof establishes this statement.
 
@@ -1870,7 +1912,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-\uses{eqn:surfaceCoordinateChange, eqn:surfaceNormCubic, prop:surfaceIntegralCubic}
+\uses{eqn:surfaceCoordinateChange, eqn:surfaceNormCubic, helper:splittingCoordinates, prop:surfaceIntegralCubic}
 
 Apply the explicit change of coordinates over $\ZZ[1/6]$. Split the norm over $E$, and compute the singular points and their local equations. The toric lattice gives the Picard rank.
 
@@ -1938,6 +1980,8 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+\uses{helper:boundaryChain, helper:boundaryIntersection}
+
 Subdivide the three singular cones to obtain the minimal smooth fan. Compute the exceptional chain, divisor classes, and intersections in that fan. The intersection numbers establish the assertions about $L$.
 
 \end{proof}
@@ -1960,6 +2004,8 @@ Subdivide the three singular cones to obtain the minimal smooth fan. Compute the
 
 \leanok
 
+\uses{helper:boundaryChain}
+
 The linked Lean proof establishes this statement.
 
 \end{proof}
@@ -1981,6 +2027,8 @@ The linked Lean proof establishes this statement.
 \begin{proof}[Proof in Lean]
 
 \leanok
+
+\uses{helper:boundaryIntersection}
 
 The linked Lean proof establishes this statement.
 
@@ -2008,7 +2056,7 @@ We use the minimal resolution $\pi:X\to S$ of the preceding chapter. The proposi
 
 \leanok
 
-\uses{cite:santens2023integral-toric-counting, eqn:affineC3invariants, prop:surfaceResolvedBoundary}
+\uses{cite:santens2023integral-toric-counting, eqn:affineC3invariants, helper:correctionProduct, helper:supportFunctionSymmetry, prop:surfaceResolvedBoundary}
 
 Use the pullback of the affine coordinate ring to express the integral condition. Verify the fan, divisor, and positivity hypotheses, then evaluate the dual-cone volume and the normalized local integrals. Their product is $2\alpha/9$.
 
@@ -2034,7 +2082,7 @@ For this surface the exponents are $a=b=2$ and the dual-cone factor is $\theta=2
 
 \leanok
 
-\uses{eqn:affineC3invariants}
+\uses{eqn:affineC3invariants, helper:correctionProduct, helper:supportFunctionSymmetry}
 
 The linked Lean proof establishes this statement.
 
@@ -2058,7 +2106,403 @@ For $P\in T(\QQ_v)$, put $\nu=\iota(P)\in(E\otimes_\QQ\QQ_v)^\times$ and $n=\nu\
 
 \leanok
 
+\uses{helper:localWeightHeight}
+
 The linked Lean proof establishes this statement.
+
+\end{proof}
+
+\chapter{Shared supporting lemmas}
+
+These lemmas occur inside several of the Lean proofs. Showing them as separate nodes makes their shared use visible in the dependency graph. Their numbering is separate from the statements of the paper.
+
+\begin{supportinglemma}[Inverse splitting coordinates]
+
+\label{helper:splittingCoordinates}
+
+\lean{Cubic.SurfaceGeometry.RationalFormSplitting.inverse_split}
+
+\leanok
+
+For $r\ne0$ in a field of characteristic zero, the substitution $x_1^\prime=x_1+rx_2$, $x_2^\prime=x_1-rx_2$ has the inverse $x_1=(x_1^\prime+x_2^\prime)/2$, $x_2=(x_1^\prime-x_2^\prime)/(2r)$. The linked lemma checks the composition in this direction.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Substitute the two inverse expressions into the original coordinates.
+
+\end{proof}
+
+\begin{supportinglemma}[Fibres of the polynomial map]
+
+\label{helper:polynomialFibres}
+
+\lean{Cubic.QuadraticCorrespondence.QuotientPolynomialConverse.separable_fibre_card}
+
+\leanok
+
+Let $f=t^3-t^2+at+b\in\QQ[t]$ be separable, and suppose that $f$ either has Galois group $C_3$ or splits over $\QQ$. Exactly two rational torus points have characteristic polynomial $f$.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Use the two roots of the quadratic resolvent and their distinctness in the separable case.
+
+\end{proof}
+
+\begin{supportinglemma}[Fibres of the moduli map]
+
+\label{helper:moduliFibres}
+
+\lean{Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq}
+
+\leanok
+
+Two $C_3$-algebras with trace-one normal elements that give the same rational quotient point are isomorphic as pairs.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Identify both pairs with the fibre algebra over their common quotient point.
+
+\end{proof}
+
+\begin{supportinglemma}[Galois symmetry of the support function]
+
+\label{helper:supportFunctionSymmetry}
+
+\lean{Cubic.ToricHeights.supportFunction_swap}
+
+\leanok
+
+For the Galois-invariant parameter $(s_0,\sigma,\sigma)$, interchanging the two conjugate coordinates leaves the support function unchanged.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Compare its values on the cones interchanged by the coordinate swap.
+
+\end{proof}
+
+\begin{supportinglemma}[Characters of the four weight vectors]
+
+\label{helper:weightCharacters}
+
+\lean{Cubic.ToricHeights.HeightFormula.weightVector_character}
+
+\leanok
+
+Each of the four sections displayed in Lemma~\ref{lemma:heightformula} is a weight vector for its listed character.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{helper:cubicCharacters}
+
+Identify the section with the corresponding eigen-monomial divided by $e_1^3$.
+
+\end{proof}
+
+\begin{supportinglemma}[Character evaluations in idempotent coordinates]
+
+\label{helper:characterCoordinates}
+
+\lean{Cubic.ToricHeights.FormulaForNormCharacter.idempotent_values}
+
+\leanok
+
+Over a field of characteristic zero containing a primitive cube root $\zeta$, write $g=u e_0+v e_1+w e_2$ in the idempotent basis of the group algebra. The three character evaluations are $u,v,w$: \[g_0+g_1+g_2=u,\qquad g_0+\zeta g_1+\zeta^2g_2=v,\qquad g_0+\zeta^2g_1+\zeta g_2=w.\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Evaluate the three characters on the three idempotents.
+
+\end{proof}
+
+\begin{supportinglemma}[The difference of the cubic characters]
+
+\label{helper:cubicCharacters}
+
+\lean{Cubic.ToricHeights.WeightVectors.eigenvalue_cubes_difference}
+
+\leanok
+
+In a commutative ring, if $\zeta^2+\zeta+1=0$, then \[(x+y\zeta+z\zeta^2)^3-(x+y\zeta^2+z\zeta)^3=3(2\zeta+1)(x-z)(y-x)(z-y).\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Expand the cubes and use the relation satisfied by $\zeta$.
+
+\end{proof}
+
+\begin{supportinglemma}[Local height from the weights]
+
+\label{helper:localWeightHeight}
+
+\lean{Cubic.ToricHeights.LocalWeightHeight.finite_localHeight}
+
+\leanok
+
+At a finite place, the local height for $3D_0$ is the square root of the maximum of $1$ and the absolute values of the three nontrivial weight characters.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+The support function is the minimum of the four weight pairings. Exponentiating turns this minimum into the stated maximum.
+
+\end{proof}
+
+\begin{supportinglemma}[Finite height factors at integral points]
+
+\label{helper:integralLocalHeight}
+
+\lean{Cubic.ToricHeights.FiniteWeightHeight.local_height_one}
+
+\leanok
+
+At each finite prime, the local height factor for $3D_0$ is one on the integral locus.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{helper:cubicCharacters, helper:localWeightHeight}
+
+Apply the local integral conditions to the four weight values.
+
+\end{proof}
+
+\begin{supportinglemma}[Integral coefficients in Eisenstein coordinates]
+
+\label{helper:integralCoefficients}
+
+\lean{Cubic.QuadraticCorrespondence.RationalCorrespondence.integrality_iff}
+
+\leanok
+
+If a rational torus point has parameter $\nu=u+v\zeta$, its characteristic polynomial has integral coefficients exactly when \[N(\nu)\in1+3\ZZ,\qquad N(\nu)(3-\operatorname{Tr}(\nu))\in1+27\ZZ.\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Substitute the norm and trace in the formulas for the two cubic coefficients.
+
+\end{proof}
+
+\begin{supportinglemma}[The finite adelic logarithm]
+
+\label{helper:adelicLogarithm}
+
+\lean{Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum}
+
+\leanok
+
+If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, its finite logarithm is the sum of the local logarithms over $S$.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+The logarithm vanishes on each maximal compact subgroup, so all other terms vanish.
+
+\end{proof}
+
+\begin{supportinglemma}[Evaluation of the finite Fourier product]
+
+\label{helper:finiteIntegralProduct}
+
+\lean{Cubic.PoissonSummation.AdelicFourierComponents.finite_integrals_product}
+
+\leanok
+
+For $\operatorname{Re}(\sigma)>1$ and $t\in\RR$, the product of the actual local Haar integrals equals the finite Euler product in Lemma~\ref{lemma:finiteFourierProduct}, with parameter $\lambda=\sigma-\pi it$.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{helper:supportFunctionSymmetry}
+
+Identify the local integrands with the evaluated Fourier factors and multiply the convergent factors.
+
+\end{proof}
+
+\begin{supportinglemma}[Evaluation of the archimedean integral]
+
+\label{helper:archimedeanIntegral}
+
+\lean{Cubic.PoissonSummation.ArchimedeanFourier.fourier_eq_fraction}
+
+\leanok
+
+For $\operatorname{Re}(s_0)>0$ and $\operatorname{Re}(\sigma)>0$, the Fourier integral in the logarithm coordinate, with Lebesgue measure, is \[\frac{s_0+2\sigma}{(s_0+2\pi it)(2\sigma-2\pi it)}.\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Integrate separately on the two half-lines and combine the resulting fractions.
+
+\end{proof}
+
+\begin{supportinglemma}[Convergence of the split correction factors]
+
+\label{helper:correctionProduct}
+
+\lean{Cubic.PoissonSummation.HeightZetaCorrectionProduct.absolute_split}
+
+\leanok
+
+For $\operatorname{Re}(z)>1/2$, \[\sum_{p\equiv1\pmod3}\left|\left(1-3p^{-2z}+2p^{-3z}\right)-1\right|<\infty.\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Bound each deviation by a constant times $p^{-2\operatorname{Re}(z)}$ and compare with a convergent Dirichlet series.
+
+\end{proof}
+
+\begin{supportinglemma}[A bound for the Euler correction]
+
+\label{helper:correctionBound}
+
+\lean{Cubic.Counting.HeightCoefficientBounds.correction_bounded}
+
+\leanok
+
+For every $\beta>1/2$ there is a constant $C_\beta$ such that \[|(1-3^{-z})^2R(z)|\leq C_\beta\qquad(\operatorname{Re}(z)\geq\beta).\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{helper:correctionProduct}
+
+Bound the correction products uniformly on the half-plane and bound the factor at $3$.
+
+\end{proof}
+
+\begin{supportinglemma}[Self-intersections of the boundary components]
+
+\label{helper:boundaryChain}
+
+\lean{Cubic.SurfaceGeometry.ResolutionIntersections.boundary_chain}
+
+\leanok
+
+The five components of the reduced boundary, in chain order, have self-intersections $-2,-2,-1,-2,-2$.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Compute the adjacent primitive rays in the resolved fan.
+
+\end{proof}
+
+\begin{supportinglemma}[The square of the reduced boundary]
+
+\label{helper:boundaryIntersection}
+
+\lean{Cubic.SurfaceGeometry.ResolutionIntersections.boundary_square}
+
+\leanok
+
+On the minimal resolution, $D_{\mathrm{red}}^2=-1$.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Add the self-intersections and twice the intersections of adjacent components.
+
+\end{proof}
+
+\begin{supportinglemma}[Identities for the main-term constants]
+
+\label{helper:leadingConstants}
+
+\lean{Cubic.Counting.AsymptoticConstantsAssembly.constants}
+
+\leanok
+
+The Euler products and prime sums defining the main-term constants converge and agree with their simplified expressions.
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{helper:correctionProduct}
+
+Combine the product identities, logarithmic derivatives, and the evaluation of the Euler--Kronecker constant.
+
+\end{proof}
+
+\begin{supportinglemma}[Rescaling the Laurent expansion]
+
+\label{helper:laurentRescaling}
+
+\lean{Cubic.PoissonSummation.LeadingTermsNormalization.laurent_z}
+
+\leanok
+
+Substituting $s=2z$ in the Laurent expansion at $s=2$ changes its polar part to \[\frac{c_2}{4(z-1)^2}+\frac{c_1}{2(z-1)}.\]
+
+\end{supportinglemma}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+Use $2z-2=2(z-1)$ in the Laurent expansion; the remainder stays bounded near $z=1$.
 
 \end{proof}
 

@@ -69,7 +69,10 @@
   <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
  </li>
 <li class="">
-  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Shared supporting lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">11</span> <span class="toc_entry">Literature inputs</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -98,7 +101,7 @@
 
     <a class="icon proof" href="sect0004.html#thm:heightZetaFunctionFormula2">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000076"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000077"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -131,20 +134,20 @@
 
 
 <p>Fix any \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) with \(\mathrm{Re}(s_0+s_1+s_2) {\gt} 2\). Then the multivariate Dirichlet series </p>
-<div class="displaymath" id="a0000000077">
+<div class="displaymath" id="a0000000078">
   \begin{equation*}  Z(s)= \sum _{\substack {P \in T(\mathbb Q)\\ \begin{bgroup} \text{\emph{integral}}
 
 \end{bgroup}}} H(P,s)^{-1} \end{equation*}
 </div>
 <p> is absolutely convergent and equals </p>
-<div class="displaymath" id="a0000000078">
+<div class="displaymath" id="a0000000079">
   \begin{align*}  \left({1-3^{-z}}\right) \zeta (z) \prod _{q\equiv 2\pmod{3}} \left(1+\frac{1}{q^{z}}\right)^{-1} \prod _{p\equiv 1\pmod{3}} \left(1+\frac{3}{p^z}\left(1-\frac{1}{p^z}\right)^{-1}\right) \end{align*}
 </div>
 <p> where \(z = \frac{1}{2}(s_0+s_1+s_2)\). This multivariate Dirichlet series admits a meromorphic continuation to \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000076">
+<div class="proof_wrapper" id="a0000000077">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -175,7 +178,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:localIntegrality">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000079"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000080"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -212,12 +215,12 @@
   <li><p>If \(v \neq 3\), then \(1_v^{D_0}(x) = 1\) if and only if \(\ell _w(x) \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2\). In particular \(K_v^{D_0}=K_v^{\mathrm{max}}\). </p>
 </li>
   <li><p>Let \(v = 3\), let \(w\) be the unique place of \(E\) over \(3\), and let \(\mathfrak w = (1-\zeta )O_{E,w}\) be the maximal ideal of \(O_{E,w}\), so that \(3O_{E,w} = \mathfrak w^2\). The support of \(1_3^{D_0}\) is the subgroup </p>
-<div class="displaymath" id="a0000000080">
+<div class="displaymath" id="a0000000081">
   \begin{equation*}  K_{3,2}\mathrel {:=}\iota ^{-1}(1+\mathfrak w^2) =\iota ^{-1}(1+3O_{E,w})\subset K_3^{\mathrm{max}}. \end{equation*}
 </div>
 </li>
   <li><p>Let \(K^{\mathrm{max}}=\prod _v K_v^{\mathrm{max}}\) and \(K^{D_0}=\prod _v K_v^{D_0}\subset K^{\mathrm{max}}\). The latter is the subgroup which fixes the characteristic function \(1^{D_0}=\otimes _v1_v^{D_0}\) for integral points in \(T(\mathbb {A})\), with \(1_\infty ^{D_0}=1\). Then </p>
-<div class="displaymath" id="a0000000081">
+<div class="displaymath" id="a0000000082">
   \[  K_3^{D_0}=K_{3,2},\qquad K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}.  \]
 </div>
 </li>
@@ -225,7 +228,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000079">
+<div class="proof_wrapper" id="a0000000080">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -282,7 +285,7 @@
 
 
 <p>Let \(f\in L^1(T(\mathbb {A}))\) and suppose \(\widehat f|_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). With counting measure on \(T(\mathbb {Q})\) and the normalized dual measure, the following equality holds for almost every \(y\in T(\mathbb {A})\). </p>
-<div class="displaymath" id="a0000000082">
+<div class="displaymath" id="a0000000083">
   \begin{equation*}  \int _{T(\mathbb {Q})} f(xy)\,  dx = \int _{T(\mathbb {Q})^\perp } \widehat{f}(\chi ) \chi (y) \, d\chi \end{equation*}
 </div>
 
@@ -305,7 +308,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:heightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000083"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000084"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -338,15 +341,15 @@
 
 
 <p>Let \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) and assume \(\mathrm{Re}(s_e){\gt}0\) for each \(e \in \{ 0,1,2\} \). Let \(w\) be the infinite place of \(E\). Let \(\chi \in T(\mathbb {R})^\vee \) be a unitary character. If \(\chi \) is ramified then \(\widehat{H_\infty }(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified, then \(\chi (x)= e(\langle \ell _w(x) ,m\rangle )\) for all \(x \in T(\mathbb {R})\) for a unique \(m \in \mathfrak t^\vee \), and </p>
-<div class="displaymath" id="a0000000084">
+<div class="displaymath" id="a0000000085">
   \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
 </div>
 <p> Next let \(v\) be a finite place of \(\mathbb {Q}\). For any unitary character \(\chi \in T(\mathbb {Q}_v)^\vee \), the integral defining \(\widehat{H_v}(\chi ,-s,D_0)\) converges absolutely to a holomorphic function of \(s\) in the region </p>
-<div class="displaymath" id="a0000000085">
+<div class="displaymath" id="a0000000086">
   \[ \{ s \in (\mathbb {C}^{\Sigma (1)})^\Gamma : \mathrm{Re}(s_1),\mathrm{Re}(s_2){\gt}0 \} . \]
 </div>
 <p> Assume \(v \neq 3\). Let \(w\) be any place of \(E\) lying over \(v\). The local characteristic function \(1_v^{D_0}\) is \(K_v^{\mathrm{max}}\)-invariant. If \(\chi \) is ramified, then \(\widehat{H_v}(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified then we may regard \(\chi \) as a character on \(X_\ast (T_{E})^{\Gamma (w/v)}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) and </p>
-<div class="displaymath" id="a0000000086">
+<div class="displaymath" id="a0000000087">
   \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 \end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -355,7 +358,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000083">
+<div class="proof_wrapper" id="a0000000084">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -384,7 +387,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:infiniteHeightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000087"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -416,13 +419,13 @@
   
 
 
-<div class="displaymath" id="a0000000088">
+<div class="displaymath" id="a0000000089">
   \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000087">
+<div class="proof_wrapper" id="a0000000088">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -431,6 +434,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -450,7 +454,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteHeightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000090"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -482,7 +486,7 @@
   
 
 
-<div class="displaymath" id="a0000000090">
+<div class="displaymath" id="a0000000091">
   \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 \end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -490,7 +494,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000089">
+<div class="proof_wrapper" id="a0000000090">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -520,7 +524,7 @@
 
     <a class="icon proof" href="sect0004.html#rem:localNonintegrability">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000091"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000092"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -556,7 +560,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000091">
+<div class="proof_wrapper" id="a0000000092">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -585,7 +589,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:localfourierassumovern">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000092"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000093"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -617,7 +621,7 @@
   
 
 
-<div class="displaymath" id="a0000000093">
+<div class="displaymath" id="a0000000094">
   \begin{equation*}  \int _{T(\mathbb {Q}_v)} H_v(x,s)^{-1}1_v^{D_0}(x)\chi (x)^{-1}\, d^\times x_v =\sum _{n \in N_w} q_v^{\frac{1}{e_v}\varphi (n)} 1_v^{D_0}(n) \chi (n)^{-1} = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ \begin{bgroup} n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 \end{bgroup}} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -625,7 +629,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000092">
+<div class="proof_wrapper" id="a0000000093">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -654,7 +658,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:LAsNorm">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000094"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000095"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -686,13 +690,13 @@
   
 
 
-<div class="displaymath" id="a0000000095">
+<div class="displaymath" id="a0000000096">
   \begin{equation*}  \ell (x)(\mathrm{N}) = -\log |\mathrm{N}(x)|_{\mathbb {A}} \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000094">
+<div class="proof_wrapper" id="a0000000095">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -701,6 +705,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -721,7 +726,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:Lmap">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000096"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -754,14 +759,14 @@
 
 
 <p>There is an exact sequence </p>
-<div class="displaymath" id="a0000000097">
+<div class="displaymath" id="a0000000098">
   \begin{equation*}  1 \longrightarrow K^{\mathrm{max}}/\mu ^{\mathrm{max}} \longrightarrow T(\mathbb Q)\backslash T(\mathbb {A}) \xrightarrow {\ell } \mathfrak t \longrightarrow 0 \end{equation*}
 </div>
 <p> where \(K^{\mathrm{max}}\) is the maximal compact subgroup of \(T(\mathbb {A})\) and \(\mu ^{\mathrm{max}} = T(\mathbb {Q}) \cap K^{\mathrm{max}}\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000096">
+<div class="proof_wrapper" id="a0000000097">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -790,7 +795,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:KprimeGroup">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000098"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000099"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -823,14 +828,14 @@
 
 
 <p>Let \(K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}\) be the subgroup of \(K^{\mathrm{max}}\) fixing \(1^{D_0}\), as in Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>. The map \(\ell \) induces an isomorphism </p>
-<div class="displaymath" id="a0000000099">
+<div class="displaymath" id="a0000000100">
   \begin{equation*}  T(\mathbb {Q})\backslash T(\mathbb {A})/K^{D_0} \xrightarrow {\sim } \mathfrak t. \end{equation*}
 </div>
 <p> Let \(a(u)\in T(\mathbb {A})\) have infinite component \(\iota ^{-1}(e^u)\) and all finite components one, so \(\ell (a(u))=uv_0\). In this coordinate, the pushforward of the quotient measure is \(du/6\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000098">
+<div class="proof_wrapper" id="a0000000099">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -859,7 +864,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:chimdefn">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000100"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000101"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -891,13 +896,13 @@
   
 
 
-<div class="displaymath" id="a0000000101">
+<div class="displaymath" id="a0000000102">
   \begin{equation*}  \chi _m(x)=e(\langle m,\ell (x)\rangle ), \qquad m\in \mathfrak t^\vee . \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000100">
+<div class="proof_wrapper" id="a0000000101">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -927,7 +932,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:finiteFourierProduct">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000102"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -960,18 +965,18 @@
 
 
 <p>For \(\operatorname {Re}(\sigma ){\gt}1\) and \(t\in \mathbb {R}\), put \(\lambda =\sigma -\pi it\). Then </p>
-<div class="displaymath" id="a0000000103">
+<div class="displaymath" id="a0000000104">
   \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
 </div>
 <p> and </p>
-<div class="displaymath" id="a0000000104">
+<div class="displaymath" id="a0000000105">
   \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
 </div>
 <p> Here \(\chi _0\) is the trivial character, corresponding to \(m=0\). The Euler product converges absolutely and locally uniformly for \(\operatorname {Re}(\lambda ){\gt}1\) and is bounded on every half-plane \(\operatorname {Re}(\lambda )\geq \tau {\gt}1\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000102">
+<div class="proof_wrapper" id="a0000000103">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -980,6 +985,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>Sum the local valuation series separately at split and inert primes and include the factor \(1/6\) at \(3\). A convergent positive Euler product bounds the absolute values and proves locally uniform convergence. </p>
 
   </div>
@@ -999,7 +1005,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteSpectralProduct">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000105"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1031,13 +1037,13 @@
   
 
 
-<div class="displaymath" id="a0000000106">
+<div class="displaymath" id="a0000000107">
   \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000105">
+<div class="proof_wrapper" id="a0000000106">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1066,7 +1072,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteEulerBound">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000107"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000108"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1098,13 +1104,13 @@
   
 
 
-<div class="displaymath" id="a0000000108">
+<div class="displaymath" id="a0000000109">
   \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000107">
+<div class="proof_wrapper" id="a0000000108">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1134,7 +1140,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:heightZetaConvergence">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000109"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000110"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1170,7 +1176,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000109">
+<div class="proof_wrapper" id="a0000000110">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1199,7 +1205,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:archimedeanSpectralFactor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000110"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000111"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1231,13 +1237,13 @@
   
 
 
-<div class="displaymath" id="a0000000111">
+<div class="displaymath" id="a0000000112">
   \begin{equation*} \begin{aligned}  \widehat{H_\infty }(\chi _{m,\infty },-s,D_0) & =\frac1{s_0+2\pi it}+\frac1{2\sigma -2\pi it}\\ & =\frac{s_0+2\sigma }{(s_0+2\pi it)(2\sigma -2\pi it)}. \end{aligned}\end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000110">
+<div class="proof_wrapper" id="a0000000111">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1246,6 +1252,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -1266,7 +1273,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:poissonIntegral">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000112"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000113"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1299,14 +1306,14 @@
 
 
 <p>For \(s\) as in Lemma&#160;<a href="sect0004.html#lemma:heightZetaConvergence">6</a>, we have </p>
-<div class="displaymath" id="a0000000113">
+<div class="displaymath" id="a0000000114">
   \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
 </div>
 <p> where both the series defining \(Z(s)\) and the integral converge absolutely. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000112">
+<div class="proof_wrapper" id="a0000000113">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1336,7 +1343,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:poissonEulerIntegral">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000114"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000115"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1368,13 +1375,13 @@
   
 
 
-<div class="displaymath" id="a0000000115">
+<div class="displaymath" id="a0000000116">
   \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000114">
+<div class="proof_wrapper" id="a0000000115">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1404,7 +1411,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:normCharacterDivisor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000116"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000117"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1436,13 +1443,13 @@
   
 
 
-<div class="displaymath" id="a0000000117">
+<div class="displaymath" id="a0000000118">
   \begin{equation*}  \operatorname {div}(\chi ^{a'+b'}) =\sum _{i=0}^2\langle a’+b’,v_i\rangle D_i =-2D_0+D_1+D_2. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000116">
+<div class="proof_wrapper" id="a0000000117">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1470,7 +1477,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:eulerCorrectionFactor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000119"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1502,13 +1509,13 @@
   
 
 
-<div class="displaymath" id="a0000000119">
+<div class="displaymath" id="a0000000120">
   \begin{equation*}  R(z)=\prod _{q\equiv 2\pmod3}\left(1-q^{-2z}\right) \prod _{p\equiv 1\pmod3}\left(1-3p^{-2z}+2p^{-3z}\right). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000118">
+<div class="proof_wrapper" id="a0000000119">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1517,6 +1524,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -1537,7 +1545,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:simplifiedZ-s">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000120"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1570,14 +1578,14 @@
 
 
 <p>The height zeta function is also given by </p>
-<div class="displaymath" id="a0000000121">
+<div class="displaymath" id="a0000000122">
   \begin{align*}  Z(s)=\left(1-3^{-z}\right)^2\xi (z)^2R(z),\qquad z=\tfrac 12(s_0+s_1+s_2), \end{align*}
 </div>
 <p> where \(\xi \) is the Dedekind zeta function of the cyclotomic field \(\mathbb {Q}(\sqrt{-3})\). The height zeta function has meromorphic continuation to the region \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000120">
+<div class="proof_wrapper" id="a0000000121">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1607,7 +1615,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0factorization">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000122"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1639,13 +1647,13 @@
   
 
 
-<div class="displaymath" id="a0000000123">
+<div class="displaymath" id="a0000000124">
   \begin{equation*}  Z_0(z)=\left(1-3^{-z}\right)^2\xi (z)^2R(z). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000122">
+<div class="proof_wrapper" id="a0000000123">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1676,7 +1684,7 @@
 
     <a class="icon proof" href="sect0004.html#rem:heightCoefficients">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000124"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1709,14 +1717,14 @@
 
 
 <p>Comparing Euler factors in <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> gives the coefficients explicitly: \(d_n=0\) if \(3\mid n\), and if \(3\nmid n\) then </p>
-<div class="displaymath" id="a0000000125">
+<div class="displaymath" id="a0000000126">
   \[  d_n=\sum _{d\mid n}3^{\omega (d_1)}(-1)^{\Omega (d_2)},  \]
 </div>
 <p> where \(d=d_1d_2\) with \(d_1\) divisible only by primes \(p\equiv 1\pmod3\) and \(d_2\) only by primes \(q\equiv 2\pmod3\). Equivalently, \(d_n\) is the product of \(3k+1\) over prime powers \(p^k\parallel n\) with \(p\equiv 1\pmod3\) if every prime \(q\equiv 2\pmod3\) divides \(n\) to an even power, and \(d_n=0\) otherwise. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000124">
+<div class="proof_wrapper" id="a0000000125">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1747,7 +1755,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:leadingTerms">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000126"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000127"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1780,14 +1788,14 @@
 
 
 <p>The only pole of \(Z_0(z)\) in the half-plane \(\mathrm{Re}(z){\gt}1/2\) is a double pole at \(z=1\). Its Laurent expansion there is </p>
-<div class="displaymath" id="a0000000127">
+<div class="displaymath" id="a0000000128">
   \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
 </div>
 <p> where \(\alpha \) and \(\beta \) are as in <a href="sect0001.html#eqn:introConstants" class="eqref">1</a>. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000126">
+<div class="proof_wrapper" id="a0000000127">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1817,7 +1825,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0Laurent">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000128"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000129"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1849,13 +1857,13 @@
   
 
 
-<div class="displaymath" id="a0000000129">
+<div class="displaymath" id="a0000000130">
   \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000128">
+<div class="proof_wrapper" id="a0000000129">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1864,6 +1872,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>
@@ -1883,7 +1892,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0LaurentR">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000130"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000131"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1916,13 +1925,13 @@
 
 
 <p>Here \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\) and \(\mu \) is the Euler–Kronecker constant defined above. </p>
-<div class="displaymath" id="a0000000131">
+<div class="displaymath" id="a0000000132">
   \begin{equation*}  Z_0(z)=\frac{a}{(z-1)^2} +2a\left(\mu +\frac12\log 3+\frac{R'(1)}{2R(1)}\right)\frac{1}{z-1} +O(1), \qquad a=\frac49r^2R(1). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000130">
+<div class="proof_wrapper" id="a0000000131">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1931,6 +1940,7 @@
   </div>
   <div class="proof_content">
   
+
 <p>The linked Lean proof establishes this statement. </p>
 
   </div>

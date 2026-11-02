@@ -32,6 +32,7 @@ def main():
     order = json.loads((ROOT / 'blueprint/order.json').read_text())
     notes = json.loads((SRC / 'notes.json').read_text())
     contexts = json.loads((SRC / 'contexts.json').read_text())
+    helpers = json.loads((SRC / 'helpers.json').read_text())
     named = {'theorem', 'proposition', 'lemma', 'corollary', 'example', 'rem', 'remark'}
     text = [r'\input{introduction}']
     chapter = None
@@ -101,6 +102,18 @@ def main():
             text.append(r'\end{proof}')
         else:
             text.append('This is an explicit hypothesis in the formalization.')
+    text.append(r'\chapter{Shared supporting lemmas}')
+    text.append('These lemmas occur inside several of the Lean proofs. Showing them '
+                'as separate nodes makes their shared use visible in the dependency graph. '
+                'Their numbering is separate from the statements of the paper.')
+    for label, entry in helpers.items():
+        text += [r'\begin{supportinglemma}[' + entry['title'] + ']',
+                 r'\label{' + label + '}', r'\lean{' + entry['declaration'] + '}',
+                 r'\leanok', clean(entry['statement']), r'\end{supportinglemma}',
+                 r'\begin{proof}[Proof in Lean]', r'\leanok']
+        if graph[label]:
+            text.append(r'\uses{' + ', '.join(safe_label(k) for k in graph[label]) + '}')
+        text += [entry['proof'], r'\end{proof}']
     text.append(r'\chapter{Literature inputs}')
     text.append('The following inputs are stated in Lean and assumed by the results '
                 'that use them. Poisson summation is recorded with the Fourier analysis above.')
@@ -143,7 +156,8 @@ def main():
                  r'\leanok', body, r'\end{citedtheorem}']
     text.append(r'\input{references}')
     (SRC / 'content.tex').write_text('\n\n'.join(text) + '\n')
-    print(f'Wrote {len(order)} current-paper nodes and {len(cited_notes)} literature inputs.')
+    print(f'Wrote {len(order)} current-paper nodes, {len(helpers)} shared lemmas, '
+          f'and {len(cited_notes)} literature inputs.')
 
 
 if __name__ == '__main__':

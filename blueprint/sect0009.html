@@ -12,7 +12,8 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Literature inputs</title>
+<title>Shared supporting lemmas</title>
+<link rel="next" href="sect0010.html" title="Literature inputs" />
 <link rel="prev" href="sect0008.html" title="Comparison with Santens" />
 <link rel="up" href="index.html" title="On monic abelian cubic polynomials" />
 <link rel="stylesheet" href="styles/theme-white.css" />
@@ -68,7 +69,10 @@
   <a href="sect0008.html"><span class="toc_ref">9</span> <span class="toc_entry">Comparison with Santens</span></a>
  </li>
 <li class=" active current">
-  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Literature inputs</span></a>
+  <a href="sect0009.html"><span class="toc_ref">10</span> <span class="toc_entry">Shared supporting lemmas</span></a>
+ </li>
+<li class="">
+  <a href="sect0010.html"><span class="toc_ref">11</span> <span class="toc_entry">Literature inputs</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -79,15 +83,15 @@
 
 
 <div class="main-text">
-<h1 id="a0000000010">10 Literature inputs</h1>
-<p>The following inputs are stated in Lean and assumed by the results that use them. Poisson summation is recorded with the Fourier analysis above. </p>
-<div class="citedtheorem_thmwrapper theorem-style-plain" id="cite:santens2023integral-toric-counting">
-  <div class="citedtheorem_thmheading">
-    <span class="citedtheorem_thmcaption">
-    Cited theorem
+<h1 id="a0000000010">10 Shared supporting lemmas</h1>
+<p>These lemmas occur inside several of the Lean proofs. Showing them as separate nodes makes their shared use visible in the dependency graph. Their numbering is separate from the statements of the paper. </p>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:splittingCoordinates">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
     </span>
-    <span class="citedtheorem_thmlabel">1</span>
-    <span class="citedtheorem_thmtitle">Santens</span>
+    <span class="supportinglemma_thmlabel">1</span>
+    <span class="supportinglemma_thmtitle">Inverse splitting coordinates</span>
     <div class="thm_header_extras">
 
     
@@ -95,7 +99,10 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0009.html#cite:santens2023integral-toric-counting">#</a>
+    <a class="icon proof" href="sect0009.html#helper:splittingCoordinates">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000197"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     
@@ -110,7 +117,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/SantensComparison/SantensInput.lean#L39" class="lean_decl">CubicTargets.SantensComparison.SantensInput.GeneralSantens</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/RationalFormSplitting.lean#L23" class="lean_decl">Cubic.SurfaceGeometry.RationalFormSplitting.inverse_split</a></li>
           
         </ul>
     
@@ -120,29 +127,34 @@
     
         </div>
   </div>
-  <div class="citedtheorem_thmcontent">
+  <div class="supportinglemma_thmcontent">
   
 
 
-<p>The integral-point counting theorem <span class="cite">
-	[
-	<a href="sect0009.html#santens2023integral" >28</a>
-	, 
-	Theorem
-	
-	8.7
-	]
-</span>, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and compatible metrics. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input. </p>
+<p>For \(r\ne 0\) in a field of characteristic zero, the substitution \(x_1^\prime =x_1+rx_2\), \(x_2^\prime =x_1-rx_2\) has the inverse \(x_1=(x_1^\prime +x_2^\prime )/2\), \(x_2=(x_1^\prime -x_2^\prime )/(2r)\). The linked lemma checks the composition in this direction. </p>
 
   </div>
 </div>
-<div class="citedtheorem_thmwrapper theorem-style-plain" id="cite:chandrasekharanNarasimhan1963-thm4">
-  <div class="citedtheorem_thmheading">
-    <span class="citedtheorem_thmcaption">
-    Cited theorem
+<div class="proof_wrapper" id="a0000000197">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
     </span>
-    <span class="citedtheorem_thmlabel">2</span>
-    <span class="citedtheorem_thmtitle">Chandrasekharan–Narasimhan</span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Substitute the two inverse expressions into the original coordinates. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:polynomialFibres">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">2</span>
+    <span class="supportinglemma_thmtitle">Fibres of the polynomial map</span>
     <div class="thm_header_extras">
 
     
@@ -150,7 +162,10 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0009.html#cite:chandrasekharanNarasimhan1963-thm4">#</a>
+    <a class="icon proof" href="sect0009.html#helper:polynomialFibres">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000198"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     
@@ -165,7 +180,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/ChandrasekharanNarasimhanMeanSquare.lean#L21" class="lean_decl">CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare.BlackBox</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/QuotientPolynomialConverse.lean#L173" class="lean_decl">Cubic.QuadraticCorrespondence.QuotientPolynomialConverse.separable_fibre_card</a></li>
           
         </ul>
     
@@ -175,33 +190,34 @@
     
         </div>
   </div>
-  <div class="citedtheorem_thmcontent">
+  <div class="supportinglemma_thmcontent">
   
 
 
-<p>For \(E=\mathbb {Q}(\sqrt{-3})\) and \(\xi =\zeta _E\), </p>
-<div class="displaymath" id="a0000000196">
-  \[ \frac1T\int _1^T|\xi (1/2+it)|^2\, dt=O((\log T)^2)\qquad (T\to \infty ). \]
-</div>
-<p>This is <span class="cite">
-	[
-	<a href="sect0009.html#chandrasekharanNarasimhan1963" >7</a>
-	, 
-	Theorem
-	
-	4, (80)
-	]
-</span>, with \([E:\mathbb {Q}]=2\) and \(\sigma =1/2\). </p>
+<p>Let \(f=t^3-t^2+at+b\in \mathbb {Q}[t]\) be separable, and suppose that \(f\) either has Galois group \(C_3\) or splits over \(\mathbb {Q}\). Exactly two rational torus points have characteristic polynomial \(f\). </p>
 
   </div>
 </div>
-<div class="citedtheorem_thmwrapper theorem-style-plain" id="cite:kuehleitnerNowak2004-cor2">
-  <div class="citedtheorem_thmheading">
-    <span class="citedtheorem_thmcaption">
-    Cited theorem
+<div class="proof_wrapper" id="a0000000198">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
     </span>
-    <span class="citedtheorem_thmlabel">3</span>
-    <span class="citedtheorem_thmtitle">Kühleitner–Nowak</span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Use the two roots of the quadratic resolvent and their distinctness in the separable case. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:moduliFibres">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">3</span>
+    <span class="supportinglemma_thmtitle">Fibres of the moduli map</span>
     <div class="thm_header_extras">
 
     
@@ -209,7 +225,10 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0009.html#cite:kuehleitnerNowak2004-cor2">#</a>
+    <a class="icon proof" href="sect0009.html#helper:moduliFibres">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000199"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     
@@ -224,7 +243,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/KuehleitnerNowakCubeIdealSum.lean#L29" class="lean_decl">CubicTargets.Introduction.KuehleitnerNowakCubeIdealSum.BlackBox</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/ModularInterpretation.lean#L95" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq</a></li>
           
         </ul>
     
@@ -234,127 +253,1061 @@
     
         </div>
   </div>
-  <div class="citedtheorem_thmcontent">
+  <div class="supportinglemma_thmcontent">
   
 
 
-<p>Let \(a_K(n)\) count integral ideals of norm \(n^3\) in a fixed quadratic field \(K\). If \(F\) is analytic at \(1\) and agrees with \((s-1)^2\sum _{n\geq 1}a_K(n)n^{-s}\) to its right, then </p>
-<div class="displaymath" id="a0000000197">
-  \[ \sum _{n\leq X}a_K(n)=F(1)X\log X+(F^\prime (1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log \log X)^2\bigr). \]
-</div>
-<p>This is the residue form of <span class="cite">
-	[
-	<a href="sect0009.html#kuehleitnerNowak2004" >21</a>
-	, 
-	Corollary
-	
-	2
-	]
-</span>. The removal of the factor at \(3\) and the comparison with the original count are proved in Lean. </p>
+<p>Two \(C_3\)-algebras with trace-one normal elements that give the same rational quotient point are isomorphic as pairs. </p>
 
   </div>
 </div>
-<dl class="bibliography">
-  <dt><a name="alberts2025">1</a></dt>
-  <dd><p>B.&#160;Alberts. An explicit Tauberian theorem taking averaged inputs with an application to counting abelian number fields. <a href ="https://arxiv.org/abs/2508.20814">arXiv:2508.20814</a>, 2025. Preprint. </p>
-</dd>
-  <dt><a name="MR1369408">2</a></dt>
-  <dd><p>V.&#160;V. Batyrev and Y.&#160;Tschinkel. Rational points of bounded height on compactifications of anisotropic tori. <em>Internat. Math. Res. Notices</em>, (12):591–635, 1995. </p>
-</dd>
-  <dt><a name="batyrevTschinkel1998toric">3</a></dt>
-  <dd><p>V.&#160;V. Batyrev and Y.&#160;Tschinkel. Manin’s conjecture for toric varieties. <em>J. Algebraic Geom.</em>, 7(1):15–53, 1998. </p>
-</dd>
-  <dt><a name="bhargavaShnidman2014">4</a></dt>
-  <dd><p>M.&#160;Bhargava and A.&#160;Shnidman. On the number of cubic orders of bounded discriminant having automorphism group \(C_3\), and related problems. <em>Algebra &amp; Number Theory</em>, 8(1):53–88, 2014. </p>
-</dd>
-  <dt><a name="browning2005overview">5</a></dt>
-  <dd><p>T.&#160;D. Browning. An overview of Manin’s conjecture for del Pezzo surfaces. <a href ="https://arxiv.org/abs/math/0511041">arXiv:math/0511041</a>, 2005. </p>
-</dd>
-  <dt><a name="campbell2023permutation">6</a></dt>
-  <dd><p>H.&#160;E.&#160;A. Campbell and D.&#160;L. Wehlau. When are permutation invariants Cohen–Macaulay?, 2023. </p>
-</dd>
-  <dt><a name="chandrasekharanNarasimhan1963">7</a></dt>
-  <dd><p>K.&#160;Chandrasekharan and R.&#160;Narasimhan. The approximate functional equation for a class of zeta-functions. <em>Math. Ann.</em>, 152:30–64, 1963. </p>
-</dd>
-  <dt><a name="MR1654185">8</a></dt>
-  <dd><p>D.&#160;I. Dais, M.&#160;Henk, and G.&#160;M. Ziegler. All abelian quotient C.I.-singularities admit projective crepant resolutions in all dimensions. <em>Adv. Math.</em>, 139(2):194–239, 1998. </p>
-</dd>
-  <dt><a name="delabreteche1998cubic">9</a></dt>
-  <dd><p>R.&#160;de&#160;la Bretèche. Sur le nombre de points de hauteur bornée d’une certaine surface cubique singulière. <em>Astérisque</em>, 251:51–77, 1998. </p>
-</dd>
-  <dt><a name="bdlwz2019nonsplit">10</a></dt>
-  <dd><p>R.&#160;de&#160;la Bretèche, K.&#160;Destagnol, J.&#160;Liu, J.&#160;Wu, and Y.&#160;Zhao. On a certain non-split cubic surface. <em>Science China Mathematics</em>, 62:2435–2446, 2019. </p>
-</dd>
-  <dt><a name="derenthal2014hypersurfaces">11</a></dt>
-  <dd><p>U.&#160;Derenthal. Singular del Pezzo surfaces whose universal torsors are hypersurfaces. <em>Proceedings of the London Mathematical Society</em>, 108(3):638–681, 2014. </p>
-</dd>
-  <dt><a name="derenthalJanda2013gaussian">12</a></dt>
-  <dd><p>U.&#160;Derenthal and F.&#160;Janda. Gaussian rational points on a singular cubic surface. In <em>Torsors, étale homotopy and applications to rational points</em>, volume 405 of <em>London Mathematical Society Lecture Note Series</em>, pages 210–230. Cambridge University Press, 2013. </p>
-</dd>
-  <dt><a name="derenthalWilsch2024integral">13</a></dt>
-  <dd><p>U.&#160;Derenthal and F.&#160;Wilsch. Integral points on singular del Pezzo surfaces. <em>Journal of the Institute of Mathematics of Jussieu</em>, 23(3):1259–1294, 2024. </p>
-</dd>
-  <dt><a name="MR291099">14</a></dt>
-  <dd><p>P.&#160;K.&#160;J. Draxl. \(L\)-Funktionen algebraischer Tori. <em>J. Number Theory</em>, 3:444–467, 1971. </p>
-</dd>
-  <dt><a name="MR1397028">15</a></dt>
-  <dd><p>G.&#160;B. Folland. <em>A course in abstract harmonic analysis</em>. CRC Press, 1995. </p>
-</dd>
-  <dt><a name="fouvry1998cubic">16</a></dt>
-  <dd><p>E.&#160;Fouvry. Sur la hauteur des points d’une certaine surface cubique singulière. <em>Astérisque</em>, 251:31–49, 1998. </p>
-</dd>
-  <dt><a name="frei2013cubic">17</a></dt>
-  <dd><p>C.&#160;Frei. Counting rational points over number fields on a singular cubic surface. <em>Algebra &amp; Number Theory</em>, 7(6):1451–1479, 2013. </p>
-</dd>
-  <dt><a name="MR1234037">18</a></dt>
-  <dd><p>W.&#160;Fulton. <em>Introduction to toric varieties</em>. Princeton University Press, 1993. </p>
-</dd>
-  <dt><a name="hartshorne1977">19</a></dt>
-  <dd><p>R.&#160;Hartshorne. <em>Algebraic Geometry</em>, volume&#160;52 of <em>Graduate Texts in Mathematics</em>. Springer-Verlag, New York, 1977. </p>
-</dd>
-  <dt><a name="heathBrownMoroz1999cubic">20</a></dt>
-  <dd><p>D.&#160;R. Heath-Brown and B.&#160;Z. Moroz. The density of rational points on the cubic surface \(X_0^3=X_1X_2X_3\). <em>Mathematical Proceedings of the Cambridge Philosophical Society</em>, 125(3):385–395, 1999. </p>
-</dd>
-  <dt><a name="kuehleitnerNowak2004">21</a></dt>
-  <dd><p>M.&#160;Kühleitner and W.&#160;G. Nowak. The average number of solutions of the Diophantine equation \(U^2+V^2=W^3\) and related arithmetic functions. <em>Acta Mathematica Hungarica</em>, 104(3):225–240, 2004. </p>
-</dd>
-  <dt><a name="liu2002algebraic">22</a></dt>
-  <dd><p>Q.&#160;Liu. <em>Algebraic Geometry and Arithmetic Curves</em>, volume&#160;6 of <em>Oxford Graduate Texts in Mathematics</em>. Oxford University Press, Oxford, 2002. </p>
-</dd>
-  <dt><a name="milne">23</a></dt>
-  <dd><p>J.&#160;S. Milne. <em>Algebraic groups</em>, volume 170 of <em>Cambridge Studies in Advanced Mathematics</em>. Cambridge University Press, Cambridge, 2017. The theory of group schemes of finite type over a field. </p>
-</dd>
-  <dt><a name="moroz1997toric">24</a></dt>
-  <dd><p>B.&#160;Z. Moroz. On the integer points of some toric varieties. <em>The Quarterly Journal of Mathematics</em>, 48(1):67–82, 1997. </p>
-</dd>
-  <dt><a name="MR1304906">25</a></dt>
-  <dd><p>D.&#160;Mumford, J.&#160;Fogarty, and F.&#160;Kirwan. <em>Geometric invariant theory</em>. Springer-Verlag, Berlin, third edition, 1994. </p>
-</dd>
-  <dt><a name="odesky2023moduli">26</a></dt>
-  <dd><p>A.&#160;O’Desky and J.&#160;Rosen. The moduli space of \({G}\)-algebras. <em>Advances in Mathematics</em>, 431:109240, 2023. </p>
-</dd>
-  <dt><a name="peyre1995hauteurs">27</a></dt>
-  <dd><p>E.&#160;Peyre. Hauteurs et mesures de Tamagawa sur les variétés de Fano. <em>Duke Math. J.</em>, 79(1):101–218, 1995. </p>
-</dd>
-  <dt><a name="santens2023integral">28</a></dt>
-  <dd><p>T.&#160;Santens. Manin’s conjecture for integral points on toric varieties, 2023. Preprint, version 2 (2025). </p>
-</dd>
-  <dt><a name="MR1697650">29</a></dt>
-  <dd><p>R.&#160;Shail. A class of infinite sums and integrals. <em>Math. Comp.</em>, 70(234):789–799, 2001. </p>
-</dd>
-  <dt><a name="titchmarsh1986">30</a></dt>
-  <dd><p>E.&#160;C. Titchmarsh. <em>The Theory of the Riemann Zeta-Function</em>. Clarendon Press, Oxford, second edition, 1986. Revised by D. R. Heath-Brown. </p>
-</dd>
-  <dt><a name="topacogullari2021">31</a></dt>
-  <dd><p>B.&#160;Topacogullari. The fourth moment of individual Dirichlet \(L\)-functions on the critical line. <em>Mathematische Zeitschrift</em>, 298:577–624, 2021. </p>
-</dd>
-  <dt><a name="wangXiao2026quartic">32</a></dt>
-  <dd><p>X.&#160;Wang and S.&#160;Y. Xiao. The density of discriminants of \(A_4\)-quartic fields, 2026. Preprint, arXiv:2610.26510. </p>
-</dd>
-  <dt><a name="xiao_2022">33</a></dt>
-  <dd><p>S.&#160;Y. Xiao. On monic abelian cubics. <em>Compositio Mathematica</em>, 158(3):550–567, 2022. </p>
-</dd>
-</dl>
+<div class="proof_wrapper" id="a0000000199">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Identify both pairs with the fibre algebra over their common quotient point. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:supportFunctionSymmetry">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">4</span>
+    <span class="supportinglemma_thmtitle">Galois symmetry of the support function</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:supportFunctionSymmetry">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000200"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/SupportFunction.lean#L27" class="lean_decl">Cubic.ToricHeights.supportFunction_swap</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>For the Galois-invariant parameter \((s_0,\sigma ,\sigma )\), interchanging the two conjugate coordinates leaves the support function unchanged. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000200">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Compare its values on the cones interchanged by the coordinate swap. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:weightCharacters">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">5</span>
+    <span class="supportinglemma_thmtitle">Characters of the four weight vectors</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:weightCharacters">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000201"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightFormula.lean#L637" class="lean_decl">Cubic.ToricHeights.HeightFormula.weightVector_character</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>Each of the four sections displayed in Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a> is a weight vector for its listed character. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000201">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Identify the section with the corresponding eigen-monomial divided by \(e_1^3\). </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:characterCoordinates">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">6</span>
+    <span class="supportinglemma_thmtitle">Character evaluations in idempotent coordinates</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:characterCoordinates">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000202"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter.lean#L37" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter.idempotent_values</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>Over a field of characteristic zero containing a primitive cube root \(\zeta \), write \(g=u e_0+v e_1+w e_2\) in the idempotent basis of the group algebra. The three character evaluations are \(u,v,w\): </p>
+<div class="displaymath" id="a0000000203">
+  \[ g_0+g_1+g_2=u,\qquad g_0+\zeta g_1+\zeta ^2g_2=v,\qquad g_0+\zeta ^2g_1+\zeta g_2=w. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000202">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Evaluate the three characters on the three idempotents. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:cubicCharacters">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">7</span>
+    <span class="supportinglemma_thmtitle">The difference of the cubic characters</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:cubicCharacters">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000204"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/WeightVectors.lean#L38" class="lean_decl">Cubic.ToricHeights.WeightVectors.eigenvalue_cubes_difference</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>In a commutative ring, if \(\zeta ^2+\zeta +1=0\), then </p>
+<div class="displaymath" id="a0000000205">
+  \[ (x+y\zeta +z\zeta ^2)^3-(x+y\zeta ^2+z\zeta )^3=3(2\zeta +1)(x-z)(y-x)(z-y). \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000204">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Expand the cubes and use the relation satisfied by \(\zeta \). </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:localWeightHeight">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">8</span>
+    <span class="supportinglemma_thmtitle">Local height from the weights</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:localWeightHeight">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000206"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/LocalWeightHeight.lean#L77" class="lean_decl">Cubic.ToricHeights.LocalWeightHeight.finite_localHeight</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>At a finite place, the local height for \(3D_0\) is the square root of the maximum of \(1\) and the absolute values of the three nontrivial weight characters. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000206">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The support function is the minimum of the four weight pairings. Exponentiating turns this minimum into the stated maximum. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:integralLocalHeight">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">9</span>
+    <span class="supportinglemma_thmtitle">Finite height factors at integral points</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:integralLocalHeight">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000207"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FiniteWeightHeight.lean#L202" class="lean_decl">Cubic.ToricHeights.FiniteWeightHeight.local_height_one</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>At each finite prime, the local height factor for \(3D_0\) is one on the integral locus. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000207">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Apply the local integral conditions to the four weight values. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:integralCoefficients">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">10</span>
+    <span class="supportinglemma_thmtitle">Integral coefficients in Eisenstein coordinates</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:integralCoefficients">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000208"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/RationalCorrespondence.lean#L57" class="lean_decl">Cubic.QuadraticCorrespondence.RationalCorrespondence.integrality_iff</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>If a rational torus point has parameter \(\nu =u+v\zeta \), its characteristic polynomial has integral coefficients exactly when </p>
+<div class="displaymath" id="a0000000209">
+  \[ N(\nu )\in 1+3\mathbb {Z},\qquad N(\nu )(3-\operatorname {Tr}(\nu ))\in 1+27\mathbb {Z}. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000208">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Substitute the norm and trace in the formulas for the two cubic coefficients. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:adelicLogarithm">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">11</span>
+    <span class="supportinglemma_thmtitle">The finite adelic logarithm</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:adelicLogarithm">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000210"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteAdelicData.lean#L229" class="lean_decl">Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>If an adele has component in the maximal compact subgroup at every prime outside a finite set \(S\), its finite logarithm is the sum of the local logarithms over \(S\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000210">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>The logarithm vanishes on each maximal compact subgroup, so all other terms vanish. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:finiteIntegralProduct">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">12</span>
+    <span class="supportinglemma_thmtitle">Evaluation of the finite Fourier product</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:finiteIntegralProduct">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000211"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicFourierComponents.lean#L59" class="lean_decl">Cubic.PoissonSummation.AdelicFourierComponents.finite_integrals_product</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>For \(\operatorname {Re}(\sigma ){\gt}1\) and \(t\in \mathbb {R}\), the product of the actual local Haar integrals equals the finite Euler product in Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a>, with parameter \(\lambda =\sigma -\pi it\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000211">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Identify the local integrands with the evaluated Fourier factors and multiply the convergent factors. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:archimedeanIntegral">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">13</span>
+    <span class="supportinglemma_thmtitle">Evaluation of the archimedean integral</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:archimedeanIntegral">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000212"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ArchimedeanFourier.lean#L164" class="lean_decl">Cubic.PoissonSummation.ArchimedeanFourier.fourier_eq_fraction</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>For \(\operatorname {Re}(s_0){\gt}0\) and \(\operatorname {Re}(\sigma ){\gt}0\), the Fourier integral in the logarithm coordinate, with Lebesgue measure, is </p>
+<div class="displaymath" id="a0000000213">
+  \[ \frac{s_0+2\sigma }{(s_0+2\pi it)(2\sigma -2\pi it)}. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000212">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Integrate separately on the two half-lines and combine the resulting fractions. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:correctionProduct">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">14</span>
+    <span class="supportinglemma_thmtitle">Convergence of the split correction factors</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:correctionProduct">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000214"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaCorrectionProduct.lean#L76" class="lean_decl">Cubic.PoissonSummation.HeightZetaCorrectionProduct.absolute_split</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>For \(\operatorname {Re}(z){\gt}1/2\), </p>
+<div class="displaymath" id="a0000000215">
+  \[ \sum _{p\equiv 1\pmod3}\left|\left(1-3p^{-2z}+2p^{-3z}\right)-1\right|{\lt}\infty . \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000214">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Bound each deviation by a constant times \(p^{-2\operatorname {Re}(z)}\) and compare with a convergent Dirichlet series. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:correctionBound">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">15</span>
+    <span class="supportinglemma_thmtitle">A bound for the Euler correction</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:correctionBound">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000216"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/HeightCoefficientBounds.lean#L165" class="lean_decl">Cubic.Counting.HeightCoefficientBounds.correction_bounded</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>For every \(\beta {\gt}1/2\) there is a constant \(C_\beta \) such that </p>
+<div class="displaymath" id="a0000000217">
+  \[ |(1-3^{-z})^2R(z)|\leq C_\beta \qquad (\operatorname {Re}(z)\geq \beta ). \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000216">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Bound the correction products uniformly on the half-plane and bound the factor at \(3\). </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:boundaryChain">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">16</span>
+    <span class="supportinglemma_thmtitle">Self-intersections of the boundary components</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:boundaryChain">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000218"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/ResolutionIntersections.lean#L21" class="lean_decl">Cubic.SurfaceGeometry.ResolutionIntersections.boundary_chain</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>The five components of the reduced boundary, in chain order, have self-intersections \(-2,-2,-1,-2,-2\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000218">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Compute the adjacent primitive rays in the resolved fan. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:boundaryIntersection">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">17</span>
+    <span class="supportinglemma_thmtitle">The square of the reduced boundary</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:boundaryIntersection">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000219"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/SurfaceGeometry/ResolutionIntersections.lean#L14" class="lean_decl">Cubic.SurfaceGeometry.ResolutionIntersections.boundary_square</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>On the minimal resolution, \(D_{\mathrm{red}}^2=-1\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000219">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Add the self-intersections and twice the intersections of adjacent components. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:leadingConstants">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">18</span>
+    <span class="supportinglemma_thmtitle">Identities for the main-term constants</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:leadingConstants">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000220"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/AsymptoticConstantsAssembly.lean#L46" class="lean_decl">Cubic.Counting.AsymptoticConstantsAssembly.constants</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>The Euler products and prime sums defining the main-term constants converge and agree with their simplified expressions. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000220">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+
+<p>Combine the product identities, logarithmic derivatives, and the evaluation of the Euler–Kronecker constant. </p>
+
+  </div>
+</div>
+<div class="supportinglemma_thmwrapper theorem-style-plain" id="helper:laurentRescaling">
+  <div class="supportinglemma_thmheading">
+    <span class="supportinglemma_thmcaption">
+    Supporting lemma
+    </span>
+    <span class="supportinglemma_thmlabel">19</span>
+    <span class="supportinglemma_thmtitle">Rescaling the Laurent expansion</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#helper:laurentRescaling">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000221"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LeadingTermsNormalization.lean#L19" class="lean_decl">Cubic.PoissonSummation.LeadingTermsNormalization.laurent_z</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="supportinglemma_thmcontent">
+  
+
+
+<p>Substituting \(s=2z\) in the Laurent expansion at \(s=2\) changes its polar part to </p>
+<div class="displaymath" id="a0000000222">
+  \[ \frac{c_2}{4(z-1)^2}+\frac{c_1}{2(z-1)}. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000221">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof in Lean
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  
+<p>Use \(2z-2=2(z-1)\) in the Laurent expansion; the remainder stays bounded near \(z=1\). </p>
+
+  </div>
+</div>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -365,6 +1318,8 @@
   <a href="sect0008.html" title="Comparison with Santens"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="On monic abelian cubic polynomials"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0010.html" title="Literature inputs"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

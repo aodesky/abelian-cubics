@@ -17,6 +17,7 @@ import subprocess
 import tempfile
 
 from site_navigation import add_blueprint_navigation
+from blueprint_dependencies import check_project_sources, source_hashes
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -70,23 +71,22 @@ def blueprint_declarations():
     return declarations, labels
 
 
-def check_lean(project, declarations):
-    # A cached local checkout may be used only when its public Lean sources and
-    # pinned dependencies match the files being published.
-    for path in [LEAN / "Cubic.lean", LEAN / "CubicTargets.lean", LEAN / "lean-toolchain",
-                 LEAN / "lake-manifest.json", LEAN / "lakefile.toml",
-                 *(LEAN / "Cubic").rglob("*.lean"), *(LEAN / "CubicTargets").rglob("*.lean")]:
-        other = project / path.relative_to(LEAN)
-        if not other.is_file() or other.read_bytes() != path.read_bytes():
-            raise ValueError(f"Lean check project differs from public source: {other}")
+def check_declarations(project, declarations):
+    check_project_sources(project)
     lake = os.environ.get("LAKE", "lake")
-    subprocess.run([lake, "build"], cwd=project, check=True)
     checks = "import Cubic\nimport CubicTargets\n" + "\n".join(f"#check {name}" for name in declarations) + "\n"
     with tempfile.TemporaryDirectory(prefix="blueprint-check-") as directory:
         path = Path(directory) / "BlueprintCheck.lean"
         path.write_text(checks)
         subprocess.run([lake, "env", "lean", str(path)], cwd=project, check=True,
                        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
+
+def check_lean(project, declarations):
+    check_project_sources(project)
+    lake = os.environ.get("LAKE", "lake")
+    subprocess.run([lake, "build"], cwd=project, check=True)
+    check_declarations(project, declarations)
     subprocess.run([lake, "env", "lean", "Audit.lean"],
                    cwd=project, check=True)
 
@@ -113,17 +113,14 @@ def main():
             raise ValueError(f"Declaration not found in public Lean sources: {name}")
     if args.reuse_lean_check:
         previous = json.loads((BLUEPRINT / "build-manifest.json").read_text())
-        files = [LEAN / "Cubic.lean", LEAN / "CubicTargets.lean",
-                 LEAN / "lakefile.toml", LEAN / "lake-manifest.json",
-                 LEAN / "lean-toolchain", LEAN / "Audit.lean",
-                 *(LEAN / "Cubic").rglob("*.lean"),
-                 *(LEAN / "CubicTargets").rglob("*.lean")]
-        hashes = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-                  for p in files}
+        hashes = source_hashes()
         if hashes != previous.get("lean_sources_sha256"):
             raise ValueError("Lean inputs changed: run a fresh Lean check")
-        if set(declarations) != set(previous["source_links"]):
-            raise ValueError("Blueprint declarations changed: run a fresh Lean check")
+        added = set(declarations) - set(previous["source_links"])
+        if added:
+            check_declarations(args.lean_project.resolve(), sorted(added))
+            print(f'Checked {len(added)} additional declarations; reused the full '
+                  'build and axiom audit for unchanged Lean sources.')
     else:
         check_lean(args.lean_project.resolve(), declarations)
     revision = "main" if args.preview else subprocess.check_output(
@@ -151,6 +148,11 @@ def main():
                 text = text.replace(old, links[old])
             if path.suffix == ".html":
                 text = add_blueprint_navigation(text)
+            if path.name == "dep_graph_document.html":
+                # Long declaration names make a top-down graph excessively wide.
+                text = text.replace('graph [bgcolor=transparent];',
+                                    'graph [bgcolor=transparent, rankdir=LR, '
+                                    'nodesep=0.25, ranksep=0.7];', 1)
             path.write_text(text)
     for path in output.iterdir():
         destination = BLUEPRINT / path.name
@@ -169,21 +171,15 @@ def main():
             path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in [*SOURCE.glob("*.tex"), *SOURCE.glob("*.json"),
                          *SOURCE.glob("*.css"), SOURCE / "plastex.cfg",
-                         BLUEPRINT / "dependencies.json", BLUEPRINT / "order.json",
+                         BLUEPRINT / "dependencies.json", BLUEPRINT / "dependency-evidence.json",
+                         BLUEPRINT / "order.json",
                          LEAN / "results.json"]
         },
-        "lean_sources_sha256": {
-            path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
-            for path in [LEAN / "Cubic.lean", LEAN / "CubicTargets.lean",
-                         LEAN / "lakefile.toml", LEAN / "lake-manifest.json",
-                         LEAN / "lean-toolchain", LEAN / "Audit.lean",
-                         *(LEAN / "Cubic").rglob("*.lean"),
-                         *(LEAN / "CubicTargets").rglob("*.lean")]
-        },
+        "lean_sources_sha256": source_hashes(),
         "source_links": {name: links[f"{DOC_BASE}/find/#doc/{name}"] for name in declarations},
     }
     (BLUEPRINT / "build-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(f"Built {len(labels)} blueprint nodes with {len(declarations)} checked Lean declarations.")
+    print(f"Built {manifest['nodes']} blueprint nodes with {len(declarations)} checked Lean declarations.")
 
 
 if __name__ == "__main__":

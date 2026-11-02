@@ -37,14 +37,14 @@ estimate now written inline in Lemma 10. They are not counted as additional
 results of the current paper. The older Topacogullari interface is retained,
 but is not an assumption of the current main counting theorems.
 
-The dependency graph follows elaborated Lean proofs through their helper
-lemmas, stopping at the next registered result. It records formal proof
-dependencies, not merely imports. Some paper displays are consequences of a
-larger theorem in Lean, so their graph positions need not follow printed order.
-Conversely, two results may use the same helper lemmas without either proof
-calling the other's final registered declaration. Those shared calculations
-do not produce an edge in this graph. Isolated nodes therefore need not be
-mathematically independent or unused in the rest of the paper.
+The dependency graph includes the paper's results, literature inputs, and
+19 selected supporting lemmas shared by several proofs. It follows elaborated
+Lean declarations through other helpers, stopping at the next displayed node.
+Every edge records a formal dependency; `blueprint/dependency-evidence.json`
+retains a declaration path for each one. Some paper displays are consequences
+of a larger theorem in Lean, so their graph positions need not follow printed
+order. Two results that share a helper have arrows from that helper, without
+implying that either result is proved using the other.
 
 The release checks compile the full project, check every project declaration
 for nonstandard axioms, check the registered target types and proof files,

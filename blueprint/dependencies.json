@@ -4,6 +4,11 @@
     "eqn:generalTraceDecomposition",
     "eqn:monicArchimedeanMoments",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:generalHeightReduction",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
@@ -17,6 +22,12 @@
   "thm:asymptoticPolynomialCount": [
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:leadingConstants",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "lemma:rootVsToric",
@@ -26,6 +37,9 @@
   ],
   "thm:exactFormula": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "lemma:rootVsToric",
@@ -33,11 +47,17 @@
     "thm:heightZetaFunctionFormula"
   ],
   "eqn:splitForm": [
-    "eqn:surfaceCoordinateChange"
+    "eqn:surfaceCoordinateChange",
+    "helper:splittingCoordinates"
   ],
-  "eqn:surfaceQuadraticTwist": [],
+  "eqn:surfaceQuadraticTwist": [
+    "helper:splittingCoordinates"
+  ],
   "thm:heightZetaFunctionFormula": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionProduct",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "thm:heightZetaFunctionFormula2"
   ],
@@ -45,26 +65,49 @@
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:affineC3invariants",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:leadingConstants",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:xiMeanValue",
     "prop:canonicalHeight",
     "thm:heightZetaFunctionFormula2"
   ],
-  "eqn:polynomialWeights": [],
-  "thm:modularInterpretation": [],
+  "eqn:polynomialWeights": [
+    "helper:polynomialFibres"
+  ],
+  "thm:modularInterpretation": [
+    "helper:moduliFibres"
+  ],
   "example:twoRationalPointsSamePoly": [],
   "example:splitAlgebra": [],
   "example:splitAlgebraNormalElement": [
-    "example:splitAlgebra"
+    "example:splitAlgebra",
+    "helper:moduliFibres"
   ],
   "prop:basicfacts": [
     "eqn:isoCocharLattices"
   ],
-  "eqn:heightforrationaladeles": [],
-  "lemma:heightformula": [],
-  "eqn:weightVectors": [],
-  "eqn:formulaForNormCharacter": [],
-  "eqn:formulaForNormCharacter2": [],
+  "eqn:heightforrationaladeles": [
+    "helper:supportFunctionSymmetry"
+  ],
+  "lemma:heightformula": [
+    "helper:cubicCharacters",
+    "helper:weightCharacters"
+  ],
+  "eqn:weightVectors": [
+    "helper:cubicCharacters",
+    "helper:weightCharacters"
+  ],
+  "eqn:formulaForNormCharacter": [
+    "helper:characterCoordinates"
+  ],
+  "eqn:formulaForNormCharacter2": [
+    "helper:characterCoordinates",
+    "helper:cubicCharacters"
+  ],
   "lemma:affineIntegrality": [
     "eqn:affineC3invariants"
   ],
@@ -72,19 +115,39 @@
     "eqn:C3invariants"
   ],
   "eqn:C3invariants": [],
-  "prop:canonicalHeight": [],
-  "eqn:localHeight": [],
-  "eqn:heightExtraFactor": [],
+  "prop:canonicalHeight": [
+    "helper:cubicCharacters",
+    "helper:integralLocalHeight",
+    "helper:supportFunctionSymmetry"
+  ],
+  "eqn:localHeight": [
+    "helper:cubicCharacters",
+    "helper:localWeightHeight"
+  ],
+  "eqn:heightExtraFactor": [
+    "helper:cubicCharacters",
+    "helper:integralLocalHeight"
+  ],
   "lemma:rootVsToric": [
+    "helper:cubicCharacters",
     "prop:canonicalHeight"
   ],
   "eqn:isoCocharLattices": [],
   "prop:cyclotomicParametrization": [
+    "helper:integralCoefficients",
+    "helper:polynomialFibres",
     "prop:canonicalHeight"
   ],
-  "eqn:integralityConditionsUsingCyclo": [],
+  "eqn:integralityConditionsUsingCyclo": [
+    "helper:integralCoefficients"
+  ],
   "thm:heightZetaFunctionFormula2": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:archimedeanIntegral",
+    "helper:correctionProduct",
+    "helper:finiteIntegralProduct",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:poissonIntegral"
   ],
@@ -95,19 +158,26 @@
   "prop:heightFourierTransform": [
     "eqn:finiteHeightFourierTransform",
     "eqn:infiniteHeightFourierTransform",
+    "helper:supportFunctionSymmetry",
     "prop:basicfacts",
     "prop:localIntegrality"
   ],
-  "eqn:infiniteHeightFourierTransform": [],
+  "eqn:infiniteHeightFourierTransform": [
+    "helper:archimedeanIntegral"
+  ],
   "eqn:finiteHeightFourierTransform": [
+    "helper:supportFunctionSymmetry",
     "prop:basicfacts",
     "prop:localIntegrality"
   ],
   "eqn:localfourierassumovern": [
+    "helper:supportFunctionSymmetry",
     "prop:basicfacts",
     "prop:localIntegrality"
   ],
-  "eqn:LAsNorm": [],
+  "eqn:LAsNorm": [
+    "helper:adelicLogarithm"
+  ],
   "prop:Lmap": [],
   "lemma:KprimeGroup": [
     "prop:Lmap"
@@ -115,7 +185,10 @@
   "eqn:chimdefn": [
     "prop:Lmap"
   ],
-  "lemma:finiteFourierProduct": [],
+  "lemma:finiteFourierProduct": [
+    "helper:finiteIntegralProduct",
+    "helper:supportFunctionSymmetry"
+  ],
   "eqn:finiteSpectralProduct": [
     "lemma:finiteFourierProduct"
   ],
@@ -123,11 +196,22 @@
     "lemma:finiteFourierProduct"
   ],
   "lemma:heightZetaConvergence": [
+    "helper:adelicLogarithm",
+    "helper:archimedeanIntegral",
+    "helper:finiteIntegralProduct",
+    "helper:supportFunctionSymmetry",
     "prop:Lmap"
   ],
-  "eqn:archimedeanSpectralFactor": [],
+  "eqn:archimedeanSpectralFactor": [
+    "helper:archimedeanIntegral",
+    "helper:supportFunctionSymmetry"
+  ],
   "lemma:poissonIntegral": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:archimedeanIntegral",
+    "helper:finiteIntegralProduct",
+    "helper:supportFunctionSymmetry",
     "prop:Lmap"
   ],
   "eqn:poissonEulerIntegral": [
@@ -135,9 +219,12 @@
     "lemma:poissonIntegral"
   ],
   "eqn:normCharacterDivisor": [],
-  "eqn:eulerCorrectionFactor": [],
+  "eqn:eulerCorrectionFactor": [
+    "helper:correctionProduct"
+  ],
   "lemma:simplifiedZ(s)": [
     "eqn:poissonae",
+    "helper:correctionProduct",
     "thm:heightZetaFunctionFormula2"
   ],
   "eqn:Z0factorization": [
@@ -147,20 +234,33 @@
   "prop:leadingTerms": [
     "eqn:Z0Laurent",
     "eqn:poissonae",
+    "helper:correctionProduct",
     "thm:heightZetaFunctionFormula2"
   ],
   "lemma:reducibles": [
     "eqn:weightedPolynomialCount"
   ],
   "eqn:weightedPolynomialCount": [
+    "helper:adelicLogarithm",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "prop:canonicalHeight"
   ],
-  "eqn:heightMeanBound": [],
+  "eqn:heightMeanBound": [
+    "helper:correctionBound",
+    "helper:correctionProduct"
+  ],
   "eqn:irrPolys": [
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:leadingConstants",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "lemma:xiMeanValue",
@@ -171,6 +271,10 @@
   "eqn:A1asymptotic": [
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:leadingConstants",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "lemma:rootVsToric",
@@ -180,18 +284,30 @@
   "eqn:dSummatoryForGeneralTrace": [
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:leadingConstants",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:xiMeanValue",
     "thm:heightZetaFunctionFormula2"
   ],
   "lemma:traceZeroCoefficients": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "thm:heightZetaFunctionFormula2"
   ],
   "prop:traceZeroAsymptotic": [
     "cite:chandrasekharanNarasimhan1963-thm4",
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:correctionBound",
+    "helper:correctionProduct",
+    "helper:leadingConstants",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:traceZeroCoefficients",
     "lemma:xiMeanValue",
@@ -199,13 +315,18 @@
   ],
   "eqn:monicArchimedeanMoments": [],
   "eqn:generalTraceDecomposition": [
+    "helper:adelicLogarithm",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:generalHeightReduction",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "prop:canonicalHeight"
   ],
   "eqn:monicConstantsFromTraceCounts": [
-    "eqn:monicArchimedeanMoments"
+    "eqn:monicArchimedeanMoments",
+    "helper:correctionProduct",
+    "helper:leadingConstants"
   ],
   "prop:surfaceIntegralCubic": [
     "eqn:surfaceAnticanonical",
@@ -220,28 +341,51 @@
   "prop:surfaceRationalForm": [
     "eqn:surfaceCoordinateChange",
     "eqn:surfaceNormCubic",
+    "helper:splittingCoordinates",
     "prop:surfaceIntegralCubic"
   ],
   "eqn:surfaceNormCubic": [],
   "eqn:surfaceCoordinateChange": [],
-  "prop:surfaceResolvedBoundary": [],
-  "eqn:surfaceBoundaryChain": [],
-  "eqn:surfaceLogIntersections": [],
+  "prop:surfaceResolvedBoundary": [
+    "helper:boundaryChain",
+    "helper:boundaryIntersection"
+  ],
+  "eqn:surfaceBoundaryChain": [
+    "helper:boundaryChain"
+  ],
+  "eqn:surfaceLogIntersections": [
+    "helper:boundaryIntersection"
+  ],
   "prop:santensConstant": [
     "cite:santens2023integral-toric-counting",
     "eqn:affineC3invariants",
+    "helper:correctionProduct",
+    "helper:supportFunctionSymmetry",
     "prop:surfaceResolvedBoundary"
   ],
-  "eqn:santensLocalHeight": [],
-  "eqn:santensTau": [
-    "eqn:affineC3invariants"
+  "eqn:santensLocalHeight": [
+    "helper:localWeightHeight"
   ],
-  "eqn:introConstants": [],
-  "eqn:Z0Laurent": [],
-  "eqn:Z0LaurentR": [],
+  "eqn:santensTau": [
+    "eqn:affineC3invariants",
+    "helper:correctionProduct",
+    "helper:supportFunctionSymmetry"
+  ],
+  "eqn:introConstants": [
+    "helper:leadingConstants"
+  ],
+  "eqn:Z0Laurent": [
+    "helper:laurentRescaling"
+  ],
+  "eqn:Z0LaurentR": [
+    "helper:correctionProduct",
+    "helper:laurentRescaling"
+  ],
   "lemma:normalityCriterion": [],
   "rem:heightCoefficients": [
     "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "thm:heightZetaFunctionFormula2"
   ],
@@ -257,6 +401,7 @@
     "cite:chandrasekharanNarasimhan1963-thm4"
   ],
   "rem:localNonintegrability": [
+    "helper:supportFunctionSymmetry",
     "prop:basicfacts",
     "prop:localIntegrality"
   ],
@@ -264,6 +409,12 @@
     "cite:kuehleitnerNowak2004-cor2",
     "eqn:affineC3invariants",
     "eqn:weightedPolynomialCount",
+    "helper:adelicLogarithm",
+    "helper:correctionProduct",
+    "helper:cubicCharacters",
+    "helper:leadingConstants",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
     "lemma:heightZetaConvergence",
     "lemma:normalityCriterion",
     "lemma:rootVsToric",
@@ -271,5 +422,35 @@
   ],
   "cite:santens2023integral-toric-counting": [],
   "cite:chandrasekharanNarasimhan1963-thm4": [],
-  "cite:kuehleitnerNowak2004-cor2": []
+  "cite:kuehleitnerNowak2004-cor2": [],
+  "helper:splittingCoordinates": [],
+  "helper:polynomialFibres": [],
+  "helper:moduliFibres": [],
+  "helper:supportFunctionSymmetry": [],
+  "helper:weightCharacters": [
+    "helper:cubicCharacters"
+  ],
+  "helper:characterCoordinates": [],
+  "helper:cubicCharacters": [],
+  "helper:localWeightHeight": [],
+  "helper:integralLocalHeight": [
+    "helper:cubicCharacters",
+    "helper:localWeightHeight"
+  ],
+  "helper:integralCoefficients": [],
+  "helper:adelicLogarithm": [],
+  "helper:finiteIntegralProduct": [
+    "helper:supportFunctionSymmetry"
+  ],
+  "helper:archimedeanIntegral": [],
+  "helper:correctionProduct": [],
+  "helper:correctionBound": [
+    "helper:correctionProduct"
+  ],
+  "helper:boundaryChain": [],
+  "helper:boundaryIntersection": [],
+  "helper:leadingConstants": [
+    "helper:correctionProduct"
+  ],
+  "helper:laurentRescaling": []
 }

@@ -12,6 +12,7 @@ older title *On monic abelian trace-one cubic polynomials*.
 
 The blueprint contains the current labelled statements, short proof notes,
 links to Lean declarations, and a dependency graph extracted from the proofs.
+Selected shared supporting lemmas are included to show how the proofs connect.
 See [CORRESPONDENCE.md](CORRESPONDENCE.md) for the two alternative analytic
 proofs, the rational-point scope of the moduli theorem, and the explicit
 literature inputs. The main counting proofs assume Poisson summation and the
