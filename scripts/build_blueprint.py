@@ -147,6 +147,11 @@ def main():
             for old in sorted(links, key=len, reverse=True):
                 text = text.replace(old, links[old])
             if path.suffix == ".html":
+                # plasTeX emits an internal grouping environment that MathJax
+                # does not recognize in substack, and expands \QQ after an
+                # unbraced overline. Preserve both expressions as valid TeX.
+                text = text.replace(r"\begin{bgroup}", "{").replace(r"\end{bgroup}", "}")
+                text = text.replace(r"\overline\mathbb {Q}", r"\overline{\mathbb {Q}}")
                 text = add_blueprint_navigation(text)
             if path.name == "dep_graph_document.html":
                 # Long declaration names make a top-down graph excessively wide.
