@@ -3,6 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style id="early-theme-style">html { background: #fff; } html[data-theme="dark"] { background: #14171a; }</style>
+<script id="early-theme">(function () {
+  var choice = null;
+  try { choice = new URLSearchParams(location.search).get('theme'); } catch (_) {}
+  if (choice !== 'system' && choice !== 'light' && choice !== 'dark') {
+    try { choice = localStorage.getItem('theme'); } catch (_) {}
+  }
+  if (choice !== 'light' && choice !== 'dark') choice = 'system';
+  var mode = choice === 'system' ? (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
+  document.documentElement.setAttribute('data-theme', mode);
+  document.documentElement.setAttribute('data-theme-preference', choice);
+  document.documentElement.style.colorScheme = mode;
+})();</script>
+
   <title>Dependency graph</title>
   <meta name="generator" content="plasTeX" />
   <meta charset="utf-8" />
