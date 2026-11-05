@@ -1,17 +1,13 @@
 import Cubic.ToricHeights.IntegralPolynomialData
-import Cubic.ToricHeights.RootHeightDiscriminant
 import Cubic.PoissonSummation.IntegralPointComparison
 import Cubic.ToricHeights.CanonicalHeight
 import Cubic.QuadraticCorrespondence.RationalCorrespondence
 
 /-!
-# Coefficients, discriminant and height on integral quotient points
+# Coefficients and height on integral quotient points
 
 The height identity is `prop:canonicalHeight`, proved along the paper's
-weight-vector route. `discriminant_square` gives the discriminant inequality from the
-norm/trace formulas; it is used only by the alternative proof
-`RootVsToric.claim_via_discriminant_square`. The labelled `lemma:rootVsToric`
-uses the paper's real-root route (`IntegralPolynomialRealRoots.discriminant_nonneg`).
+weight-vector route.
 -/
 
 noncomputable section
@@ -67,28 +63,5 @@ theorem toricHeight_nonneg (P : Points) : 0 ≤ toricHeight P := by
 
 theorem toricHeight_square (P : Points) : toricHeight P ^ 2 = 1 - 3 * (linear P : ℝ) := by
   rw [toricHeight_eq_sqrt, Real.sq_sqrt (coefficient_height_positive P).le]
-
-/-- The cubic discriminant is the square `(N v / 3)^2` in cyclotomic coordinates. -/
-theorem discriminant_square (P : AdelicHeightZetaData.RationalPoints) :
-    IsSquare (⟨1, -1, P linearCoefficient, P constantCoefficient⟩ : Cubic ℚ).discr := by
-  obtain ⟨u, v, huv⟩ := exists_linear (parameterEquiv P : E)
-  rw [linearCoefficient_eq, constantCoefficient_eq, huv, norm_linear, trace_linear]
-  refine ⟨CyclotomicCoefficients.normForm u v * v / 3, ?_⟩
-  simp only [Cubic.discr, CyclotomicCoefficients.normForm, CyclotomicCoefficients.traceForm]
-  ring
-
-theorem discriminant_nonneg (P : Points) :
-    0 ≤ (linear P : ℝ) ^ 2 - 4 * (linear P : ℝ) ^ 3 +
-      (4 - 18 * (linear P : ℝ)) * constant P - 27 * (constant P : ℝ) ^ 2 := by
-  have h := (discriminant_square P.val).nonneg
-  simp only [Cubic.discr] at h
-  rw [← linear_cast P, ← constant_cast P] at h
-  have hq : (0 : ℚ) ≤ (linear P : ℚ) ^ 2 - 4 * (linear P : ℚ) ^ 3 +
-      (4 - 18 * (linear P : ℚ)) * constant P - 27 * (constant P : ℚ) ^ 2 := by
-    nlinarith [h]
-  exact_mod_cast hq
-
-theorem rootHeight_eq_sqrt (P : Points) : rootHeight P = Real.sqrt (-(linear P : ℝ)) :=
-  RootHeightDiscriminant.rootHeight_eq_sqrt _ _ (linear_nonpos P) (discriminant_nonneg P)
 
 end Cubic.ToricHeights.IntegralPolynomialHeight

@@ -384,6 +384,8 @@ import Cubic.SantensComparison.ToricPicardSpecialization
 import Cubic.SantensComparison.IntegralModelWeights
 import Cubic.SantensComparison.SantensConstant
 import Cubic.SantensComparison.SantensTau
+import Cubic.SantensComparison.SantensMetric
+import Cubic.SantensComparison.TrivialFiniteMetric
 import Cubic.AllGaloisCounts.CountData
 import Cubic.AllGaloisCounts.HeightBox
 import Cubic.AllGaloisCounts.MarkedFactorization
@@ -426,3 +428,5 @@ import Cubic.Analysis.GaussianMeanValue
 import Cubic.Counting.CriticalMeanSquare
 import Cubic.Counting.TopacogullariDyadic
 import Cubic.Counting.HeightCoefficientMeanValue
+import Cubic.Counting.TranslationClasses
+import Cubic.Counting.TraceDistribution

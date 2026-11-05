@@ -120,3 +120,5 @@ import CubicTargets.Counting.XiMeanValue
 import CubicTargets.Counting.TopacogullariDyadic
 import CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare
 import CubicTargets.Counting.CriticalMeanSquare
+import CubicTargets.Counting.TranslationClasses
+import CubicTargets.Counting.TraceDistribution

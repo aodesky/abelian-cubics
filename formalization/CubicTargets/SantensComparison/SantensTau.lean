@@ -12,14 +12,14 @@ open Cubic.PoissonSummation.FiniteEulerProduct
 open scoped LogDifferentials
 
 def Claim : Prop :=
-  coefficient paperLattices paperModel paperSupport 2 1 =
-      tau paperModel paperSupport 2 1 ∧
-  tau paperModel paperSupport 2 1 =
+  coefficient paperLattices paperModel paperSupport (uniform paperSupport) 2 1 =
+      tau paperModel (uniform paperSupport) 2 1 ∧
+  tau paperModel (uniform paperSupport) 2 1 =
     2 * NumberField.dedekindZeta_residue Cubic.QuadraticCorrespondence.CyclotomicField.E *
-      ((∏' p : SplitPrimes, splitVolume paperModel paperSupport 2 1 p) *
-       (∏' p : InertPrimes, inertVolume paperModel paperSupport 2 1 p)) *
-      ramifiedVolume paperModel paperSupport 2 1 *
+      ((∏' p : SplitPrimes, splitVolume paperModel (uniform paperSupport) 2 1 p) *
+       (∏' p : InertPrimes, inertVolume paperModel (uniform paperSupport) 2 1 p)) *
+      ramifiedVolume paperModel (uniform paperSupport) 2 1 *
       LogDifferentials.boundaryResidueMeasure.real Set.univ ∧
-  Summable (fun p : SplitPrimes => ‖splitVolume paperModel paperSupport 2 1 p - 1‖) ∧
-  Summable (fun p : InertPrimes => ‖inertVolume paperModel paperSupport 2 1 p - 1‖)
+  Summable (fun p : SplitPrimes => ‖splitVolume paperModel (uniform paperSupport) 2 1 p - 1‖) ∧
+  Summable (fun p : InertPrimes => ‖inertVolume paperModel (uniform paperSupport) 2 1 p - 1‖)
 end CubicTargets.SantensComparison.SantensTau

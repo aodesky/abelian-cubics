@@ -6,7 +6,9 @@ import Cubic.SantensComparison.RamifiedHaarNormalization
 /-! The local integrals and leading-constant expression for general model
 and metric data on the quadratic torus. The rank-two permutation-Picard
 case has Dedekind convergence factors and a circle as its real residue
-stratum. Neither the count nor these integrals use their cubic evaluations. -/
+stratum. Neither the count nor these integrals use their cubic evaluations.
+The finite local integrals use the metric at that prime; the cone factor uses
+the height class, which is read from the real-place support function. -/
 
 noncomputable section
 
@@ -21,26 +23,26 @@ open scoped Cubic.ToricHeights.SplitLocalModel Cubic.ToricHeights.InertLocalMode
 local instance primeFact (p : Nat.Primes) : Fact (p : ℕ).Prime := ⟨p.2⟩
 local instance inertFact (p : InertPrimes) : Fact ((p.1 : ℕ)%3=2) := ⟨p.2⟩
 
-def splitVolume (A : IntegralModel) (φ : Support) (a : ℝ) (k : ℤ) (p : SplitPrimes) : ℝ :=
+def splitVolume (A : IntegralModel) (ψ : FiniteSupport) (a : ℝ) (k : ℤ) (p : SplitPrimes) : ℝ :=
   UnramifiedGaugeVolume.splitScale p *
-    ∫ x, IntegralModelWeights.splitWeight A φ a k p x ∂UnramifiedGaugeVolume.splitMeasure p
+    ∫ x, IntegralModelWeights.splitWeight A (ψ p.1) a k p x ∂UnramifiedGaugeVolume.splitMeasure p
 
-def inertVolume (A : IntegralModel) (φ : Support) (a : ℝ) (k : ℤ) (p : InertPrimes) : ℝ :=
+def inertVolume (A : IntegralModel) (ψ : FiniteSupport) (a : ℝ) (k : ℤ) (p : InertPrimes) : ℝ :=
   UnramifiedGaugeVolume.inertScale p *
-    ∫ x, IntegralModelWeights.inertWeight A φ a k p x ∂UnramifiedGaugeVolume.inertMeasure p
+    ∫ x, IntegralModelWeights.inertWeight A (ψ p.1) a k p x ∂UnramifiedGaugeVolume.inertMeasure p
 
-def ramifiedVolume (A : IntegralModel) (φ : Support) (a : ℝ) (k : ℤ) : ℝ :=
+def ramifiedVolume (A : IntegralModel) (ψ : FiniteSupport) (a : ℝ) (k : ℤ) : ℝ :=
   (PicardArtinFactors.ramifiedPolynomial ((3:ℂ)^(-1:ℂ))).re *
-    ∫ x, IntegralModelWeights.ramifiedWeight A φ a k x ∂RamifiedHaarNormalization.gaugeMeasure
+    ∫ x, IntegralModelWeights.ramifiedWeight A (ψ three) a k x ∂RamifiedHaarNormalization.gaugeMeasure
 
-def tau (A : IntegralModel) (φ : Support) (a : ℝ) (k : ℤ) : ℝ :=
+def tau (A : IntegralModel) (ψ : FiniteSupport) (a : ℝ) (k : ℤ) : ℝ :=
   2 * NumberField.dedekindZeta_residue E *
-    ((∏' p : SplitPrimes, splitVolume A φ a k p) *
-      ∏' p : InertPrimes, inertVolume A φ a k p) *
-        ramifiedVolume A φ a k * LogDifferentials.boundaryResidueMeasure.real Set.univ
+    ((∏' p : SplitPrimes, splitVolume A ψ a k p) *
+      ∏' p : InertPrimes, inertVolume A ψ a k p) *
+        ramifiedVolume A ψ a k * LogDifferentials.boundaryResidueMeasure.real Set.univ
 
 def coefficient {P : Pair} (L : Lattices P) (A : IntegralModel) (φ : Support)
-    (a : ℝ) (k : ℤ) : ℝ :=
-  L.theta φ / (a * (Nat.factorial (2-1):ℝ)) * tau A φ a k
+    (ψ : FiniteSupport) (a : ℝ) (k : ℤ) : ℝ :=
+  L.theta φ / (a * (Nat.factorial (2-1):ℝ)) * tau A ψ a k
 
 end Cubic.SantensComparison.ToricCountingData

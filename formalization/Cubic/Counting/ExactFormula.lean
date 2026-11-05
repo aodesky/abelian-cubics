@@ -1,21 +1,29 @@
 import Cubic.Counting.AsymptoticPolynomialCount
 import Cubic.PoissonSummation.HeightZetaCountingFormula
 import CubicTargets.Counting.ExactFormula
+import Cubic.Counting.PrimaryNormCount
+import Cubic.Counting.EisensteinIdealCount
 
 /-!
 # Proof of `thm:exactFormula`
 
-The paper: "By Corollary `cor:automaticallyNormal` and Proposition `prop:canonicalHeight`,
-every `f ∈ F` arises from a `D₀`-integral point of `T`. Lemma `lemma:rootVsToric`
-therefore gives `a ≤ 0`. Fix such an integer `a` and put `n = 1−3a`. The same free
-`C₃`-action used above identifies split points of height exactly `√n` with orbits of
-`E_{√n}(ℤ)`, so there are `⅓ #E_{√n}(ℤ)` such points. Each irreducible polynomial
-contributes two points; hence their number is `½ d_n − ⅙ #E_{√n}(ℤ)`. Since `3 ∤ n`,
-Theorem `thm:heightZetaFunctionFormula` supplies the stated divisor sum for `d_n`."
+The paper: "Every `f ∈ F` arises from an integral point of `T`, so
+Lemma `lemma:rootVsToric` gives `a ≤ 0`. Fix `a` and put `n = 1−3a`, so `3 ∤ n`.
+The split points of height `√n` are represented by triples `(x,y,z) ∈ ℤ³` with
+`x+y+z = 1` and `xy+yz+zx = a`, modulo cyclic permutation. To such a triple attach
+`θ = x+yζ+zζ²`; then `Nθ = n` and `θ ≡ 1 (mod 1−ζ)`, and conversely every such `θ`
+comes from exactly one triple. An ideal of norm `n` has six generators `±ζʲθ`, exactly
+three of which are congruent to `1`. Hence the split points of height `√n` correspond
+to the ideals of norm `n`, and there are `a_E(n)` of them. Each irreducible polynomial
+contributes two points; hence their number is `½(d_n − a_E(n))`. Finally `d_n = a_E(n³)`."
 
-This is the exact-height version of `eqn:weightedPolynomialCount` (`WeightedCount`). As
-there, every `f ∈ F` arises from an integral point by `thm:modularInterpretation`
-(`AsymptoticPolynomialCount.exists_point`).
+The count is organized as in the paper: `card_split` gives three triples per split
+point (the cyclic permutations), `tripleEquiv` is the bijection `(x,y,z) ↦ θ` written in
+the coordinates `θ = (x−z) + (y−z)ζ`, and `PrimaryNormCount.card_primarySet` gives
+three primary generators per ideal. Hence `#split points = a_E(n)`. For `d_n`,
+`thm:heightZetaFunctionFormula` gives the divisor sum of
+Remark `rem:heightCoefficients`, and `EisensteinIdealCount.idealCount_cube` identifies it
+with `a_E(n³)`.
 -/
 
 noncomputable section
@@ -26,7 +34,7 @@ open Polynomial Cubic.Counting.PolynomialCountData Cubic.Counting.WeightedCount
 open Cubic.Counting.SplitPoints Cubic.Counting.SplitCount
 open Cubic.QuadraticCorrespondence Cubic.QuadraticCorrespondence.DescendedCoefficients
 open Cubic.QuadraticCorrespondence.CorrespondencePolynomials
-open CubicTargets.Counting.ExactFormula (ellipsePoints fibre divisorSum)
+open CubicTargets.Counting.ExactFormula (fibre normIdeals aE)
 
 /-- `lemma:rootVsToric`: if `t³−t²+at+b ∈ F` then `a ≤ 0`. -/
 theorem a_nonpos (a b : ℤ) (h : traceOneCubic a b ∈ cyclicPolynomials) : a ≤ 0 := by
@@ -87,42 +95,54 @@ theorem IPa_finite (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) : (IPa a).Finite := by
 def exactTriples (a : ℤ) : Set Triple :=
   {v | Cubic.OrbitParametrization.secondCoeff (v.val 0) (v.val 1) (v.val 2) = a}
 
-theorem curve_iff (ha : a ≤ 0) (α β : ℤ) :
-    (α : ℝ) ^ 2 + (β : ℝ) ^ 2 + α * β - α - β = (Real.sqrt (1 - 3 * a) ^ 2 - 1) / 3 ↔
-      Cubic.OrbitParametrization.secondCoeff α β (1 - α - β) = a := by
-  have ha' : (a : ℝ) ≤ 0 := by exact_mod_cast ha
-  rw [Real.sq_sqrt (by linarith)]
-  have h' := congrArg (Int.cast : ℤ → ℝ) (neg_secondCoeff α β)
-  push_cast at h'
-  constructor
-  · intro h
-    have : ((Cubic.OrbitParametrization.secondCoeff α β (1 - α - β) : ℤ) : ℝ) = a := by linarith
-    exact_mod_cast this
-  · intro h
-    rw [h] at h'
-    linarith
-
-/-- `E_{√(1−3a)}(ℤ)` is the set of triples with `αβ + βγ + γα = a`. -/
-def curveEquiv (ha : a ≤ 0) : ellipsePoints (Real.sqrt (1 - 3 * a)) ≃ exactTriples a where
-  toFun p := ⟨ofPair p.val, (curve_iff ha _ _).mp p.property⟩
-  invFun v := ⟨(v.val.val 0, v.val.val 1), by
+/-- `(x, y, z) ↦ θ = x + yζ + zζ² = (x−z) + (y−z)ζ`: the triples with
+`xy + yz + zx = a` are the `θ` of norm `n = 1−3a` with `θ ≡ 1 (mod 1−ζ)`. -/
+def tripleEquiv (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) :
+    exactTriples a ≃ PrimaryNormCount.primarySet n where
+  toFun v := ⟨(v.val.val 0 - v.val.val 2, v.val.val 1 - v.val.val 2), by
+    have hs := v.val.property
     have hv : Cubic.OrbitParametrization.secondCoeff (v.val.val 0) (v.val.val 1)
         (v.val.val 2) = a := v.property
-    have hsum := v.val.property
-    rw [show v.val.val 2 = 1 - v.val.val 0 - v.val.val 1 by omega] at hv
-    exact (curve_iff ha _ _).mpr hv⟩
-  left_inv p := rfl
-  right_inv v := by
+    simp only [Cubic.OrbitParametrization.secondCoeff] at hv
+    refine ⟨?_, ⟨v.val.val 2, ?_⟩⟩
+    · linear_combination (v.val.val 0 + v.val.val 1 + v.val.val 2 + 1) * hs - 3 * hv - hn
+    · linear_combination -hs⟩
+  invFun p := by
+    refine ⟨ofPair (p.1.1 + (1 - p.1.1 - p.1.2) / 3, p.1.2 + (1 - p.1.1 - p.1.2) / 3), ?_⟩
+    obtain ⟨hN, k, hk⟩ := p.2
+    have hz : (1 - p.1.1 - p.1.2) / 3 = k := by rw [hk]; omega
+    obtain ⟨h0, h1, h2⟩ := ofPair_val (p.1.1 + (1 - p.1.1 - p.1.2) / 3,
+      p.1.2 + (1 - p.1.1 - p.1.2) / 3)
+    change Cubic.OrbitParametrization.secondCoeff _ _ _ = a
+    rw [h0, h1, h2]
+    simp only [Cubic.OrbitParametrization.secondCoeff, hz]
+    have h3 : (3 : ℤ) * a = 1 - n := by omega
+    have hz' : 1 - (p.1.1 + k) - (p.1.2 + k) = k := by linarith
+    rw [hz']
+    have : 3 * ((p.1.1 + k) * (p.1.2 + k) + (p.1.2 + k) * k + k * (p.1.1 + k)) = 3 * a := by
+      linear_combination -hN - h3 - (p.1.1 + p.1.2 + 3 * k + 1) * hk
+    omega
+  left_inv v := by
     apply Subtype.ext
     apply Subtype.ext
+    have hs := v.val.property
+    have hz : (1 - (v.val.val 0 - v.val.val 2) - (v.val.val 1 - v.val.val 2)) / 3 =
+        v.val.val 2 := by omega
     funext i
-    have hsum := v.val.property
     have hi : i = 0 ∨ i = 1 ∨ i = 2 := by revert i; decide
     rcases hi with rfl | rfl | rfl
-    · rfl
-    · rfl
-    · change 1 - v.val.val 0 - v.val.val 1 = v.val.val 2
-      omega
+    · change v.val.val 0 - v.val.val 2 + _ = _; rw [hz]; ring
+    · change v.val.val 1 - v.val.val 2 + _ = _; rw [hz]; ring
+    · change 1 - (v.val.val 0 - v.val.val 2 + _) - (v.val.val 1 - v.val.val 2 + _) = _
+      rw [hz]; omega
+  right_inv p := by
+    obtain ⟨⟨u, w⟩, hN, k, hk⟩ := p
+    apply Subtype.ext
+    have hz : (1 - u - w) / 3 = k := by rw [hk]; omega
+    change ((u + (1 - u - w) / 3) - (1 - (u + (1 - u - w) / 3) - (w + (1 - u - w) / 3)),
+      (w + (1 - u - w) / 3) - (1 - (u + (1 - u - w) / 3) - (w + (1 - u - w) / 3))) = (u, w)
+    rw [hz]
+    ext <;> simp <;> omega
 
 /-- The fibre of a triple's point in a shift-invariant set of triples is its orbit. -/
 theorem fibre_card_of_invariant (S : Set Triple)
@@ -264,8 +284,9 @@ theorem IPa_disjoint : Disjoint (IPc a) (IPs a) := by
 
 end Fixed
 
-/-- `thm:exactFormula`, relative to the Poisson summation input `PoissonWithDualMeasure.BlackBox`, which enters through
-`thm:heightZetaFunctionFormula` (the divisor sum for `d_n`). -/
+/-- `thm:exactFormula`, relative to the Poisson summation input
+`PoissonWithDualMeasure.BlackBox`, which enters through `thm:heightZetaFunctionFormula`
+(the divisor sum for `d_n`). -/
 theorem «thm:exactFormula»
     (hPoisson : CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox) :
     CubicTargets.Counting.ExactFormula.Claim := by
@@ -275,34 +296,34 @@ theorem «thm:exactFormula»
   have hn0 : 0 < n := by omega
   have hn3 : ¬ 3 ∣ n := by omega
   obtain ⟨hfin, hcyc⟩ := card_cyclic n hn
+  refine ⟨hfin, Ideal.finite_setOf_absNorm_eq n, Ideal.finite_setOf_absNorm_eq (n ^ 3), ?_⟩
+  -- split points of height `√n`: three triples each, three primary generators per ideal
   have hsplit := card_split n hn
+  rw [Nat.card_congr (tripleEquiv n hn), PrimaryNormCount.card_primarySet n hn3] at hsplit
+  have hs : Nat.card (IPs a) = aE n := by
+    have h : Nat.card (IPs a) = EisensteinIdealCount.idealCount n := by omega
+    exact h
+  -- `d_n = a_E(n³)`
   have hcount := count_eq n hn
-  have hS1 : 1 ≤ Real.sqrt (1 - 3 * a) := by
-    have : (a : ℝ) ≤ 0 := by exact_mod_cast ha
-    rw [Real.le_sqrt (by norm_num) (by linarith)]
-    linarith
-  have hEfin : (ellipsePoints (Real.sqrt (1 - 3 * a))).Finite :=
-    ((Cubic.Counting.EllipseLatticeCount.«eqn:ellipseLatticeCount»).1 _ hS1).subset
-      fun p hp => le_of_eq hp
-  refine ⟨hfin, hEfin, ?_⟩
-  have hE : Nat.card (ellipsePoints (Real.sqrt (1 - 3 * a))) = Nat.card (exactTriples a) :=
-    Nat.card_congr (curveEquiv ha)
+  have hd := (Cubic.PoissonSummation.«thm:heightZetaFunctionFormula» hPoisson).point_count n hn0 hn3
+  rw [hcount] at hd
+  have hcube := EisensteinIdealCount.idealCount_cube 0 n hn0 hn3
+  rw [pow_zero, one_mul, Cubic.PoissonSummation.HeightCountingCoefficients.away_three n hn3] at hcube
+  have hdn : (Nat.card (IPa a) : ℝ) = aE (n ^ 3) := by
+    have h1 : ((Nat.card (IPa a) : ℤ) : ℂ) = (EisensteinIdealCount.idealCount (n ^ 3) : ℂ) := by
+      rw [hcube, hd]
+    have h2 : Nat.card (IPa a) = EisensteinIdealCount.idealCount (n ^ 3) := by exact_mod_cast h1
+    exact_mod_cast h2
   have hunion : Nat.card (IPa a) = Nat.card (IPc a) + Nat.card (IPs a) := by
     have hfa := IPa_finite n hn
     rw [Nat.card_coe_set_eq, Nat.card_coe_set_eq, Nat.card_coe_set_eq, IPa_union,
       Set.ncard_union_eq IPa_disjoint (hfa.subset fun P (hP : P ∈ IPc a) => hP.1)
         (hfa.subset fun P (hP : P ∈ IPs a) => hP.1)]
-  have hd := (Cubic.PoissonSummation.«thm:heightZetaFunctionFormula» hPoisson).point_count n hn0 hn3
-  have hdiv : Cubic.PoissonSummation.HeightCountingData.divisorFormula n = divisorSum n := rfl
-  rw [hdiv, hcount] at hd
-  have hd' : ((Nat.card (IPa a) : ℤ) : ℝ) = (divisorSum n : ℝ) := by exact_mod_cast hd
-  push_cast at hd'
   have e1 : (Nat.card (IPa a) : ℝ) = Nat.card (IPc a) + Nat.card (IPs a) := by
     exact_mod_cast hunion
   have e2 : (Nat.card (IPc a) : ℝ) = Nat.card (fibre a) * 2 := by exact_mod_cast hcyc
-  have e3 : (Nat.card (ellipsePoints (Real.sqrt (1 - 3 * a))) : ℝ) = Nat.card (IPs a) * 3 := by
-    rw [hE]; exact_mod_cast hsplit
-  rw [e3, ← hd', e1, e2]
+  have e3 : (Nat.card (IPs a) : ℝ) = aE n := by exact_mod_cast hs
+  rw [← hdn, e1, e2, e3]
   ring
 
 end Cubic.Counting.ExactFormula
