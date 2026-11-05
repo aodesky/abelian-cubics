@@ -1,5 +1,5 @@
 {
-  "lean_sources_digest": "1eb29026f7a224b4168696292668652defde55d8c4ee2de791929c6305799048",
+  "lean_sources_digest": "020cdd705b0b5a119bfecbfcdecf9f54657700c5473af0ebbed7bdb5bace6a64",
   "roots": {
     "thm:generalMonicCount": "Cubic.Counting.GeneralMonicCount.thm:generalMonicCount",
     "thm:asymptoticPolynomialCount": "Cubic.Counting.AsymptoticPolynomialCount.thm:asymptoticPolynomialCount",
@@ -465,9 +465,9 @@
         "Cubic.Counting.WeightedCount.height_eq_sqrt_iff",
         "Cubic.ToricHeights.CanonicalHeight.prop:canonicalHeight"
       ],
-      "thm:heightZetaFunctionFormula": [
+      "rem:heightCoefficients": [
         "Cubic.Counting.ExactFormula.thm:exactFormula",
-        "Cubic.PoissonSummation.thm:heightZetaFunctionFormula"
+        "Cubic.PoissonSummation.HeightCoefficients.rem:heightCoefficients"
       ]
     },
     "eqn:splitForm": {

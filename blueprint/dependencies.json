@@ -44,7 +44,7 @@
     "lemma:normalityCriterion",
     "lemma:rootVsToric",
     "prop:canonicalHeight",
-    "thm:heightZetaFunctionFormula"
+    "rem:heightCoefficients"
   ],
   "eqn:splitForm": [
     "eqn:surfaceCoordinateChange",

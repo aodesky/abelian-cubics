@@ -90,7 +90,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 
 
- For $m\geq1$ let $a_E(m)$ denote the number of ideals of norm $m$ in the ring of integers $\mcO_E$ of $E$. If $t^3-t^2+at+b\in\ZZ[t]$ has Galois group $C_3$, then $a\leq0$. Fix $a \in \ZZ_{\leq 0}$ and put $n=1-3a$. The number of polynomials of the form $t^3 -t^2 + at + b \in \ZZ[t]$ with Galois group $C_3$ is equal to \begin{equation*} \tfrac{1}{2}\big(a_E(n^3)-a_E(n)\big). \end{equation*} 
+ For $m\geq1$ let $a_E(m)$ denote the number of ideals of norm $m$ in the ring of integers $\mcO_E$ of $E$. If $t^3-t^2+at+b\in\ZZ[t]$ has Galois group $C_3$, then $a\leq0$. Fix $a \in \ZZ_{\leq 0}$ and put $n=1-3a$. The number of polynomials of the form $t^3 -t^2 + at + b \in \ZZ[t]$ with Galois group $C_3$ is equal to $\tfrac{1}{2}\big(a_E(n^3)-a_E(n)\big)$. 
 
 \end{theorem}
 
@@ -98,9 +98,9 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-\uses{eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:heightZetaFunctionFormula}
+\uses{eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, rem:heightCoefficients}
 
-Let $d_n$ be the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$ (Theorem~\ref{thm:heightZetaFunctionFormula}), and let $\zeta\in E$ be a primitive cube root of unity. If $f=t^3-t^2+at+b$ has Galois group $C_3$, its roots are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$; so $f$ comes from an integral point of $T$ (Proposition~\ref{prop:canonicalHeight}), and Lemma~\ref{lemma:rootVsToric} gives $a\leq0$. Fix $a$ and $n=1-3a$, so that $3\nmid n$. The $d_n$ points of height $\sqrt n$ are two points for each such $f$ (Equation~\ref{eqn:polynomialWeights}) together with the split points. A split point is a triple $(x,y,z)\in\ZZ^3$ with $x+y+z=1$ and $xy+yz+zx=a$, up to cyclic permutation. Its element $\theta=x+y\zeta+z\zeta^2\in\mcO_E$ has norm $(x+y+z)^2-3(xy+yz+zx)=n$ and is congruent to $1$ modulo $1-\zeta$. Conversely, each $u+v\zeta$ with $u+v\equiv1\pmod3$ comes from exactly one triple, and a cyclic permutation multiplies $\theta$ by a power of $\zeta$. An ideal of norm $n$ has six generators $\pm\zeta^j\theta$, and exactly three of them are congruent to $1$ modulo $1-\zeta$. Hence there are $a_E(n)$ split points, and the number of polynomials is $\frac12(d_n-a_E(n))$. It remains to show $d_n=a_E(n^3)$. By Remark~\ref{rem:heightCoefficients}, $d_n$ is the product of $3k+1$ over $p^k\parallel n$ with $p\equiv1\pmod3$ if every prime $q\equiv2\pmod3$ divides $n$ to an even power, and $d_n=0$ otherwise. The paper matches this with the ideals of norm $n^3$: there are $3k+1$ of norm $p^{3k}$, and one or none of norm $q^{3k}$ according as $k$ is even or odd. Lean instead compares Dirichlet coefficients in $\xi(s)=\zeta(s)L(s,\chi)$, where $\zeta(s)$ is the Riemann zeta function and $\chi$ is the nontrivial character modulo $3$.
+Let $d_n$ be the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$ (Theorem~\ref{thm:heightZetaFunctionFormula}), and let $\zeta\in E$ be a primitive cube root of unity. If $f=t^3-t^2+at+b$ has Galois group $C_3$, its roots are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$; so $f$ comes from an integral point of $T$ (Proposition~\ref{prop:canonicalHeight}), and Lemma~\ref{lemma:rootVsToric} gives $a\leq0$. Fix $a$ and $n=1-3a$, so that $3\nmid n$. The $d_n$ points of height $\sqrt n$ are two points for each such $f$ (Equation~\ref{eqn:polynomialWeights}) together with the split points. A split point is a triple $(x,y,z)\in\ZZ^3$ with $x+y+z=1$ and $xy+yz+zx=a$, up to cyclic permutation. Its element $\theta=x+y\zeta+z\zeta^2\in\mcO_E$ has norm $(x+y+z)^2-3(xy+yz+zx)=n$ and is congruent to $1$ modulo $1-\zeta$. Conversely, each $u+v\zeta$ with $u+v\equiv1\pmod3$ comes from exactly one triple, and a cyclic permutation multiplies $\theta$ by a power of $\zeta$. An ideal of norm $n$ has six generators $\pm\zeta^j\theta$, and exactly three of them are congruent to $1$ modulo $1-\zeta$. Hence there are $a_E(n)$ split points, and the number of polynomials is $\frac12(d_n-a_E(n))$. It remains to show $d_n=a_E(n^3)$. By Remark~\ref{rem:heightCoefficients}, $d_n$ is the product of $3k+1$ over $p^k\parallel n$ with $p\equiv1\pmod3$ if every prime $q\equiv2\pmod3$ divides $n$ to an even power, and $d_n=0$ otherwise. The ideal count $n\mapsto a_E(n^3)$ is multiplicative, so it suffices to count ideals of prime-power norm. A prime $p\equiv1\pmod3$ splits as $\mathfrak p\overline{\mathfrak p}$, and the ideals of norm $p^{3k}$ are $\mathfrak p^i\overline{\mathfrak p}^{3k-i}$ for $0\leq i\leq3k$, so there are $3k+1$ of them. A prime $q\equiv2\pmod3$ is inert with norm $q^2$, so there is one ideal of norm $q^{3k}$ if $k$ is even and none if $k$ is odd.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -174,7 +174,7 @@ Let $\DDD_0=\{X+Y+Z=0\}\subset\SSS$. The toric height functions $H(-,s)$ of Baty
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:correctionProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
-Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in the open torus $T$: on this affine chart $T$ is defined by $1-3e_2\neq0$, and $e_2(P)\in\ZZ$ by Lemma~\ref{lemma:affineIntegrality}. Hence the series is $Z_0(s/2)$, where $Z_0(z)=Z(2z,0,0)$ is the multivariate height zeta function $Z$ of Theorem~\ref{thm:heightZetaFunctionFormula2} on the line spanned by $D_0$; that theorem gives absolute convergence for $\operatorname{Re}(s)>2$. Lemma~\ref{lemma:simplifiedZ-s} rewrites its Euler product as $(1-3^{-z})^2\xi(z)^2R(z)$, with $R$ as in Equation~\ref{eqn:eulerCorrectionFactor}, using the Euler product of $\xi$ and the identity $(1+2x)(1-x)^2=1-3x^2+2x^3$; with $z=s/2$ this is the displayed product. The product $R(z)$ converges absolutely and locally uniformly for $\operatorname{Re}(z)>1/2$, which gives the continuation to $\operatorname{Re}(s)>1$. Since $\xi$ has only a simple pole at $1$ and $R(1)>0$, Proposition~\ref{prop:leadingTerms} shows that the only pole is a double pole at $s=2$. Finally, $3D_0$ is linearly equivalent to $D_0+D_1+D_2=-K$ (Equation~\ref{eqn:normCharacterDivisor}), so $\mathcal O(D_0)$ corresponds to $s=1$ and $H(P)$ is the toric height $H(P,\mathcal O(D_0))$.
+Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in the open torus $T$: on this affine chart $T$ is defined by $1-3e_2\neq0$, and $e_2(P)\in\ZZ$ by Lemma~\ref{lemma:affineIntegrality}. Hence the series is $Z_0(s/2)$, where $Z_0(z)=Z(2z,0,0)$ is the multivariate height zeta function $Z$ of Theorem~\ref{thm:heightZetaFunctionFormula2} on the line spanned by $D_0$; that theorem gives absolute convergence for $\operatorname{Re}(s)>2$. Lemma~\ref{lemma:simplifiedZ-s} rewrites its Euler product as $(1-3^{-z})^2\xi(z)^2R(z)$, with $R$ as in Equation~\ref{eqn:eulerCorrectionFactor}, using the Euler product of $\xi$ and the identity $(1+2x)(1-x)^2=1-3x^2+2x^3$; with $z=s/2$ this is the displayed product. The product $R(z)$ converges absolutely and locally uniformly for $\operatorname{Re}(z)>1/2$, which gives the continuation to $\operatorname{Re}(s)>1$. Since $\xi$ has only a simple pole at $1$ and $R(1)>0$, Proposition~\ref{prop:leadingTerms} shows that the only pole is a double pole at $s=2$. Finally, $S$ has Picard rank one \cite[Corollary~3.6]{odesky2023moduli}, and $-K=D_0+D_1+D_2$ is, up to torsion in the divisor class group, the ample generator \cite[Theorems~3.5 and~3.7]{odesky2023moduli}, which corresponds to $s=3$. Equation~\ref{eqn:normCharacterDivisor} shows that $3D_0$ is linearly equivalent to $-K$, so $\mathcal O(D_0)$ corresponds to $s=1$ and $H(P)$ is the toric height $H(P,\mathcal O(D_0))$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -226,7 +226,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{cite:kuehleitnerNowak2004-cor2, eqn:affineC3invariants, eqn:weightedPolynomialCount, helper:adelicLogarithm, helper:correctionProduct, helper:cubicCharacters, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight}
 
-Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in $T$; let $\nu\in E^\times$ be the element attached to $P$ by Proposition~\ref{prop:cyclotomicParametrization}, so that $\mathrm N\nu=1-3a=H(P)^2$. The element $\beta=\mathrm N(\nu)\nu$ has norm $H(P)^6$. Integrality of $P$ (Lemma~\ref{lemma:affineIntegrality}) makes $\beta$ an Eisenstein integer congruent to $1$ modulo $3\mcO_E$. Conversely, the congruences of Equation~\ref{eqn:integralityConditionsUsingCyclo} recover an integral point from each such $\beta$ of cube norm. The six units of $\mcO_E$ map bijectively onto $(\mcO_E/3\mcO_E)^\times$, so every ideal $J$ with $J+3\mcO_E=\mcO_E$, equivalently $3\nmid\mathrm NJ$, has exactly one generator congruent to $1$ modulo $3\mcO_E$. Hence $P\mapsto\beta\mcO_E$ is a bijection onto the ideals in the sum, with $\mathrm NJ=H(P)^6$, and the two series agree for $\operatorname{Re}(s)>2$. For the counts, let $A(X)=\sum_{n\leq X}a_E(n^3)$, where $a_E(m)$ is the number of ideals of norm $m$. The prime above $3$ is ramified of norm $3$, so $a_E((3n)^3)=a_E(n^3)$ and the sum over $n\leq X$ with $3\nmid n$ is $A(X)-A(X/3)$. Apply the K\"uhleitner--Nowak estimate to $A$, with $F(s)=(s-1)^2Z_0(s)/(1-3^{-s})$, where $Z_0(z)=\sum_{3\nmid n}a_E(n^3)n^{-z}$ is the height zeta function at $s=2z$; the Laurent expansion in Proposition~\ref{prop:leadingTerms} gives $F(1)$ and $F'(1)$. The result is $\sum_{n\leq X,\,3\nmid n}a_E(n^3)=XQ(\tfrac12\log X)+O(\sqrt X(\log X)^3(\log\log X)^2)$. Taking $X=H^2$ gives Corollary~\ref{cor:integralPointCount} with error $O(H(\log H)^3(\log\log H)^2)$. Combining this with Lemma~\ref{lemma:reducibles} and taking $X=3H^2+1$, as in the proof of Theorem~\ref{thm:asymptoticPolynomialCount}, gives that theorem with the same error.
+Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in $T$; let $\nu\in E^\times$ be the element attached to $P$ by Proposition~\ref{prop:cyclotomicParametrization}, so that $\mathrm N\nu=1-3a=H(P)^2$. The element $\theta=\mathrm N(\nu)\nu=\nu^2\overline\nu$ has norm $H(P)^6$. Integrality of $P$ (Lemma~\ref{lemma:affineIntegrality}) makes $\theta$ an Eisenstein integer congruent to $1$ modulo $3\mcO_E$. Conversely, the congruences of Equation~\ref{eqn:integralityConditionsUsingCyclo} recover an integral point from each such $\theta$ of cube norm. The six units of $\mcO_E$ map bijectively onto $(\mcO_E/3\mcO_E)^\times$, so every ideal $J$ with $J+3\mcO_E=\mcO_E$, equivalently $3\nmid\mathrm NJ$, has exactly one generator congruent to $1$ modulo $3\mcO_E$. Hence $P\mapsto\theta\mcO_E$ is a bijection onto the ideals in the sum, with $\mathrm NJ=H(P)^6$, and the two series agree for $\operatorname{Re}(s)>2$. For the counts, let $A(X)=\sum_{n\leq X}a_E(n^3)$, where $a_E(m)$ is the number of ideals of norm $m$. The prime above $3$ is ramified of norm $3$, so $a_E((3n)^3)=a_E(n^3)$ and the sum over $n\leq X$ with $3\nmid n$ is $A(X)-A(X/3)$. Apply the K\"uhleitner--Nowak estimate to $A$, with $F(s)=(s-1)^2Z_0(s)/(1-3^{-s})$, where $Z_0(z)=\sum_{3\nmid n}a_E(n^3)n^{-z}$ is the height zeta function at $s=2z$; the Laurent expansion in Proposition~\ref{prop:leadingTerms} gives $F(1)$ and $F'(1)$. The result is $\sum_{n\leq X,\,3\nmid n}a_E(n^3)=XQ(\tfrac12\log X)+O(\sqrt X(\log X)^3(\log\log X)^2)$. Taking $X=H^2$ gives Corollary~\ref{cor:integralPointCount} with error $O(H(\log H)^3(\log\log H)^2)$. Combining this with Lemma~\ref{lemma:reducibles} and taking $X=3H^2+1$, as in the proof of Theorem~\ref{thm:asymptoticPolynomialCount}, gives that theorem with the same error.
 
 The proof assumes the K\"uhleitner--Nowak estimate (Cited theorem~\ref{cite:kuehleitnerNowak2004-cor2}).
 
@@ -280,7 +280,7 @@ There is a bijection between rational points of $T$ and equivalence classes of $
 
 \uses{helper:moduliFibres}
 
-Let $\mathcal G_1$ be the torus of augmentation-one units of the group algebra of $C_3$, so that $T=\mathcal G_1/C_3$, and let $A$ and $A^{C_3}$ be the coordinate rings of $\mathcal G_1$ and $T$. We follow \cite[\S2]{odesky2023moduli}. A pair $(K,x)$ gives the element $u=\sum_{g\in C_3}(g^{-1}x)[g]$ of the group algebra $K[C_3]$. Its augmentation is $\operatorname{Tr}(x)=1$, and $u$ is a unit if and only if $x$ is normal. Thus $u$ is a $K$-point of $\mathcal G_1$; its image in $T$ is fixed by the action of $C_3$ on $K$, so it is a rational point, and its characteristic polynomial is that of $x$. Conversely, a rational point $P$ of $T$ gives the fibre algebra $A\otimes_{A^{C_3},P}\QQ$ with its $C_3$-action. It is a $C_3$-algebra, and the image of the first coordinate is a trace-one normal element. If $(K,x)$ maps to $P$, the equivariant map from the fibre algebra to $K$ sending the first coordinate to $x$ carries the coordinate basis to the basis of conjugates of $x$. So it is an isomorphism of pairs, and pairs with the same point are equivalent. Equivalent pairs give the same point, and the fibre pair of $P$ maps to $P$, so the map is a bijection. Lean formalizes this rational-point correspondence, not the moduli statement over general bases.
+Let $\mathcal G_1$ be the torus of augmentation-one units of the group algebra of $C_3$, so that $T=\mathcal G_1/C_3$, and let $A$ and $A^{C_3}$ be the coordinate rings of $\mathcal G_1$ and $T$. We follow \cite[\S2]{odesky2023moduli}. A pair $(K,x)$ gives the element $u=\sum_{g\in C_3}(g^{-1}x)[g]$ of the group algebra $K[C_3]$. Its augmentation is $\operatorname{Tr}(x)=1$, and $u$ is a unit if and only if $x$ is normal. Thus $u$ is a $K$-point of $\mathcal G_1$; its image in $T$ is fixed by the action of $C_3$ on $K$, so it is a rational point $P$; the characteristic polynomial attached to $P$ is that of $x$. Conversely, a rational point $P$ of $T$ gives the fibre algebra $A\otimes_{A^{C_3},P}\QQ$ with its $C_3$-action. It is a $C_3$-algebra, and the image of the first coordinate is a trace-one normal element. If $(K,x)$ maps to $P$, the equivariant map from the fibre algebra to $K$ sending the first coordinate to $x$ carries the images of $X,Y,Z$, which form a basis of the fibre algebra, to $x,\sigma^2x,\sigma x$. So it is an isomorphism of pairs, and pairs with the same point are equivalent. Equivalent pairs give the same point, and the fibre pair of $P$ maps to $P$, so the map is a bijection. Lean formalizes this rational-point correspondence, not the moduli statement over general bases.
 
 \end{proof}
 
@@ -400,7 +400,7 @@ A support function is a continuous $\Gamma$-invariant function $\varphi\colon\ma
 
 \uses{helper:supportFunctionSymmetry}
 
-If $v$ splits in $E$, its two places are $w$ and $\gamma w$, and $\ell_{\gamma w}(x_v)=\gamma\,\ell_w(x_v)$. Since $\varphi$ is $\Gamma$-invariant (Supporting lemma~\ref{helper:supportFunctionSymmetry}), both places give the same value $\varphi(\ell_w(x_v))$. Grouping the factors of $H(x,\varphi)$ by the place $v$ below $w$, the factors over $v$ multiply to $q_v^{-\varphi(\ell_w(x_v))\,f_vg_v/[E:\QQ]}$, because $\prod_{w\mid v}q_w=q_v^{f_vg_v}$, where $f_v$ is the residue degree and $g_v$ the number of places over $v$. As $e_vf_vg_v=[E:\QQ]=2$, this is $q_v^{-\varphi(\ell_w(x_v))/e_v}$. Concretely, a split prime $p$ contributes two factors $p^{-\varphi/2}$, an inert prime one factor $(p^2)^{-\varphi/2}$, the ramified prime one factor $3^{-\varphi/2}$, and the complex place one factor $(e^2)^{-\varphi/2}$.
+If $v$ splits in $E$, its two places are $w$ and $\gamma w$, and $\ell_{\gamma w}(x_v)=\gamma\,\ell_w(x_v)$. Since $\varphi$ is $\Gamma$-invariant (Supporting lemma~\ref{helper:supportFunctionSymmetry}), both places give the same value $\varphi(\ell_w(x_v))$. Let $f_v=[E_w:\QQ_v]/e_v$, which is the residue degree for finite $v$, with $f_\infty=2$, and let $g_v$ be the number of places of $E$ over $v$. Then $\prod_{w\mid v}q_w=q_v^{f_vg_v}$, so, grouping the factors of $H(x,\varphi)$ by the place $v$ below $w$, the factors over $v$ multiply to $q_v^{-\varphi(\ell_w(x_v))\,f_vg_v/[E:\QQ]}$. As $e_vf_vg_v=[E:\QQ]=2$, this is $q_v^{-\varphi(\ell_w(x_v))/e_v}$. Concretely, a split prime $p$ contributes two factors $p^{-\varphi/2}$, an inert prime one factor $(p^2)^{-\varphi/2}$, the ramified prime one factor $3^{-\varphi/2}$, and the complex place one factor $(e^2)^{-\varphi/2}$.
 
 \end{proof}
 
@@ -714,7 +714,7 @@ We have $\gamma\omega=\tfrac13(v_1+2v_2)=v_1+v_2-\omega\in N_E$, and $v_1=2\omeg
 
 \uses{helper:integralCoefficients, helper:polynomialFibres, prop:canonicalHeight}
 
-A torus over $\QQ$ is determined up to isomorphism by its character lattice with the Galois action \cite[Theorem~12.23]{milne}, so the $\Gamma$-isomorphism of Equation~\ref{eqn:isoCocharLattices} gives $T\cong\mathcal G_1$, unique up to $\mathrm{Aut}(\mathcal G_1)$. On characters it sends $\chi^{v_1^\vee},\chi^{v_2^\vee}$ of $\mathcal G_{1,E}$ to $\chi^{a'},\chi^{b'}$ of $T_E$, and at $\alpha\in E^\times=\mathcal G_1(\QQ)$ the characters $\chi^{v_1^\vee},\chi^{v_2^\vee}$ take the values $\alpha$ and $\gamma\alpha$ in some order. On the chart $e_1=1$, Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} give $\chi^{a'+b'}=1-3e_2$ and $\chi^{2a'+b'}+\chi^{a'+2b'}=2-9e_2+27e_3$. At the point given by $\alpha$, where $e_2=a$ and $e_3=-b$, these become $N=\alpha\cdot\gamma\alpha=1-3a$ and $NT=N(\alpha+\gamma\alpha)=2-9a-27b$; solving for $a,b$ gives the formula for $f$. At integral points Lemma~\ref{lemma:rootVsToric} gives $H_{\mathrm{tor}}(f)^2=1-3a=N$. Since $N\neq0$, $T=3-(1+27b)/N$, so every $\alpha$ giving $f$ is a root of $g=t^2-Tt+N$. The polynomial $f$ has Galois group $C_3$ or splits, without a triple root, because $K$ is a cyclic cubic field or $\QQ^3$ and $x$ is normal (Theorem~\ref{thm:modularInterpretation}). For the converse, the roots $\theta_i$ of $f$ are real and not all equal, so $N=1-3a=\tfrac12\sum_{i<j}(\theta_i-\theta_j)^2>0$. Write $\mathrm{disc}(f)=r^2$ with $r\in\QQ$. Then $T^2-4N=-27\,\mathrm{disc}(f)/N^2=-3(3r/N)^2$, so the roots $\alpha_\pm=\tfrac12\bigl(T\pm\tfrac{3r}{N}\sqrt{-3}\bigr)$ of $g$ lie in $E^\times$, are swapped by $\gamma$, and have trace $T$ and norm $N$. By the coefficient formula they give points with characteristic polynomial $f$, and they are distinct exactly when $r\neq0$; this gives two points for separable $f$ and one when $f$ has a double root (Supporting lemma~\ref{helper:polynomialFibres}). Finally, $u+v\zeta$ has norm $u^2+v^2-uv$ and trace $2u-v$, and substituting into $a=(1-N)/3$ and $b=(N(3-T)-1)/27$ gives Equation~\ref{eqn:integralityConditionsUsingCyclo}.
+A torus over $\QQ$ is determined up to isomorphism by its character lattice with the Galois action \cite[Theorem~12.23]{milne}, so the $\Gamma$-isomorphism of Equation~\ref{eqn:isoCocharLattices} gives $T\cong\mathcal G_1$, unique up to $\mathrm{Aut}(\mathcal G_1)$. On characters it sends $\chi^{v_1^\vee},\chi^{v_2^\vee}$ of $\mathcal G_{1,E}$ to $\chi^{a'},\chi^{b'}$ of $T_E$, and at $\alpha\in E^\times=\mathcal G_1(\QQ)$ the characters $\chi^{v_1^\vee},\chi^{v_2^\vee}$ take the values $\alpha$ and $\gamma\alpha$ in some order. On the chart $e_1=1$, Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} give $\chi^{a'+b'}=1-3e_2$ and $\chi^{2a'+b'}+\chi^{a'+2b'}=2-9e_2+27e_3$. At the point given by $\alpha$, where $e_2=a$ and $e_3=-b$, these become $\mathrm N=\alpha\cdot\gamma\alpha=1-3a$ and $\mathrm N\operatorname{Tr}=\mathrm N(\alpha+\gamma\alpha)=2-9a-27b$, where $\mathrm N$ and $\operatorname{Tr}$ are the norm and trace of $\alpha\in E^\times$; solving for $a,b$ gives the formula for $f$. At integral points Lemma~\ref{lemma:rootVsToric} gives $H_{\mathrm{tor}}(f)^2=1-3a=\mathrm N$. Since $\mathrm N\neq0$, $\operatorname{Tr}=3-(1+27b)/\mathrm N$, so every $\alpha$ giving $f$ is a root of $g=t^2-\operatorname{Tr}\,t+\mathrm N$. The polynomial $f$ has Galois group $C_3$ or splits, without a triple root, because $K$ is a cyclic cubic field or $\QQ^3$ and $x$ is normal (Theorem~\ref{thm:modularInterpretation}). For the converse, the roots $\theta_i$ of $f$ are real and not all equal, so $\mathrm N=1-3a=\tfrac12\sum_{i<j}(\theta_i-\theta_j)^2>0$. Write $\mathrm{disc}(f)=r^2$ with $r\in\QQ$. Then $\operatorname{Tr}^2-4\mathrm N=-27\,\mathrm{disc}(f)/\mathrm N^2=-3(3r/\mathrm N)^2$, so the roots $\alpha_\pm=\tfrac12\bigl(\operatorname{Tr}\pm\tfrac{3r}{\mathrm N}\sqrt{-3}\bigr)$ of $g$ lie in $E^\times$, are swapped by $\gamma$, and have trace $\operatorname{Tr}$ and norm $\mathrm N$. By the coefficient formula they give points with characteristic polynomial $f$, and they are distinct exactly when $r\neq0$; this gives two points for separable $f$ and one when $f$ has a double root (Supporting lemma~\ref{helper:polynomialFibres}). Finally, $u+v\zeta$ has norm $u^2+v^2-uv$ and trace $2u-v$, and substituting into $a=(1-\mathrm N)/3$ and $b=(\mathrm N(3-\operatorname{Tr})-1)/27$ gives Equation~\ref{eqn:integralityConditionsUsingCyclo}.
 
 \end{proof}
 
@@ -766,7 +766,7 @@ For $s=(s_0,s_1,s_2)$ invariant under Galois, let $H(P,s)$ be the toric height a
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:archimedeanIntegral, helper:correctionProduct, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:poissonIntegral}
 
-Write $s_1=s_2=\sigma$ and $z=s_0/2+\sigma$, and first assume $\operatorname{Re}(s_0)>0$ and $\operatorname{Re}(\sigma)>1$. Lemma~\ref{lemma:poissonIntegral} writes $Z(s)$ as $6\int_\RR$ of the product of the archimedean factor \eqref{eqn:archimedeanSpectralFactor} and the finite Euler product \eqref{eqn:finiteSpectralProduct}, as functions of $t$. For $\operatorname{Im}(t)\geq0$ we have $\operatorname{Re}(\lambda)\geq\operatorname{Re}(\sigma)>1$, so the finite factor is holomorphic and bounded in the upper half-plane (Lemma~\ref{lemma:finiteFourierProduct}), while the archimedean factor is $O(|t|^{-2})$. Closing the contour upwards picks up only the pole $t_0=-s_0/(2\pi i)$ of the archimedean factor, with residue $1/(2\pi i)$; there $\lambda=z$, so $Z(s)$ is $6$ times the finite product at $\lambda=z$, namely $\prod_{q\equiv2\Mod{3}}(1-q^{-2z})^{-1}\prod_{p\equiv1\Mod{3}}(1+2p^{-z})(1-p^{-z})^{-2}$. Pulling out a factor $(1-p^{-z})^{-1}$ at every prime $p\neq3$ gives the stated product. To reach every $z$ with $\operatorname{Re}(z)>1$, note that by the product formula $H(P,s)$ for $P\in T(\QQ)$ depends only on $s$ modulo complex multiples of principal toric divisors, and $-2D_0+D_1+D_2$ is principal (Equation~\ref{eqn:normCharacterDivisor}). So $Z(s)$ depends only on $z$, and the representative $s_0=z-1$, $\sigma=(z+1)/2$ satisfies the initial hypotheses. The meromorphic continuation comes from Lemma~\ref{lemma:simplifiedZ-s}.
+Write $s_1=s_2=\sigma$ and $z=s_0/2+\sigma$, and first assume $\operatorname{Re}(s_0)>0$ and $\operatorname{Re}(\sigma)>1$. Lemma~\ref{lemma:poissonIntegral} writes $Z(s)$ as $6\int_\RR$ of the product of the archimedean factor \eqref{eqn:archimedeanSpectralFactor} and the finite Euler product \eqref{eqn:finiteSpectralProduct}, as functions of $t$. For $\operatorname{Im}(t)\geq0$ we have $\operatorname{Re}(\lambda)\geq\operatorname{Re}(\sigma)>1$, so the finite factor is holomorphic and bounded in the upper half-plane (Lemma~\ref{lemma:finiteFourierProduct}), while the archimedean factor is $O(|t|^{-2})$. Closing the contour upwards picks up only the pole $t_0=-s_0/(2\pi i)$ of the archimedean factor, with residue $1/(2\pi i)$; there $\lambda=z$, so $Z(s)=6\,\widehat{H_{\mathrm{fin}}}(\chi_m,-s,D_0)$ at $\lambda=z$, which by \eqref{eqn:finiteSpectralProduct} is $\prod_{q\equiv2\Mod{3}}(1-q^{-2z})^{-1}\prod_{p\equiv1\Mod{3}}(1+2p^{-z})(1-p^{-z})^{-2}$. Pulling out a factor $(1-p^{-z})^{-1}$ at every prime $p\neq3$ gives the stated product. To reach every $z$ with $\operatorname{Re}(z)>1$, note that by the product formula $H(P,s)$ for $P\in T(\QQ)$ depends only on $s$ modulo complex multiples of principal toric divisors, and $-2D_0+D_1+D_2$ is principal (Equation~\ref{eqn:normCharacterDivisor}). So $Z(s)$ depends only on $z$, and the representative $s_0=z-1$, $\sigma=(z+1)/2$ satisfies the initial hypotheses. The meromorphic continuation comes from Lemma~\ref{lemma:simplifiedZ-s}.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1442,7 +1442,7 @@ For $f=t^3-t^2+at+b\in F$, $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$ is the toric height
 
 \uses{eqn:weightedPolynomialCount}
 
-Put $H=\sqrt X$. By Theorem~\ref{thm:modularInterpretation} and Proposition~\ref{prop:canonicalHeight}, $\sum_{n\leq X}d_n$ counts equivalence classes of pairs $(K,x)$, with $K$ a $C_3$-algebra and $x$ an integral trace-one normal element, of toric height at most $H$. If $K$ is a field, the characteristic polynomial of $x$ lies in $F$; conversely the roots of $f\in F$ are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$, and each $f\in F$ gives two classes, one for each identification $C_3\cong\operatorname{Gal}(\QQ(x)/\QQ)$ (Example~\ref{example:twoRationalPointsSamePoly}). If $K=\QQ^3$, the classes are the triples $(\alpha,\beta,\gamma)\in\ZZ^3$ with $\alpha+\beta+\gamma=1$ modulo cyclic permutation, and each orbit has three elements because no such triple has equal coordinates. Substituting $\gamma=1-\alpha-\beta$ gives $H_{\mathrm{tor}}^2=1+3(\alpha^2+\beta^2+\alpha\beta-\alpha-\beta)$, so the split classes number $\frac13\#(\mathcal E_H\cap\ZZ^2)$, where $\mathcal E_H=\{(x,y)\in\RR^2:x^2+y^2+xy-x-y\leq\frac13(H^2-1)\}$. Hence the left-hand side is $\frac12\sum_{n\leq X}d_n-\frac16\#(\mathcal E_H\cap\ZZ^2)$. The ellipse $\mathcal E_H$ has area $\frac{2\pi}{3\sqrt3}H^2$ and boundary length $O(H)$, so its lattice-point count is $\frac{2\pi}{3\sqrt3}X+O(\sqrt X)$.
+Put $H=\sqrt X$. By Theorem~\ref{thm:modularInterpretation} and Proposition~\ref{prop:canonicalHeight}, $\sum_{n\leq X}d_n$ counts equivalence classes of $C_3$-algebras $K$ with an integral trace-one normal element of toric height at most $H$. If $K$ is a field, the characteristic polynomial of the element lies in $F$; conversely the roots of $f\in F$ are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$, and each $f\in F$ gives two classes, one for each identification $C_3\cong\operatorname{Gal}(K/\QQ)$ (Example~\ref{example:twoRationalPointsSamePoly}). If $K=\QQ^3$, the elements are the triples $(x,y,1-x-y)$ with $x,y\in\ZZ$, the classes are their orbits under cyclic permutation, and each orbit has three elements because no such triple has equal coordinates. For such a triple, $H_{\mathrm{tor}}^2=1+3(x^2+y^2+xy-x-y)$, so the split classes number $\frac13\#(\mathcal E_H\cap\ZZ^2)$, where $\mathcal E_H=\{(x,y)\in\RR^2:x^2+y^2+xy-x-y\leq\frac13(H^2-1)\}$. Hence the left-hand side is $\frac12\sum_{n\leq X}d_n-\frac16\#(\mathcal E_H\cap\ZZ^2)$. The ellipse $\mathcal E_H$ has area $\frac{2\pi}{3\sqrt3}H^2$ and boundary length $O(H)$, so its lattice-point count is $\frac{2\pi}{3\sqrt3}X+O(\sqrt X)$.
 
 \end{proof}
 
@@ -1466,7 +1466,7 @@ For $f=t^3-t^2+at+b\in F$, $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$ is the toric height
 
 \uses{helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
 
-This is the display of Lemma~\ref{lemma:reducibles}. The sum $\sum_{n\leq X}d_n$ counts classes of $C_3$-algebras with an integral trace-one normal element of toric height at most $\sqrt X$ (Theorem~\ref{thm:modularInterpretation}, Proposition~\ref{prop:canonicalHeight}). Each $f\in F$ accounts for two field classes, and the split classes are the cyclic orbits of $(\alpha,\beta,1-\alpha-\beta)\in\ZZ^3$ with $1+3(\alpha^2+\beta^2+\alpha\beta-\alpha-\beta)\leq X$, each orbit of size three. Counting the lattice points $(\alpha,\beta)$ in this ellipse, of area $\frac{2\pi}{3\sqrt3}X$ and perimeter $O(\sqrt X)$, gives the split contribution $\frac{\pi}{9\sqrt3}X+O(\sqrt X)$ after dividing by $3$ and by $2$.
+This is the display of Lemma~\ref{lemma:reducibles}; see its proof.
 
 \end{proof}
 
@@ -1516,7 +1516,7 @@ The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{c
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:criticalMeanSquare}
 
-This is the bound of Lemma~\ref{lemma:xiMeanValue}, for $1/2\leq\sigma\leq2$ and $U\geq2$. It follows by convexity in $\sigma$ from the mean-square bound $\ll_\eta T^{1+\eta}$ on $\operatorname{Re}(z)=1/2$ (Equation~\ref{eqn:criticalMeanSquare}) and the bound $\ll T$ on $\operatorname{Re}(z)=2$, where $\xi$ converges absolutely. In Lean, the strip bound is proved with the residue theorem and a reflected kernel, uniformly on the closed strip, instead of Titchmarsh's convexity theorem \cite[\S7.8, (7.8.3)]{titchmarsh1986}.
+This is the display of Lemma~\ref{lemma:xiMeanValue}, for $1/2\leq\sigma\leq2$ and $U\geq2$; see that lemma for the argument.
 
 The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1568,7 +1568,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
 
-Fix $0<\varepsilon<1$ and put $\eta=\varepsilon/4$. The coefficients $d_n$ are nonnegative, $Z_0$ converges absolutely for $\operatorname{Re}(z)>1$, and by Proposition~\ref{prop:leadingTerms} it continues meromorphically to $\operatorname{Re}(z)>1/2$ with only a double pole at $z=1$. Equation~\ref{eqn:heightMeanBound} and Lemma~\ref{lemma:xiMeanValue} give $\int_U^{2U}|Z_0(\sigma+it)|\,dt\ll_\eta U^{1+\eta}$ for $1/2+\eta\leq\sigma\leq2$ and $U\geq2$, and absolute convergence gives the same for $\sigma\geq2$; this bounds $\int_U^{2U}Z_0(\sigma\pm it)Y^{\pm it}\,dt$. The Tauberian theorem \cite[Theorem~1.1]{alberts2025}, with abscissa $1$ and $\delta=1/2-\eta$, then gives $\sum_{n\leq X}d_n=\operatorname{Res}_{z=1}Z_0(z)X^z/z+O_\varepsilon(X^{1/2+\varepsilon})$. By the Laurent expansion in Equation~\ref{eqn:Z0Laurent}, this residue is $XQ(\frac12\log X)$. Lean uses truncated Perron's formula and contour shifting instead of \cite[Theorem~1.1]{alberts2025}.
+Fix $0<\varepsilon<1$ and put $\eta=\varepsilon/4$. The coefficients $d_n$ are nonnegative, $Z_0$ converges absolutely for $\operatorname{Re}(z)>1$, and by Proposition~\ref{prop:leadingTerms} it continues meromorphically to $\operatorname{Re}(z)>1/2$ with only a double pole at $z=1$. Equation~\ref{eqn:heightMeanBound} and Lemma~\ref{lemma:xiMeanValue} give $\int_U^{2U}|Z_0(\sigma+it)|\,dt\ll_\eta U^{1+\eta}$ for $1/2+\eta\leq\sigma\leq2$ and $U\geq2$, and absolute convergence gives the same for $\sigma\geq2$. Since $|Y^{\pm it}|=1$ and the $d_n$ are real, this bounds $|\int_U^{2U}Z_0(\sigma\pm it)Y^{\pm it}\,dt|$ uniformly in $Y>0$, which is condition~(c) of \cite[Theorem~1.1]{alberts2025}. The Tauberian theorem \cite[Theorem~1.1]{alberts2025}, with abscissa $1$ and $\delta=1/2-\eta$, then gives $\sum_{n\leq X}d_n=\operatorname{Res}_{z=1}Z_0(z)X^z/z+O_\varepsilon(X^{1/2+\varepsilon})$. By the Laurent expansion in Equation~\ref{eqn:Z0Laurent}, this residue is $XQ(\frac12\log X)$. Lean uses truncated Perron's formula and contour shifting instead of \cite[Theorem~1.1]{alberts2025}.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1818,7 +1818,7 @@ For $f=t^3+a_1t^2+a_2t+a_3$ put $I=a_1^2-3a_2$, $J=-2a_1^3+9a_1a_2-27a_3$ and $H
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:A1asymptotic, eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight, prop:traceZeroAsymptotic}
 
-The invariant $I$ is $n(f)$. Translating the roots by an integer $k$ changes the trace by $3k$ and preserves $n(f)$, so each translation class has exactly one representative of trace $-1$, $0$ or $1$, and $f(t)\mapsto-f(-t)$ matches the classes of trace $1$ with those of trace $-1$. Since $t^3-t^2+at+b$ has $n(f)=1-3a$ and $t^3-Nt+c$ has $n(f)=3N$, the number of classes with $I\leq Y$ is $C(Y)=2A_1(Y)+A_0(Y/3)$. Equation~\ref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic}, with $Q(\frac12\log\frac Y3)=Q(\frac12\log Y)-\frac\alpha9\log3$, give $C(Y)=Y\bigl(\frac{11}6Q(\frac12\log Y)-\frac{19\alpha}{108}\log3-\frac{\pi}{3\sqrt3}\bigr)+O_\varepsilon(Y^{1/2+\varepsilon})$. The roots are real and distinct, so $4I^3-J^2=27\operatorname{disc}(f)>0$ and $H_{\mathrm{BS}}(f)=I^3$. Setting $Y=H^{1/3}$ and inserting $Q$ from Corollary~\ref{cor:integralPointCount} gives $P_{\mathrm{BS}}$.
+The remark gives the argument. The one step it leaves implicit is that $Q$ is linear with leading coefficient $2\alpha/9$, so $Q(\frac12\log\frac Y3)=Q(\frac12\log Y)-\frac\alpha9\log3$. Hence $2A_1(Y)+A_0(Y/3)$ gives the displayed $C(Y)$, and setting $Y=H^{1/3}$ gives $P_{\mathrm{BS}}$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1988,7 +1988,7 @@ Apply the linear change of coordinates of Equation~\ref{eqn:surfaceCoordinateCha
 
 \leanok
 
-Substituting Equation~\ref{eqn:surfaceCoordinateChange} into $x_0(x_1^2+3x_2^2)-x_3^3$ gives $27F$, where $F$ is the cubic of Equation~\ref{eqn:surfaceIntegralCubic}. Since $27$ is a unit in $\ZZ[1/6]$, the two equations define the same hypersurface. In Lean, the coordinate isomorphism is proved over $\ZZ[1/6]$ and the remaining assertions on the rational fiber.
+Substituting Equation~\ref{eqn:surfaceCoordinateChange} into $x_0(x_1^2+3x_2^2)-x_3^3$ gives $27F$, where $F$ is the cubic of Equation~\ref{eqn:surfaceIntegralCubic}. Since $27$ is a unit in $\ZZ[1/6]$, the two equations define the same hypersurface.
 
 \end{proof}
 
@@ -2010,7 +2010,7 @@ Substituting Equation~\ref{eqn:surfaceCoordinateChange} into $x_0(x_1^2+3x_2^2)-
 
 \leanok
 
-This display defines the coordinates $x_0,\dots,x_3$ as linear forms in $A,B,C,D$. The matrix has determinant $-3^5/2$, a unit in $\ZZ[1/6]$, so the substitution is invertible over $\ZZ[1/6]$. In Lean, the coordinate isomorphism is proved over $\ZZ[1/6]$ and the remaining assertions on the rational fiber.
+This display defines the coordinates $x_0,\dots,x_3$ as linear forms in $A,B,C,D$. The matrix has determinant $-3^5/2$, a unit in $\ZZ[1/6]$, so the substitution is invertible over $\ZZ[1/6]$.
 
 \end{proof}
 
@@ -2034,7 +2034,7 @@ This display defines the coordinates $x_0,\dots,x_3$ as linear forms in $A,B,C,D
 
 \uses{helper:boundaryChain, helper:boundaryIntersection}
 
-Over $E$, $S$ is the toric surface whose fan has rays $v_0=(-1,-1)$, $v_1=(2,-1)$, $v_2=(-1,2)$. Insert the rays $(0,-1),(1,-1)$ between $v_0$ and $v_1$, $(1,0),(0,1)$ between $v_1$ and $v_2$, and $(-1,1),(-1,0)$ between $v_2$ and $v_0$ \cite[\S2.6]{MR1234037}. Consecutive rays have determinant $1$, so the new toric surface $X$ is smooth and projective. The subdivision is Galois-stable, so $\pi$ is defined over $\QQ$. The neighbors of each inserted ray sum to twice that ray, so every exceptional curve is a $(-2)$-curve; hence $\pi$ is minimal \cite[Theorems~V.5.4 and~V.5.7]{hartshorne1977}. The inserted rays lie on the segments joining the original rays, so $\pi$ is crepant and $-K_X=\pi^*(-K_S)$ is nef and big with square $3$. The nine rays give Picard rank $9-2=7$. Equations~\ref{eqn:surfaceBoundaryChain} and~\ref{eqn:surfaceLogIntersections} give the boundary chain and the intersection numbers. Since all nine toric divisors sum to $-K_X$, $L$ is linearly equivalent to the complementary chain $D_{v_1},D_{(1,0)},D_{(0,1)},D_{v_2}$, with self-intersections $-1,-2,-2,-1$. It meets each of its own components in $0$, each end of $D_{\mathrm{red}}$ in $1$, and the other three components of $D_{\mathrm{red}}$ in $0$. Torus-invariant curves generate the cone of curves, so $L$ is nef and not numerically zero. A nef divisor is big exactly when its square is positive, and $L^2=0$.
+Over $E$, $S$ is the toric surface whose fan has, in the basis $(\omega,\gamma\omega)$ of $N_E$ (Equation~\ref{eqn:isoCocharLattices}), the rays $v_0=(-1,-1)$, $v_1=(2,-1)$, $v_2=(-1,2)$. Insert the rays $(0,-1),(1,-1)$ between $v_0$ and $v_1$, $(1,0),(0,1)$ between $v_1$ and $v_2$, and $(-1,1),(-1,0)$ between $v_2$ and $v_0$ \cite[\S2.6]{MR1234037}. Consecutive rays have determinant $1$, so the new toric surface $X$ is smooth and projective. The subdivision is Galois-stable, so $\pi$ is defined over $\QQ$. The neighbors of each inserted ray sum to twice that ray, so every exceptional curve is a $(-2)$-curve; hence $\pi$ is minimal \cite[Theorems~V.5.4 and~V.5.7]{hartshorne1977}. The inserted rays lie on the segments joining the original rays, so $\pi$ is crepant and $-K_X=\pi^*(-K_S)$ is nef and big with square $3$. The nine rays give Picard rank $9-2=7$. Equations~\ref{eqn:surfaceBoundaryChain} and~\ref{eqn:surfaceLogIntersections} give the boundary chain and the intersection numbers. Since all nine toric divisors sum to $-K_X$, $L$ is linearly equivalent to the complementary chain $D_{v_1},D_{(1,0)},D_{(0,1)},D_{v_2}$, with self-intersections $-1,-2,-2,-1$. It meets each of its own components in $0$, each end of $D_{\mathrm{red}}$ in $1$, and the other three components of $D_{\mathrm{red}}$ in $0$. Torus-invariant curves generate the cone of curves, so $L$ is nef and not numerically zero. A nef divisor is big exactly when its square is positive, and $L^2=0$.
 
 \end{proof}
 
@@ -2116,7 +2116,7 @@ In Santens's group $\operatorname{Pic}(X;\{D_0'\})$, write $R=D_{v_1}+D_{v_2}$ a
 
 Santens requires local norms with values in $p^{\ZZ}\cup\{0\}$ at each prime \cite[Definition~4.1]{santens2023integral}, and $H(\cdot,1)$ does not satisfy this. We therefore apply his theorem to the height with the trivial metric on $L$ at every prime (the canonical section of $\mcO(D_0')$ has norm $1$) and the metric of $H(\cdot,1)$ at the real place. At every point where some $f_p$ is nonzero, $n$ and $\nu^2\overline\nu$ are integral, so $H_p(P,1)=1$ by Equation~\ref{eqn:santensLocalHeight}; the two heights agree on the support of the weight and give the same count and constant.
 
-The dual-cone factor is $\theta=\int_0^\infty\int_0^{2p}e^{-p}\,dq\,dp=2$. Since $\operatorname{Pic}U_{\overline\QQ}\cong\ZZ[\operatorname{Gal}(E/\QQ)]$, its $L$-function is $\xi$ and its first Galois cohomology vanishes by Shapiro's lemma, so the Brauer factor is $1$. Equation~\ref{eqn:santensTau} then gives $c=2\rho_E\prod_v\tau'_v$. The local factors are $1-3p^{-2}+2p^{-3}$ for $p\equiv1\pmod 3$ (there are $3k+1$ valuation pairs with $v_p(n)=k$), $1-p^{-2}$ for $p\equiv2\pmod3$, $2/(27\sqrt3)$ at $3$ (where integrality means $\nu\in1+3\mcO_{E,3}$ by Proposition~\ref{prop:localIntegrality}), and $2\pi$ at the real place (the residue measure on the circle $D_0'(\RR)$). Using $\prod_{p\neq3}\tau'_p=27\alpha/(4\pi^2)$ and $\rho_E=\pi/(3\sqrt3)$ gives $c=2\alpha/9$. This is nonzero, which is the last hypothesis of Santens's theorem.
+The dual-cone factor is $\theta=\int_0^\infty\int_0^{2y_1}e^{-y_1}\,dy_2\,dy_1=2$. Since $\operatorname{Pic}U_{\overline\QQ}\cong\ZZ[\operatorname{Gal}(E/\QQ)]$, its $L$-function is $\xi$ and its first Galois cohomology vanishes by Shapiro's lemma, so the Brauer factor is $1$. Equation~\ref{eqn:santensTau} then gives $c=2\rho_E\prod_v\tau'_v$. The local factors are $1-3p^{-2}+2p^{-3}$ for $p\equiv1\pmod 3$ (there are $3k+1$ valuation pairs with $v_p(n)=k$), $1-p^{-2}$ for $p\equiv2\pmod3$, $2/(27\sqrt3)$ at $3$ (where integrality means $\nu\in1+3\mcO_{E,3}$ by Proposition~\ref{prop:localIntegrality}), and $2\pi$ at the real place (the residue measure on the circle $D_0'(\RR)$). Using $\prod_{p\neq3}\tau'_p=27\alpha/(4\pi^2)$ and $\rho_E=\pi/(3\sqrt3)$ gives $c=2\alpha/9$. This is nonzero, which is the last hypothesis of Santens's theorem.
 
 The proof assumes Santens's theorem (Cited theorem~\ref{cite:santens2023integral-toric-counting}).
 
@@ -2210,7 +2210,7 @@ Let $f=t^3-t^2+at+b\in\QQ[t]$ be separable, and suppose that $f$ either has Galo
 
 \leanok
 
-Use the two roots of the quadratic resolvent and their distinctness in the separable case.
+Under the isomorphism of Proposition~\ref{prop:cyclotomicParametrization}, the points correspond to the roots of $g=t^2-\operatorname{Tr}\,t+\mathrm N$ in $E^\times$; they are distinct when $f$ is separable.
 
 \end{proof}
 
@@ -2242,7 +2242,7 @@ Identify both pairs with the fibre algebra over their common quotient point.
 
 \leanok
 
-For the Galois-invariant parameter $(s_0,\sigma,\sigma)$, interchanging the two conjugate coordinates leaves the support function unchanged.
+For the Galois-invariant parameter $s=(s_0,\sigma,\sigma)$, the support function satisfies $\varphi(\gamma n)=\varphi(n)$ for every $n$, where $\gamma$ swaps $v_1$ and $v_2$.
 
 \end{supportinglemma}
 
@@ -2272,7 +2272,7 @@ Each of the four sections displayed in Lemma~\ref{lemma:heightformula} is a weig
 
 \uses{helper:cubicCharacters}
 
-Identify the section with the corresponding eigen-monomial divided by $e_1^3$.
+Write each section as $\chi^m\mathbf 1$ with $\chi^m$ given by Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2}.
 
 \end{proof}
 
@@ -2284,7 +2284,7 @@ Identify the section with the corresponding eigen-monomial divided by $e_1^3$.
 
 \leanok
 
-Over a field of characteristic zero containing a primitive cube root $\zeta$, write $g=u e_0+v e_1+w e_2$ in the idempotent basis of the group algebra. The three character evaluations are $u,v,w$: \[g_0+g_1+g_2=u,\qquad g_0+\zeta g_1+\zeta^2g_2=v,\qquad g_0+\zeta^2g_1+\zeta g_2=w.\]
+Over a field of characteristic zero containing a primitive cube root $\zeta$, write $g=g_0+g_1\sigma+g_2\sigma^2=uv_0'+vv_1'+wv_2'$, where $v_0',v_1',v_2'$ are the idempotents of Equation~\ref{eqn:formulaForNormCharacter}. The three character evaluations are $u,v,w$: \[u=g_0+g_1+g_2,\qquad v=g_0+\zeta g_1+\zeta^2g_2,\qquad w=g_0+\zeta^2g_1+\zeta g_2.\]
 
 \end{supportinglemma}
 
@@ -2386,7 +2386,7 @@ Substitute the norm and trace in the formulas for the two cubic coefficients.
 
 \leanok
 
-If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, its finite logarithm is the sum of the local logarithms over $S$.
+If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, the finite part of $\ell$ of Equation~\ref{eqn:LAsNorm} is the sum of the local logarithms over $S$.
 
 \end{supportinglemma}
 
@@ -2406,7 +2406,7 @@ The logarithm vanishes on each maximal compact subgroup, so all other terms vani
 
 \leanok
 
-For $\operatorname{Re}(\sigma)>1$ and $t\in\RR$, the product of the actual local Haar integrals equals the finite Euler product in Lemma~\ref{lemma:finiteFourierProduct}, with parameter $\lambda=\sigma-\pi it$.
+For $\operatorname{Re}(\sigma)>1$ and $t\in\RR$, the product of the local Haar integrals equals the finite Euler product in Lemma~\ref{lemma:finiteFourierProduct}, with parameter $\lambda=\sigma-\pi it$.
 
 \end{supportinglemma}
 
@@ -2468,7 +2468,7 @@ Bound each deviation by a constant times $p^{-2\operatorname{Re}(z)}$ and compar
 
 \leanok
 
-For every $\beta>1/2$ there is a constant $C_\beta$ such that \[|(1-3^{-z})^2R(z)|\leq C_\beta\qquad(\operatorname{Re}(z)\geq\beta).\]
+For every $\sigma_0>1/2$ there is a constant $C_{\sigma_0}$ such that \[|(1-3^{-z})^2R(z)|\leq C_{\sigma_0}\qquad(\operatorname{Re}(z)\geq\sigma_0).\]
 
 \end{supportinglemma}
 
@@ -2530,7 +2530,7 @@ Add the self-intersections and twice the intersections of adjacent components.
 
 \leanok
 
-The Euler products and prime sums defining the main-term constants converge and agree with their simplified expressions.
+The products and series defining $\alpha$ and $\beta$ converge, and, with $R$ as in Equation~\ref{eqn:eulerCorrectionFactor}, \[R(1)=\frac{27\alpha}{4\pi^2},\qquad \frac{R'(1)}{2R(1)}=\beta-\frac{\zeta'(2)}{\zeta(2)}-\frac18\log3.\] Moreover $\mu=2\gamma+\log(2\pi)-3\log\bigl(\Gamma(1/3)/\Gamma(2/3)\bigr)$, where $\gamma$ is Euler's constant.
 
 \end{supportinglemma}
 
@@ -2552,7 +2552,7 @@ Combine the product identities, logarithmic derivatives, and the evaluation of t
 
 \leanok
 
-Substituting $s=2z$ in the Laurent expansion at $s=2$ changes its polar part to \[\frac{c_2}{4(z-1)^2}+\frac{c_1}{2(z-1)}.\]
+If $F(s)=c_2(s-2)^{-2}+c_1(s-2)^{-1}+O(1)$ near $s=2$, then \[F(2z)=\frac{c_2}{4(z-1)^2}+\frac{c_1}{2(z-1)}+O(1)\] near $z=1$.
 
 \end{supportinglemma}
 
@@ -2576,7 +2576,7 @@ The following inputs are stated in Lean and assumed by the results that use them
 
 \leanok
 
-The integral-point counting theorem \cite[Theorem~8.7]{santens2023integral}, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and heights from Santens's metrics, whose local norms at each prime lie in $p^{\ZZ}\cup\{0\}$. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input.
+The integral-point counting theorem \cite[Theorem~8.7]{santens2023integral}, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and heights from Santens's metrics, whose local norms at each prime lie in $p^{\ZZ}\cup\{0\}$. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Proposition~\ref{prop:santensConstant} verifies those hypotheses and evaluates the constant for this surface. The linked Lean proposition gives the full quantified input.
 
 \end{citedtheorem}
 
@@ -2600,7 +2600,7 @@ For $E=\QQ(\sqrt{-3})$ and $\xi=\zeta_E$, \[\frac1T\int_1^T|\xi(1/2+it)|^2\,dt=O
 
 \leanok
 
-Let $a_K(n)$ count integral ideals of norm $n^3$ in a fixed quadratic field $K$. If $F$ is analytic at $1$ and agrees with $(s-1)^2\sum_{n\geq1}a_K(n)n^{-s}$ to its right, then \[\sum_{n\leq X}a_K(n)=F(1)X\log X+(F^\prime(1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log\log X)^2\bigr).\]This is the residue form of \cite[Corollary~2]{kuehleitnerNowak2004}. The removal of the factor at $3$ and the comparison with the original count are proved in Lean.
+For a fixed quadratic field $K$, let $a_K(m)$ be the number of integral ideals of norm $m$, and let $b_K(n)=a_K(n^3)$ be the number of integral ideals of norm $n^3$. If $F$ is analytic at $1$ and agrees with $(s-1)^2\sum_{n\geq1}b_K(n)n^{-s}$ to its right, then \[\sum_{n\leq X}b_K(n)=F(1)X\log X+(F^\prime(1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log\log X)^2\bigr).\]This is the residue form of \cite[Corollary~2]{kuehleitnerNowak2004}. The removal of the factor at $3$ and the comparison with the original count are proved in Lean.
 
 \end{citedtheorem}
 

@@ -104,10 +104,10 @@
 <div class="main-text">
 <h1 id="a0000000007">7 Counting arbitrary trace</h1>
 <p>Let \(F_{\mathrm{mon}}\) be the monic integral cubics with Galois group \(C_3\), let \(F_s\) be those of trace \(s\), and put \(n(f)=a_1^2-3a_2\). We use </p>
-<div class="displaymath" id="a0000000149">
+<div class="displaymath" id="a0000000148">
   \[ A_1(X)=\# \{ t^3-t^2+at+b\in F_1:1-3a\leq X\} , \]
 </div>
-<div class="displaymath" id="a0000000150">
+<div class="displaymath" id="a0000000149">
   \[ A_0(X)=\# \{ t^3-Nt+c\in F_0:1\leq N\leq X\} . \]
 </div>
 <p> For \(N\geq 1\), let \(r(N)=\# \{ c\in \mathbb {Z}:4N^3-27c^2\text{ is a square}\} \). The polynomial \(Q\) is as in Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a>. Summing the trace-zero and trace-one counts over \(s\) proves Theorem&#160;<a href="sect0001.html#thm:generalMonicCount">1</a>. </p>
@@ -127,7 +127,7 @@
 
     <a class="icon proof" href="sect0006.html#lemma:generalHeightReduction">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000151"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000150"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -143,9 +143,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L66" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralHeightReductionClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L66" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralHeightReductionClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/GeneralHeightReduction.lean#L235" class="lean_decl">Cubic.Counting.GeneralHeightReduction.«lemma:generalHeightReduction»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/GeneralHeightReduction.lean#L235" class="lean_decl">Cubic.Counting.GeneralHeightReduction.«lemma:generalHeightReduction»</a></li>
           
         </ul>
     
@@ -161,18 +161,18 @@
 
 <p>Here \(H(f)\) is the root height, and for \(g=t^3-t^2+at+b\in F_1\), \(H_{\mathrm{tor}}(g)=\sqrt{1-3a}\) is the toric height of Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>. </p>
 <p>For \(s\in \mathbb {Z}\), define \(\phi _s\) on \(F_s\) by </p>
-<div class="displaymath" id="a0000000152">
+<div class="displaymath" id="a0000000151">
   \[  \phi _s(f)(t)= \begin{cases}  f(t+\tfrac {s}{3}),& s\equiv 0\pmod3,\\ f(t+\tfrac {s-1}{3}),& s\equiv 1\pmod3,\\ -f(-t+\tfrac {s+1}{3}),& s\equiv -1\pmod3. \end{cases}  \]
 </div>
 <p> Then \(\phi _s\) is a bijection from \(F_s\) to \(F_0\) if \(3\mid s\), and from \(F_s\) to \(F_1\) if \(3\nmid s\), and it preserves \(n\). For \(f\in F_s\), put \(n=n(f)\). Then \(n{\gt}0\), and </p>
-<div class="displaymath" id="a0000000153">
+<div class="displaymath" id="a0000000152">
   \[  H(f)\leq H \quad \Longleftrightarrow \quad |s|\leq H\  \text{ and }\  n\leq s^2+3H^2.  \]
 </div>
 <p> If \(3\nmid s\), then \(H_{\mathrm{tor}}(\phi _s(f))^2=n\). If \(3\mid s\), then \(\phi _s(f)=t^3-\frac n3t+c\) for some \(c\in \mathbb {Z}\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000151">
+<div class="proof_wrapper" id="a0000000150">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -200,7 +200,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:A1asymptotic">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000154"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000153"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -216,9 +216,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L200" class="lean_decl">CubicTargets.Counting.GeneralMonic.A1Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L200" class="lean_decl">CubicTargets.Counting.GeneralMonic.A1Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/A1Asymptotic.lean#L145" class="lean_decl">Cubic.Counting.A1Asymptotic.«eqn:A1asymptotic»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/A1Asymptotic.lean#L145" class="lean_decl">Cubic.Counting.A1Asymptotic.«eqn:A1asymptotic»</a></li>
           
         </ul>
     
@@ -233,13 +233,13 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
-<div class="displaymath" id="a0000000155">
+<div class="displaymath" id="a0000000154">
   \begin{equation*}  A_1(X) =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000154">
+<div class="proof_wrapper" id="a0000000153">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -270,7 +270,7 @@
 
     <a class="icon proof" href="sect0006.html#lemma:traceZeroCoefficients">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000156"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000155"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -286,9 +286,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L46" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroCoefficientsClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L46" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroCoefficientsClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/TraceZeroCoefficients.lean#L32" class="lean_decl">Cubic.Counting.TraceZeroCoefficients.«lemma:traceZeroCoefficients»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/TraceZeroCoefficients.lean#L32" class="lean_decl">Cubic.Counting.TraceZeroCoefficients.«lemma:traceZeroCoefficients»</a></li>
           
         </ul>
     
@@ -304,13 +304,13 @@
 
 <p>Here \(d_n\) are the coefficients of \(Z_0(z)=\sum _{n\geq 1}d_nn^{-z}\), given explicitly in Remark&#160;<a href="sect0004.html#rem:heightCoefficients">3</a>. </p>
 <p>Let \(e\) be the exponent of \(3\) in \(N\), and write \(N=3^eM\) with \(3\nmid M\). Then </p>
-<div class="displaymath" id="a0000000157">
+<div class="displaymath" id="a0000000156">
   \[  r(N)= \begin{cases}  d_M,& e=0,\\ 3d_M+1,& N=3u^2\text{ for some }u\in \mathbb {Z}_{{\gt}0},\\ 3d_M,& \text{otherwise}. \end{cases}  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000156">
+<div class="proof_wrapper" id="a0000000155">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -341,7 +341,7 @@
 
     <a class="icon proof" href="sect0006.html#prop:traceZeroAsymptotic">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000158"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000157"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -357,9 +357,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L207" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroAsymptoticClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L207" class="lean_decl">CubicTargets.Counting.GeneralMonic.TraceZeroAsymptoticClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/TraceZeroAsymptotic.lean#L52" class="lean_decl">Cubic.Counting.TraceZeroAsymptotic.«prop:traceZeroAsymptotic»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/TraceZeroAsymptotic.lean#L52" class="lean_decl">Cubic.Counting.TraceZeroAsymptotic.«prop:traceZeroAsymptotic»</a></li>
           
         </ul>
     
@@ -375,13 +375,13 @@
 
 <p>The constant \(\alpha \) is defined in Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>. </p>
 <p>For every \(\varepsilon {\gt}0\), </p>
-<div class="displaymath" id="a0000000159">
+<div class="displaymath" id="a0000000158">
   \[  A_0(X) =\frac52XQ\left(\tfrac 12\log X\right) -\left(\frac{\alpha }{4}\log 3+\frac{\pi }{3\sqrt3}\right)X +O_\varepsilon (X^{1/2+\varepsilon }).  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000158">
+<div class="proof_wrapper" id="a0000000157">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -411,7 +411,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:generalTraceDecomposition">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000160"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000159"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -427,9 +427,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L83" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralTraceDecompositionClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L83" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralTraceDecompositionClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/GeneralTraceDecomposition.lean#L114" class="lean_decl">Cubic.Counting.GeneralTraceDecomposition.«eqn:generalTraceDecomposition»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/GeneralTraceDecomposition.lean#L114" class="lean_decl">Cubic.Counting.GeneralTraceDecomposition.«eqn:generalTraceDecomposition»</a></li>
           
         </ul>
     
@@ -443,7 +443,7 @@
   
 
 
-<div class="displaymath" id="a0000000161">
+<div class="displaymath" id="a0000000160">
   \begin{align*}  \# \{ f\in F_{\mathrm{mon}}:H(f)\leq H\}  =\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ { 3\nmid s
 
 }}} A_1(3H^2+s^2) +\sum _{\substack {s\in \mathbb {Z},\  |s|\leq H\\ { 3\mid s
@@ -453,7 +453,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000160">
+<div class="proof_wrapper" id="a0000000159">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -482,7 +482,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:monicArchimedeanMoments">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000162"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000161"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -498,9 +498,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L105" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicArchimedeanMomentsClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L105" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicArchimedeanMomentsClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/MonicArchimedeanMoments.lean#L96" class="lean_decl">Cubic.Counting.MonicArchimedeanMoments.«eqn:monicArchimedeanMoments»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/MonicArchimedeanMoments.lean#L96" class="lean_decl">Cubic.Counting.MonicArchimedeanMoments.«eqn:monicArchimedeanMoments»</a></li>
           
         </ul>
     
@@ -515,13 +515,13 @@
 
 
 <p>The main term of Theorem&#160;<a href="sect0001.html#thm:generalMonicCount">1</a> involves two integrals over the normalized trace \(u=s/H\in [-1,1]\). </p>
-<div class="displaymath" id="a0000000163">
+<div class="displaymath" id="a0000000162">
   \begin{equation*} \begin{aligned}  \int _{-1}^1(3+u^2)\, du& =\frac{20}{3},\\ \int _{-1}^1(3+u^2)\log (3+u^2)\, du & =\frac{40}{3}\log 2+\frac{4\pi \sqrt3}{3}-\frac{76}{9}. \end{aligned}\end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000162">
+<div class="proof_wrapper" id="a0000000161">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -549,7 +549,7 @@
 
     <a class="icon proof" href="sect0006.html#eqn:monicConstantsFromTraceCounts">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000164"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000163"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -565,9 +565,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L214" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicConstantsFromTraceCountsClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/GeneralMonic.lean#L214" class="lean_decl">CubicTargets.Counting.GeneralMonic.MonicConstantsFromTraceCountsClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/MonicConstantsFromTraceCounts.lean#L54" class="lean_decl">Cubic.Counting.MonicConstantsFromTraceCounts.«eqn:monicConstantsFromTraceCounts»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/MonicConstantsFromTraceCounts.lean#L54" class="lean_decl">Cubic.Counting.MonicConstantsFromTraceCounts.«eqn:monicConstantsFromTraceCounts»</a></li>
           
         </ul>
     
@@ -582,13 +582,13 @@
 
 
 <p>Summing the main terms of Equation&#160;<a href="sect0006.html#eqn:A1asymptotic">36</a> and Proposition&#160;<a href="sect0006.html#prop:traceZeroAsymptotic">8</a> over the traces in Equation&#160;<a href="sect0006.html#eqn:generalTraceDecomposition">37</a> gives the main term \(H^3P(\log H)\) of Theorem&#160;<a href="sect0001.html#thm:generalMonicCount">1</a>. In terms of the polynomial \(Q\) of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> and the constant \(\alpha \) of Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>, the polynomial \(P\) is as follows. </p>
-<div class="displaymath" id="a0000000165">
+<div class="displaymath" id="a0000000164">
   \begin{equation*}  P(X) =\frac{110}{27}Q(X) +\frac{220\alpha }{243}\left(\log 2-\frac{19}{44}\log 3 -\frac{19}{30}+\frac{\pi \sqrt3}{10}\right) -\frac{20\pi \sqrt3}{81}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000164">
+<div class="proof_wrapper" id="a0000000163">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -618,7 +618,7 @@
 
     <a class="icon proof" href="sect0006.html#rem:translationClasses">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000166"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000165"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -634,9 +634,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/TranslationClasses.lean#L36" class="lean_decl">CubicTargets.Counting.TranslationClasses.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/TranslationClasses.lean#L36" class="lean_decl">CubicTargets.Counting.TranslationClasses.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/TranslationClasses.lean#L300" class="lean_decl">Cubic.Counting.TranslationClasses.«rem:translationClasses»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/TranslationClasses.lean#L300" class="lean_decl">Cubic.Counting.TranslationClasses.«rem:translationClasses»</a></li>
           
         </ul>
     
@@ -651,27 +651,27 @@
 
 
 <p>For \(f=t^3+a_1t^2+a_2t+a_3\) put \(I=a_1^2-3a_2\), \(J=-2a_1^3+9a_1a_2-27a_3\) and \(H_{\mathrm{BS}}(f)=\max \{ |I|^3,J^2/4\} \). The introduction states that, for every \(\varepsilon {\gt}0\), the number of translation classes in \(F_{\mathrm{mon}}\) with \(H_{\mathrm{BS}}(f)\leq H\) is </p>
-<div class="displaymath" id="a0000000167">
+<div class="displaymath" id="a0000000166">
   \[ H^{1/3}P_{\mathrm{BS}}(\log H)+O_\varepsilon (H^{1/6+\varepsilon }), \]
 </div>
 <p> where </p>
-<div class="displaymath" id="a0000000168">
+<div class="displaymath" id="a0000000167">
   \[ P_{\mathrm{BS}}(X)=\frac{11\alpha }{162}\biggl(X+6\mu -6\frac{\zeta '(2)}{\zeta (2)}+6\beta -3-\frac{15}{44}\log 3\biggr)-\frac{\pi }{3\sqrt3}. \]
 </div>
 <p> The constants \(\alpha \), \(\mu \) and \(\beta \) are defined in Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>. </p>
 <p>We derive the count of translation classes by \(H_{\mathrm{BS}}\) stated in the introduction. The invariant \(I\) there is \(n(f)\). Translating the roots by an integer \(k\) changes the trace by \(3k\) and preserves \(n(f)\), so each translation class in \(F_{\mathrm{mon}}\) has exactly one representative with trace in \(\{ -1,0,1\} \). The map \(f(t)\mapsto -f(-t)\) negates the roots, so it matches the classes of trace \(1\) with those of trace \(-1\) and preserves \(n(f)\). A trace-one polynomial \(t^3-t^2+at+b\) has \(n(f)=1-3a\), and \(t^3-Nt+c\) has \(n(f)=3N\). Hence the number \(C(Y)\) of translation classes with \(I\leq Y\) is </p>
-<div class="displaymath" id="a0000000169">
+<div class="displaymath" id="a0000000168">
   \[  C(Y)=2A_1(Y)+A_0(Y/3).  \]
 </div>
 <p> Substituting <a href="sect0006.html#eqn:A1asymptotic" class="eqref">36</a> and Proposition&#160;<a href="sect0006.html#prop:traceZeroAsymptotic">8</a>, and using that \(Q\) is linear with leading coefficient \(2\alpha /9\), gives </p>
-<div class="displaymath" id="a0000000170">
+<div class="displaymath" id="a0000000169">
   \[  C(Y)=Y\left(\frac{11}{6}Q\left(\tfrac 12\log Y\right) -\frac{19\alpha }{108}\log 3-\frac{\pi }{3\sqrt3}\right) +O_\varepsilon (Y^{1/2+\varepsilon }).  \]
 </div>
 <p> Since \(f\) has three distinct real roots, \(4I^3-J^2=27\operatorname {disc}(f){\gt}0\), so \(H_{\mathrm{BS}}(f)=I^3\). Setting \(Y=H^{1/3}\) and substituting the formula for \(Q\) from Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> gives the stated polynomial \(P_{\mathrm{BS}}\) and error \(O_\varepsilon (H^{1/6+\varepsilon })\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000166">
+<div class="proof_wrapper" id="a0000000165">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -681,7 +681,7 @@
   <div class="proof_content">
   
 
-<p>The invariant \(I\) is \(n(f)\). Translating the roots by an integer \(k\) changes the trace by \(3k\) and preserves \(n(f)\), so each translation class has exactly one representative of trace \(-1\), \(0\) or \(1\), and \(f(t)\mapsto -f(-t)\) matches the classes of trace \(1\) with those of trace \(-1\). Since \(t^3-t^2+at+b\) has \(n(f)=1-3a\) and \(t^3-Nt+c\) has \(n(f)=3N\), the number of classes with \(I\leq Y\) is \(C(Y)=2A_1(Y)+A_0(Y/3)\). Equation&#160;<a href="sect0006.html#eqn:A1asymptotic">36</a> and Proposition&#160;<a href="sect0006.html#prop:traceZeroAsymptotic">8</a>, with \(Q(\frac12\log \frac Y3)=Q(\frac12\log Y)-\frac\alpha 9\log 3\), give \(C(Y)=Y\bigl(\frac{11}6Q(\frac12\log Y)-\frac{19\alpha }{108}\log 3-\frac{\pi }{3\sqrt3}\bigr)+O_\varepsilon (Y^{1/2+\varepsilon })\). The roots are real and distinct, so \(4I^3-J^2=27\operatorname {disc}(f){\gt}0\) and \(H_{\mathrm{BS}}(f)=I^3\). Setting \(Y=H^{1/3}\) and inserting \(Q\) from Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> gives \(P_{\mathrm{BS}}\). </p>
+<p>The remark gives the argument. The one step it leaves implicit is that \(Q\) is linear with leading coefficient \(2\alpha /9\), so \(Q(\frac12\log \frac Y3)=Q(\frac12\log Y)-\frac\alpha 9\log 3\). Hence \(2A_1(Y)+A_0(Y/3)\) gives the displayed \(C(Y)\), and setting \(Y=H^{1/3}\) gives \(P_{\mathrm{BS}}\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -702,7 +702,7 @@
 
     <a class="icon proof" href="sect0006.html#thm:traceDistribution">#</a>
     
-    <a class="icon proof" href="sect0006.html#a0000000171"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0006.html#a0000000170"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -718,9 +718,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/TraceDistribution.lean#L36" class="lean_decl">CubicTargets.Counting.TraceDistribution.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/TraceDistribution.lean#L36" class="lean_decl">CubicTargets.Counting.TraceDistribution.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/TraceDistribution.lean#L446" class="lean_decl">Cubic.Counting.TraceDistribution.«thm:traceDistribution»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/Cubic/Counting/TraceDistribution.lean#L446" class="lean_decl">Cubic.Counting.TraceDistribution.«thm:traceDistribution»</a></li>
           
         </ul>
     
@@ -735,19 +735,19 @@
 
 
 <p>For \(r\in \{ 0,1,2\} \) and \(-1\leq u_1\leq u_2\leq 1\), let </p>
-<div class="displaymath" id="a0000000172">
+<div class="displaymath" id="a0000000171">
   \[ N_r(H;u_1,u_2)=\# \Bigl\{ f\in F_{\mathrm{mon}}:H(f)\leq H,\  \operatorname {Tr}(f)\equiv r\  (\mathrm{mod}\  3),\  u_1\leq \frac{\operatorname {Tr}(f)}{H}\leq u_2\Bigr\} . \]
 </div>
 <p> The constant \(\alpha \) is defined in Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>. </p>
 <p>Uniformly in \(r\), \(u_1\) and \(u_2\), as \(H\to \infty \), </p>
-<div class="displaymath" id="a0000000173">
+<div class="displaymath" id="a0000000172">
   \[  N_r(H;u_1,u_2) =c_r\left(\int _{u_1}^{u_2}(3+u^2)\, du\right)H^3\log H+O(H^3), \qquad c_0=\frac{5\alpha }{81},\quad c_1=c_2=\frac{\alpha }{27}.  \]
 </div>
 <p> Consequently, among the polynomials counted in Theorem&#160;<a href="sect0001.html#thm:generalMonicCount">1</a>, the proportions with trace congruent to \(0\), \(1\) and \(2\) modulo \(3\) tend to \(5/11\), \(3/11\) and \(3/11\). Within each residue class, \(\operatorname {Tr}(f)/H\) has limiting density \(\frac{3}{20}(3+u^2)\) on \([-1,1]\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000171">
+<div class="proof_wrapper" id="a0000000170">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean

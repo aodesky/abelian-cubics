@@ -132,7 +132,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/SantensComparison/SantensInput.lean#L47" class="lean_decl">CubicTargets.SantensComparison.SantensInput.GeneralSantens</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/SantensComparison/SantensInput.lean#L47" class="lean_decl">CubicTargets.SantensComparison.SantensInput.GeneralSantens</a></li>
           
         </ul>
     
@@ -154,7 +154,7 @@
 	
 	8.7
 	]
-</span>, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and heights from Santens’s metrics, whose local norms at each prime lie in \(p^{\mathbb {Z}}\cup \{ 0\} \). Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input. </p>
+</span>, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and heights from Santens’s metrics, whose local norms at each prime lie in \(p^{\mathbb {Z}}\cup \{ 0\} \). Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Proposition&#160;<a href="sect0008.html#prop:santensConstant">12</a> verifies those hypotheses and evaluates the constant for this surface. The linked Lean proposition gives the full quantified input. </p>
 
   </div>
 </div>
@@ -187,7 +187,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/ChandrasekharanNarasimhanMeanSquare.lean#L21" class="lean_decl">CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare.BlackBox</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Counting/ChandrasekharanNarasimhanMeanSquare.lean#L21" class="lean_decl">CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare.BlackBox</a></li>
           
         </ul>
     
@@ -246,7 +246,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Introduction/KuehleitnerNowakCubeIdealSum.lean#L29" class="lean_decl">CubicTargets.Introduction.KuehleitnerNowakCubeIdealSum.BlackBox</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/8fb87790b8afdc722d76a171a5075445c75f8978/formalization/CubicTargets/Introduction/KuehleitnerNowakCubeIdealSum.lean#L29" class="lean_decl">CubicTargets.Introduction.KuehleitnerNowakCubeIdealSum.BlackBox</a></li>
           
         </ul>
     
@@ -260,9 +260,9 @@
   
 
 
-<p>Let \(a_K(n)\) count integral ideals of norm \(n^3\) in a fixed quadratic field \(K\). If \(F\) is analytic at \(1\) and agrees with \((s-1)^2\sum _{n\geq 1}a_K(n)n^{-s}\) to its right, then </p>
+<p>For a fixed quadratic field \(K\), let \(a_K(m)\) be the number of integral ideals of norm \(m\), and let \(b_K(n)=a_K(n^3)\) be the number of integral ideals of norm \(n^3\). If \(F\) is analytic at \(1\) and agrees with \((s-1)^2\sum _{n\geq 1}b_K(n)n^{-s}\) to its right, then </p>
 <div class="displaymath" id="a0000000231">
-  \[ \sum _{n\leq X}a_K(n)=F(1)X\log X+(F^\prime (1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log \log X)^2\bigr). \]
+  \[ \sum _{n\leq X}b_K(n)=F(1)X\log X+(F^\prime (1)-F(1))X+O\bigl(\sqrt X(\log X)^3(\log \log X)^2\bigr). \]
 </div>
 <p>This is the residue form of <span class="cite">
 	[
