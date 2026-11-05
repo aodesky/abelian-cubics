@@ -9,7 +9,7 @@
     "declaration": "Cubic.QuadraticCorrespondence.QuotientPolynomialConverse.separable_fibre_card",
     "title": "Fibres of the polynomial map",
     "statement": "Let $f=t^3-t^2+at+b\\in\\QQ[t]$ be separable, and suppose that $f$ either has Galois group $C_3$ or splits over $\\QQ$. Exactly two rational torus points have characteristic polynomial $f$.",
-    "proof": "Use the two roots of the quadratic resolvent and their distinctness in the separable case."
+    "proof": "Under the isomorphism of Proposition~\\ref{prop:cyclotomicParametrization}, the points correspond to the roots of $g=t^2-\\operatorname{Tr}\\,t+\\mathrm N$ in $E^\\times$; they are distinct when $f$ is separable."
   },
   "helper:moduliFibres": {
     "declaration": "Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq",
@@ -20,19 +20,19 @@
   "helper:supportFunctionSymmetry": {
     "declaration": "Cubic.ToricHeights.supportFunction_swap",
     "title": "Galois symmetry of the support function",
-    "statement": "For the Galois-invariant parameter $(s_0,\\sigma,\\sigma)$, interchanging the two conjugate coordinates leaves the support function unchanged.",
+    "statement": "For the Galois-invariant parameter $s=(s_0,\\sigma,\\sigma)$, the support function satisfies $\\varphi(\\gamma n)=\\varphi(n)$ for every $n$, where $\\gamma$ swaps $v_1$ and $v_2$.",
     "proof": "Compare its values on the cones interchanged by the coordinate swap."
   },
   "helper:weightCharacters": {
     "declaration": "Cubic.ToricHeights.HeightFormula.weightVector_character",
     "title": "Characters of the four weight vectors",
     "statement": "Each of the four sections displayed in Lemma~\\ref{lemma:heightformula} is a weight vector for its listed character.",
-    "proof": "Identify the section with the corresponding eigen-monomial divided by $e_1^3$."
+    "proof": "Write each section as $\\chi^m\\mathbf 1$ with $\\chi^m$ given by Equations~\\ref{eqn:formulaForNormCharacter} and~\\ref{eqn:formulaForNormCharacter2}."
   },
   "helper:characterCoordinates": {
     "declaration": "Cubic.ToricHeights.FormulaForNormCharacter.idempotent_values",
     "title": "Character evaluations in idempotent coordinates",
-    "statement": "Over a field of characteristic zero containing a primitive cube root $\\zeta$, write $g=u e_0+v e_1+w e_2$ in the idempotent basis of the group algebra. The three character evaluations are $u,v,w$: \\[g_0+g_1+g_2=u,\\qquad g_0+\\zeta g_1+\\zeta^2g_2=v,\\qquad g_0+\\zeta^2g_1+\\zeta g_2=w.\\]",
+    "statement": "Over a field of characteristic zero containing a primitive cube root $\\zeta$, write $g=g_0+g_1\\sigma+g_2\\sigma^2=uv_0'+vv_1'+wv_2'$, where $v_0',v_1',v_2'$ are the idempotents of Equation~\\ref{eqn:formulaForNormCharacter}. The three character evaluations are $u,v,w$: \\[u=g_0+g_1+g_2,\\qquad v=g_0+\\zeta g_1+\\zeta^2g_2,\\qquad w=g_0+\\zeta^2g_1+\\zeta g_2.\\]",
     "proof": "Evaluate the three characters on the three idempotents."
   },
   "helper:cubicCharacters": {
@@ -62,13 +62,13 @@
   "helper:adelicLogarithm": {
     "declaration": "Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum",
     "title": "The finite adelic logarithm",
-    "statement": "If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, its finite logarithm is the sum of the local logarithms over $S$.",
+    "statement": "If an adele has component in the maximal compact subgroup at every prime outside a finite set $S$, the finite part of $\\ell$ of Equation~\\ref{eqn:LAsNorm} is the sum of the local logarithms over $S$.",
     "proof": "The logarithm vanishes on each maximal compact subgroup, so all other terms vanish."
   },
   "helper:finiteIntegralProduct": {
     "declaration": "Cubic.PoissonSummation.AdelicFourierComponents.finite_integrals_product",
     "title": "Evaluation of the finite Fourier product",
-    "statement": "For $\\operatorname{Re}(\\sigma)>1$ and $t\\in\\RR$, the product of the actual local Haar integrals equals the finite Euler product in Lemma~\\ref{lemma:finiteFourierProduct}, with parameter $\\lambda=\\sigma-\\pi it$.",
+    "statement": "For $\\operatorname{Re}(\\sigma)>1$ and $t\\in\\RR$, the product of the local Haar integrals equals the finite Euler product in Lemma~\\ref{lemma:finiteFourierProduct}, with parameter $\\lambda=\\sigma-\\pi it$.",
     "proof": "Identify the local integrands with the evaluated Fourier factors and multiply the convergent factors."
   },
   "helper:archimedeanIntegral": {
@@ -86,7 +86,7 @@
   "helper:correctionBound": {
     "declaration": "Cubic.Counting.HeightCoefficientBounds.correction_bounded",
     "title": "A bound for the Euler correction",
-    "statement": "For every $\\beta>1/2$ there is a constant $C_\\beta$ such that \\[|(1-3^{-z})^2R(z)|\\leq C_\\beta\\qquad(\\operatorname{Re}(z)\\geq\\beta).\\]",
+    "statement": "For every $\\sigma_0>1/2$ there is a constant $C_{\\sigma_0}$ such that \\[|(1-3^{-z})^2R(z)|\\leq C_{\\sigma_0}\\qquad(\\operatorname{Re}(z)\\geq\\sigma_0).\\]",
     "proof": "Bound the correction products uniformly on the half-plane and bound the factor at $3$."
   },
   "helper:boundaryChain": {
@@ -104,13 +104,13 @@
   "helper:leadingConstants": {
     "declaration": "Cubic.Counting.AsymptoticConstantsAssembly.constants",
     "title": "Identities for the main-term constants",
-    "statement": "The Euler products and prime sums defining the main-term constants converge and agree with their simplified expressions.",
+    "statement": "The products and series defining $\\alpha$ and $\\beta$ converge, and, with $R$ as in Equation~\\ref{eqn:eulerCorrectionFactor}, \\[R(1)=\\frac{27\\alpha}{4\\pi^2},\\qquad \\frac{R'(1)}{2R(1)}=\\beta-\\frac{\\zeta'(2)}{\\zeta(2)}-\\frac18\\log3.\\] Moreover $\\mu=2\\gamma+\\log(2\\pi)-3\\log\\bigl(\\Gamma(1/3)/\\Gamma(2/3)\\bigr)$, where $\\gamma$ is Euler's constant.",
     "proof": "Combine the product identities, logarithmic derivatives, and the evaluation of the Euler--Kronecker constant."
   },
   "helper:laurentRescaling": {
     "declaration": "Cubic.PoissonSummation.LeadingTermsNormalization.laurent_z",
     "title": "Rescaling the Laurent expansion",
-    "statement": "Substituting $s=2z$ in the Laurent expansion at $s=2$ changes its polar part to \\[\\frac{c_2}{4(z-1)^2}+\\frac{c_1}{2(z-1)}.\\]",
+    "statement": "If $F(s)=c_2(s-2)^{-2}+c_1(s-2)^{-1}+O(1)$ near $s=2$, then \\[F(2z)=\\frac{c_2}{4(z-1)^2}+\\frac{c_1}{2(z-1)}+O(1)\\] near $z=1$.",
     "proof": "Use $2z-2=2(z-1)$ in the Laurent expansion; the remainder stays bounded near $z=1$."
   }
 }

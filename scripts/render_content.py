@@ -136,14 +136,15 @@ def main():
             r'each prime lie in $p^{\ZZ}\cup\{0\}$. Its hypotheses include the '
             r'geometric positivity conditions and the conditions on integral points; '
             r'its constant is the dual-cone volume times the normalized local integrals. '
-            r'Appendix B verifies those hypotheses and evaluates the constant for this surface. '
-            r'The linked proposition gives the full quantified input.'),
+            r'Proposition~\ref{prop:santensConstant} verifies those hypotheses and evaluates the constant for this surface. '
+            r'The linked Lean proposition gives the full quantified input.'),
         'cite:kuehleitnerNowak2004-cor2': (
             r'K\"uhleitner--Nowak',
-            r'Let $a_K(n)$ count integral ideals of norm $n^3$ in a fixed quadratic '
-            r'field $K$. If $F$ is analytic at $1$ and agrees with '
-            r'$(s-1)^2\sum_{n\geq1}a_K(n)n^{-s}$ to its right, then '
-            r'\[\sum_{n\leq X}a_K(n)=F(1)X\log X+(F^\prime(1)-F(1))X'
+            r'For a fixed quadratic field $K$, let $a_K(m)$ be the number of integral '
+            r'ideals of norm $m$, and let $b_K(n)=a_K(n^3)$ be the number of integral '
+            r'ideals of norm $n^3$. If $F$ is analytic at $1$ and agrees with '
+            r'$(s-1)^2\sum_{n\geq1}b_K(n)n^{-s}$ to its right, then '
+            r'\[\sum_{n\leq X}b_K(n)=F(1)X\log X+(F^\prime(1)-F(1))X'
             r'+O\bigl(\sqrt X(\log X)^3(\log\log X)^2\bigr).\]'
             r'This is the residue form of \cite[Corollary~2]{kuehleitnerNowak2004}. '
             r'The removal of the factor at $3$ and the comparison with the original '

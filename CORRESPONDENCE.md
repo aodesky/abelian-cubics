@@ -12,13 +12,12 @@ divisors, and local coordinates. These are the computational models used by
 the proofs. Theorem 5 (`thm:modularInterpretation`) is formalized for rational
 points; the functorial statement over general bases is not formalized.
 
-Three proofs use different arguments from the printed paper:
+Two proofs use different arguments from the printed paper:
 
 | Result | Paper | Lean |
 | --- | --- | --- |
 | `lemma:xiMeanValue`, including `eqn:xiMeanBound` | Titchmarsh, §7.8, (7.8.3) | The residue theorem, with a reflected kernel to obtain a bound uniform on the closed strip |
 | `eqn:dSummatoryForGeneralTrace`, in the proof of Theorem 2 | Alberts, Theorem 1.1 | Truncated Perron’s formula and contour shifting |
-| `thm:exactFormula`, the step d_n = a_E(n³) | Count of ideals of prime-power norm | Comparison of Dirichlet coefficients in ζ_E(s) = ζ(s)L(s, χ), with χ the nontrivial character mod 3 |
 
 Later results use the two estimates. Neither Titchmarsh’s result nor Alberts’s
 theorem is an extra hypothesis in Lean.
