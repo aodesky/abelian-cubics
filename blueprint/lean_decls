@@ -143,6 +143,10 @@ CubicTargets.Counting.GeneralMonic.MonicArchimedeanMomentsClaim
 Cubic.Counting.MonicArchimedeanMoments.«eqn:monicArchimedeanMoments»
 CubicTargets.Counting.GeneralMonic.MonicConstantsFromTraceCountsClaim
 Cubic.Counting.MonicConstantsFromTraceCounts.«eqn:monicConstantsFromTraceCounts»
+CubicTargets.Counting.TranslationClasses.Claim
+Cubic.Counting.TranslationClasses.«rem:translationClasses»
+CubicTargets.Counting.TraceDistribution.Claim
+Cubic.Counting.TraceDistribution.«thm:traceDistribution»
 CubicTargets.SurfaceGeometry.SurfaceIntegralCubic.Claim
 Cubic.SurfaceGeometry.SurfaceIntegralCubic.«prop:surfaceIntegralCubic»
 CubicTargets.SurfaceGeometry.SurfaceIntegralEquation.Claim

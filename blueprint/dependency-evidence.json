@@ -1,5 +1,5 @@
 {
-  "lean_sources_digest": "345d3d059e512a6e12e75806da11336862a6f221e2fb5cdc4d1ba2791d69169a",
+  "lean_sources_digest": "1eb29026f7a224b4168696292668652defde55d8c4ee2de791929c6305799048",
   "roots": {
     "thm:generalMonicCount": "Cubic.Counting.GeneralMonicCount.thm:generalMonicCount",
     "thm:asymptoticPolynomialCount": "Cubic.Counting.AsymptoticPolynomialCount.thm:asymptoticPolynomialCount",
@@ -63,6 +63,8 @@
     "prop:traceZeroAsymptotic": "Cubic.Counting.TraceZeroAsymptotic.prop:traceZeroAsymptotic",
     "eqn:monicArchimedeanMoments": "Cubic.Counting.MonicArchimedeanMoments.eqn:monicArchimedeanMoments",
     "eqn:generalTraceDecomposition": "Cubic.Counting.GeneralTraceDecomposition.eqn:generalTraceDecomposition",
+    "rem:translationClasses": "Cubic.Counting.TranslationClasses.rem:translationClasses",
+    "thm:traceDistribution": "Cubic.Counting.TraceDistribution.thm:traceDistribution",
     "eqn:monicConstantsFromTraceCounts": "Cubic.Counting.MonicConstantsFromTraceCounts.eqn:monicConstantsFromTraceCounts",
     "prop:surfaceIntegralCubic": "Cubic.SurfaceGeometry.SurfaceIntegralCubic.prop:surfaceIntegralCubic",
     "eqn:surfaceIntegralCubic": "Cubic.SurfaceGeometry.SurfaceIntegralEquation.eqn:surfaceIntegralCubic",
@@ -794,7 +796,6 @@
     "lemma:rootVsToric": {
       "helper:cubicCharacters": [
         "Cubic.ToricHeights.lemma:rootVsToric",
-        "Cubic.ToricHeights.RootVsToric.claim_of_discriminant_nonneg",
         "Cubic.ToricHeights.IntegralPolynomialHeight.linear_nonpos",
         "Cubic.ToricHeights.IntegralPolynomialHeight.coefficient_height_positive",
         "Cubic.ToricHeights.CanonicalHeight.norm_ge_one",
@@ -808,7 +809,6 @@
       ],
       "prop:canonicalHeight": [
         "Cubic.ToricHeights.lemma:rootVsToric",
-        "Cubic.ToricHeights.RootVsToric.claim_of_discriminant_nonneg",
         "Cubic.ToricHeights.IntegralPolynomialHeight.height_real",
         "Cubic.ToricHeights.IntegralPolynomialHeight.height_eq_sqrt",
         "Cubic.ToricHeights.CanonicalHeight.prop:canonicalHeight"
@@ -1887,6 +1887,228 @@
         "Cubic.Counting.WeightedCount.heightFibreEquiv",
         "Cubic.Counting.WeightedCount.height_eq_sqrt_iff",
         "Cubic.ToricHeights.CanonicalHeight.prop:canonicalHeight"
+      ]
+    },
+    "rem:translationClasses": {
+      "cite:chandrasekharanNarasimhan1963-thm4": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare.BlackBox"
+      ],
+      "eqn:A1asymptotic": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_asymptotic",
+        "Cubic.Counting.A1Asymptotic.eqn:A1asymptotic"
+      ],
+      "eqn:poissonae": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox"
+      ],
+      "helper:adelicLogarithm": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.HeightZetaFullRegion.series_absolute",
+        "Cubic.PoissonSummation.HeightParameterShift.zetaTerm_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.rational_inverseHeight_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.adelic_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.finite_shift",
+        "Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum"
+      ],
+      "helper:moduliFibres": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.card_cyclic",
+        "Cubic.Counting.CyclicFibre.fibre_card",
+        "Cubic.Counting.CyclicFibre.point_pair_ne",
+        "Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq"
+      ],
+      "helper:supportFunctionSymmetry": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.zetaTerm_eq",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.height_eq_cpow_index",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.height_eq_exp",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.finite_inverseHeight_one",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.local_inverseHeight_one",
+        "Cubic.ToricHeights.QuotientFiniteHeight.splitInverseHeight_eq",
+        "Cubic.ToricHeights.LocalDegreeNormalization.split_height_product",
+        "Cubic.ToricHeights.supportFunction_swap"
+      ],
+      "lemma:generalHeightReduction": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.TranslationClasses.bijOn_one",
+        "Cubic.Counting.GeneralHeightReduction.lemma:generalHeightReduction"
+      ],
+      "lemma:heightZetaConvergence": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.HeightZetaFullRegion.series_absolute",
+        "Cubic.PoissonSummation.lemma:heightZetaConvergence"
+      ],
+      "lemma:normalityCriterion": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.card_cyclic",
+        "Cubic.Counting.CyclicFibre.fibre_card",
+        "Cubic.Counting.CyclicFibre.pair",
+        "Cubic.Counting.CyclicFibre.\u03b8_normal",
+        "Cubic.Counting.NormalityCriterion.lemma:normalityCriterion"
+      ],
+      "prop:canonicalHeight": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_count",
+        "Cubic.Counting.TranslationClasses.R_card_neg_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.sum_count_eq",
+        "Cubic.Counting.WeightedCount.sum_count",
+        "Cubic.Counting.WeightedCount.heightFibreEquiv",
+        "Cubic.Counting.WeightedCount.height_eq_sqrt_iff",
+        "Cubic.ToricHeights.CanonicalHeight.prop:canonicalHeight"
+      ],
+      "prop:traceZeroAsymptotic": [
+        "Cubic.Counting.TranslationClasses.rem:translationClasses",
+        "Cubic.Counting.TranslationClasses.class_asymptotic",
+        "Cubic.Counting.TraceZeroAsymptotic.prop:traceZeroAsymptotic"
+      ]
+    },
+    "thm:traceDistribution": {
+      "cite:chandrasekharanNarasimhan1963-thm4": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "CubicTargets.Counting.ChandrasekharanNarasimhanMeanSquare.BlackBox"
+      ],
+      "eqn:A1asymptotic": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.A1Asymptotic.eqn:A1asymptotic"
+      ],
+      "eqn:poissonae": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox"
+      ],
+      "helper:adelicLogarithm": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.HeightZetaFullRegion.series_absolute",
+        "Cubic.PoissonSummation.HeightParameterShift.zetaTerm_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.rational_inverseHeight_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.adelic_shift",
+        "Cubic.PoissonSummation.HeightParameterShift.finite_shift",
+        "Cubic.PoissonSummation.FiniteAdelicData.logarithm_eq_sum"
+      ],
+      "helper:leadingConstants": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.alpha_pos",
+        "Cubic.Counting.AsymptoticConstantsAssembly.constants"
+      ],
+      "helper:moduliFibres": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.card_cyclic",
+        "Cubic.Counting.CyclicFibre.fibre_card",
+        "Cubic.Counting.CyclicFibre.point_pair_ne",
+        "Cubic.OrbitParametrization.C3Algebra.equivalent_of_point_eq"
+      ],
+      "helper:supportFunctionSymmetry": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.zetaTerm_eq",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.height_eq_cpow_index",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.height_eq_exp",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.finite_inverseHeight_one",
+        "Cubic.PoissonSummation.IntegralHeightNormalization.local_inverseHeight_one",
+        "Cubic.ToricHeights.QuotientFiniteHeight.splitInverseHeight_eq",
+        "Cubic.ToricHeights.LocalDegreeNormalization.split_height_product",
+        "Cubic.ToricHeights.supportFunction_swap"
+      ],
+      "lemma:generalHeightReduction": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.card_decomp",
+        "Cubic.Counting.GeneralTraceDecomposition.trace_mem",
+        "Cubic.Counting.GeneralHeightReduction.lemma:generalHeightReduction"
+      ],
+      "lemma:heightZetaConvergence": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.IP_finite",
+        "Cubic.PoissonSummation.HeightCountingSeries.index_fiber_finite",
+        "Cubic.PoissonSummation.HeightZetaFullRegion.series_absolute",
+        "Cubic.PoissonSummation.lemma:heightZetaConvergence"
+      ],
+      "lemma:normalityCriterion": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.card_cyclic",
+        "Cubic.Counting.CyclicFibre.fibre_card",
+        "Cubic.Counting.CyclicFibre.pair",
+        "Cubic.Counting.CyclicFibre.\u03b8_normal",
+        "Cubic.Counting.NormalityCriterion.lemma:normalityCriterion"
+      ],
+      "prop:canonicalHeight": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.GeneralTraceDecomposition.card_fiber_one",
+        "Cubic.Counting.A1Asymptotic.traceOneSet_finite",
+        "Cubic.Counting.WeightedCount.exact_count",
+        "Cubic.Counting.WeightedCount.sum_count_eq",
+        "Cubic.Counting.WeightedCount.sum_count",
+        "Cubic.Counting.WeightedCount.heightFibreEquiv",
+        "Cubic.Counting.WeightedCount.height_eq_sqrt_iff",
+        "Cubic.ToricHeights.CanonicalHeight.prop:canonicalHeight"
+      ],
+      "prop:traceZeroAsymptotic": [
+        "Cubic.Counting.TraceDistribution.thm:traceDistribution",
+        "Cubic.Counting.TraceDistribution.estimate",
+        "Cubic.Counting.TraceDistribution.fiber_estimate",
+        "Cubic.Counting.TraceZeroAsymptotic.prop:traceZeroAsymptotic"
       ]
     },
     "eqn:monicConstantsFromTraceCounts": {

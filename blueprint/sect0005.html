@@ -120,7 +120,7 @@
 
     <a class="icon proof" href="sect0005.html#lemma:normalityCriterion">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000133"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000132"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -136,9 +136,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/NormalityCriterion.lean#L10" class="lean_decl">CubicTargets.Counting.NormalityCriterion.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/NormalityCriterion.lean#L10" class="lean_decl">CubicTargets.Counting.NormalityCriterion.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/NormalityCriterion.lean#L55" class="lean_decl">Cubic.Counting.NormalityCriterion.«lemma:normalityCriterion»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/NormalityCriterion.lean#L55" class="lean_decl">Cubic.Counting.NormalityCriterion.«lemma:normalityCriterion»</a></li>
           
         </ul>
     
@@ -156,7 +156,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000133">
+<div class="proof_wrapper" id="a0000000132">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -165,7 +165,7 @@
   </div>
   <div class="proof_content">
   
-<p>The Gram determinant of the trace pairing on the conjugates of \(x\) is the square of the group determinant. Use its factorization \(\Delta =e_1(e_1^2-3e_2)\) and nondegeneracy of the trace form. </p>
+<p>Let \(\sigma \) generate \(C_3\) and put \(x_i=\sigma ^{i-1}x\) for \(i=1,2,3\). Since \(K/\mathbb {Q}\) is separable, the trace pairing \((u,v)\mapsto \operatorname {Tr}_{K/\mathbb {Q}}(uv)\) is nondegenerate, so \(x_1,x_2,x_3\) form a \(\mathbb {Q}\)-basis exactly when the Gram matrix \(B=(\operatorname {Tr}_{K/\mathbb {Q}}(x_ix_j))_{i,j}\) is invertible. Writing \(B=M^{\mathsf T}M\) with \(M\) the circulant matrix of \(x_1,x_2,x_3\) gives \(\det B=\Delta ^2\), where \(\Delta =x_1^3+x_2^3+x_3^3-3x_1x_2x_3\). Finally \(\Delta =(x_1+x_2+x_3)(x_1^2+x_2^2+x_3^2-x_1x_2-x_2x_3-x_3x_1)=e_1(e_1^2-3e_2)\). </p>
 
   </div>
 </div>
@@ -185,7 +185,7 @@
 
     <a class="icon proof" href="sect0005.html#lemma:reducibles">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000134"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000133"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -201,9 +201,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/Reducibles.lean#L13" class="lean_decl">CubicTargets.Counting.Reducibles.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/Reducibles.lean#L13" class="lean_decl">CubicTargets.Counting.Reducibles.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/Reducibles.lean#L8" class="lean_decl">Cubic.Counting.Reducibles.«lemma:reducibles»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/Reducibles.lean#L8" class="lean_decl">Cubic.Counting.Reducibles.«lemma:reducibles»</a></li>
           
         </ul>
     
@@ -217,8 +217,9 @@
   
 
 
+<p>For \(f=t^3-t^2+at+b\in F\), \(H_{\mathrm{tor}}(f)=\sqrt{1-3a}\) is the toric height of Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>. </p>
 <p>Let \(d_n\) be the coefficients of \(Z_0(z)=\sum _{n\geq 1}d_n n^{-z}\). For \(X\geq 1\), </p>
-<div class="displaymath" id="a0000000135">
+<div class="displaymath" id="a0000000134">
   \begin{equation*}  \sum _{\substack {f\in F\\ { H_{\mathrm{tor}}(f)\leq \sqrt X
 
 }}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
@@ -226,7 +227,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000134">
+<div class="proof_wrapper" id="a0000000133">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -236,7 +237,7 @@
   <div class="proof_content">
   
 
-<p>Use the multiplicities of the characteristic-polynomial map. Count the split points by cyclic orbits of integer triples and compare the corresponding ellipse lattice count with its area. </p>
+<p>Put \(H=\sqrt X\). By Theorem&#160;<a href="sect0002.html#thm:modularInterpretation">5</a> and Proposition&#160;<a href="sect0003.html#prop:canonicalHeight">2</a>, \(\sum _{n\leq X}d_n\) counts equivalence classes of pairs \((K,x)\), with \(K\) a \(C_3\)-algebra and \(x\) an integral trace-one normal element, of toric height at most \(H\). If \(K\) is a field, the characteristic polynomial of \(x\) lies in \(F\); conversely the roots of \(f\in F\) are normal by Lemma&#160;<a href="sect0005.html#lemma:normalityCriterion">9</a>, since \(1-3a\neq 0\), and each \(f\in F\) gives two classes, one for each identification \(C_3\cong \operatorname {Gal}(\mathbb {Q}(x)/\mathbb {Q})\) (Example&#160;<a href="sect0002.html#example:twoRationalPointsSamePoly">1</a>). If \(K=\mathbb {Q}^3\), the classes are the triples \((\alpha ,\beta ,\gamma )\in \mathbb {Z}^3\) with \(\alpha +\beta +\gamma =1\) modulo cyclic permutation, and each orbit has three elements because no such triple has equal coordinates. Substituting \(\gamma =1-\alpha -\beta \) gives \(H_{\mathrm{tor}}^2=1+3(\alpha ^2+\beta ^2+\alpha \beta -\alpha -\beta )\), so the split classes number \(\frac13\# (\mathcal E_H\cap \mathbb {Z}^2)\), where \(\mathcal E_H=\{ (x,y)\in \mathbb {R}^2:x^2+y^2+xy-x-y\leq \frac13(H^2-1)\} \). Hence the left-hand side is \(\frac12\sum _{n\leq X}d_n-\frac16\# (\mathcal E_H\cap \mathbb {Z}^2)\). The ellipse \(\mathcal E_H\) has area \(\frac{2\pi }{3\sqrt3}H^2\) and boundary length \(O(H)\), so its lattice-point count is \(\frac{2\pi }{3\sqrt3}X+O(\sqrt X)\). </p>
 
   </div>
 </div>
@@ -255,7 +256,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:weightedPolynomialCount">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000136"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000135"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -271,9 +272,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/WeightedPolynomialCount.lean#L36" class="lean_decl">CubicTargets.Counting.WeightedPolynomialCount.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/WeightedPolynomialCount.lean#L36" class="lean_decl">CubicTargets.Counting.WeightedPolynomialCount.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/WeightedCount.lean#L340" class="lean_decl">Cubic.Counting.WeightedCount.«eqn:weightedPolynomialCount»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/WeightedCount.lean#L340" class="lean_decl">Cubic.Counting.WeightedCount.«eqn:weightedPolynomialCount»</a></li>
           
         </ul>
     
@@ -287,7 +288,8 @@
   
 
 
-<div class="displaymath" id="a0000000137">
+<p>For \(f=t^3-t^2+at+b\in F\), \(H_{\mathrm{tor}}(f)=\sqrt{1-3a}\) is the toric height of Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>. </p>
+<div class="displaymath" id="a0000000136">
   \begin{equation*}  \sum _{\substack {f\in F\\ { H_{\mathrm{tor}}(f)\leq \sqrt X
 
 }}}1 =\frac12\sum _{n\leq X}d_n -\frac{\pi }{9\sqrt3}X+O(\sqrt X). \end{equation*}
@@ -295,7 +297,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000136">
+<div class="proof_wrapper" id="a0000000135">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -305,7 +307,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>This is the display of Lemma&#160;<a href="sect0005.html#lemma:reducibles">10</a>. The sum \(\sum _{n\leq X}d_n\) counts classes of \(C_3\)-algebras with an integral trace-one normal element of toric height at most \(\sqrt X\) (Theorem&#160;<a href="sect0002.html#thm:modularInterpretation">5</a>, Proposition&#160;<a href="sect0003.html#prop:canonicalHeight">2</a>). Each \(f\in F\) accounts for two field classes, and the split classes are the cyclic orbits of \((\alpha ,\beta ,1-\alpha -\beta )\in \mathbb {Z}^3\) with \(1+3(\alpha ^2+\beta ^2+\alpha \beta -\alpha -\beta )\leq X\), each orbit of size three. Counting the lattice points \((\alpha ,\beta )\) in this ellipse, of area \(\frac{2\pi }{3\sqrt3}X\) and perimeter \(O(\sqrt X)\), gives the split contribution \(\frac{\pi }{9\sqrt3}X+O(\sqrt X)\) after dividing by \(3\) and by \(2\). </p>
 
   </div>
 </div>
@@ -325,7 +327,7 @@
 
     <a class="icon proof" href="sect0005.html#lemma:xiMeanValue">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000138"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000137"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -341,9 +343,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanValue.lean#L4" class="lean_decl">CubicTargets.Counting.XiMeanValue.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/XiMeanValue.lean#L4" class="lean_decl">CubicTargets.Counting.XiMeanValue.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanValue.lean#L6" class="lean_decl">Cubic.Counting.XiMeanValue.«lemma:xiMeanValue»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/XiMeanValue.lean#L6" class="lean_decl">Cubic.Counting.XiMeanValue.«lemma:xiMeanValue»</a></li>
           
         </ul>
     
@@ -358,13 +360,13 @@
 
 
 <p>Let \(\eta {\gt}0\). For \(1/2\leq \sigma \leq 2\) and \(U\geq 2\), </p>
-<div class="displaymath" id="a0000000139">
+<div class="displaymath" id="a0000000138">
   \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000138">
+<div class="proof_wrapper" id="a0000000137">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -374,7 +376,14 @@
   <div class="proof_content">
   
 
-<p>Apply the residue theorem to an exponentially decaying kernel. A reflected kernel keeps the estimate uniform as \(\sigma \) approaches \(1/2\). Integrate over the height interval and apply the critical-line mean-square bound. The paper instead uses Titchmarsh, <span class="cite">
+<p>We interpolate between the lines \(\operatorname {Re}(z)=1/2\) and \(\operatorname {Re}(z)=2\). On the critical line, Equation&#160;<a href="sect0005.html#eqn:criticalMeanSquare">32</a> gives \(\int _0^T|\xi (1/2+it)|^2\, dt\ll _\eta 1+T^{1+\eta }\), and absolute convergence gives \(\int _0^T|\xi (2+it)|^2\, dt\ll T\). Titchmarsh’s convexity theorem for mean values <span class="cite">
+	[
+	<a href="sect0010.html#titchmarsh1986" >30</a>
+	, 
+	§
+	7.8, (7.8.3)
+	]
+</span> allows the simple pole of \(\xi \) at \(1\); its growth hypothesis follows from the polynomial growth of \(\xi \) in vertical strips. With exponents \(1+\eta \) and \(1\) on the two lines and \(T=2U\), it gives \(\int _U^{2U}|\xi (\sigma +it)|^2\, dt\ll _\eta U^{1+\frac{2(2-\sigma )}{3}\eta }\leq U^{1+\eta }\) for \(1/2{\lt}\sigma {\lt}2\), and the two boundary bounds cover \(\sigma =1/2\) and \(\sigma =2\). In Lean, the strip bound is proved with the residue theorem and a reflected kernel, uniformly on the closed strip, instead of Titchmarsh’s convexity theorem <span class="cite">
 	[
 	<a href="sect0010.html#titchmarsh1986" >30</a>
 	, 
@@ -402,7 +411,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:xiMeanBound">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000140"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000139"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -418,9 +427,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/XiMeanBound.lean#L9" class="lean_decl">CubicTargets.Counting.XiMeanBound.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/XiMeanBound.lean#L9" class="lean_decl">CubicTargets.Counting.XiMeanBound.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/XiMeanBound.lean#L9" class="lean_decl">Cubic.Counting.XiMeanBound.«eqn:xiMeanBound»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/XiMeanBound.lean#L9" class="lean_decl">Cubic.Counting.XiMeanBound.«eqn:xiMeanBound»</a></li>
           
         </ul>
     
@@ -434,13 +443,13 @@
   
 
 
-<div class="displaymath" id="a0000000141">
+<div class="displaymath" id="a0000000140">
   \begin{equation*}  \int _U^{2U}|\xi (\sigma +it)|^2\, dt \ll _\eta U^{1+\eta }. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000140">
+<div class="proof_wrapper" id="a0000000139">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -450,7 +459,14 @@
   <div class="proof_content">
   
 
-<p>This is the bound proved in Lemma&#160;<a href="sect0005.html#lemma:xiMeanValue">11</a>, with the same uniformity in \(\sigma \). </p>
+<p>This is the bound of Lemma&#160;<a href="sect0005.html#lemma:xiMeanValue">11</a>, for \(1/2\leq \sigma \leq 2\) and \(U\geq 2\). It follows by convexity in \(\sigma \) from the mean-square bound \(\ll _\eta T^{1+\eta }\) on \(\operatorname {Re}(z)=1/2\) (Equation&#160;<a href="sect0005.html#eqn:criticalMeanSquare">32</a>) and the bound \(\ll T\) on \(\operatorname {Re}(z)=2\), where \(\xi \) converges absolutely. In Lean, the strip bound is proved with the residue theorem and a reflected kernel, uniformly on the closed strip, instead of Titchmarsh’s convexity theorem <span class="cite">
+	[
+	<a href="sect0010.html#titchmarsh1986" >30</a>
+	, 
+	§
+	7.8, (7.8.3)
+	]
+</span>. </p>
 <p>The proof assumes the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -470,7 +486,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:criticalMeanSquare">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000142"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000141"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -486,9 +502,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/CriticalMeanSquare.lean#L7" class="lean_decl">CubicTargets.Counting.CriticalMeanSquare.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/CriticalMeanSquare.lean#L7" class="lean_decl">CubicTargets.Counting.CriticalMeanSquare.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/CriticalMeanSquare.lean#L12" class="lean_decl">Cubic.Counting.CriticalMeanSquare.«eqn:criticalMeanSquare»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/CriticalMeanSquare.lean#L12" class="lean_decl">Cubic.Counting.CriticalMeanSquare.«eqn:criticalMeanSquare»</a></li>
           
         </ul>
     
@@ -502,13 +518,13 @@
   
 
 
-<div class="displaymath" id="a0000000143">
+<div class="displaymath" id="a0000000142">
   \begin{equation*}  \int _1^T|\xi (1/2+it)|^2\, dt \ll T\log ^2T. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000142">
+<div class="proof_wrapper" id="a0000000141">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -518,7 +534,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Multiply the Chandrasekharan–Narasimhan estimate \(\frac1T\int _1^T|\xi (1/2+it)|^2\, dt=O((\log T)^2)\) (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>, with \([E:\mathbb {Q}]=2\) and \(\sigma =1/2\)) by \(T\). </p>
 <p>The proof assumes the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -539,7 +555,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:dSummatoryForGeneralTrace">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000144"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000143"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -555,9 +571,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L195" class="lean_decl">CubicTargets.Counting.GeneralMonic.DSummatoryClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L195" class="lean_decl">CubicTargets.Counting.GeneralMonic.DSummatoryClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/DSummatory.lean#L55" class="lean_decl">Cubic.Counting.DSummatory.«eqn:dSummatoryForGeneralTrace»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/DSummatory.lean#L55" class="lean_decl">Cubic.Counting.DSummatory.«eqn:dSummatoryForGeneralTrace»</a></li>
           
         </ul>
     
@@ -572,13 +588,13 @@
 
 
 <p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
-<div class="displaymath" id="a0000000145">
+<div class="displaymath" id="a0000000144">
   \begin{equation*}  \sum _{n\leq X}d_n =XQ\left(\tfrac 12\log X\right) +O_\varepsilon (X^{1/2+\varepsilon }), \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000144">
+<div class="proof_wrapper" id="a0000000143">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -588,7 +604,15 @@
   <div class="proof_content">
   
 
-<p>Apply truncated Perron at a half-integer, move the contour across the double pole at \(1\), and estimate the new contour using the strip mean-square bound. The residue supplies the main term. This is the direct argument retained in Lean in place of <span class="cite">
+<p>Fix \(0{\lt}\varepsilon {\lt}1\) and put \(\eta =\varepsilon /4\). The coefficients \(d_n\) are nonnegative, \(Z_0\) converges absolutely for \(\operatorname {Re}(z){\gt}1\), and by Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a> it continues meromorphically to \(\operatorname {Re}(z){\gt}1/2\) with only a double pole at \(z=1\). Equation&#160;<a href="sect0005.html#eqn:heightMeanBound">34</a> and Lemma&#160;<a href="sect0005.html#lemma:xiMeanValue">11</a> give \(\int _U^{2U}|Z_0(\sigma +it)|\, dt\ll _\eta U^{1+\eta }\) for \(1/2+\eta \leq \sigma \leq 2\) and \(U\geq 2\), and absolute convergence gives the same for \(\sigma \geq 2\); this bounds \(\int _U^{2U}Z_0(\sigma \pm it)Y^{\pm it}\, dt\). The Tauberian theorem <span class="cite">
+	[
+	<a href="sect0010.html#alberts2025" >1</a>
+	, 
+	Theorem
+	
+	1.1
+	]
+</span>, with abscissa \(1\) and \(\delta =1/2-\eta \), then gives \(\sum _{n\leq X}d_n=\operatorname {Res}_{z=1}Z_0(z)X^z/z+O_\varepsilon (X^{1/2+\varepsilon })\). By the Laurent expansion in Equation&#160;<a href="sect0004.html#eqn:Z0Laurent">28</a>, this residue is \(XQ(\frac12\log X)\). Lean uses truncated Perron’s formula and contour shifting instead of <span class="cite">
 	[
 	<a href="sect0010.html#alberts2025" >1</a>
 	, 
@@ -616,7 +640,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:heightMeanBound">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000146"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000145"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -632,9 +656,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/HeightMeanBound.lean#L11" class="lean_decl">CubicTargets.Counting.HeightMeanBound.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/HeightMeanBound.lean#L11" class="lean_decl">CubicTargets.Counting.HeightMeanBound.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/HeightMeanBound.lean#L11" class="lean_decl">Cubic.Counting.HeightMeanBound.«eqn:heightMeanBound»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/HeightMeanBound.lean#L11" class="lean_decl">Cubic.Counting.HeightMeanBound.«eqn:heightMeanBound»</a></li>
           
         </ul>
     
@@ -649,13 +673,13 @@
 
 
 <p>For each \(\eta {\gt}0\) there is a constant \(A_\eta \), depending only on \(\eta \), such that the following holds for all \(\sigma \geq 1/2+\eta \). </p>
-<div class="displaymath" id="a0000000147">
+<div class="displaymath" id="a0000000146">
   \begin{equation*}  \int _U^{2U}|Z_0(\sigma +it)|\, dt \leq A_\eta \int _U^{2U}|\xi (\sigma +it)|^2\, dt \qquad (U \geq 2). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000146">
+<div class="proof_wrapper" id="a0000000145">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -665,7 +689,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>By Equation&#160;<a href="sect0004.html#eqn:Z0factorization">27</a>, \(Z_0(z)=(1-3^{-z})^2\xi (z)^2R(z)\), with \(R\) the Euler product of Equation&#160;<a href="sect0004.html#eqn:eulerCorrectionFactor">26</a>. That product converges absolutely and uniformly on \(\operatorname {Re}(z)\geq 1/2+\eta \), so \(|(1-3^{-z})^2R(z)|\leq A_\eta \) there (Supporting lemma&#160;<a href="sect0009.html#helper:correctionBound">15</a>). Hence \(|Z_0(\sigma +it)|\leq A_\eta |\xi (\sigma +it)|^2\) pointwise, and integrating over \(U\leq t\leq 2U\) gives the bound. </p>
 
   </div>
 </div>
@@ -684,7 +708,7 @@
 
     <a class="icon proof" href="sect0005.html#eqn:irrPolys">#</a>
     
-    <a class="icon proof" href="sect0005.html#a0000000148"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000147"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -700,9 +724,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IrrPolys.lean#L31" class="lean_decl">CubicTargets.Counting.IrrPolys.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/IrrPolys.lean#L31" class="lean_decl">CubicTargets.Counting.IrrPolys.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IrrPolys.lean#L91" class="lean_decl">Cubic.Counting.IrrPolys.«eqn:irrPolys»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/IrrPolys.lean#L91" class="lean_decl">Cubic.Counting.IrrPolys.«eqn:irrPolys»</a></li>
           
         </ul>
     
@@ -716,8 +740,8 @@
   
 
 
-<p>For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
-<div class="displaymath" id="a0000000149">
+<p>For \(f=t^3-t^2+at+b\in F\), \(H_{\mathrm{tor}}(f)=\sqrt{1-3a}\) is the toric height of Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>. For every \(\varepsilon {\gt}0\), the following asymptotic holds as \(X\to \infty \). </p>
+<div class="displaymath" id="a0000000148">
   \begin{equation*}  \sum _{\substack {f\in F\\ { H_{\mathrm{tor}}(f)\leq \sqrt X
 
 }}}1 =\frac12XQ\left(\tfrac 12\log X\right) -\frac{\pi }{9\sqrt3}X +O_\varepsilon (X^{1/2+\varepsilon }). \end{equation*}
@@ -725,7 +749,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000148">
+<div class="proof_wrapper" id="a0000000147">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -735,7 +759,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Insert the asymptotic \(\sum _{n\leq X}d_n=XQ(\frac12\log X)+O_\varepsilon (X^{1/2+\varepsilon })\) of Equation&#160;<a href="sect0005.html#eqn:dSummatoryForGeneralTrace">33</a> into Lemma&#160;<a href="sect0005.html#lemma:reducibles">10</a>. The error \(O(\sqrt X)\) of that lemma is absorbed into \(O_\varepsilon (X^{1/2+\varepsilon })\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>

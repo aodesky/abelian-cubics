@@ -135,9 +135,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IntroConstants.lean#L11" class="lean_decl">CubicTargets.Counting.IntroConstants.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/IntroConstants.lean#L11" class="lean_decl">CubicTargets.Counting.IntroConstants.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IntroConstants.lean#L6" class="lean_decl">Cubic.Counting.IntroConstants.«eqn:introConstants»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/IntroConstants.lean#L6" class="lean_decl">Cubic.Counting.IntroConstants.«eqn:introConstants»</a></li>
           
         </ul>
     
@@ -167,7 +167,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>The Dedekind zeta function \(\xi \) is meromorphic near \(s=1\) with a simple pole there, so \(\xi '/\xi \) has a simple pole with residue \(-1\) at \(s=1\) and the limit defining \(\mu \) exists; \(\mu \) is the Euler–Kronecker constant of \(E\). For \(p\equiv 1\pmod3\) the factor \(1-2/(p(p+1))\) lies in \((0,1)\) and differs from \(1\) by less than \(2p^{-2}\), so the product defining \(\alpha \) converges absolutely to a positive number. The terms of \(\beta \) are \(O(p^{-2}\log p)\), so the series converges absolutely. </p>
 
   </div>
 </div>
@@ -203,9 +203,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/GeneralMonic.lean#L146" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralMonicCountClaim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/GeneralMonic.lean#L146" class="lean_decl">CubicTargets.Counting.GeneralMonic.GeneralMonicCountClaim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/GeneralMonicCount.lean#L439" class="lean_decl">Cubic.Counting.GeneralMonicCount.«thm:generalMonicCount»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/GeneralMonicCount.lean#L439" class="lean_decl">Cubic.Counting.GeneralMonicCount.«thm:generalMonicCount»</a></li>
           
         </ul>
     
@@ -240,7 +240,7 @@
   <div class="proof_content">
   
 
-<p>Reduce each trace class to trace zero or one. Substitute the asymptotic formulas for \(A_0\) and \(A_1\), approximate their main-term sums by integrals, and then sum the errors. The two real integrals give the displayed polynomial \(P\). </p>
+<p>For \(f=t^3+a_1t^2+a_2t+a_3\) put \(s=-a_1\) and \(n(f)=a_1^2-3a_2\). Let \(A_1(X)\) count the polynomials \(t^3-t^2+at+b\in \mathbb {Z}[t]\) with Galois group \(C_3\) and \(1-3a\leq X\), and let \(A_0(X)\) count the polynomials \(t^3-Nt+c\in \mathbb {Z}[t]\) with Galois group \(C_3\) and \(1\leq N\leq X\). By Lemma&#160;<a href="sect0006.html#lemma:generalHeightReduction">12</a>, translating the roots by an integer, and also negating them when \(s\equiv -1\pmod3\), sends the polynomials of trace \(s\) bijectively to those of trace \(0\) (if \(3\mid s\)) or \(1\) (if \(3\nmid s\)) and preserves \(n(f)\), which equals \(1-3a\) in trace one and \(3N\) in trace zero. The same lemma shows that \(H(f)\leq H\) exactly when \(|s|\leq H\) and \(n(f)\leq s^2+3H^2\); the bound on \(a_3\) follows from the others by the arithmetic–geometric mean inequality. This gives the exact decomposition of Equation&#160;<a href="sect0006.html#eqn:generalTraceDecomposition">37</a>, a sum of \(A_1(3H^2+s^2)\) over \(3\nmid s\) and of \(A_0(H^2+s^2/3)\) over \(3\mid s\). Insert Equation&#160;<a href="sect0006.html#eqn:A1asymptotic">36</a> and Proposition&#160;<a href="sect0006.html#prop:traceZeroAsymptotic">8</a>, where \(Q\) is the linear polynomial of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a>. The main terms become Riemann sums \(\sum _{|s|\leq H,\  s\equiv r\  (\mathrm{mod}\  3)}g(s/H)=\frac H3\int _{-1}^1g(u)\, du+O(1)\) for \(g(u)=3+u^2\) and \(g(u)=(3+u^2)\log (3+u^2)\), over two residue classes for \(A_1\) and one for \(A_0\). The two integrals in Equation&#160;<a href="sect0006.html#eqn:monicArchimedeanMoments">38</a> give \(P\) in the form of Equation&#160;<a href="sect0006.html#eqn:monicConstantsFromTraceCounts">39</a>, and substituting \(Q\) gives the stated \(P\). Each of the \(O(H)\) traces contributes an error \(O_\varepsilon (H^{1+\varepsilon })\) and the Riemann-sum errors contribute \(O(H^2\log H)\), so the total error is \(O_\varepsilon (H^{2+\varepsilon })\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -277,9 +277,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/AsymptoticPolynomialCount.lean#L62" class="lean_decl">CubicTargets.Counting.AsymptoticPolynomialCount.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/AsymptoticPolynomialCount.lean#L62" class="lean_decl">CubicTargets.Counting.AsymptoticPolynomialCount.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/AsymptoticPolynomialCount.lean#L163" class="lean_decl">Cubic.Counting.AsymptoticPolynomialCount.«thm:asymptoticPolynomialCount»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/AsymptoticPolynomialCount.lean#L163" class="lean_decl">Cubic.Counting.AsymptoticPolynomialCount.«thm:asymptoticPolynomialCount»</a></li>
           
         </ul>
     
@@ -314,7 +314,7 @@
   <div class="proof_content">
   
 
-<p>Estimate \(\sum _{n\leq X}d_n\) by truncated Perron’s formula and contour shifting. Subtract the split contribution and set \(X=1+3H^2\). The paper uses Alberts’s theorem for the coefficient estimate; Lean retains the direct proof. </p>
+<p>Let \(d_n\) be the number of \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) with \(H(P)^2=n\) (Theorem&#160;<a href="sect0001.html#thm:heightZetaFunctionFormula">4</a>), and for \(f=t^3-t^2+at+b\) with Galois group \(C_3\) write \(H_{\mathrm{tor}}(f)=\sqrt{1-3a}\), the toric height of its points (Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>). By Equation&#160;<a href="sect0005.html#eqn:dSummatoryForGeneralTrace">33</a>, \(\sum _{n\leq X}d_n=XQ(\tfrac 12\log X)+O_\varepsilon (X^{1/2+\varepsilon })\), where \(Q\) is the polynomial of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a>; the main term is the residue of \(Z_0(z)X^z/z\) at the double pole \(z=1\) of \(Z_0(z)=\sum _{n\geq 1}d_nn^{-z}\) (Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a>). Lemma&#160;<a href="sect0005.html#lemma:reducibles">10</a> removes the points of split polynomials, which are a third of the lattice points in an ellipse of area \(\frac{2\pi }{3\sqrt3}X\), and halves the rest, since each polynomial with Galois group \(C_3\) gives two points. This gives Equation&#160;<a href="sect0005.html#eqn:irrPolys">35</a>. By Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a>, \(H(f)\leq H\) is equivalent to \(H_{\mathrm{tor}}(f)\leq \sqrt X\) with \(X=3H^2+1\). Then \(\tfrac 12\log X=\log H+\log \sqrt3+O(H^{-2})\), and since \(Q\) is linear the main term is \(\tfrac 32H^2Q(\log H+\log \sqrt3)-\frac{\pi }{3\sqrt3}H^2=H^2P_1(\log H)\), with error \(O_\varepsilon (H^{1+\varepsilon })\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -351,9 +351,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/ExactFormula.lean#L43" class="lean_decl">CubicTargets.Counting.ExactFormula.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/ExactFormula.lean#L37" class="lean_decl">CubicTargets.Counting.ExactFormula.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/ExactFormula.lean#L269" class="lean_decl">Cubic.Counting.ExactFormula.«thm:exactFormula»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/ExactFormula.lean#L290" class="lean_decl">Cubic.Counting.ExactFormula.«thm:exactFormula»</a></li>
           
         </ul>
     
@@ -367,11 +367,10 @@
   
 
 
-<p>For any \(H \geq 1\) let \(E_H \subset \mathbb {R}^2\) be the ellipse defined by \(E_{H} : x^2+y^2+xy-x-y = \tfrac {1}{3}(H^2-1)\). If \(t^3-t^2+at+b\in \mathbb {Z}[t]\) has Galois group \(C_3\), then \(a\leq 0\). Fix \(a \in \mathbb {Z}_{\leq 0}\). The number of polynomials of the form \(t^3 -t^2 + at + b \in \mathbb {Z}[t]\) with Galois group \(C_3\) is equal to </p>
+<p>For \(m\geq 1\) let \(a_E(m)\) denote the number of ideals of norm \(m\) in the ring of integers \(\mathcal{O}_E\) of \(E\). If \(t^3-t^2+at+b\in \mathbb {Z}[t]\) has Galois group \(C_3\), then \(a\leq 0\). Fix \(a \in \mathbb {Z}_{\leq 0}\) and put \(n=1-3a\). The number of polynomials of the form \(t^3 -t^2 + at + b \in \mathbb {Z}[t]\) with Galois group \(C_3\) is equal to </p>
 <div class="displaymath" id="a0000000021">
-  \begin{equation*}  \frac12\sum _{d|(1-3a)} 3^{\omega (Q_1(d))} (-1)^{\Omega (Q_2(d))} -\frac16 \# E_{\sqrt{1-3a}}(\mathbb {Z}) \end{equation*}
+  \begin{equation*}  \tfrac {1}{2}\big(a_E(n^3)-a_E(n)\big). \end{equation*}
 </div>
-<p> where \(Q_j(d)\) denotes the largest divisor of \(d\) only divisible by primes \(\equiv j \pmod3\), and \(\omega (n)\) (resp.&#160;\(\Omega (n)\)) denotes the number of prime factors of a positive integer \(n\) counted without (resp.&#160;with) multiplicity. </p>
 
   </div>
 </div>
@@ -385,7 +384,7 @@
   <div class="proof_content">
   
 
-<p>For \(n=1-3a\), the torus points are counted by \(d_n\). The split points are the free cyclic orbits of \(E_{\sqrt n}(\mathbb {Z})\), and each irreducible polynomial contributes two points. Thus the answer is \(d_n/2-\# E_{\sqrt n}(\mathbb {Z})/6\). </p>
+<p>Let \(d_n\) be the number of \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) with \(H(P)^2=n\) (Theorem&#160;<a href="sect0001.html#thm:heightZetaFunctionFormula">4</a>), and let \(\zeta \in E\) be a primitive cube root of unity. If \(f=t^3-t^2+at+b\) has Galois group \(C_3\), its roots are normal by Lemma&#160;<a href="sect0005.html#lemma:normalityCriterion">9</a>, since \(1-3a\neq 0\); so \(f\) comes from an integral point of \(T\) (Proposition&#160;<a href="sect0003.html#prop:canonicalHeight">2</a>), and Lemma&#160;<a href="sect0003.html#lemma:rootVsToric">3</a> gives \(a\leq 0\). Fix \(a\) and \(n=1-3a\), so that \(3\nmid n\). The \(d_n\) points of height \(\sqrt n\) are two points for each such \(f\) (Equation&#160;<a href="sect0001.html#eqn:polynomialWeights">4</a>) together with the split points. A split point is a triple \((x,y,z)\in \mathbb {Z}^3\) with \(x+y+z=1\) and \(xy+yz+zx=a\), up to cyclic permutation. Its element \(\theta =x+y\zeta +z\zeta ^2\in \mathcal{O}_E\) has norm \((x+y+z)^2-3(xy+yz+zx)=n\) and is congruent to \(1\) modulo \(1-\zeta \). Conversely, each \(u+v\zeta \) with \(u+v\equiv 1\pmod3\) comes from exactly one triple, and a cyclic permutation multiplies \(\theta \) by a power of \(\zeta \). An ideal of norm \(n\) has six generators \(\pm \zeta ^j\theta \), and exactly three of them are congruent to \(1\) modulo \(1-\zeta \). Hence there are \(a_E(n)\) split points, and the number of polynomials is \(\frac12(d_n-a_E(n))\). It remains to show \(d_n=a_E(n^3)\). By Remark&#160;<a href="sect0004.html#rem:heightCoefficients">3</a>, \(d_n\) is the product of \(3k+1\) over \(p^k\parallel n\) with \(p\equiv 1\pmod3\) if every prime \(q\equiv 2\pmod3\) divides \(n\) to an even power, and \(d_n=0\) otherwise. The paper matches this with the ideals of norm \(n^3\): there are \(3k+1\) of norm \(p^{3k}\), and one or none of norm \(q^{3k}\) according as \(k\) is even or odd. Lean instead compares Dirichlet coefficients in \(\xi (s)=\zeta (s)L(s,\chi )\), where \(\zeta (s)\) is the Riemann zeta function and \(\chi \) is the nontrivial character modulo \(3\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -421,9 +420,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/SplitForm.lean#L12" class="lean_decl">CubicTargets.Introduction.SplitForm.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Introduction/SplitForm.lean#L12" class="lean_decl">CubicTargets.Introduction.SplitForm.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/SplitForm.lean#L12" class="lean_decl">Cubic.Introduction.SplitForm.«eqn:splitForm»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Introduction/SplitForm.lean#L12" class="lean_decl">Cubic.Introduction.SplitForm.«eqn:splitForm»</a></li>
           
         </ul>
     
@@ -437,6 +436,7 @@
   
 
 
+<p>Over \(\mathbb {Q}\) the surface \(S\) has the equation \(x_0(x_1^2+3x_2^2)=x_3^3\) (Equation&#160;<a href="sect0007.html#eqn:surfaceNormCubic">43</a>). Over \(E\) it becomes the split form </p>
 <div class="displaymath" id="a0000000023">
   \begin{equation*}  x_0x_1x_2=x_3^3. \end{equation*}
 </div>
@@ -453,7 +453,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>By Proposition&#160;<a href="sect0007.html#prop:surfaceRationalForm">10</a>, the coordinate change of Equation&#160;<a href="sect0007.html#eqn:surfaceCoordinateChange">44</a> identifies \(S\) with the cubic \(x_0(x_1^2+3x_2^2)=x_3^3\). Over \(E\) put \(x_1'=x_1+\sqrt{-3}\, x_2\) and \(x_2'=x_1-\sqrt{-3}\, x_2\). Then \(x_1'x_2'=x_1^2+3x_2^2\), so the equation becomes \(x_0x_1'x_2'=x_3^3\). The substitution is invertible, with \(x_1=(x_1'+x_2')/2\) and \(x_2=(x_1'-x_2')/(2\sqrt{-3})\) (Supporting lemma&#160;<a href="sect0009.html#helper:splittingCoordinates">1</a> with \(r=\sqrt{-3}\)). </p>
 
   </div>
 </div>
@@ -488,9 +488,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/SurfaceQuadraticTwist.lean#L10" class="lean_decl">CubicTargets.Introduction.SurfaceQuadraticTwist.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Introduction/SurfaceQuadraticTwist.lean#L10" class="lean_decl">CubicTargets.Introduction.SurfaceQuadraticTwist.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/SurfaceQuadraticTwist.lean#L46" class="lean_decl">Cubic.Introduction.SurfaceQuadraticTwist.«eqn:surfaceQuadraticTwist»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Introduction/SurfaceQuadraticTwist.lean#L46" class="lean_decl">Cubic.Introduction.SurfaceQuadraticTwist.«eqn:surfaceQuadraticTwist»</a></li>
           
         </ul>
     
@@ -504,6 +504,7 @@
   
 
 
+<p>The split form \(x_0x_1x_2=x_3^3\) (Equation&#160;<a href="sect0001.html#eqn:splitForm">2</a>) has the involution exchanging \(x_1\) and \(x_2\). For a nonsquare \(d\in \mathbb {Q}^\times \), its quadratic twist by \(\mathbb {Q}(\sqrt d)\) through this involution is </p>
 <div class="displaymath" id="a0000000025">
   \begin{equation*}  S^{(d)}\colon x_0(x_1^2-dx_2^2)=x_3^3. \end{equation*}
 </div>
@@ -520,7 +521,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Let \(r=\sqrt d\in \mathbb {Q}(\sqrt d)\). Over \(\mathbb {Q}(\sqrt d)\) put \(x_1'=x_1+rx_2\) and \(x_2'=x_1-rx_2\); this substitution is invertible since \(r\neq 0\) (Supporting lemma&#160;<a href="sect0009.html#helper:splittingCoordinates">1</a>). Then \(x_1'x_2'=x_1^2-dx_2^2\), so \(x_0x_1'x_2'=x_3^3\) becomes \(x_0(x_1^2-dx_2^2)=x_3^3\). The nontrivial automorphism \(r\mapsto -r\) of \(\mathbb {Q}(\sqrt d)\) exchanges \(x_1'\) and \(x_2'\), which is the involution of the split form, and the split cubic is invariant under it. So \(S^{(d)}\) is the twist of the split form by \(\mathbb {Q}(\sqrt d)\) through this involution. In particular \(S=S^{(-3)}\). </p>
 
   </div>
 </div>
@@ -556,9 +557,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaCountingFormula.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaCountingFormula.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/HeightZetaCountingFormula.lean#L31" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula»</a></li>
           
         </ul>
     
@@ -572,6 +573,12 @@
   
 
 
+<p>Let \(\mathscr {D}_0=\{ X+Y+Z=0\} \subset \mathscr {S}\). The toric height functions \(H(-,s)\) of Batyrev–Tschinkel <span class="cite">
+	[
+	<a href="sect0010.html#MR1369408" >2</a>
+	]
+</span> are indexed by \(s\in \mathrm{Pic}(S)\otimes \mathbb {C}\). Since \(S\) has Picard rank one, we regard \(s\) as a complex number, with \(s=3\) corresponding to the ample generator. Then \(H(-,s)=H(-)^s\), where \(H(-)=H(-,1)\). </p>
+<p>For \(\mathrm{Re}(s){\gt}2\) the series below converges absolutely, and </p>
 <div class="displaymath" id="a0000000027">
   \begin{equation*}  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \left(1-\frac{1}{3^{s/2}}\right)^2 \xi \left(\frac s2\right)^2 \prod _{q\equiv 2\pmod{3}}\left(1-\frac{1}{q^{s}}\right) \prod _{p\equiv 1\pmod{3}}\left(1-\frac{3}{p^{s}}+\frac{2}{p^{3s/2}}\right) \end{equation*}
 </div>
@@ -589,7 +596,7 @@
   <div class="proof_content">
   
 
-<p>Restrict the multivariate formula to the height under consideration and identify its Euler factors with those of \(\xi \). The correction product is holomorphic in the required half-plane; the Laurent expansion gives the unique double pole. </p>
+<p>Every \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) lies in the open torus \(T\): on this affine chart \(T\) is defined by \(1-3e_2\neq 0\), and \(e_2(P)\in \mathbb {Z}\) by Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a>. Hence the series is \(Z_0(s/2)\), where \(Z_0(z)=Z(2z,0,0)\) is the multivariate height zeta function \(Z\) of Theorem&#160;<a href="sect0004.html#thm:heightZetaFunctionFormula2">6</a> on the line spanned by \(D_0\); that theorem gives absolute convergence for \(\operatorname {Re}(s){\gt}2\). Lemma&#160;<a href="sect0004.html#lemma:simplifiedZ-s">8</a> rewrites its Euler product as \((1-3^{-z})^2\xi (z)^2R(z)\), with \(R\) as in Equation&#160;<a href="sect0004.html#eqn:eulerCorrectionFactor">26</a>, using the Euler product of \(\xi \) and the identity \((1+2x)(1-x)^2=1-3x^2+2x^3\); with \(z=s/2\) this is the displayed product. The product \(R(z)\) converges absolutely and locally uniformly for \(\operatorname {Re}(z){\gt}1/2\), which gives the continuation to \(\operatorname {Re}(s){\gt}1\). Since \(\xi \) has only a simple pole at \(1\) and \(R(1){\gt}0\), Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a> shows that the only pole is a double pole at \(s=2\). Finally, \(3D_0\) is linearly equivalent to \(D_0+D_1+D_2=-K\) (Equation&#160;<a href="sect0004.html#eqn:normCharacterDivisor">25</a>), so \(\mathcal O(D_0)\) corresponds to \(s=1\) and \(H(P)\) is the toric height \(H(P,\mathcal O(D_0))\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -626,9 +633,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Counting/IntegralPointCount.lean#L24" class="lean_decl">CubicTargets.Counting.IntegralPointCount.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Counting/IntegralPointCount.lean#L24" class="lean_decl">CubicTargets.Counting.IntegralPointCount.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Counting/IntegralPointCount.lean#L134" class="lean_decl">Cubic.Counting.IntegralPointCount.«cor:integralPointCount»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Counting/IntegralPointCount.lean#L134" class="lean_decl">Cubic.Counting.IntegralPointCount.«cor:integralPointCount»</a></li>
           
         </ul>
     
@@ -663,7 +670,7 @@
   <div class="proof_content">
   
 
-<p>The coefficient sum counts the integral points with the prescribed height. Insert its asymptotic formula and the Laurent coefficients of \(Z_0\). </p>
+<p>Let \(d_n\) be the number of \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) with \(H(P)^2=n\). The count is \(\sum _{n\leq H^2}d_n\), and by Theorem&#160;<a href="sect0001.html#thm:heightZetaFunctionFormula">4</a> the series \(Z_0(z)=\sum _{n\geq 1}d_nn^{-z}\) is the height zeta function at \(s=2z\). By Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a>, \(Z_0\) has only a double pole at \(z=1\) in \(\operatorname {Re}(z){\gt}1/2\), and its Laurent expansion there shows that the residue of \(Z_0(z)X^z/z\) at \(z=1\) is \(XQ(\tfrac 12\log X)\). Equation&#160;<a href="sect0005.html#eqn:dSummatoryForGeneralTrace">33</a> gives \(\sum _{n\leq X}d_n=XQ(\tfrac 12\log X)+O_\varepsilon (X^{1/2+\varepsilon })\). Taking \(X=H^2\) gives \(H^2Q(\log H)+O_\varepsilon (H^{1+2\varepsilon })\), and replacing \(\varepsilon \) by \(\varepsilon /2\) proves the corollary. </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>) and the Chandrasekharan–Narasimhan estimate (Cited theorem&#160;<a href="sect0010.html#cite:chandrasekharanNarasimhan1963-thm4">2</a>). </p>
 
   </div>
@@ -700,9 +707,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/IdealRemark.lean#L49" class="lean_decl">CubicTargets.Introduction.IdealRemark.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Introduction/IdealRemark.lean#L49" class="lean_decl">CubicTargets.Introduction.IdealRemark.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/Introduction/IdealRemark.lean#L8" class="lean_decl">Cubic.Introduction.IdealRemark.«rem:idealParametrization»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/Introduction/IdealRemark.lean#L8" class="lean_decl">Cubic.Introduction.IdealRemark.«rem:idealParametrization»</a></li>
           
         </ul>
     
@@ -720,7 +727,7 @@
 <div class="displaymath" id="a0000000032">
   \[  \sum _{P \in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})} H(P)^{-s} = \sum _{\substack {0\ne J\subseteq \mathcal{O}_E\\ J+3\mathcal{O}_E=\mathcal{O}_E\\ \mathrm N J\text{ a cube}}} N^E_\mathbb {Q}(J)^{-s/6}  \]
 </div>
-<p> where \(J \subset \mathcal{O}_E\) runs over integral nonzero ideals. With the help of this description using ideals, we found another result in the literature <span class="cite">
+<p> where \(J \subset \mathcal{O}_E\) runs over integral nonzero ideals. It also found a result in the literature <span class="cite">
 	[
 	<a href="sect0010.html#kuehleitnerNowak2004" >21</a>
 	]
@@ -732,7 +739,7 @@
 	
 	2
 	]
-</span> can be used to obtain an alternative proof of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> and Theorem&#160;<a href="sect0001.html#thm:asymptoticPolynomialCount">2</a> without using toric harmonic analysis, and with an error term \(O\bigl(H(\log H)^3(\log \log H)^2\bigr)\). We did not incorporate this argument as the toric approach of this paper has the merit of generalizing readily to other abelian groups where there is no analogue of <span class="cite">
+</span> can be used to obtain an shorter proof of Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> and Theorem&#160;<a href="sect0001.html#thm:asymptoticPolynomialCount">2</a> without using the toric method, and with an error term \(O\bigl(H(\log H)^3(\log \log H)^2\bigr)\). We did not incorporate this argument as the toric approach has the merit of generalizing readily to other abelian groups where there is no analogue of <span class="cite">
 	[
 	<a href="sect0010.html#kuehleitnerNowak2004" >21</a>
 	]
@@ -750,7 +757,7 @@
   <div class="proof_content">
   
 
-<p>The Eisenstein parametrization identifies integral torus points with ideals of cube norm prime to \(3\). Apply the cube-ideal summatory estimate, remove the Euler factor at \(3\), and compare the constants and heights. </p>
+<p>Every \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) lies in \(T\); let \(\nu \in E^\times \) be the element attached to \(P\) by Proposition&#160;<a href="sec-quadraticParametrization.html#prop:cyclotomicParametrization">3</a>, so that \(\mathrm N\nu =1-3a=H(P)^2\). The element \(\beta =\mathrm N(\nu )\nu \) has norm \(H(P)^6\). Integrality of \(P\) (Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a>) makes \(\beta \) an Eisenstein integer congruent to \(1\) modulo \(3\mathcal{O}_E\). Conversely, the congruences of Equation&#160;<a href="sec-quadraticParametrization.html#eqn:integralityConditionsUsingCyclo">14</a> recover an integral point from each such \(\beta \) of cube norm. The six units of \(\mathcal{O}_E\) map bijectively onto \((\mathcal{O}_E/3\mathcal{O}_E)^\times \), so every ideal \(J\) with \(J+3\mathcal{O}_E=\mathcal{O}_E\), equivalently \(3\nmid \mathrm NJ\), has exactly one generator congruent to \(1\) modulo \(3\mathcal{O}_E\). Hence \(P\mapsto \beta \mathcal{O}_E\) is a bijection onto the ideals in the sum, with \(\mathrm NJ=H(P)^6\), and the two series agree for \(\operatorname {Re}(s){\gt}2\). For the counts, let \(A(X)=\sum _{n\leq X}a_E(n^3)\), where \(a_E(m)\) is the number of ideals of norm \(m\). The prime above \(3\) is ramified of norm \(3\), so \(a_E((3n)^3)=a_E(n^3)\) and the sum over \(n\leq X\) with \(3\nmid n\) is \(A(X)-A(X/3)\). Apply the Kühleitner–Nowak estimate to \(A\), with \(F(s)=(s-1)^2Z_0(s)/(1-3^{-s})\), where \(Z_0(z)=\sum _{3\nmid n}a_E(n^3)n^{-z}\) is the height zeta function at \(s=2z\); the Laurent expansion in Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a> gives \(F(1)\) and \(F'(1)\). The result is \(\sum _{n\leq X,\, 3\nmid n}a_E(n^3)=XQ(\tfrac 12\log X)+O(\sqrt X(\log X)^3(\log \log X)^2)\). Taking \(X=H^2\) gives Corollary&#160;<a href="sect0001.html#cor:integralPointCount">1</a> with error \(O(H(\log H)^3(\log \log H)^2)\). Combining this with Lemma&#160;<a href="sect0005.html#lemma:reducibles">10</a> and taking \(X=3H^2+1\), as in the proof of Theorem&#160;<a href="sect0001.html#thm:asymptoticPolynomialCount">2</a>, gives that theorem with the same error. </p>
 <p>The proof assumes the Kühleitner–Nowak estimate (Cited theorem&#160;<a href="sect0010.html#cite:kuehleitnerNowak2004-cor2">3</a>). </p>
 
   </div>
@@ -786,9 +793,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/Introduction/PolynomialWeights.lean#L32" class="lean_decl">CubicTargets.Introduction.PolynomialWeights.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/Introduction/PolynomialWeights.lean#L32" class="lean_decl">CubicTargets.Introduction.PolynomialWeights.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/QuadraticCorrespondence/PolynomialWeights.lean#L48" class="lean_decl">Cubic.QuadraticCorrespondence.PolynomialWeights.«eqn:polynomialWeights»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/QuadraticCorrespondence/PolynomialWeights.lean#L48" class="lean_decl">Cubic.QuadraticCorrespondence.PolynomialWeights.«eqn:polynomialWeights»</a></li>
           
         </ul>
     
@@ -802,6 +809,7 @@
   
 
 
+<p>By Theorem&#160;<a href="sect0002.html#thm:modularInterpretation">5</a>, rational points of \(T\) correspond to equivalence classes of pairs \((K,x)\) of a \(C_3\)-algebra \(K\) and a trace-one normal element \(x\). Taking the characteristic polynomial of \(x\) gives a map from \(T(\mathbb {Q})\) to polynomials \(t^3-t^2+at+b\in \mathbb {Q}[t]\). Its image consists of the polynomials that have Galois group \(C_3\) or split over \(\mathbb {Q}\) with at most two equal roots. For such \(f\), the number of rational points of \(T\) above \(f\) is given below, where \((K_f,x_f)\) is any pair above \(f\) and \(\mathrm{Aut}(K_f,x_f)\) is the group of \(\mathbb {Q}\)-algebra automorphisms of \(K_f\) fixing \(x_f\). </p>
 <div class="displaymath" id="a0000000034">
   \begin{equation*}  w_f=\frac{|\mathrm{Aut}(C_3)|}{|\mathrm{Aut}(K_f,x_f)|}= \begin{cases}  1 & \text{if $f$ has a double root,}\\ 2 & \text{otherwise,} \end{cases}\end{equation*}
 </div>
@@ -818,7 +826,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>We count equivalence classes of pairs above \(f\). The roots \(r_1,r_2,r_3\) of \(f\) are not all equal, so \(1-3a=\frac12\sum _{i{\lt}j}(r_i-r_j)^2\neq 0\) and each root is normal by Lemma&#160;<a href="sect0005.html#lemma:normalityCriterion">9</a>. If \(f\) has Galois group \(C_3\), then \(K_f=\mathbb {Q}(x_f)\) is a cyclic cubic field. The two identifications of \(C_3\) with its Galois group give inequivalent pairs (Example&#160;<a href="sect0002.html#example:twoRationalPointsSamePoly">1</a>). For a fixed identification the three roots give equivalent pairs, related by Galois automorphisms. So there are two classes. If \(f\) splits, then \(K_f=\mathbb {Q}^3\) and \(x_f\) is an ordering of the roots. The \(C_3\)-equivariant automorphisms of \(\mathbb {Q}^3\) form the centralizer of \(C_3\) in \(S_3\), which is \(C_3\), so the classes are the orderings modulo cyclic permutation. The six orderings of three distinct roots form two classes, and the three orderings of a double root form one. In each case the count is \(2/|\mathrm{Aut}(K_f,x_f)|\): an automorphism fixing \(x_f\) is trivial unless \(f\) has a double root, when the transposition of the two equal coordinates also fixes \(x_f\). </p>
 
   </div>
 </div>

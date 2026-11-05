@@ -323,6 +323,33 @@
     "lemma:normalityCriterion",
     "prop:canonicalHeight"
   ],
+  "rem:translationClasses": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:A1asymptotic",
+    "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
+    "lemma:generalHeightReduction",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "prop:canonicalHeight",
+    "prop:traceZeroAsymptotic"
+  ],
+  "thm:traceDistribution": [
+    "cite:chandrasekharanNarasimhan1963-thm4",
+    "eqn:A1asymptotic",
+    "eqn:poissonae",
+    "helper:adelicLogarithm",
+    "helper:leadingConstants",
+    "helper:moduliFibres",
+    "helper:supportFunctionSymmetry",
+    "lemma:generalHeightReduction",
+    "lemma:heightZetaConvergence",
+    "lemma:normalityCriterion",
+    "prop:canonicalHeight",
+    "prop:traceZeroAsymptotic"
+  ],
   "eqn:monicConstantsFromTraceCounts": [
     "eqn:monicArchimedeanMoments",
     "helper:correctionProduct",

@@ -120,7 +120,7 @@
 
     <a class="icon proof" href="sect0004.html#thm:heightZetaFunctionFormula2">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000077"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000076"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -136,9 +136,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightZetaFunctionFormula.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaFunctionFormula.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/HeightZetaFunctionFormula.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.HeightZetaFunctionFormula.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightZetaFunctionFormula.lean#L21" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula2»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/HeightZetaFunctionFormula.lean#L21" class="lean_decl">Cubic.PoissonSummation.«thm:heightZetaFunctionFormula2»</a></li>
           
         </ul>
     
@@ -153,20 +153,20 @@
 
 
 <p>Fix any \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) with \(\mathrm{Re}(s_0+s_1+s_2) {\gt} 2\). Then the multivariate Dirichlet series </p>
-<div class="displaymath" id="a0000000078">
+<div class="displaymath" id="a0000000077">
   \begin{equation*}  Z(s)= \sum _{\substack {P \in T(\mathbb Q)\\ { \text{\emph{integral}}
 
 }}} H(P,s)^{-1} \end{equation*}
 </div>
 <p> is absolutely convergent and equals </p>
-<div class="displaymath" id="a0000000079">
+<div class="displaymath" id="a0000000078">
   \begin{align*}  \left({1-3^{-z}}\right) \zeta (z) \prod _{q\equiv 2\pmod{3}} \left(1+\frac{1}{q^{z}}\right)^{-1} \prod _{p\equiv 1\pmod{3}} \left(1+\frac{3}{p^z}\left(1-\frac{1}{p^z}\right)^{-1}\right) \end{align*}
 </div>
 <p> where \(z = \frac{1}{2}(s_0+s_1+s_2)\). This multivariate Dirichlet series admits a meromorphic continuation to \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000077">
+<div class="proof_wrapper" id="a0000000076">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -176,7 +176,7 @@
   <div class="proof_content">
   
 
-<p>Compute the local Fourier transforms, apply Poisson summation, and evaluate the resulting real integral by residues. Shift the height parameters to obtain the full convergence region, then identify the continued Euler product. </p>
+<p>Write \(s_1=s_2=\sigma \) and \(z=s_0/2+\sigma \), and first assume \(\operatorname {Re}(s_0){\gt}0\) and \(\operatorname {Re}(\sigma ){\gt}1\). Lemma&#160;<a href="sect0004.html#lemma:poissonIntegral">7</a> writes \(Z(s)\) as \(6\int _\mathbb {R}\) of the product of the archimedean factor <a href="sect0004.html#eqn:archimedeanSpectralFactor" class="eqref">23</a> and the finite Euler product <a href="sect0004.html#eqn:finiteSpectralProduct" class="eqref">21</a>, as functions of \(t\). For \(\operatorname {Im}(t)\geq 0\) we have \(\operatorname {Re}(\lambda )\geq \operatorname {Re}(\sigma ){\gt}1\), so the finite factor is holomorphic and bounded in the upper half-plane (Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a>), while the archimedean factor is \(O(|t|^{-2})\). Closing the contour upwards picks up only the pole \(t_0=-s_0/(2\pi i)\) of the archimedean factor, with residue \(1/(2\pi i)\); there \(\lambda =z\), so \(Z(s)\) is \(6\) times the finite product at \(\lambda =z\), namely \(\prod _{q\equiv 2\  (\mathrm{mod}\  3)}(1-q^{-2z})^{-1}\prod _{p\equiv 1\  (\mathrm{mod}\  3)}(1+2p^{-z})(1-p^{-z})^{-2}\). Pulling out a factor \((1-p^{-z})^{-1}\) at every prime \(p\neq 3\) gives the stated product. To reach every \(z\) with \(\operatorname {Re}(z){\gt}1\), note that by the product formula \(H(P,s)\) for \(P\in T(\mathbb {Q})\) depends only on \(s\) modulo complex multiples of principal toric divisors, and \(-2D_0+D_1+D_2\) is principal (Equation&#160;<a href="sect0004.html#eqn:normCharacterDivisor">25</a>). So \(Z(s)\) depends only on \(z\), and the representative \(s_0=z-1\), \(\sigma =(z+1)/2\) satisfies the initial hypotheses. The meromorphic continuation comes from Lemma&#160;<a href="sect0004.html#lemma:simplifiedZ-s">8</a>. </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -197,7 +197,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:localIntegrality">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000080"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000079"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -213,9 +213,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalIntegrality.lean#L36" class="lean_decl">CubicTargets.PoissonSummation.LocalIntegrality.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LocalIntegrality.lean#L36" class="lean_decl">CubicTargets.PoissonSummation.LocalIntegrality.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalIntegrality.lean#L902" class="lean_decl">Cubic.PoissonSummation.LocalIntegrality.«prop:localIntegrality»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LocalIntegrality.lean#L902" class="lean_decl">Cubic.PoissonSummation.LocalIntegrality.«prop:localIntegrality»</a></li>
           
         </ul>
     
@@ -229,17 +229,18 @@
   
 
 
+<p>For a finite place \(v\) of \(\mathbb {Q}\), let \(1_v^{D_0}\) be the indicator function of the set of \(x\in T(\mathbb {Q}_v)\) at which the functions \(e_2\), \(e_3\) and \(\delta \) of Equation&#160;<a href="sect0003.html#eqn:affineC3invariants">9</a> take values in \(\mathbb {Z}_v\), and let \(K_v^{D_0}\) be the subgroup of \(K_v^{\mathrm{max}}\) fixing \(1_v^{D_0}\). Write \(\iota :T\to R^E_\mathbb {Q}\mathbb {G}_m\) for the isomorphism induced by Equation&#160;<a href="sec-quadraticParametrization.html#eqn:isoCocharLattices">13</a>, and let \(\zeta \in E\) be a primitive cube root of unity. </p>
 <p>Let \(v\) be a finite place of \(\mathbb {Q}\) and let \(w\) be a place of \(E\) lying over \(v\). </p>
 <ol class="enumerate">
   <li><p>If \(v \neq 3\), then \(1_v^{D_0}(x) = 1\) if and only if \(\ell _w(x) \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2\). In particular \(K_v^{D_0}=K_v^{\mathrm{max}}\). </p>
 </li>
   <li><p>Let \(v = 3\), let \(w\) be the unique place of \(E\) over \(3\), and let \(\mathfrak w = (1-\zeta )O_{E,w}\) be the maximal ideal of \(O_{E,w}\), so that \(3O_{E,w} = \mathfrak w^2\). The support of \(1_3^{D_0}\) is the subgroup </p>
-<div class="displaymath" id="a0000000081">
+<div class="displaymath" id="a0000000080">
   \begin{equation*}  K_{3,2}\mathrel {:=}\iota ^{-1}(1+\mathfrak w^2) =\iota ^{-1}(1+3O_{E,w})\subset K_3^{\mathrm{max}}. \end{equation*}
 </div>
 </li>
   <li><p>Let \(K^{\mathrm{max}}=\prod _v K_v^{\mathrm{max}}\) and \(K^{D_0}=\prod _v K_v^{D_0}\subset K^{\mathrm{max}}\). The latter is the subgroup which fixes the characteristic function \(1^{D_0}=\otimes _v1_v^{D_0}\) for integral points in \(T(\mathbb {A})\), with \(1_\infty ^{D_0}=1\). Then </p>
-<div class="displaymath" id="a0000000082">
+<div class="displaymath" id="a0000000081">
   \[  K_3^{D_0}=K_{3,2},\qquad K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}.  \]
 </div>
 </li>
@@ -247,7 +248,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000080">
+<div class="proof_wrapper" id="a0000000079">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -257,7 +258,7 @@
   <div class="proof_content">
   
 
-<p>Away from \(3\), evaluate the invariant functions in local coordinates to obtain the cone condition. At \(3\), the same computation gives the subgroup \(1+3O_{E,w}\). Its stabilizer determines the global compact level. </p>
+<p>Let \(v\neq 3\). Since \(\delta \) is integral over \(\mathbb {Z}[e_2,e_3]\), the argument of Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a> shows \(1_v^{D_0}(x)=1\) exactly when \(e_2(x),e_3(x)\in \mathbb {Z}_v\). Put \(r=\chi ^{v_1^\vee +v_2^\vee }(x)\), \(y_1=\chi ^{3v_1^\vee }(x)\) and \(y_2=\chi ^{3v_2^\vee }(x)\) in \(E_w\); the character formulas of Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a> give \(r=1-3e_2\), \(y_1+y_2=2-9e_2+27e_3\) and \(y_1y_2=r^3\). If \(e_2,e_3\in \mathbb {Z}_v\), then \(y_1,y_2\) are roots of \(U^2-(y_1+y_2)U+r^3\in \mathbb {Z}_v[U]\) and so lie in \(O_{E,w}\). Conversely, if \(y_1,y_2\in O_{E,w}\) then \(r\in O_{E,w}\), and \(e_2=(1-r)/3\), \(e_3=(y_1+y_2+1-3r)/27\) lie in \(O_{E,w}\cap \mathbb {Q}_v=\mathbb {Z}_v\) because \(3\) is a unit. Since \(\mathrm{ord}_w(y_1)=3\langle v_1^\vee ,\ell _w(x)\rangle \) and \(\mathrm{ord}_w(y_2)=3\langle v_2^\vee ,\ell _w(x)\rangle \), this is the cone condition; it depends only on \(\ell _w(x)\), which vanishes on \(K_v^{\mathrm{max}}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>). At \(v=3\), let \(u=\iota (P)\) have norm \(N\) and trace \(T\); by Equation&#160;<a href="sec-quadraticParametrization.html#eqn:integralityConditionsUsingCyclo">14</a>, read over \(\mathbb {Z}_3\), \(P\) is integral exactly when \(N\in 1+3\mathbb {Z}_3\) and \(N(3-T)\in 1+27\mathbb {Z}_3\). If these hold, then \(u\) is a unit, and writing \(N=1+3n\) gives \(T\equiv 2+3n-9n^2\pmod{27}\), so \(\mathrm{ord}_{\mathfrak w}(T-2)\geq 2\) and \(\mathrm{ord}_{\mathfrak w}(1-T+N)\geq 4\). The Newton polygon of \((U-1)^2-(T-2)(U-1)+(1-T+N)\), the characteristic polynomial of \(u\), then gives \(u\in 1+\mathfrak w^2\). Conversely, for \(u=1+3x\) with \(x=c+d\zeta \) and \(c,d\in \mathbb {Z}_3\), one computes \(\mathrm N(u)\in 1+3\mathbb {Z}_3\) and \(\mathrm N(u)(3-\mathrm{Tr}(u))=1+9(\mathrm N(x)-\mathrm{Tr}(x)^2)-27\mathrm N(x)\mathrm{Tr}(x)\), which lies in \(1+27\mathbb {Z}_3\) because \(\mathrm{Tr}(x)^2-\mathrm N(x)=3c(c-d)\). Part (3) follows: \(1_3^{D_0}\) is the indicator function of the subgroup \(K_{3,2}\), whose stabilizer in \(K_3^{\mathrm{max}}\) is \(K_{3,2}\) itself. </p>
 
   </div>
 </div>
@@ -289,7 +290,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonWithDualMeasure.lean#L30" class="lean_decl">CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/PoissonWithDualMeasure.lean#L30" class="lean_decl">CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox</a></li>
           
         </ul>
     
@@ -303,8 +304,16 @@
   
 
 
-<p>Let \(f\in L^1(T(\mathbb {A}))\) and suppose \(\widehat f|_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). With counting measure on \(T(\mathbb {Q})\) and the normalized dual measure, the following equality holds for almost every \(y\in T(\mathbb {A})\). </p>
-<div class="displaymath" id="a0000000083">
+<p>Let \(T(\mathbb {Q})^\perp \) be the group of unitary characters of \(T(\mathbb {A})\) that are trivial on \(T(\mathbb {Q})\); it is the dual group of \(T(\mathbb {Q})\backslash T(\mathbb {A})\). Give \(T(\mathbb {Q})\) counting measure, \(T(\mathbb {Q})\backslash T(\mathbb {A})\) the quotient of the Haar measure \(d^\times x\), and \(T(\mathbb {Q})^\perp \) the dual measure \(d\chi \), for which Fourier inversion holds on \(T(\mathbb {Q})\backslash T(\mathbb {A})\). For \(f\in L^1(T(\mathbb {A}))\) put \(\widehat f(\chi )=\int _{T(\mathbb {A})}f(x)\chi (x)^{-1}\, d^\times x\), and suppose \(\widehat f|_{T(\mathbb {Q})^\perp }\in L^1(T(\mathbb {Q})^\perp )\). The Poisson summation formula <span class="cite">
+	[
+	<a href="sect0010.html#MR1397028" >15</a>
+	, 
+	Theorem
+	
+	4.42
+	]
+</span> states that the following equality holds for almost every \(y\in T(\mathbb {A})\). </p>
+<div class="displaymath" id="a0000000082">
   \begin{equation*}  \int _{T(\mathbb {Q})} f(xy)\,  dx = \int _{T(\mathbb {Q})^\perp } \widehat{f}(\chi ) \chi (y) \, d\chi \end{equation*}
 </div>
 
@@ -327,7 +336,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:heightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000084"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000083"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -343,9 +352,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightFourierTransform.lean#L176" class="lean_decl">CubicTargets.PoissonSummation.HeightFourierTransform.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/HeightFourierTransform.lean#L176" class="lean_decl">CubicTargets.PoissonSummation.HeightFourierTransform.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightFourierTransform.lean#L48" class="lean_decl">Cubic.PoissonSummation.HeightFourierTransform.«prop:heightFourierTransform»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/HeightFourierTransform.lean#L48" class="lean_decl">Cubic.PoissonSummation.HeightFourierTransform.«prop:heightFourierTransform»</a></li>
           
         </ul>
     
@@ -359,16 +368,17 @@
   
 
 
+<p>For a place \(v\) of \(\mathbb {Q}\) put \(H_v(x,-s,D_0)=H_v(x,s)^{-1}1_v^{D_0}(x)\) for \(x\in T(\mathbb {Q}_v)\), where \(H_v(x,s)\) is the local factor of the height in Equation&#160;<a href="sect0003.html#eqn:heightforrationaladeles">5</a> and \(1_\infty ^{D_0}=1\). Its Fourier transform is \(\widehat{H_v}(\chi ,-s,D_0)=\int _{T(\mathbb {Q}_v)}H_v(x,-s,D_0)\chi (x)^{-1}\, d^\times x_v\). At a finite place \(d^\times x_v\) gives \(K_v^{\mathrm{max}}\) measure one; at infinity it is chosen so that \(\mathbb {Z}v_0\) is unimodular for its pushforward to \(\mathfrak t\) under \(\ell _w\). A character of \(T(\mathbb {Q}_v)\) is unramified if it is trivial on \(K_v^{\mathrm{max}}\), and ramified otherwise. The subgroup \(K_{3,2}\) is defined in Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>. </p>
 <p>Let \(s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma }\) and assume \(\mathrm{Re}(s_e){\gt}0\) for each \(e \in \{ 0,1,2\} \). Let \(w\) be the infinite place of \(E\). Let \(\chi \in T(\mathbb {R})^\vee \) be a unitary character. If \(\chi \) is ramified then \(\widehat{H_\infty }(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified, then \(\chi (x)= e(\langle \ell _w(x) ,m\rangle )\) for all \(x \in T(\mathbb {R})\) for a unique \(m \in \mathfrak t^\vee \), and </p>
-<div class="displaymath" id="a0000000085">
+<div class="displaymath" id="a0000000084">
   \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
 </div>
 <p> Next let \(v\) be a finite place of \(\mathbb {Q}\). For any unitary character \(\chi \in T(\mathbb {Q}_v)^\vee \), the integral defining \(\widehat{H_v}(\chi ,-s,D_0)\) converges absolutely to a holomorphic function of \(s\) in the region </p>
-<div class="displaymath" id="a0000000086">
+<div class="displaymath" id="a0000000085">
   \[ \{ s \in (\mathbb {C}^{\Sigma (1)})^\Gamma : \mathrm{Re}(s_1),\mathrm{Re}(s_2){\gt}0 \} . \]
 </div>
 <p> Assume \(v \neq 3\). Let \(w\) be any place of \(E\) lying over \(v\). The local characteristic function \(1_v^{D_0}\) is \(K_v^{\mathrm{max}}\)-invariant. If \(\chi \) is ramified, then \(\widehat{H_v}(\chi ,-s,D_0)\) is identically zero. If \(\chi \) is unramified then we may regard \(\chi \) as a character on \(X_\ast (T_{E})^{\Gamma (w/v)}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) and </p>
-<div class="displaymath" id="a0000000087">
+<div class="displaymath" id="a0000000086">
   \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ { n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 }} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -377,7 +387,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000084">
+<div class="proof_wrapper" id="a0000000083">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -387,7 +397,7 @@
   <div class="proof_content">
   
 
-<p>At infinity and at finite places other than \(3\), ramified characters vanish after integration over the maximal compact subgroup. For unramified characters, integrate the archimedean support function on its two cones and sum the finite valuation lattices. At \(3\), integrate over the congruence subgroup of index six. </p>
+<p>At infinity \(1_\infty ^{D_0}=1\) and the height is \(K_\infty ^{\mathrm{max}}\)-invariant, so a ramified character integrates to zero over \(K_\infty ^{\mathrm{max}}\). For unramified \(\chi \), push the integral forward by \(\ell _w\) to \(\mathfrak t_w\), where the integrand is \(e^{\varphi (y)}e(-\langle y,m\rangle )\). On the half-lines \(\mathbb {R}_{\geq 0}v_0\) and \(\mathbb {R}_{\geq 0}(-v_0)\) the support function \(\varphi \) has slopes \(-s_0\) and \(-(s_1+s_2)\), since \(-v_0=v_1+v_2\); integrating the two exponentials gives \((s_0+2\pi im(v_0))^{-1}+(s_1+s_2-2\pi im(v_0))^{-1}\), which rearranges to <a href="sect0004.html#eqn:infiniteHeightFourierTransform" class="eqref">16</a>. At a finite place \(v\neq 3\), Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a> shows that \(1_v^{D_0}\) is \(K_v^{\mathrm{max}}\)-invariant and is the indicator of the cone \(\mathbb {R}_{\geq 0}v_1+\mathbb {R}_{\geq 0}v_2\) in the \(\ell _w\)-coordinate; the height is also \(K_v^{\mathrm{max}}\)-invariant. So ramified characters give zero, and for unramified \(\chi \) the integral becomes the lattice sum <a href="sect0004.html#eqn:localfourierassumovern" class="eqref">18</a> over the image \(X_\ast (T_E)^{\Gamma (w/v)}\) of \(\ell _w\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>). On the cone \(\operatorname {Re}\varphi (n_1v_1+n_2v_2)=-\operatorname {Re}(s_1)n_1-\operatorname {Re}(s_2)n_2\), so the sum converges absolutely and locally uniformly when \(\operatorname {Re}(s_1),\operatorname {Re}(s_2){\gt}0\). At \(v=3\), Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a> identifies the support with \(K_{3,2}\), whose index in \(K_3^{\mathrm{max}}\) is \(\# (O_{E,w}/3O_{E,w})^\times =6\); the local height is one there, so \(\widehat{H_3}(\chi ,-s,D_0)\) is \(1/6\) if \(\chi \) is trivial on \(K_{3,2}\) and \(0\) otherwise. </p>
 
   </div>
 </div>
@@ -406,7 +416,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:infiniteHeightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000088"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000087"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -422,9 +432,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/InfiniteHeightFourierTransform.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.InfiniteHeightFourierTransform.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/InfiniteHeightFourierTransform.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.InfiniteHeightFourierTransform.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/InfiniteHeightFourierTransform.lean#L19" class="lean_decl">Cubic.PoissonSummation.InfiniteHeightFourierTransform.«eqn:infiniteHeightFourierTransform»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/InfiniteHeightFourierTransform.lean#L19" class="lean_decl">Cubic.PoissonSummation.InfiniteHeightFourierTransform.«eqn:infiniteHeightFourierTransform»</a></li>
           
         </ul>
     
@@ -438,13 +448,13 @@
   
 
 
-<div class="displaymath" id="a0000000089">
+<div class="displaymath" id="a0000000088">
   \begin{equation*}  \widehat{H_\infty }(\chi ,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000088">
+<div class="proof_wrapper" id="a0000000087">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -454,7 +464,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Push the integral forward by \(\ell _w\) to \(\mathfrak t_w=\mathbb {R}v_0\) and split it over \(\mathbb {R}_{\geq 0}v_0\), where \(\varphi (yv_0)=-ys_0\), and \(\mathbb {R}_{\geq 0}(-v_0)\), where \(\varphi (-yv_0)=-y(s_1+s_2)\). The two exponential integrals give \((s_0+2\pi im(v_0))^{-1}+(s_1+s_2-2\pi im(v_0))^{-1}\), and combining the fractions gives the display. </p>
 
   </div>
 </div>
@@ -473,7 +483,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteHeightFourierTransform">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000090"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -489,9 +499,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteHeightFourierTransform.lean#L25" class="lean_decl">CubicTargets.PoissonSummation.FiniteHeightFourierTransform.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/FiniteHeightFourierTransform.lean#L25" class="lean_decl">CubicTargets.PoissonSummation.FiniteHeightFourierTransform.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteHeightFourierTransform.lean#L23" class="lean_decl">Cubic.PoissonSummation.FiniteHeightFourierTransform.«eqn:finiteHeightFourierTransform»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/FiniteHeightFourierTransform.lean#L23" class="lean_decl">Cubic.PoissonSummation.FiniteHeightFourierTransform.«eqn:finiteHeightFourierTransform»</a></li>
           
         </ul>
     
@@ -505,7 +515,7 @@
   
 
 
-<div class="displaymath" id="a0000000091">
+<div class="displaymath" id="a0000000090">
   \begin{equation*}  \widehat{H_v}(\chi ,-s,D_0) = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ { n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 }} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -513,7 +523,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000090">
+<div class="proof_wrapper" id="a0000000089">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -523,7 +533,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>The integrand is invariant under \(K_v^{\mathrm{max}}\), which has measure one, so the integral is a sum over \(T(\mathbb {Q}_v)/K_v^{\mathrm{max}}\cong X_\ast (T_E)^{\Gamma (w/v)}\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>). By Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>, \(1_v^{D_0}\) keeps exactly the lattice points in the cone \(\mathbb {R}_{\geq 0}v_1+\mathbb {R}_{\geq 0}v_2\); this is Equation&#160;<a href="sect0004.html#eqn:localfourierassumovern">18</a>. </p>
 
   </div>
 </div>
@@ -543,7 +553,7 @@
 
     <a class="icon proof" href="sect0004.html#rem:localNonintegrability">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000092"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000091"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -559,9 +569,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalNonintegrability.lean#L14" class="lean_decl">CubicTargets.PoissonSummation.LocalNonintegrability.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LocalNonintegrability.lean#L14" class="lean_decl">CubicTargets.PoissonSummation.LocalNonintegrability.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalNonintegrability.lean#L69" class="lean_decl">Cubic.PoissonSummation.LocalNonintegrability.«rem:localNonintegrability»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LocalNonintegrability.lean#L69" class="lean_decl">Cubic.PoissonSummation.LocalNonintegrability.«rem:localNonintegrability»</a></li>
           
         </ul>
     
@@ -579,7 +589,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000092">
+<div class="proof_wrapper" id="a0000000091">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -589,7 +599,7 @@
   <div class="proof_content">
   
 
-<p>Along a boundary ray where a height exponent vanishes, the local valuation series has terms of constant absolute value. It therefore fails to converge. </p>
+<p>Since \(s\) is Galois-invariant, \(s_1=s_2\), so if one vanishes both do. Let \(v\neq 3\) be finite. As in <a href="sect0004.html#eqn:localfourierassumovern" class="eqref">18</a>, the integral of \(|H_v(\cdot ,-s,D_0)|\) over \(T(\mathbb {Q}_v)\) is the sum of \(q_v^{\operatorname {Re}\varphi (n)}\) over the points \(n\) of \(X_\ast (T_E)^{\Gamma (w/v)}\) in the cone \(\mathbb {R}_{\geq 0}v_1+\mathbb {R}_{\geq 0}v_2\). On this cone \(\varphi \) is linear with \(\varphi (v_1)=-s_1\) and \(\varphi (v_2)=-s_2\); it does not involve \(s_0\) and vanishes when \(s_1=s_2=0\). The cone contains the infinitely many invariant lattice points \(k(v_1+v_2)\), \(k\geq 0\), each contributing \(1\), so the integral diverges. </p>
 
   </div>
 </div>
@@ -608,7 +618,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:localfourierassumovern">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000093"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000092"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -624,9 +634,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LocalFourierAsSumOverN.lean#L45" class="lean_decl">CubicTargets.PoissonSummation.LocalFourierAsSumOverN.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LocalFourierAsSumOverN.lean#L45" class="lean_decl">CubicTargets.PoissonSummation.LocalFourierAsSumOverN.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LocalFourierAsSumOverN.lean#L40" class="lean_decl">Cubic.PoissonSummation.LocalFourierAsSumOverN.«eqn:localfourierassumovern»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LocalFourierAsSumOverN.lean#L40" class="lean_decl">Cubic.PoissonSummation.LocalFourierAsSumOverN.«eqn:localfourierassumovern»</a></li>
           
         </ul>
     
@@ -640,7 +650,8 @@
   
 
 
-<div class="displaymath" id="a0000000094">
+<p>Let \(v\neq 3\) be a finite place, \(w\) a place of \(E\) over \(v\), \(e_v\) its ramification index (here \(e_v=1\)), and \(N_w=X_\ast (T_E)^{\Gamma (w/v)}\). Let \(\chi \) be an unramified character of \(T(\mathbb {Q}_v)\), regarded as a character of \(N_w\) through \(\ell _w\), and evaluate \(1_v^{D_0}\) at a lattice point \(n\) through any \(x\) with \(\ell _w(x)=n\). </p>
+<div class="displaymath" id="a0000000093">
   \begin{equation*}  \int _{T(\mathbb {Q}_v)} H_v(x,s)^{-1}1_v^{D_0}(x)\chi (x)^{-1}\, d^\times x_v =\sum _{n \in N_w} q_v^{\frac{1}{e_v}\varphi (n)} 1_v^{D_0}(n) \chi (n)^{-1} = \sum _{\substack {n \in X_\ast (T_{E})^{\Gamma (w/v)}\\ { n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2
 
 }} } \chi (n)^{-1} q_v^{\varphi (n)} . \end{equation*}
@@ -648,7 +659,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000093">
+<div class="proof_wrapper" id="a0000000092">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -658,7 +669,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>The integrand is \(K_v^{\mathrm{max}}\)-invariant by Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>, and \(K_v^{\mathrm{max}}\) has measure one. Since \(\ell _w\) identifies \(T(\mathbb {Q}_v)/K_v^{\mathrm{max}}\) with \(N_w\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) and the local height on the coset of \(n\) is \(q_v^{-\varphi (n)/e_v}\) by Equation&#160;<a href="sect0003.html#eqn:heightforrationaladeles">5</a>, the integral is the first sum. Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a> says \(1_v^{D_0}(n)=1\) exactly when \(n\) lies in the cone \(\mathbb {R}_{\geq 0}v_1+\mathbb {R}_{\geq 0}v_2\), and \(e_v=1\); this gives the second sum. </p>
 
   </div>
 </div>
@@ -677,7 +688,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:LAsNorm">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000095"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000094"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -693,9 +704,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LAsNorm.lean#L56" class="lean_decl">CubicTargets.PoissonSummation.LAsNorm.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LAsNorm.lean#L56" class="lean_decl">CubicTargets.PoissonSummation.LAsNorm.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LAsNorm.lean#L52" class="lean_decl">Cubic.PoissonSummation.LAsNorm.«eqn:LAsNorm»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LAsNorm.lean#L52" class="lean_decl">Cubic.PoissonSummation.LAsNorm.«eqn:LAsNorm»</a></li>
           
         </ul>
     
@@ -709,13 +720,14 @@
   
 
 
-<div class="displaymath" id="a0000000096">
+<p>For \(x=(x_w)_w\in T(\mathbb {A})\subset T(\mathbb {A}_E)\) put \(\ell (x)=\tfrac 12\sum _w\ell _w(x_w)\log q_w\), the sum over all places \(w\) of \(E\), where \(q_w\) is the size of the residue field at a finite place and \(q_w=e^2\) at the complex place. Let \(\mathrm N:T\to \mathbb {G}_m\) be the norm character, obtained by composing the isomorphism \(\iota :T\to R^E_\mathbb {Q}\mathbb {G}_m\) with the norm, and let \(\mathrm N(x)\in \mathbb {A}^\times \) be its adelic value. </p>
+<div class="displaymath" id="a0000000095">
   \begin{equation*}  \ell (x)(\mathrm{N}) = -\log |\mathrm{N}(x)|_{\mathbb {A}} \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000095">
+<div class="proof_wrapper" id="a0000000094">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -725,7 +737,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>For a character \(\chi \), \(\langle \chi ,\ell _w(x_w)\rangle \) is the normalized valuation \(\mathrm{ord}_w(\chi (x_w))\), so \(\langle \chi ,\ell _w(x_w)\rangle \log q_w=-\log |\chi (x_w)|_w\) for the normalized absolute value \(|\cdot |_w=q_w^{-\mathrm{ord}_w(\cdot )}\). Taking \(\chi =\mathrm N\) and summing over \(w\) gives \(-\tfrac 12\log \prod _w|\mathrm N(x)|_w\). Since \(\mathrm N(x)\in \mathbb {A}^\times \) and \([E:\mathbb {Q}]=2\), this product is \(|\mathrm N(x)|_\mathbb {A}^2\). </p>
 
   </div>
 </div>
@@ -745,7 +757,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:Lmap">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000096"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -761,9 +773,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">CubicTargets.PoissonSummation.LogarithmExactSequence.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">CubicTargets.PoissonSummation.LogarithmExactSequence.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">Cubic.PoissonSummation.«prop:Lmap»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LogarithmExactSequence.lean#L16" class="lean_decl">Cubic.PoissonSummation.«prop:Lmap»</a></li>
           
         </ul>
     
@@ -777,15 +789,16 @@
   
 
 
+<p>Here \(\ell \) is the adelic logarithm of Equation&#160;<a href="sect0004.html#eqn:LAsNorm">19</a>. </p>
 <p>There is an exact sequence </p>
-<div class="displaymath" id="a0000000098">
+<div class="displaymath" id="a0000000097">
   \begin{equation*}  1 \longrightarrow K^{\mathrm{max}}/\mu ^{\mathrm{max}} \longrightarrow T(\mathbb Q)\backslash T(\mathbb {A}) \xrightarrow {\ell } \mathfrak t \longrightarrow 0 \end{equation*}
 </div>
 <p> where \(K^{\mathrm{max}}\) is the maximal compact subgroup of \(T(\mathbb {A})\) and \(\mu ^{\mathrm{max}} = T(\mathbb {Q}) \cap K^{\mathrm{max}}\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000097">
+<div class="proof_wrapper" id="a0000000096">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -794,7 +807,7 @@
   </div>
   <div class="proof_content">
   
-<p>The product formula makes the logarithm descend to the adelic quotient. Principalize the finite valuations to identify its kernel with the compact quotient; the infinite component supplies surjectivity. </p>
+<p>Under \(\iota \), the quotient \(T(\mathbb {Q})\backslash T(\mathbb {A})\) is the idèle class group \(E^\times \backslash \mathbb {A}_E^\times \). By Equation&#160;<a href="sect0004.html#eqn:LAsNorm">19</a>, \(\ell \) depends only on \(|\mathrm N(x)|_\mathbb {A}\); it is trivial on \(T(\mathbb {Q})\) by the product formula, and its kernel is the group of idèle classes of norm one. Since \(E\) has class number one, every idèle class has a representative that is a unit at every finite place; if the class has norm one, the infinite component also has absolute value one, so the representative lies in \(K^{\mathrm{max}}\). Two elements of \(K^{\mathrm{max}}\) give the same class exactly when they differ by an element of \(T(\mathbb {Q})\cap K^{\mathrm{max}}=\mu ^{\mathrm{max}}\), so the kernel is \(K^{\mathrm{max}}/\mu ^{\mathrm{max}}\). Finally \(\ell \) is surjective because \(\ell _w\) is surjective at the complex place \(w\) of \(E\) (Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>). </p>
 
   </div>
 </div>
@@ -814,7 +827,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:KprimeGroup">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000099"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000098"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -830,9 +843,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/KprimeGroup.lean#L21" class="lean_decl">CubicTargets.PoissonSummation.KprimeGroup.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/KprimeGroup.lean#L21" class="lean_decl">CubicTargets.PoissonSummation.KprimeGroup.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/KprimeGroup.lean#L14" class="lean_decl">Cubic.PoissonSummation.«lemma:KprimeGroup»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/KprimeGroup.lean#L14" class="lean_decl">Cubic.PoissonSummation.«lemma:KprimeGroup»</a></li>
           
         </ul>
     
@@ -847,14 +860,14 @@
 
 
 <p>Let \(K^{D_0}=K_{3,2}\times \prod _{v\neq 3}K_v^{\mathrm{max}}\) be the subgroup of \(K^{\mathrm{max}}\) fixing \(1^{D_0}\), as in Proposition&#160;<a href="sect0004.html#prop:localIntegrality">4</a>. The map \(\ell \) induces an isomorphism </p>
-<div class="displaymath" id="a0000000100">
+<div class="displaymath" id="a0000000099">
   \begin{equation*}  T(\mathbb {Q})\backslash T(\mathbb {A})/K^{D_0} \xrightarrow {\sim } \mathfrak t. \end{equation*}
 </div>
 <p> Let \(a(u)\in T(\mathbb {A})\) have infinite component \(\iota ^{-1}(e^u)\) and all finite components one, so \(\ell (a(u))=uv_0\). In this coordinate, the pushforward of the quotient measure is \(du/6\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000099">
+<div class="proof_wrapper" id="a0000000098">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -864,7 +877,7 @@
   <div class="proof_content">
   
 
-<p>The six Eisenstein units represent the residue classes at the ramified place. They identify the quotient by the integral level with the logarithm line. Tracking the normalized Haar measure gives \(du/6\). </p>
+<p>The map \(\ell \) vanishes on \(K^{D_0}\), so it descends to the double quotient, and by Proposition&#160;<a href="sect0004.html#prop:Lmap">6</a> the descended map is surjective with kernel \(K^{\mathrm{max}}/(\mu ^{\mathrm{max}}K^{D_0})\). A point of \(T(\mathbb {Q})\) lies in \(K^{\mathrm{max}}\) exactly when its image under \(\iota \) is a unit at every finite place, so \(\iota (\mu ^{\mathrm{max}})=O_E^\times =\{ \pm 1,\pm \zeta ,\pm \zeta ^2\} \), where \(\zeta \) is a primitive cube root of unity. Projecting to the place \(3\) and reducing modulo \(3\) identifies \(K^{\mathrm{max}}/K^{D_0}\) with \(K_3^{\mathrm{max}}/K_{3,2}\cong (O_{E,w}/3O_{E,w})^\times \), a group of order six. No sixth root of unity other than \(1\) is congruent to \(1\) modulo \(3\), so \(\mu ^{\mathrm{max}}\) maps bijectively onto this group. Hence \(K^{\mathrm{max}}=\mu ^{\mathrm{max}}K^{D_0}\), which gives the isomorphism, and \(T(\mathbb {Q})\cap K^{D_0}=\{ 1\} \), so every class has a unique representative in \(a(\mathbb {R})K^{D_0}\). In this representative the infinite factor contributes \(du\) times an angular measure of total mass one, and the finite part of \(K^{D_0}\) has measure \([K_3^{\mathrm{max}}:K_{3,2}]^{-1}=1/6\). </p>
 
   </div>
 </div>
@@ -883,7 +896,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:chimdefn">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000101"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000100"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -899,9 +912,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ChimDefn.lean#L57" class="lean_decl">CubicTargets.PoissonSummation.ChimDefn.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/ChimDefn.lean#L57" class="lean_decl">CubicTargets.PoissonSummation.ChimDefn.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ChimDefn.lean#L75" class="lean_decl">Cubic.PoissonSummation.ChimDefn.«eqn:chimdefn»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/ChimDefn.lean#L75" class="lean_decl">Cubic.PoissonSummation.ChimDefn.«eqn:chimdefn»</a></li>
           
         </ul>
     
@@ -915,13 +928,14 @@
   
 
 
-<div class="displaymath" id="a0000000102">
+<p>The automorphic characters trivial on \(K^{D_0}\) are described as follows. </p>
+<div class="displaymath" id="a0000000101">
   \begin{equation*}  \chi _m(x)=e(\langle m,\ell (x)\rangle ), \qquad m\in \mathfrak t^\vee . \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000101">
+<div class="proof_wrapper" id="a0000000100">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -931,7 +945,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>A character of \(T(\mathbb {Q})\backslash T(\mathbb {A})\) trivial on \(K^{D_0}\) factors through the isomorphism \(\ell \) onto the line \(\mathfrak t\) (Lemma&#160;<a href="sect0004.html#lemma:KprimeGroup">4</a>), and the unitary characters of \(\mathfrak t\) are \(y\mapsto e(\langle m,y\rangle )\) with \(m\in \mathfrak t^\vee \). </p>
 
   </div>
 </div>
@@ -951,7 +965,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:finiteFourierProduct">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000102"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -967,9 +981,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicFiniteFourierProduct.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.AdelicFiniteFourierProduct.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/AdelicFiniteFourierProduct.lean#L26" class="lean_decl">CubicTargets.PoissonSummation.AdelicFiniteFourierProduct.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicFiniteFourierProduct.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:finiteFourierProduct»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/AdelicFiniteFourierProduct.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:finiteFourierProduct»</a></li>
           
         </ul>
     
@@ -983,19 +997,20 @@
   
 
 
+<p>Here \(s=(s_0,\sigma ,\sigma )\), \(\chi _m\) is the character of Equation&#160;<a href="sect0004.html#eqn:chimdefn">20</a> with \(t=m(v_0)\), and \(\widehat{H_{\mathrm{fin}}}(\chi ,-s,D_0)=\prod _{v{\lt}\infty }\widehat{H_v}(\chi _v,-s,D_0)\), where \(\chi _v\) is the restriction of \(\chi \) to \(T(\mathbb {Q}_v)\) and \(\widehat{H_v}\) is the local Fourier transform of Proposition&#160;<a href="sect0004.html#prop:heightFourierTransform">5</a>. </p>
 <p>For \(\operatorname {Re}(\sigma ){\gt}1\) and \(t\in \mathbb {R}\), put \(\lambda =\sigma -\pi it\). Then </p>
-<div class="displaymath" id="a0000000104">
+<div class="displaymath" id="a0000000103">
   \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
 </div>
 <p> and </p>
-<div class="displaymath" id="a0000000105">
+<div class="displaymath" id="a0000000104">
   \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
 </div>
 <p> Here \(\chi _0\) is the trivial character, corresponding to \(m=0\). The Euler product converges absolutely and locally uniformly for \(\operatorname {Re}(\lambda ){\gt}1\) and is bounded on every half-plane \(\operatorname {Re}(\lambda )\geq \tau {\gt}1\). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000103">
+<div class="proof_wrapper" id="a0000000102">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1005,7 +1020,7 @@
   <div class="proof_content">
   
 
-<p>Sum the local valuation series separately at split and inert primes and include the factor \(1/6\) at \(3\). A convergent positive Euler product bounds the absolute values and proves locally uniform convergence. </p>
+<p>Fix a finite place \(v\neq 3\), a place \(w\) of \(E\) over \(v\), and \(x_v\in T(\mathbb {Q}_v)\) with \(n=\ell _w(x_v)\). The local component is \(\chi _{m,v}(x_v)=e(\langle m,\ell (x^{(v)})\rangle )\), where \(x^{(v)}\) is the adele equal to \(x_v\) at \(v\) and \(1\) elsewhere. If \(v\) splits, the two places over \(v\) have valuation vectors \(n\) and its Galois conjugate, with the same pairing against the invariant \(m\), and residue fields of size \(q_v\); if \(v\) is inert, there is one place, with residue field of size \(q_v^2\). In both cases \(\chi _{m,v}(x_v)=q_v^{2\pi i\langle m,n\rangle }\). Since \(m(v_1)=m(v_2)=-t/2\) and \(\varphi (n)=-\sigma (n_1+n_2)\) for \(n=n_1v_1+n_2v_2\) in the cone, each term of <a href="sect0004.html#eqn:finiteHeightFourierTransform" class="eqref">17</a> is \(q_v^{-\lambda (n_1+n_2)}\). For inert \(q\equiv 2\  (\mathrm{mod}\  3)\) the invariant lattice points in the cone are \(k(v_1+v_2)\), \(k\geq 0\), giving \(\sum _kq^{-2k\lambda }=(1-q^{-2\lambda })^{-1}\). For split \(p\equiv 1\  (\mathrm{mod}\  3)\) the lattice is \(\mathbb {Z}v_1+\mathbb {Z}\omega \) with \(\omega =\tfrac 13(2v_1+v_2)\); writing \(n=av_1+b\omega \), the points of the cone with \(n_1+n_2=k\) are those with \(0\leq b\leq 3k\), so there are \(3k+1\) of them, and \(\sum _k(3k+1)p^{-k\lambda }=(1+2p^{-\lambda })(1-p^{-\lambda })^{-2}\). At \(3\) the character \(\chi _{m,3}\) is trivial on \(K_3^{\mathrm{max}}\), so the factor is \(1/6\) by Proposition&#160;<a href="sect0004.html#prop:heightFourierTransform">5</a>. The factors away from \(3\) are \(1+O(p^{-\tau })\) on \(\operatorname {Re}(\lambda )\geq \tau {\gt}1\), which gives absolute, locally uniform convergence and boundedness. Each local series has terms of absolute value \(q_v^{-\operatorname {Re}(\sigma )(n_1+n_2)}\), which are the terms for \(m=0\) and \(\operatorname {Re}(s)\); this gives <a href="sect0004.html#eqn:finiteEulerBound" class="eqref">22</a>. </p>
 
   </div>
 </div>
@@ -1024,7 +1039,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteSpectralProduct">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000105"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1040,9 +1055,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteSpectralProduct.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteSpectralProduct.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteSpectralProduct»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/FiniteSpectralProduct.lean#L13" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteSpectralProduct»</a></li>
           
         </ul>
     
@@ -1056,13 +1071,13 @@
   
 
 
-<div class="displaymath" id="a0000000107">
+<div class="displaymath" id="a0000000106">
   \begin{equation*}  \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0) =\frac16 \prod _{q\equiv 2\pmod3}(1-q^{-2\lambda })^{-1} \prod _{p\equiv 1\pmod3} \frac{1+2p^{-\lambda }}{(1-p^{-\lambda })^2} \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000106">
+<div class="proof_wrapper" id="a0000000105">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1072,7 +1087,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Multiply the local factors computed in Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a>: \((1-q^{-2\lambda })^{-1}\) at inert primes \(q\equiv 2\  (\mathrm{mod}\  3)\), \((1+2p^{-\lambda })(1-p^{-\lambda })^{-2}\) at split primes \(p\equiv 1\  (\mathrm{mod}\  3)\), and \(1/6\) at \(3\). </p>
 
   </div>
 </div>
@@ -1091,7 +1106,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:finiteEulerBound">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000108"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000107"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1107,9 +1122,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/FiniteEulerBound.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteEulerBound.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/FiniteEulerBound.lean#L13" class="lean_decl">CubicTargets.PoissonSummation.FiniteEulerBound.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/FiniteEulerBound.lean#L14" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteEulerBound»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/FiniteEulerBound.lean#L14" class="lean_decl">Cubic.PoissonSummation.«eqn:finiteEulerBound»</a></li>
           
         </ul>
     
@@ -1123,13 +1138,13 @@
   
 
 
-<div class="displaymath" id="a0000000109">
+<div class="displaymath" id="a0000000108">
   \begin{equation*}  \left|\widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\right| \leq \widehat{H_{\mathrm{fin}}}(\chi _0,{-\operatorname {Re}(s)},D_0){\lt}\infty . \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000108">
+<div class="proof_wrapper" id="a0000000107">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1139,7 +1154,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>In each local series of Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a>, the term indexed by \(n=n_1v_1+n_2v_2\) has absolute value \(q_v^{-\operatorname {Re}(\sigma )(n_1+n_2)}\), which is the corresponding term for the trivial character and parameter \(\operatorname {Re}(s)\). Apply the triangle inequality to each factor and multiply; the right side is finite because the Euler product converges at \(\lambda =\operatorname {Re}(\sigma ){\gt}1\). </p>
 
   </div>
 </div>
@@ -1159,7 +1174,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:heightZetaConvergence">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000110"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000109"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1175,9 +1190,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/AdelicHeightZetaConvergence.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.AdelicHeightZetaConvergence.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/AdelicHeightZetaConvergence.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.AdelicHeightZetaConvergence.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/AdelicHeightZetaConvergence.lean#L21" class="lean_decl">Cubic.PoissonSummation.«lemma:heightZetaConvergence»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/AdelicHeightZetaConvergence.lean#L21" class="lean_decl">Cubic.PoissonSummation.«lemma:heightZetaConvergence»</a></li>
           
         </ul>
     
@@ -1195,7 +1210,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000110">
+<div class="proof_wrapper" id="a0000000109">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1205,7 +1220,7 @@
   <div class="proof_content">
   
 
-<p>The positive local factors give spatial integrability. The finite Euler-product bound and quadratic decay of the archimedean factor give integrability on the annihilator of \(T(\mathbb {Q})\). </p>
+<p>By Equation&#160;<a href="sect0003.html#eqn:heightforrationaladeles">5</a>, \(|f|\) is the product over \(v\) of \(1_v^{D_0}(x_v)q_v^{\operatorname {Re}\varphi (\ell _w(x_v))/e_v}\). For a finite set \(S\) of places containing \(3\) and \(\infty \), the factors outside \(S\) equal \(1\) on \(K_v^{\mathrm{max}}\), which has measure one, so monotone convergence gives \(\int _{T(\mathbb {A})}|f|=\sup _S\prod _{v\in S}\int _{T(\mathbb {Q}_v)}|H_v(\cdot ,-s,D_0)|\). Put \(\tau =\operatorname {Re}(\sigma )\). By Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a> each local integral at \(v\neq 3\) is at most \((1+2q_v^{-\tau })(1-q_v^{-\tau })^{-2}\leq (1-q_v^{-\tau })^{-4}\), since \((1+2x)(1-x)^2=1-3x^2+2x^3\leq 1\); the integral at \(3\) is \(1/6\), and the one at \(\infty \) is finite by Proposition&#160;<a href="sect0004.html#prop:heightFourierTransform">5</a>. Hence \(\int |f|\leq \tfrac 16\zeta (\tau )^4\int _{T(\mathbb {R})}|H_\infty (\cdot ,-s,D_0)|{\lt}\infty \). Since \(f\) is \(K^{D_0}\)-invariant, \(\widehat f\) on \(T(\mathbb {Q})^\perp \) is supported on the characters \(\chi _m\) of Equation&#160;<a href="sect0004.html#eqn:chimdefn">20</a>. There the finite factor is bounded by <a href="sect0004.html#eqn:finiteEulerBound" class="eqref">22</a> and the archimedean factor <a href="sect0004.html#eqn:archimedeanSpectralFactor" class="eqref">23</a> is \(O_s((1+|t|)^{-2})\). The dual measure is \(6\, dt\) because the quotient measure is \(du/6\) (Lemma&#160;<a href="sect0004.html#lemma:KprimeGroup">4</a>), so \(\widehat f\) is integrable on \(T(\mathbb {Q})^\perp \). </p>
 
   </div>
 </div>
@@ -1224,7 +1239,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:archimedeanSpectralFactor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000111"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000110"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1240,9 +1255,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/ArchimedeanSpectralFactor.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.ArchimedeanSpectralFactor.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/ArchimedeanSpectralFactor.lean#L27" class="lean_decl">CubicTargets.PoissonSummation.ArchimedeanSpectralFactor.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/ArchimedeanSpectralFactor.lean#L16" class="lean_decl">Cubic.PoissonSummation.«eqn:archimedeanSpectralFactor»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/ArchimedeanSpectralFactor.lean#L16" class="lean_decl">Cubic.PoissonSummation.«eqn:archimedeanSpectralFactor»</a></li>
           
         </ul>
     
@@ -1256,13 +1271,13 @@
   
 
 
-<div class="displaymath" id="a0000000112">
+<div class="displaymath" id="a0000000111">
   \begin{equation*} \begin{aligned}  \widehat{H_\infty }(\chi _{m,\infty },-s,D_0) & =\frac1{s_0+2\pi it}+\frac1{2\sigma -2\pi it}\\ & =\frac{s_0+2\sigma }{(s_0+2\pi it)(2\sigma -2\pi it)}. \end{aligned}\end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000111">
+<div class="proof_wrapper" id="a0000000110">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1272,7 +1287,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>At the infinite place \(q_w=e^2\), so the infinite component of \(\chi _m\) is \(x\mapsto e(\langle \ell _w(x),m\rangle )\), the unramified character with the same \(m\). Substitute \(s_1=s_2=\sigma \) and \(t=m(v_0)\) into \((s_0+2\pi it)^{-1}+(s_1+s_2-2\pi it)^{-1}\), the form of <a href="sect0004.html#eqn:infiniteHeightFourierTransform" class="eqref">16</a> obtained by integrating over the two half-lines, and combine the fractions. </p>
 
   </div>
 </div>
@@ -1292,7 +1307,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:poissonIntegral">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000113"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000112"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1308,9 +1323,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonIntegral.lean#L17" class="lean_decl">CubicTargets.PoissonSummation.PoissonIntegral.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/PoissonIntegral.lean#L17" class="lean_decl">CubicTargets.PoissonSummation.PoissonIntegral.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonIntegral.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:poissonIntegral»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/PoissonIntegral.lean#L25" class="lean_decl">Cubic.PoissonSummation.«lemma:poissonIntegral»</a></li>
           
         </ul>
     
@@ -1324,15 +1339,16 @@
   
 
 
+<p>Here \(\chi _{m,\infty }\) is the infinite component of the character \(\chi _m\) of Equation&#160;<a href="sect0004.html#eqn:chimdefn">20</a>, \(t=m(v_0)\), and \(\widehat{H_{\mathrm{fin}}}\) is the product of the finite local transforms, as in Lemma&#160;<a href="sect0004.html#lemma:finiteFourierProduct">5</a>. </p>
 <p>For \(s\) as in Lemma&#160;<a href="sect0004.html#lemma:heightZetaConvergence">6</a>, we have </p>
-<div class="displaymath" id="a0000000114">
+<div class="displaymath" id="a0000000113">
   \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
 </div>
 <p> where both the series defining \(Z(s)\) and the integral converge absolutely. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000113">
+<div class="proof_wrapper" id="a0000000112">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1342,7 +1358,7 @@
   <div class="proof_content">
   
 
-<p>Apply the general Poisson formula with the normalized quotient measure. Identify the characters trivial on the integral level with the real logarithm coordinate; the dual measure contributes the factor six. </p>
+<p>By Lemma&#160;<a href="sect0004.html#lemma:heightZetaConvergence">6</a>, \(f=H(\cdot ,-s,D_0)\) satisfies the hypotheses of the Poisson formula <a href="sect0004.html#eqn:poissonae" class="eqref">15</a>, so it holds for almost every \(y\); its left side at \(y=1\) is \(\sum _{P\in T(\mathbb {Q})}H(P,s)^{-1}1^{D_0}(P)=Z(s)\). To evaluate at \(y=1\), use \(a(u)\) from Lemma&#160;<a href="sect0004.html#lemma:KprimeGroup">4</a>: by that lemma, \(\int |f|=\tfrac 16\int _\mathbb {R}\sum _{\gamma \in T(\mathbb {Q})}|f(\gamma a(u))|\, du{\lt}\infty \), so the series converges at some \(u_0\). The function \(r\mapsto \operatorname {Re}\varphi (rv_0)\) is Lipschitz with constant \(M=\max \{ \operatorname {Re}(s_0),2\operatorname {Re}(\sigma )\} \), and multiplying by \(a(u)\) shifts the infinite valuation by \(uv_0\). Hence \(|f(\gamma a(u))|\leq e^{M|u-u_0|}|f(\gamma a(u_0))|\), so the series converges absolutely and locally uniformly in \(u\) and is continuous; at \(u=0\) this is the absolute convergence of \(Z(s)\). The right side at \(a(u)\) is continuous in \(u\) by dominated convergence, since \(|\widehat f|\) is integrable on \(T(\mathbb {Q})^\perp \). Both sides are \(K^{D_0}\)-invariant, so they are continuous functions of \(u\) that agree almost everywhere, hence at \(u=0\). Finally, the dual measure is \(6\, dt\) on the characters \(\chi _m\), and \(\widehat f\) factors into its archimedean and finite parts. </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1362,7 +1378,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:poissonEulerIntegral">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000115"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000114"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1378,9 +1394,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/PoissonEulerIntegral.lean#L18" class="lean_decl">CubicTargets.PoissonSummation.PoissonEulerIntegral.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/PoissonEulerIntegral.lean#L18" class="lean_decl">CubicTargets.PoissonSummation.PoissonEulerIntegral.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/PoissonEulerIntegral.lean#L8" class="lean_decl">Cubic.PoissonSummation.PoissonEulerIntegral.«eqn:poissonEulerIntegral»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/PoissonEulerIntegral.lean#L8" class="lean_decl">Cubic.PoissonSummation.PoissonEulerIntegral.«eqn:poissonEulerIntegral»</a></li>
           
         </ul>
     
@@ -1394,13 +1410,13 @@
   
 
 
-<div class="displaymath" id="a0000000116">
+<div class="displaymath" id="a0000000115">
   \begin{equation*}  Z(s)=6\int _\mathbb {R}\widehat{H_\infty }(\chi _{m,\infty },-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi _m,-s,D_0)\, dt, \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000115">
+<div class="proof_wrapper" id="a0000000114">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1410,7 +1426,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>This is the conclusion of Lemma&#160;<a href="sect0004.html#lemma:poissonIntegral">7</a>: evaluate the Poisson formula <a href="sect0004.html#eqn:poissonae" class="eqref">15</a> at the identity, use that \(\widehat{H}\) is supported on the characters \(\chi _m\) with dual measure \(6\, dt\), and factor \(\widehat H\) into its archimedean and finite parts. </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1430,7 +1446,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:normCharacterDivisor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000117"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000116"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1446,9 +1462,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/NormCharacterDivisor.lean#L40" class="lean_decl">CubicTargets.PoissonSummation.NormCharacterDivisor.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/NormCharacterDivisor.lean#L40" class="lean_decl">CubicTargets.PoissonSummation.NormCharacterDivisor.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/NormCharacterDivisor.lean#L17" class="lean_decl">Cubic.PoissonSummation.NormCharacterDivisor.«eqn:normCharacterDivisor»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/NormCharacterDivisor.lean#L17" class="lean_decl">Cubic.PoissonSummation.NormCharacterDivisor.«eqn:normCharacterDivisor»</a></li>
           
         </ul>
     
@@ -1462,13 +1478,14 @@
   
 
 
-<div class="displaymath" id="a0000000118">
+<p>Here \(a'=2v_1^\vee -v_2^\vee \) and \(b'=2v_2^\vee -v_1^\vee \) are as in Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>, so \(a'+b'=v_1^\vee +v_2^\vee \) is Galois-invariant and \(\chi ^{a'+b'}\) is defined over \(\mathbb {Q}\). The divisors \(D_0,D_1,D_2\) correspond to the rays \(v_0,v_1,v_2\), and \(v_0=-v_1-v_2\). </p>
+<div class="displaymath" id="a0000000117">
   \begin{equation*}  \operatorname {div}(\chi ^{a'+b'}) =\sum _{i=0}^2\langle a’+b’,v_i\rangle D_i =-2D_0+D_1+D_2. \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000117">
+<div class="proof_wrapper" id="a0000000116">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1477,7 +1494,14 @@
   </div>
   <div class="proof_content">
   
-<p>The linked Lean proof establishes this statement. </p>
+<p>The divisor of a character \(\chi ^m\) on a toric variety is \(\sum _i\langle m,v_i\rangle D_i\) <span class="cite">
+	[
+	<a href="sect0010.html#MR1234037" >18</a>
+	, 
+	§
+	3.3
+	]
+</span>. Since \(a'+b'=v_1^\vee +v_2^\vee \) and \(v_0=-v_1-v_2\), the pairings with \(v_0,v_1,v_2\) are \(-2,1,1\). </p>
 
   </div>
 </div>
@@ -1496,7 +1520,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:eulerCorrectionFactor">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000119"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1512,9 +1536,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/EulerCorrectionFactor.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.EulerCorrectionFactor.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/EulerCorrectionFactor.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.EulerCorrectionFactor.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/EulerCorrectionFactor.lean#L21" class="lean_decl">Cubic.PoissonSummation.EulerCorrectionFactor.«eqn:eulerCorrectionFactor»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/EulerCorrectionFactor.lean#L21" class="lean_decl">Cubic.PoissonSummation.EulerCorrectionFactor.«eqn:eulerCorrectionFactor»</a></li>
           
         </ul>
     
@@ -1528,13 +1552,13 @@
   
 
 
-<div class="displaymath" id="a0000000120">
+<div class="displaymath" id="a0000000119">
   \begin{equation*}  R(z)=\prod _{q\equiv 2\pmod3}\left(1-q^{-2z}\right) \prod _{p\equiv 1\pmod3}\left(1-3p^{-2z}+2p^{-3z}\right). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000119">
+<div class="proof_wrapper" id="a0000000118">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1544,7 +1568,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>This defines \(R(z)\) for \(\operatorname {Re}(z){\gt}1/2\). Each factor differs from \(1\) by at most \(5\ell ^{-2\operatorname {Re}(z)}\), where \(\ell \) is its prime, so the product converges absolutely and locally uniformly there (Supporting lemma&#160;<a href="sect0009.html#helper:correctionProduct">14</a>). </p>
 
   </div>
 </div>
@@ -1564,7 +1588,7 @@
 
     <a class="icon proof" href="sect0004.html#lemma:simplifiedZ-s">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000121"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000120"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1580,9 +1604,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/SimplifiedHeightZeta.lean#L51" class="lean_decl">CubicTargets.PoissonSummation.SimplifiedHeightZeta.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/SimplifiedHeightZeta.lean#L51" class="lean_decl">CubicTargets.PoissonSummation.SimplifiedHeightZeta.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/SimplifiedHeightZeta.lean#L52" class="lean_decl">Cubic.PoissonSummation.«lemma:simplifiedZ(s)»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/SimplifiedHeightZeta.lean#L52" class="lean_decl">Cubic.PoissonSummation.«lemma:simplifiedZ(s)»</a></li>
           
         </ul>
     
@@ -1597,14 +1621,14 @@
 
 
 <p>The height zeta function is also given by </p>
-<div class="displaymath" id="a0000000122">
+<div class="displaymath" id="a0000000121">
   \begin{align*}  Z(s)=\left(1-3^{-z}\right)^2\xi (z)^2R(z),\qquad z=\tfrac 12(s_0+s_1+s_2), \end{align*}
 </div>
 <p> where \(\xi \) is the Dedekind zeta function of the cyclotomic field \(\mathbb {Q}(\sqrt{-3})\). The height zeta function has meromorphic continuation to the region \(\{ s \in (\mathbb {C}^{\Sigma (1)})^{\Gamma } : \mathrm{Re}(s_0+s_1+s_2) {\gt} 1\} \). </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000121">
+<div class="proof_wrapper" id="a0000000120">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1614,7 +1638,7 @@
   <div class="proof_content">
   
 
-<p>Compare the Euler factors with \(\xi (z)^2\) and the correction product \(R(z)\). The factorization and convergence of the correction product give the continuation. </p>
+<p>For \(\operatorname {Re}(z){\gt}1\), the Euler product of \(\xi \) is \((1-3^{-z})^{-1}\prod _{q\equiv 2\  (\mathrm{mod}\  3)}(1-q^{-2z})^{-1}\prod _{p\equiv 1\  (\mathrm{mod}\  3)}(1-p^{-z})^{-2}\). By Theorem&#160;<a href="sect0004.html#thm:heightZetaFunctionFormula2">6</a>, \(Z(s)=\prod _{q\equiv 2\  (\mathrm{mod}\  3)}(1-q^{-2z})^{-1}\prod _{p\equiv 1\  (\mathrm{mod}\  3)}(1+2p^{-z})(1-p^{-z})^{-2}\). Dividing by \((1-3^{-z})^2\xi (z)^2\) leaves \(1-q^{-2z}\) at each \(q\) and \((1+2p^{-z})(1-p^{-z})^2=1-3p^{-2z}+2p^{-3z}\) at each \(p\), which is the product \(R(z)\) of Equation&#160;<a href="sect0004.html#eqn:eulerCorrectionFactor">26</a>. Each factor of \(R\) differs from \(1\) by at most \(5\ell ^{-2\operatorname {Re}(z)}\), so \(R\) is holomorphic on \(\operatorname {Re}(z){\gt}1/2\). The meromorphic continuation of \(\xi \) then continues \(Z\) to \(\operatorname {Re}(z){\gt}1/2\), that is, to \(\operatorname {Re}(s_0+s_1+s_2){\gt}1\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1634,7 +1658,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0factorization">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000123"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000122"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1650,9 +1674,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Factorization.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.Z0Factorization.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/Z0Factorization.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.Z0Factorization.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Factorization.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0Factorization.«eqn:Z0factorization»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/Z0Factorization.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0Factorization.«eqn:Z0factorization»</a></li>
           
         </ul>
     
@@ -1666,13 +1690,14 @@
   
 
 
-<div class="displaymath" id="a0000000124">
+<p>Write \(Z_0(z)=Z(2zD_0)\), the value at \(s=(2z,0,0)\). Since \(H(P,2zD_0)=H(P)^{2z}\), where \(H(P)=H(P,D_0)\), this is the Dirichlet series \(Z_0(z)=\sum _{n\geq 1}d_nn^{-z}\), where \(d_n\) is the number of \(P\in (\mathscr {S}\setminus \mathscr {D}_0)(\mathbb {Z})\) with \(H(P)^2=n\). </p>
+<div class="displaymath" id="a0000000123">
   \begin{equation*}  Z_0(z)=\left(1-3^{-z}\right)^2\xi (z)^2R(z). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000123">
+<div class="proof_wrapper" id="a0000000122">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1682,7 +1707,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Take \(s=(2z,0,0)\) in Lemma&#160;<a href="sect0004.html#lemma:simplifiedZ-s">8</a>; then \(\tfrac 12(s_0+s_1+s_2)=z\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1703,7 +1728,7 @@
 
     <a class="icon proof" href="sect0004.html#rem:heightCoefficients">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000125"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000124"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1719,9 +1744,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/HeightCoefficients.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.HeightCoefficients.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/HeightCoefficients.lean#L10" class="lean_decl">CubicTargets.PoissonSummation.HeightCoefficients.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/HeightCoefficients.lean#L47" class="lean_decl">Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/HeightCoefficients.lean#L47" class="lean_decl">Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients»</a></li>
           
         </ul>
     
@@ -1736,14 +1761,14 @@
 
 
 <p>Comparing Euler factors in <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> gives the coefficients explicitly: \(d_n=0\) if \(3\mid n\), and if \(3\nmid n\) then </p>
-<div class="displaymath" id="a0000000126">
+<div class="displaymath" id="a0000000125">
   \[  d_n=\sum _{d\mid n}3^{\omega (d_1)}(-1)^{\Omega (d_2)},  \]
 </div>
 <p> where \(d=d_1d_2\) with \(d_1\) divisible only by primes \(p\equiv 1\pmod3\) and \(d_2\) only by primes \(q\equiv 2\pmod3\). Equivalently, \(d_n\) is the product of \(3k+1\) over prime powers \(p^k\parallel n\) with \(p\equiv 1\pmod3\) if every prime \(q\equiv 2\pmod3\) divides \(n\) to an even power, and \(d_n=0\) otherwise. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000125">
+<div class="proof_wrapper" id="a0000000124">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1753,7 +1778,7 @@
   <div class="proof_content">
   
 
-<p>Expand the split, inert, and ramified Euler factors and multiply the prime-power coefficients. </p>
+<p>By <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> and Theorem&#160;<a href="sect0004.html#thm:heightZetaFunctionFormula2">6</a>, \(Z_0(z)\) is the Euler product \((1-3^{-z})\zeta (z)\prod _{q\equiv 2\  (\mathrm{mod}\  3)}(1+q^{-z})^{-1}\prod _{p\equiv 1\  (\mathrm{mod}\  3)}(1+3p^{-z}(1-p^{-z})^{-1})\) for \(\operatorname {Re}(z){\gt}1\). The factor at \(3\) is \((1-3^{-z})(1-3^{-z})^{-1}=1\), so \(d_n=0\) when \(3\mid n\). Away from \(3\), \(\zeta (z)\) contributes the sum over divisors \(d\), the coefficient of \(p^{-kz}\) in \(1+3p^{-z}(1-p^{-z})^{-1}\) is \(3\) for \(k\geq 1\), and that of \(q^{-kz}\) in \((1+q^{-z})^{-1}\) is \((-1)^k\); this gives the divisor-sum formula. For the product form, the full local factors are \((1-q^{-2z})^{-1}=\sum _kq^{-2kz}\) and \((1+2p^{-z})(1-p^{-z})^{-2}=\sum _k(3k+1)p^{-kz}\). </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1774,7 +1799,7 @@
 
     <a class="icon proof" href="sect0004.html#prop:leadingTerms">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000127"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000126"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1790,9 +1815,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/LeadingTermsNormalized.lean#L15" class="lean_decl">CubicTargets.PoissonSummation.LeadingTermsNormalized.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/LeadingTermsNormalized.lean#L15" class="lean_decl">CubicTargets.PoissonSummation.LeadingTermsNormalized.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/LeadingTerms.lean#L31" class="lean_decl">Cubic.PoissonSummation.«prop:leadingTerms»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/LeadingTerms.lean#L31" class="lean_decl">Cubic.PoissonSummation.«prop:leadingTerms»</a></li>
           
         </ul>
     
@@ -1807,14 +1832,14 @@
 
 
 <p>The only pole of \(Z_0(z)\) in the half-plane \(\mathrm{Re}(z){\gt}1/2\) is a double pole at \(z=1\). Its Laurent expansion there is </p>
-<div class="displaymath" id="a0000000128">
+<div class="displaymath" id="a0000000127">
   \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
 </div>
 <p> where \(\alpha \) and \(\beta \) are as in <a href="sect0001.html#eqn:introConstants" class="eqref">1</a>. </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000127">
+<div class="proof_wrapper" id="a0000000126">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1824,7 +1849,7 @@
   <div class="proof_content">
   
 
-<p>Expand the Dedekind zeta factor at \(1\) and logarithmically differentiate the convergent correction product. Simplifying the prime factors yields \(\alpha \), \(\beta \), and the Euler–Kronecker constant \(\mu \). </p>
+<p>The product \(R(z)\) of Equation&#160;<a href="sect0004.html#eqn:eulerCorrectionFactor">26</a> is holomorphic on \(\operatorname {Re}(z){\gt}1/2\) with \(R(1){\gt}0\), and \(\xi \) has a simple pole at \(z=1\) and no other pole, so <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> gives a double pole at \(z=1\) and no other pole. The class number formula gives \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\), and the definition of \(\mu \) in Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a> gives \(\xi (z)=r/(z-1)+r\mu +O(z-1)\). Since \((1-3^{-z})^2\) equals \(4/9\) at \(z=1\) with logarithmic derivative \(\log 3\), expanding the factorization gives <a href="sect0004.html#eqn:Z0LaurentR" class="eqref">29</a>. To evaluate \(R(1)\) and \(R'(1)\), use \((1-3p^{-2z}+2p^{-3z})/(1-p^{-2z})=1-2/(p^z(p^z+1))\) and the Euler product of \(\zeta (2z)\) to write \(R(z)=((1-3^{-2z})\zeta (2z))^{-1}\prod _{p\equiv 1\  (\mathrm{mod}\  3)}(1-2/(p^z(p^z+1)))\). With \(\zeta (2)=\pi ^2/6\) this gives \(R(1)=27\alpha /(4\pi ^2)\), so \(\tfrac 49r^2R(1)=\alpha /9\). Logarithmic differentiation gives \(R'(1)/(2R(1))=\beta -\zeta '(2)/\zeta (2)-\tfrac 18\log 3\), and substituting into <a href="sect0004.html#eqn:Z0LaurentR" class="eqref">29</a> gives <a href="sect0004.html#eqn:Z0Laurent" class="eqref">28</a>. </p>
 <p>The proof assumes Poisson summation (Equation&#160;<a href="sect0004.html#eqn:poissonae">15</a>). </p>
 
   </div>
@@ -1844,7 +1869,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0Laurent">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000129"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000128"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1860,9 +1885,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0Laurent.lean#L11" class="lean_decl">CubicTargets.PoissonSummation.Z0Laurent.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/Z0Laurent.lean#L11" class="lean_decl">CubicTargets.PoissonSummation.Z0Laurent.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0Laurent.lean#L32" class="lean_decl">Cubic.PoissonSummation.Z0Laurent.«eqn:Z0Laurent»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/Z0Laurent.lean#L32" class="lean_decl">Cubic.PoissonSummation.Z0Laurent.«eqn:Z0Laurent»</a></li>
           
         </ul>
     
@@ -1876,13 +1901,14 @@
   
 
 
-<div class="displaymath" id="a0000000130">
+<p>Here \(\alpha \), \(\beta \) and \(\mu \) are the constants of Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>. </p>
+<div class="displaymath" id="a0000000129">
   \begin{equation*}  Z_0(z)=\frac{\alpha }{9(z-1)^2} +\frac{2\alpha }{9}\left(\mu -\frac{\zeta '(2)}{\zeta (2)}+\beta +\frac38\log 3\right)\frac{1}{z-1}+O(1), \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000129">
+<div class="proof_wrapper" id="a0000000128">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1892,7 +1918,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Substitute \(R(1)=27\alpha /(4\pi ^2)\) and \(R'(1)/(2R(1))=\beta -\zeta '(2)/\zeta (2)-\tfrac 18\log 3\), computed in the proof of Proposition&#160;<a href="sect0004.html#prop:leadingTerms">7</a>, into Equation&#160;<a href="sect0004.html#eqn:Z0LaurentR">29</a>; with \(r=\pi /(3\sqrt3)\) the leading coefficient becomes \(\tfrac 49r^2R(1)=\alpha /9\). </p>
 
   </div>
 </div>
@@ -1911,7 +1937,7 @@
 
     <a class="icon proof" href="sect0004.html#eqn:Z0LaurentR">#</a>
     
-    <a class="icon proof" href="sect0004.html#a0000000131"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000130"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1927,9 +1953,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.Z0LaurentR.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">CubicTargets.PoissonSummation.Z0LaurentR.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0LaurentR.«eqn:Z0LaurentR»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/PoissonSummation/Z0LaurentR.lean#L9" class="lean_decl">Cubic.PoissonSummation.Z0LaurentR.«eqn:Z0LaurentR»</a></li>
           
         </ul>
     
@@ -1943,14 +1969,14 @@
   
 
 
-<p>Here \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\) and \(\mu \) is the Euler–Kronecker constant defined above. </p>
-<div class="displaymath" id="a0000000132">
+<p>Here \(r=\operatorname {Res}_{z=1}\xi (z)=\pi /(3\sqrt3)\) by the class number formula, \(\mu \) is the Euler–Kronecker constant of Equation&#160;<a href="sect0001.html#eqn:introConstants">1</a>, and \(R(z)\) is the product of Equation&#160;<a href="sect0004.html#eqn:eulerCorrectionFactor">26</a>. </p>
+<div class="displaymath" id="a0000000131">
   \begin{equation*}  Z_0(z)=\frac{a}{(z-1)^2} +2a\left(\mu +\frac12\log 3+\frac{R'(1)}{2R(1)}\right)\frac{1}{z-1} +O(1), \qquad a=\frac49r^2R(1). \end{equation*}
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000131">
+<div class="proof_wrapper" id="a0000000130">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof in Lean
@@ -1960,7 +1986,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Expand the three factors of <a href="sect0004.html#eqn:Z0factorization" class="eqref">27</a> at \(z=1\): \(\xi (z)^2=r^2(z-1)^{-2}+2r^2\mu (z-1)^{-1}+O(1)\), \((1-3^{-z})^2=\tfrac 49(1+(z-1)\log 3)+O((z-1)^2)\) and \(R(z)=R(1)+R'(1)(z-1)+O((z-1)^2)\). Multiplying, the coefficient of \((z-1)^{-2}\) is \(a=\tfrac 49r^2R(1)\) and that of \((z-1)^{-1}\) is \(a(2\mu +\log 3+R'(1)/R(1))\). </p>
 
   </div>
 </div>

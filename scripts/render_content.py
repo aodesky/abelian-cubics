@@ -132,7 +132,8 @@ def main():
             r'with its measure normalizations and auxiliary results, is used in the '
             r'rank-two permutation-Picard setting. The Lean input is a general '
             r'computational corollary for smooth complete Galois fans, integral '
-            r'subalgebras, and compatible metrics. Its hypotheses include the '
+            r"subalgebras, and heights from Santens's metrics, whose local norms at "
+            r'each prime lie in $p^{\ZZ}\cup\{0\}$. Its hypotheses include the '
             r'geometric positivity conditions and the conditions on integral points; '
             r'its constant is the dual-cone volume times the normalized local integrals. '
             r'Appendix B verifies those hypotheses and evaluates the constant for this surface. '

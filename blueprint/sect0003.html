@@ -136,9 +136,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/BasicFacts.lean#L152" class="lean_decl">CubicTargets.ToricHeights.BasicFacts.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/BasicFacts.lean#L152" class="lean_decl">CubicTargets.ToricHeights.BasicFacts.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/BasicFacts.lean#L1072" class="lean_decl">Cubic.ToricHeights.BasicFacts.«prop:basicfacts»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/BasicFacts.lean#L1072" class="lean_decl">Cubic.ToricHeights.BasicFacts.«prop:basicfacts»</a></li>
           
         </ul>
     
@@ -152,6 +152,7 @@
   
 
 
+<p>Let \(\Gamma =\{ 1,\gamma \} \) be the Galois group of \(E=\mathbb {Q}(\zeta )\) over \(\mathbb {Q}\), and for a place \(w\) of \(E\) over \(v\) let \(\Gamma (w/v)\subseteq \Gamma \) be its decomposition group and \(\mathcal{O}_w\) the ring of integers of \(E_w\). Let \(\mathcal G_1\cong R^E_\mathbb {Q}\mathbb {G}_m\) be the torus of units of augmentation one in the group algebra of \(C_3\), so that \(T=\mathcal G_1/C_3\). The characters of \(\mathcal G_{1,E}\) form a lattice \(M_E'\) with basis \((v_1^\vee ,v_2^\vee )\), given by the eigenvalues of multiplication on the two nontrivial idempotents of \(E[C_3]\); \(\gamma \) swaps \(v_1^\vee \) and \(v_2^\vee \). Let \(N_E'\) be the dual lattice, with dual basis \((v_1,v_2)\), and put \(\omega =\tfrac 13(2v_1+v_2)\). The cocharacter lattice of \(T_E\) is \(X_\ast (T_E)=N_E=N_E'+\mathbb {Z}\omega =\mathbb {Z}\langle \omega ,\gamma \omega \rangle \), and its character lattice \(M_E\) is the dual of \(N_E\). Put \(\mathfrak t_E=N_E\otimes \mathbb {R}\) and \(\mathfrak t_w=\mathfrak t_E^{\Gamma (w/v)}\). For \(x\in T(\mathbb {Q}_v)\), \(\ell _w(x)\in \mathfrak t_E\) is the cocharacter \(\chi \mapsto \mathrm{ord}_w(\chi (x))\) on \(\chi \in M_E\), and \(K_v^{\mathrm{max}}\) is the maximal compact subgroup of \(T(\mathbb {Q}_v)\). </p>
 <p>Let \(w\) be a place of \(E\) lying over a place \(v\) of \(\mathbb {Q}\). There is an exact sequence </p>
 <div class="displaymath" id="a0000000041">
   \begin{equation*}  1 \longrightarrow K_v^{\mathrm{max}} \longrightarrow T(\mathbb {Q}_v) \xrightarrow {\ell _w} \mathfrak t_w. \end{equation*}
@@ -170,7 +171,15 @@
   <div class="proof_content">
   
 
-<p>Express torus points by characters over the splitting field. Applying the normalized valuation gives the finite-place image lattice and compact kernel. The logarithmic absolute value gives the analogous statement at infinity. </p>
+<p>Evaluating characters identifies \(T(\mathbb {Q}_v)\) with \(\mathrm{Hom}_{\Gamma (w/v)}(M_E,E_w^\times )\). Under this identification \(\ell _w\) is composition with \(\mathrm{ord}_w\), with values in \(\mathrm{Hom}_{\Gamma (w/v)}(M_E,\mathbb {Z})=X_\ast (T_E)^{\Gamma (w/v)}\), and for finite \(v\) its kernel \(\mathrm{Hom}_{\Gamma (w/v)}(M_E,\mathcal{O}_w^\times )\) is \(K_v^{\mathrm{max}}\). By <span class="cite">
+	[
+	<a href="sect0010.html#MR291099" >14</a>
+	, 
+	(1.3), p.
+	
+	449
+	]
+</span> this gives the exact sequence and the asserted image, except that at the ramified place \(w\) over \(3\) it only shows that the image has finite index. At that place we pass to \(\mathcal G_1\). The transpose of the \(\Gamma \)-isomorphism \(N_E\to N_E'\) of Equation&#160;<a href="sec-quadraticParametrization.html#eqn:isoCocharLattices">13</a> gives a commutative diagram identifying the sequence \(\mathrm{Hom}_{\Gamma (w/v)}(M_E',\mathcal{O}_w^\times )\to \mathrm{Hom}_{\Gamma (w/v)}(M_E',E_w^\times )\to \mathrm{Hom}_{\Gamma (w/v)}(M_E',\mathbb {Z})\) for \(\mathcal G_1\) with the corresponding sequence for \(T\), so it suffices to show that \(\ell _w\) is surjective for \(\mathcal G_1\). Since \(M_E'\) is free, applying \(\mathrm{Hom}(M_E',-)\) to \(1\to \mathcal{O}_w^\times \to E_w^\times \xrightarrow {\mathrm{ord}_w}\mathbb {Z}\to 0\) gives a short exact sequence of \(\Gamma (w/v)\)-modules, so the cokernel of \(\ell _w\) embeds in \(H^1(\Gamma (w/v),\mathrm{Hom}(M_E',\mathcal{O}_w^\times ))\). Evaluation at \((v_1^\vee ,v_2^\vee )\) identifies this module with \(\mathcal{O}_w^\times \times \mathcal{O}_w^\times \), on which \(\gamma (x,y)=(\gamma y,\gamma x)\). The map \((x,y)\mapsto (x,\gamma y)\) carries it isomorphically onto \(\mathcal{O}_w^\times \times \mathcal{O}_w^\times \) with \(\gamma \) swapping the two factors. This module is coinduced from the trivial subgroup, so its \(H^1\) vanishes by Shapiro’s lemma. </p>
 
   </div>
 </div>
@@ -205,9 +214,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightForRationalAdeles.lean#L64" class="lean_decl">CubicTargets.ToricHeights.HeightForRationalAdeles.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/HeightForRationalAdeles.lean#L64" class="lean_decl">CubicTargets.ToricHeights.HeightForRationalAdeles.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightForRationalAdeles.lean#L105" class="lean_decl">Cubic.ToricHeights.HeightForRationalAdeles.«eqn:heightforrationaladeles»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/HeightForRationalAdeles.lean#L105" class="lean_decl">Cubic.ToricHeights.HeightForRationalAdeles.«eqn:heightforrationaladeles»</a></li>
           
         </ul>
     
@@ -221,6 +230,7 @@
   
 
 
+<p>A support function is a continuous \(\Gamma \)-invariant function \(\varphi \colon \mathfrak t_E\to \mathbb {C}\) that is linear on each cone of the fan of \(S\). For \(x=(x_w)_w\in T(\mathbb {A}_E)\) the toric height is \(H(x,\varphi )=\prod _{w\in Pl_E}\bigl(q_w^{-\varphi (\ell _w(x_w))}\bigr)^{1/[E:\mathbb {Q}]}\), where \(Pl_E\) is the set of places of \(E\), \(q_w=N(w)\) for finite \(w\), and \(q_w=e^2\) at the complex place. For a place \(v\) of \(\mathbb {Q}\) let \(q_v=p\) if \(v=p\) and \(q_\infty =e\), and let \(e_v\) be the ramification index of a place of \(E\) over \(v\) (\(e_\infty =1\)). If \(x=(x_v)_v\in T(\mathbb {A})\) is embedded diagonally in \(T(\mathbb {A}_E)\), then \(\varphi (\ell _w(x_v))\) does not depend on the place \(w\) over \(v\), and the following holds. </p>
 <div class="displaymath" id="a0000000043">
   \begin{equation*}  H(x,\varphi ) = \prod _{v \in Pl_\mathbb {Q}} q_v^{-\frac{1}{e_v}\varphi (\ell _w(x_v)) } \end{equation*}
 </div>
@@ -237,7 +247,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>If \(v\) splits in \(E\), its two places are \(w\) and \(\gamma w\), and \(\ell _{\gamma w}(x_v)=\gamma \, \ell _w(x_v)\). Since \(\varphi \) is \(\Gamma \)-invariant (Supporting lemma&#160;<a href="sect0009.html#helper:supportFunctionSymmetry">4</a>), both places give the same value \(\varphi (\ell _w(x_v))\). Grouping the factors of \(H(x,\varphi )\) by the place \(v\) below \(w\), the factors over \(v\) multiply to \(q_v^{-\varphi (\ell _w(x_v))\, f_vg_v/[E:\mathbb {Q}]}\), because \(\prod _{w\mid v}q_w=q_v^{f_vg_v}\), where \(f_v\) is the residue degree and \(g_v\) the number of places over \(v\). As \(e_vf_vg_v=[E:\mathbb {Q}]=2\), this is \(q_v^{-\varphi (\ell _w(x_v))/e_v}\). Concretely, a split prime \(p\) contributes two factors \(p^{-\varphi /2}\), an inert prime one factor \((p^2)^{-\varphi /2}\), the ramified prime one factor \(3^{-\varphi /2}\), and the complex place one factor \((e^2)^{-\varphi /2}\). </p>
 
   </div>
 </div>
@@ -273,9 +283,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightFormula.lean#L123" class="lean_decl">CubicTargets.ToricHeights.HeightFormula.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/HeightFormula.lean#L123" class="lean_decl">CubicTargets.ToricHeights.HeightFormula.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightFormula.lean#L642" class="lean_decl">Cubic.ToricHeights.HeightFormula.«lemma:heightformula»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/HeightFormula.lean#L642" class="lean_decl">Cubic.ToricHeights.HeightFormula.«lemma:heightformula»</a></li>
           
         </ul>
     
@@ -289,6 +299,7 @@
   
 
 
+<p>We use the lattices of Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>. For \(m\in M_E\) we write \(\chi ^m\) for the corresponding character of \(T_E\), so \(\chi ^{m+n}=\chi ^m\chi ^n\). The coordinates \(X,Y,Z\) on \(\mathbb {P}^2\) are those of the group algebra element \(X+Y\sigma +Z\sigma ^2\), where \(\sigma \) generates \(C_3\), and \(\sqrt{-27}\) denotes \(3(1+2\zeta )\). </p>
 <p>Let \(\mathbf1\) denote the global section in \(H^0(S_E,\mathcal O(3D_0))\) associated to the effective Cartier divisor \(3D_0\), namely the image of \(1\) under the natural inclusion \(\mathcal O_{S_E}\hookrightarrow \mathcal O_{S_E}(3D_0)\). The space \(H^0(S_E,\mathcal O(3D_0))\) is spanned over \(E\) by the following four weight vectors: </p>
 <div class="displaymath" id="a0000000045">
   \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
@@ -311,7 +322,16 @@
   <div class="proof_content">
   
 
-<p>Compute the invariant cubic forms, divide by \(e_1^3\), and diagonalize the torus action. The four displayed forms and their characters give the required basis of sections. </p>
+<p>Let \(\varphi _0\) be the support function of \(D_0\). In the coordinates \(n=n_1v_1+n_2v_2\) on \(\mathfrak t_E\) it is \(\varphi _0(n)=\min (0,n_1,n_2)\): it equals \(0\), \(v_2^\vee \) and \(v_1^\vee \) on the cones spanned by \(\{ v_1,v_2\} \), \(\{ v_1,v_0\} \) and \(\{ v_2,v_0\} \), where \(v_0=-v_1-v_2\). By the weight decomposition <span class="cite">
+	[
+	<a href="sect0010.html#MR1234037" >18</a>
+	, 
+	§
+	3.4, p.
+	
+	66
+	]
+</span>, \(H^0(S_E,\mathcal O(3D_0))\cong \bigoplus _{m\in P\cap M_E}E\chi ^m\), where \(P=\{ m\in M_E\otimes \mathbb {R}: m\geq 3\varphi _0\} \). Writing \(m=m_1v_1^\vee +m_2v_2^\vee \), \(P\) is the triangle \(m_1,m_2\geq 0\), \(m_1+m_2\leq 3\), and \(m\in M_E\) exactly when \(m_1,m_2\in \mathbb {Z}\) and \(m(\omega )=(2m_1+m_2)/3\in \mathbb {Z}\), that is, \(m_1\equiv m_2\pmod3\). So \(P\cap M_E\) consists of \(0\), \(v_1^\vee +v_2^\vee =a'+b'\), \(3v_1^\vee =2a'+b'\) and \(3v_2^\vee =a'+2b'\), and \(h^0(S_E,\mathcal O(3D_0))=4\). The weight vectors are the twists \(\chi ^m\mathbf1\). Equations&#160;<a href="sect0003.html#eqn:formulaForNormCharacter">7</a> and&#160;<a href="sect0003.html#eqn:formulaForNormCharacter2">8</a> express \(\chi ^{a'+b'}\) and \(\chi ^{a'+2b'}\) through \(e_1,e_2,e_3\) and \(\sqrt{\mathrm{disc}}\), and \(\chi ^{2a'+b'}=\gamma \chi ^{a'+2b'}\) is obtained by changing the sign of \(\sqrt{-27}\). </p>
 
   </div>
 </div>
@@ -346,9 +366,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/WeightVectorsDisplay.lean#L24" class="lean_decl">CubicTargets.ToricHeights.WeightVectorsDisplay.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/WeightVectorsDisplay.lean#L24" class="lean_decl">CubicTargets.ToricHeights.WeightVectorsDisplay.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/WeightVectorsDisplay.lean#L22" class="lean_decl">Cubic.ToricHeights.WeightVectorsDisplay.«eqn:weightVectors»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/WeightVectorsDisplay.lean#L22" class="lean_decl">Cubic.ToricHeights.WeightVectorsDisplay.«eqn:weightVectors»</a></li>
           
         </ul>
     
@@ -362,6 +382,7 @@
   
 
 
+<p>With \(\mathbf1\), \(\sqrt{\mathrm{disc}}\) and \(\sqrt{-27}\) as in Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>, the following four sections span \(H^0(S_E,\mathcal O(3D_0))\) and are weight vectors for the characters \(1\), \(\chi ^{a'+b'}\), \(\chi ^{2a'+b'}\) and \(\chi ^{a'+2b'}\). </p>
 <div class="displaymath" id="a0000000048">
   \begin{align*} & \mathbf1,\qquad (1-3e_2e_1^{-2})\mathbf1, \\ & (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf1 \end{align*}
 </div>
@@ -378,7 +399,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>These are the twists \(\chi ^m\mathbf1\) for the four weights \(m=0,a'+b',2a'+b',a'+2b'\) found in the proof of Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>. The coefficient of \(\mathbf1\) in each is the value of \(\chi ^m\) given by Equations&#160;<a href="sect0003.html#eqn:formulaForNormCharacter">7</a> and&#160;<a href="sect0003.html#eqn:formulaForNormCharacter2">8</a> and its conjugate (Supporting lemma&#160;<a href="sect0009.html#helper:weightCharacters">5</a>). </p>
 
   </div>
 </div>
@@ -413,9 +434,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter.lean#L82" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter.lean#L82" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter.lean#L103" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter.«eqn:formulaForNormCharacter»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/FormulaForNormCharacter.lean#L103" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter.«eqn:formulaForNormCharacter»</a></li>
           
         </ul>
     
@@ -429,6 +450,7 @@
   
 
 
+<p>Let \(\sigma \) generate \(C_3\) and let \(\mathcal G\) be the torus of units in the group algebra of \(C_3\). Over \(E\) write elements of the group algebra as \(uv_0'+vv_1'+wv_2'\) in the basis of idempotents \(v_0'=\tfrac 13(1+\sigma +\sigma ^2)\), \(v_1'=\tfrac 13(1+\zeta ^2\sigma +\zeta \sigma ^2)\), \(v_2'=\tfrac 13(1+\zeta \sigma +\zeta ^2\sigma ^2)\), and let \(\chi _i\) be the character with \(g v_i'=\chi _i(g)v_i'\). Characters \(\chi ^m\) of \(T_E\) (\(m\in M_E\), Proposition&#160;<a href="sect0003.html#prop:basicfacts">1</a>) are evaluated on \(\mathcal G\) by pulling back along \(\mathcal G\to \mathcal G_1\to T\), where the first map is \(g\mapsto \chi _0(g)^{-1}g\); the pullbacks of \(\chi ^{v_1^\vee }\) and \(\chi ^{v_2^\vee }\) are \(\chi _1/\chi _0\) and \(\chi _2/\chi _0\). The point \(uv_0'+vv_1'+wv_2'\) is the element \(X+Y\sigma +Z\sigma ^2\). </p>
 <div class="displaymath" id="a0000000050">
   \begin{equation*}  \chi ^{a'+b'}(uv_0’ + vv_1’+wv_2’) = \frac{vw}{u^2} = \frac{(X+\zeta Y+\zeta ^2 Z)(X+\zeta ^2 Y+\zeta Z)}{(X+Y+Z)^2} = \frac{e_1^2-3e_2}{e_1^2} \end{equation*}
 </div>
@@ -445,7 +467,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Since \(a'+b'=v_1^\vee +v_2^\vee \), the character \(\chi ^{a'+b'}\) pulls back to \(\chi _1\chi _2/\chi _0^2\), whose value at \(uv_0'+vv_1'+wv_2'\) is \(vw/u^2\). For \(X+Y\sigma +Z\sigma ^2\) one has \(u=X+Y+Z\), \(v=X+\zeta Y+\zeta ^2Z\) and \(w=X+\zeta ^2Y+\zeta Z\) (Supporting lemma&#160;<a href="sect0009.html#helper:characterCoordinates">6</a>). Expanding with \(1+\zeta +\zeta ^2=0\) gives \(vw=X^2+Y^2+Z^2-XY-YZ-ZX=e_1^2-3e_2\). </p>
 
   </div>
 </div>
@@ -480,9 +502,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter2.lean#L33" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter2.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/FormulaForNormCharacter2.lean#L33" class="lean_decl">CubicTargets.ToricHeights.FormulaForNormCharacter2.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/FormulaForNormCharacter2.lean#L26" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter2.«eqn:formulaForNormCharacter2»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/FormulaForNormCharacter2.lean#L26" class="lean_decl">Cubic.ToricHeights.FormulaForNormCharacter2.«eqn:formulaForNormCharacter2»</a></li>
           
         </ul>
     
@@ -496,6 +518,7 @@
   
 
 
+<p>Notation is as in Equation&#160;<a href="sect0003.html#eqn:formulaForNormCharacter">7</a>, with \(\sqrt{\mathrm{disc}}=(X-Z)(Y-X)(Z-Y)\) and \(\sqrt{-27}=3(1+2\zeta )\). </p>
 <div class="displaymath" id="a0000000052">
   \begin{equation*}  \chi ^{2b'+a'}(uv_0’ + vv_1’+wv_2’) =\frac{w^3}{u^3} = \frac{e_1^3-\tfrac 92 e_1 e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}}{e_1^3} \end{equation*}
 </div>
@@ -512,7 +535,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Since \(a'+2b'=3v_2^\vee \), the character \(\chi ^{a'+2b'}\) pulls back to \((\chi _2/\chi _0)^3\), whose value is \(w^3/u^3\) with \(u,v,w\) as in Equation&#160;<a href="sect0003.html#eqn:formulaForNormCharacter">7</a>. The sum \(v^3+w^3\) is symmetric in \(X,Y,Z\) and equals \(2e_1^3-9e_1e_2+27e_3\). The difference is \(v^3-w^3=3(1+2\zeta )(X-Z)(Y-X)(Z-Y)=\sqrt{-27}\sqrt{\mathrm{disc}}\) (Supporting lemma&#160;<a href="sect0009.html#helper:cubicCharacters">7</a>). Hence \(w^3=\tfrac 12\bigl((v^3+w^3)-(v^3-w^3)\bigr)\) is the displayed numerator, and \(u^3=e_1^3\). </p>
 
   </div>
 </div>
@@ -548,9 +571,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineIntegrality.lean#L18" class="lean_decl">CubicTargets.ToricHeights.AffineIntegrality.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/AffineIntegrality.lean#L18" class="lean_decl">CubicTargets.ToricHeights.AffineIntegrality.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineIntegrality.lean#L43" class="lean_decl">Cubic.ToricHeights.AffineIntegrality.«lemma:affineIntegrality»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/AffineIntegrality.lean#L43" class="lean_decl">Cubic.ToricHeights.AffineIntegrality.«lemma:affineIntegrality»</a></li>
           
         </ul>
     
@@ -564,6 +587,7 @@
   
 
 
+<p>Let \(C_3\) permute \(X,Y,Z\) cyclically. The complement of \(\mathscr {D}_0\) in the integral model \(\mathscr {S}\) is \(\operatorname {Spec}\mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3}\), and a rational point \(P\) of \(S\setminus D_0\) is integral if every element of \(\mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3}\) takes an integer value at \(P\). </p>
 <p>Write \(e_2,e_3,\delta \) for the dehomogenized invariants </p>
 <div class="displaymath" id="a0000000054">
   \[  e_2=\frac{XY+YZ+ZX}{\varepsilon ^2},\qquad e_3=\frac{XYZ}{\varepsilon ^3},\qquad \delta =\frac{X^2Y+Y^2Z+Z^2X}{\varepsilon ^3}.  \]
@@ -586,7 +610,7 @@
   <div class="proof_content">
   
 
-<p>Compute the cyclic invariants in the affine chart. The invariant relation makes \(\delta \) integral over \(\mathbb {Z}[e_2,e_3]\), so integral values of \(e_2,e_3\) force the rational value of \(\delta \) to be integral. </p>
+<p>The equality of rings is Equation&#160;<a href="sect0003.html#eqn:affineC3invariants">9</a>. Put \(\delta '=(XY^2+YZ^2+ZX^2)/\varepsilon ^3\). Then \(\delta +\delta '=e_2-3e_3\) and \(\delta \delta '=e_2^3+e_3-6e_2e_3+9e_3^2\), so \(\delta \) is a root of the monic quadratic \(t^2-(e_2-3e_3)t+(e_2^3+e_3-6e_2e_3+9e_3^2)\) over \(\mathbb {Z}[e_2,e_3]\). If \(e_2(P),e_3(P)\in \mathbb {Z}\), then \(\delta (P)\) is a rational number integral over \(\mathbb {Z}\), hence an integer. By the equality of rings every invariant is an integer polynomial in \(e_2,e_3,\delta \), so it takes an integer value at \(P\). The converse holds because \(e_2\) and \(e_3\) are invariants. </p>
 
   </div>
 </div>
@@ -621,9 +645,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/AffineC3Invariants.lean#L16" class="lean_decl">CubicTargets.ToricHeights.AffineC3Invariants.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/AffineC3Invariants.lean#L16" class="lean_decl">CubicTargets.ToricHeights.AffineC3Invariants.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/AffineC3Invariants.lean#L63" class="lean_decl">Cubic.ToricHeights.AffineC3Invariants.«eqn:affineC3invariants»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/AffineC3Invariants.lean#L63" class="lean_decl">Cubic.ToricHeights.AffineC3Invariants.«eqn:affineC3invariants»</a></li>
           
         </ul>
     
@@ -637,6 +661,7 @@
   
 
 
+<p>Notation is as in Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a>: \(e_2=(XY+YZ+ZX)/\varepsilon ^2\), \(e_3=XYZ/\varepsilon ^3\) and \(\delta =(X^2Y+Y^2Z+Z^2X)/\varepsilon ^3\). </p>
 <div class="displaymath" id="a0000000057">
   \begin{equation*}  \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]^{C_3} =\mathbb {Z}[e_2,e_3,\delta ]. \end{equation*}
 </div>
@@ -653,7 +678,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Each \(f\in \mathbb {Z}[X/\varepsilon ,Y/\varepsilon ]\) equals \(F/\varepsilon ^d\) for a form \(F\in \mathbb {Z}[X,Y,Z]\) of some degree \(d\). Since \(\varepsilon \) is invariant, \(f\) is \(C_3\)-invariant exactly when \(F\) is. By Equation&#160;<a href="sect0003.html#eqn:C3invariants">10</a>, \(F\) is then a \(\mathbb {Z}\)-linear combination of products \(e_1^ie_2^je_3^k(X^2Y+Y^2Z+Z^2X)^l\) with homogeneous \(e_i\) and \(i+2j+3k+3l=d\). Dividing each product by \(\varepsilon ^d=e_1^d\) gives \(e_2^je_3^k\delta ^l\) in the dehomogenized notation, so \(f\in \mathbb {Z}[e_2,e_3,\delta ]\). The reverse inclusion holds because \(e_2\), \(e_3\) and \(\delta \) are invariant. </p>
 
   </div>
 </div>
@@ -688,9 +713,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/C3Invariants.lean#L17" class="lean_decl">CubicTargets.ToricHeights.C3Invariants.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/C3Invariants.lean#L17" class="lean_decl">CubicTargets.ToricHeights.C3Invariants.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/C3Invariants.lean#L37" class="lean_decl">Cubic.ToricHeights.C3Invariants.«eqn:C3invariants»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/C3Invariants.lean#L37" class="lean_decl">Cubic.ToricHeights.C3Invariants.«eqn:C3invariants»</a></li>
           
         </ul>
     
@@ -704,6 +729,7 @@
   
 
 
+<p>Here \(C_3\) permutes \(X,Y,Z\) cyclically, and \(e_1,e_2,e_3\) are the elementary symmetric polynomials in \(X,Y,Z\). </p>
 <div class="displaymath" id="a0000000059">
   \begin{equation*}  \mathbb {Z}[X,Y,Z]^{C_3} =\mathbb {Z}[e_1,e_2,e_3,X^2Y+Y^2Z+Z^2X] \end{equation*}
 </div>
@@ -719,7 +745,15 @@
   </div>
   <div class="proof_content">
   
-<p>The linked Lean proof establishes this statement. </p>
+<p>We follow <span class="cite">
+	[
+	<a href="sect0010.html#campbell2023permutation" >6</a>
+	, 
+	Example
+	
+	4.6
+	]
+</span>. Put \(q=X^2Y+Y^2Z+Z^2X\) and let \(\tau \) swap \(X\) and \(Y\), so that \(\tau q=XY^2+YZ^2+ZX^2\) and \(q-\tau q=-(X-Y)(Y-Z)(Z-X)\). Let \(f\) be \(C_3\)-invariant. Then \(f-\tau f\) changes sign under every transposition, so it vanishes when two variables are equal and is divisible in \(\mathbb {Z}[X,Y,Z]\) by \((X-Y)(Y-Z)(Z-X)\). Hence \(B=(f-\tau f)/(q-\tau q)\) is a symmetric polynomial with integer coefficients. The polynomial \(S=f-Bq\) is \(C_3\)-invariant and satisfies \(S-\tau S=(f-\tau f)-B(q-\tau q)=0\), so it is symmetric as well. By the fundamental theorem on symmetric polynomials over \(\mathbb {Z}\), \(S\) and \(B\) lie in \(\mathbb {Z}[e_1,e_2,e_3]\), so \(f=S+Bq\) lies in \(\mathbb {Z}[e_1,e_2,e_3,q]\). The four generators are invariant, which gives the reverse inclusion. </p>
 
   </div>
 </div>
@@ -755,9 +789,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/CanonicalHeight.lean#L23" class="lean_decl">CubicTargets.ToricHeights.CanonicalHeight.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/CanonicalHeight.lean#L23" class="lean_decl">CubicTargets.ToricHeights.CanonicalHeight.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/CanonicalHeight.lean#L193" class="lean_decl">Cubic.ToricHeights.CanonicalHeight.«prop:canonicalHeight»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/CanonicalHeight.lean#L193" class="lean_decl">Cubic.ToricHeights.CanonicalHeight.«prop:canonicalHeight»</a></li>
           
         </ul>
     
@@ -771,6 +805,7 @@
   
 
 
+<p>The characteristic polynomial of \((K/\mathbb {Q},x)\) is \(\prod _{g\in C_3}(t-gx)\); its \(t^2\)-coefficient is \(-1\) because \(x\) has trace one. A rational point of \(T\) is integral if it is integral as a point of \(S\setminus D_0\) in the sense of Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a>. Since \(3D_0\) is Cartier, \(H(\cdot ,\mathcal O(D_0))=H(\cdot ,\mathcal O(3D_0))^{1/3}\), where \(H(\cdot ,\mathcal O(3D_0))\) is the toric height (Equation&#160;<a href="sect0003.html#eqn:heightforrationaladeles">5</a>) for the support function of \(3D_0\). </p>
 <p>The characteristic polynomial \(f = t^3-t^2+at+b \in \mathbb {Q}[t]\) of a rational point \((K/\mathbb Q,x) \in T(\mathbb Q)\) has integer coefficients if and only if \((K/\mathbb Q,x)\) is integral. For any integral rational point \((K/\mathbb {Q},x)\) on \(T\), </p>
 <div class="displaymath" id="a0000000061">
   \begin{equation*}  H((K/\mathbb Q,x),\mathcal O(D_0)) = \sqrt{1-3a}. \end{equation*}
@@ -788,7 +823,15 @@
   <div class="proof_content">
   
 
-<p>Apply the invariant-ring criterion to the characteristic polynomial. Evaluate the local height factors; their product reduces to \(\sqrt{1-3a}\). </p>
+<p>By <span class="cite">
+	[
+	<a href="sect0010.html#odesky2023moduli" >26</a>
+	, 
+	Prop.
+	
+	2.5
+	]
+</span> the unit \(x+(\sigma ^2x)\sigma +(\sigma x)\sigma ^2\) of the group algebra over \(K\) maps to \(P=(K/\mathbb {Q},x)\), so \(X/\varepsilon \), \(Y/\varepsilon \) and \(Z/\varepsilon \) take the values \(x\), \(\sigma ^2x\) and \(\sigma x\) at \(P\). Hence \(e_2(P)=a\) and \(e_3(P)=-b\), and Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a> gives the first assertion. For the height, Equation&#160;<a href="sect0003.html#eqn:localHeight">11</a> writes each local factor of \(H(P,\mathcal O(3D_0))\) as a maximum over the four weight vectors of Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>. At an integral point every finite factor is \(1\), and Equation&#160;<a href="sect0003.html#eqn:heightExtraFactor">12</a> gives the factor at the complex place. Let \(z_\pm =1-\tfrac 92e_2+\tfrac {27}2e_3\pm \tfrac {\sqrt{-27}}2\sqrt{\mathrm{disc}}\), evaluated at \(P\); these are the values of \(\chi ^{2a'+b'}\) and \(\chi ^{a'+2b'}\). Since \((2a'+b')+(a'+2b')=3(a'+b')\) and \(z_-=\overline{z_+}\), we get \(|z_+|^2=z_+z_-=(1-3a)^3\). So \(1-3a\geq 0\); as \(1-3a\) is an integer congruent to \(1\) modulo \(3\), in fact \(1-3a\geq 1\), and the maximum in Equation&#160;<a href="sect0003.html#eqn:heightExtraFactor">12</a> is \((1-3a)^3\). Thus \(H(P,\mathcal O(3D_0))=(1-3a)^{3/2}\) and \(H(P,\mathcal O(D_0))=\sqrt{1-3a}\). </p>
 
   </div>
 </div>
@@ -823,9 +866,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/LocalHeightFormula.lean#L96" class="lean_decl">CubicTargets.ToricHeights.LocalHeightFormula.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/LocalHeightFormula.lean#L96" class="lean_decl">CubicTargets.ToricHeights.LocalHeightFormula.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/LocalHeightFormula.lean#L132" class="lean_decl">Cubic.ToricHeights.LocalHeightFormula.«eqn:localHeight»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/LocalHeightFormula.lean#L132" class="lean_decl">Cubic.ToricHeights.LocalHeightFormula.«eqn:localHeight»</a></li>
           
         </ul>
     
@@ -839,6 +882,7 @@
   
 
 
+<p>Let \(P\in T(\mathbb {Q})\) and let \(w\) be a place of \(E\). Here \(e_2,e_3\) and \(\sqrt{\mathrm{disc}}\) denote the values at \(P\) of \(e_2/e_1^2\), \(e_3/e_1^3\) and \(\sqrt{\mathrm{disc}}/e_1^3\) (notation of Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>), and \(|\cdot |_w=q_w^{-\mathrm{ord}_w(\cdot )}\) for finite \(w\), \(|\cdot |_w=|\cdot |^2\) at the complex place. The local factor at \(w\) of \(H(P,\mathcal O(3D_0))\) (Equation&#160;<a href="sect0003.html#eqn:heightforrationaladeles">5</a>) is the following. </p>
 <div class="displaymath" id="a0000000063">
   \begin{align*}  \max \Bigg( 1, |1-3e_2|_w, & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 - \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w, \\ & \left| 1-\tfrac {9}{2} e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w \Bigg)^{\frac{1}{[E:\mathbb {Q}]}} \end{align*}
 </div>
@@ -855,7 +899,15 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Let \(\varphi _0\) be the support function of \(D_0\), so that \(\varphi _0(n)=\min (0,n_1,n_2)\) for \(n=n_1v_1+n_2v_2\). Following <span class="cite">
+	[
+	<a href="sect0010.html#MR1234037" >18</a>
+	, 
+	p.
+	
+	68
+	]
+</span>, the support function \(3\varphi _0\) of \(3D_0\) is the minimum of the pairings \(\langle m,\cdot \rangle \) over the four weights \(m\in \{ 0,a'+b',2a'+b',a'+2b'\} \) of Lemma&#160;<a href="sect0003.html#lemma:heightformula">1</a>; this is checked on each of the three cones. Since \(\langle m,\ell _w(P)\rangle =\mathrm{ord}_w\chi ^m(P)\), we have \(|\chi ^m(P)|_w=q_w^{-\langle m,\ell _w(P)\rangle }\), so \(q_w^{-3\varphi _0(\ell _w(P))}=\max _m|\chi ^m(P)|_w\) (Supporting lemma&#160;<a href="sect0009.html#helper:localWeightHeight">8</a>). On the chart \(e_1=1\), Equations&#160;<a href="sect0003.html#eqn:formulaForNormCharacter">7</a> and&#160;<a href="sect0003.html#eqn:formulaForNormCharacter2">8</a> give \(\chi ^{a'+b'}(P)=1-3e_2\) and give \(\chi ^{a'+2b'}(P)\) and its conjugate \(\chi ^{2a'+b'}(P)\) as the third and fourth entries. Raising to the power \(1/[E:\mathbb {Q}]\) gives the display. </p>
 
   </div>
 </div>
@@ -890,9 +942,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/HeightExtraFactor.lean#L45" class="lean_decl">CubicTargets.ToricHeights.HeightExtraFactor.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/HeightExtraFactor.lean#L45" class="lean_decl">CubicTargets.ToricHeights.HeightExtraFactor.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/HeightExtraFactor.lean#L46" class="lean_decl">Cubic.ToricHeights.HeightExtraFactor.«eqn:heightExtraFactor»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/HeightExtraFactor.lean#L46" class="lean_decl">Cubic.ToricHeights.HeightExtraFactor.«eqn:heightExtraFactor»</a></li>
           
         </ul>
     
@@ -906,6 +958,7 @@
   
 
 
+<p>Notation is as in Equation&#160;<a href="sect0003.html#eqn:localHeight">11</a>. If \(P\in T(\mathbb {Q})\) is integral, then every finite local factor of \(H(P,\mathcal O(3D_0))\) equals \(1\), and the factor at the complex place is the following. </p>
 <div class="displaymath" id="a0000000065">
   \begin{align*}  \max \left( 1, |1-3e_2|^2, \left|1-\tfrac 92 e_2+ \tfrac {27}{2} e_3 + \tfrac {\sqrt{-27}}{2} \sqrt{\mathrm{disc}}\right|^2 \right)^{1/2}. \end{align*}
 </div>
@@ -922,7 +975,7 @@
   <div class="proof_content">
   
 
-<p>The linked Lean proof establishes this statement. </p>
+<p>Write \(z_\pm =1-\tfrac 92e_2+\tfrac {27}2e_3\pm \tfrac {\sqrt{-27}}2\sqrt{\mathrm{disc}}\). By Lemma&#160;<a href="sect0003.html#lemma:affineIntegrality">2</a>, \(e_2,e_3\in \mathbb {Z}\) at the integral point \(P\). Then \(z_++z_-=2-9e_2+27e_3\) and \(z_+z_-=(1-3e_2)^3\) are integers, the latter because \((2a'+b')+(a'+2b')=3(a'+b')\). So \(z_\pm \) are roots of a monic quadratic over \(\mathbb {Z}\) and are integral at every finite place; together with \(1-3e_2\in \mathbb {Z}\) this makes every finite factor in Equation&#160;<a href="sect0003.html#eqn:localHeight">11</a> equal to \(1\) (Supporting lemma&#160;<a href="sect0009.html#helper:integralLocalHeight">9</a>). At the complex place \(|\cdot |_w=|\cdot |^2\) and \([E:\mathbb {Q}]=2\). The value of \(\sqrt{\mathrm{disc}}\) at \(P\) is fixed by \(C_3\), hence rational, while \(\sqrt{-27}\) is purely imaginary; so \(z_-=\overline{z_+}\), and the last two entries of Equation&#160;<a href="sect0003.html#eqn:localHeight">11</a> coincide. </p>
 
   </div>
 </div>
@@ -958,9 +1011,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/ToricHeights/RootVsToric.lean#L32" class="lean_decl">CubicTargets.ToricHeights.RootVsToric.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/ToricHeights/RootVsToric.lean#L32" class="lean_decl">CubicTargets.ToricHeights.RootVsToric.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/ToricHeights/RootVsToric.lean#L113" class="lean_decl">Cubic.ToricHeights.«lemma:rootVsToric»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/ToricHeights/RootVsToric.lean#L80" class="lean_decl">Cubic.ToricHeights.«lemma:rootVsToric»</a></li>
           
         </ul>
     
@@ -974,12 +1027,8 @@
   
 
 
-<p>Let \(P=(K/\mathbb {Q},x)\) be an integral rational point of \(T\) with characteristic polynomial \(f=t^3-t^2+at+b\in \mathbb {Z}[t]\). Write \(H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))\) for its toric height and set \(h(f)=\max (|a|^{1/2},|b|^{1/3})\), so that \(H(f)=\max \{ 1,h(f)\} \). Then \(a\leq 0\) and </p>
+<p>Let \(P=(K/\mathbb {Q},x)\) be an integral rational point of \(T\) with characteristic polynomial \(f=t^3-t^2+at+b\in \mathbb {Z}[t]\). Write \(H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))\) for its toric height and set \(h(f)=\max (|a|^{1/2},|b|^{1/3})\), so that \(H(f)=\max \{ 1,h(f)\} \). Then \(a\leq 0\) and \(h(f)^2=-a, H_{\mathrm{tor}}(f)^2=1+3h(f)^2\) so for every \(B\geq 0\), </p>
 <div class="displaymath" id="a0000000067">
-  \begin{equation*}  h(f)^2=-a, \qquad H_{\mathrm{tor}}(f)^2=1+3h(f)^2, \end{equation*}
-</div>
-<p> so for every \(B\geq 0\), </p>
-<div class="displaymath" id="a0000000068">
   \begin{equation*}  h(f)\leq B \quad \Longleftrightarrow \quad H_{\mathrm{tor}}(f)\leq \sqrt{1+3B^2}. \end{equation*}
 </div>
 <p> In particular, \(H_{\mathrm{tor}}(f)\asymp H(f)\). The only polynomial here with \(h(f)=0\) is \(t^3-t^2\), for which \(H_{\mathrm{tor}}(f)=1\). </p>
@@ -996,7 +1045,7 @@
   <div class="proof_content">
   
 
-<p>The three roots are real. The resulting coefficient inequalities give \(a\leq 0\) and \(|b|^{2/3}\leq -a\). Substitute this into the root-height definition and use the toric-height formula. </p>
+<p>Proposition&#160;<a href="sect0003.html#prop:canonicalHeight">2</a> gives \(H_{\mathrm{tor}}(f)^2=1-3a{\gt}0\), so \(a\leq 0\) because \(a\in \mathbb {Z}\). The algebra \(K\) is \(\mathbb {Q}^3\) or a cyclic cubic field; in the second case complex conjugation is trivial on \(K\) because \(C_3\) has no element of order two. So the roots \(r_1,r_2,r_3\) of \(f\) are real. Write \(A=-a\). Then \(r_1^2+r_2^2+r_3^2=(r_1+r_2+r_3)^2-2a=1+2A\) and \(r_1r_2r_3=-b\), so AM–GM applied to the \(r_i^2\) gives \(b^2\leq ((1+2A)/3)^3\). If \(A\geq 1\), then \(1+2A\leq 3A\), so \(|b|^{2/3}\leq A\); if \(A=0\), then \(b^2\leq 1/27\), so \(b=0\). In both cases \(h(f)^2=-a\). Substituting into \(H_{\mathrm{tor}}(f)^2=1-3a\) gives \(H_{\mathrm{tor}}(f)^2=1+3h(f)^2\), from which the equivalence follows; \(h(f)=0\) forces \(a=b=0\). </p>
 
   </div>
 </div>

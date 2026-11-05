@@ -24,7 +24,7 @@ We count $f(t)=t^3+a_1t^2+a_2t+a_3\in\ZZ[t]$ with Galois group $C_3$, ordered by
 
 \uses{helper:leadingConstants}
 
-The linked Lean proof establishes this statement.
+The Dedekind zeta function $\xi$ is meromorphic near $s=1$ with a simple pole there, so $\xi'/\xi$ has a simple pole with residue $-1$ at $s=1$ and the limit defining $\mu$ exists; $\mu$ is the Euler--Kronecker constant of $E$. For $p\equiv1\pmod3$ the factor $1-2/(p(p+1))$ lies in $(0,1)$ and differs from $1$ by less than $2p^{-2}$, so the product defining $\alpha$ converges absolutely to a positive number. The terms of $\beta$ are $O(p^{-2}\log p)$, so the series converges absolutely.
 
 \end{proof}
 
@@ -48,7 +48,7 @@ The linked Lean proof establishes this statement.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:generalTraceDecomposition, eqn:monicArchimedeanMoments, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:traceZeroCoefficients, lemma:xiMeanValue, prop:canonicalHeight, thm:asymptoticPolynomialCount, thm:heightZetaFunctionFormula2}
 
-Reduce each trace class to trace zero or one. Substitute the asymptotic formulas for $A_0$ and $A_1$, approximate their main-term sums by integrals, and then sum the errors. The two real integrals give the displayed polynomial $P$.
+For $f=t^3+a_1t^2+a_2t+a_3$ put $s=-a_1$ and $n(f)=a_1^2-3a_2$. Let $A_1(X)$ count the polynomials $t^3-t^2+at+b\in\ZZ[t]$ with Galois group $C_3$ and $1-3a\leq X$, and let $A_0(X)$ count the polynomials $t^3-Nt+c\in\ZZ[t]$ with Galois group $C_3$ and $1\leq N\leq X$. By Lemma~\ref{lemma:generalHeightReduction}, translating the roots by an integer, and also negating them when $s\equiv-1\pmod3$, sends the polynomials of trace $s$ bijectively to those of trace $0$ (if $3\mid s$) or $1$ (if $3\nmid s$) and preserves $n(f)$, which equals $1-3a$ in trace one and $3N$ in trace zero. The same lemma shows that $H(f)\leq H$ exactly when $|s|\leq H$ and $n(f)\leq s^2+3H^2$; the bound on $a_3$ follows from the others by the arithmetic--geometric mean inequality. This gives the exact decomposition of Equation~\ref{eqn:generalTraceDecomposition}, a sum of $A_1(3H^2+s^2)$ over $3\nmid s$ and of $A_0(H^2+s^2/3)$ over $3\mid s$. Insert Equation~\ref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic}, where $Q$ is the linear polynomial of Corollary~\ref{cor:integralPointCount}. The main terms become Riemann sums $\sum_{|s|\leq H,\ s\equiv r\ (\mathrm{mod}\ 3)}g(s/H)=\frac H3\int_{-1}^1g(u)\,du+O(1)$ for $g(u)=3+u^2$ and $g(u)=(3+u^2)\log(3+u^2)$, over two residue classes for $A_1$ and one for $A_0$. The two integrals in Equation~\ref{eqn:monicArchimedeanMoments} give $P$ in the form of Equation~\ref{eqn:monicConstantsFromTraceCounts}, and substituting $Q$ gives the stated $P$. Each of the $O(H)$ traces contributes an error $O_\varepsilon(H^{1+\varepsilon})$ and the Riemann-sum errors contribute $O(H^2\log H)$, so the total error is $O_\varepsilon(H^{2+\varepsilon})$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -74,7 +74,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
-Estimate $\sum_{n\leq X}d_n$ by truncated Perron's formula and contour shifting. Subtract the split contribution and set $X=1+3H^2$. The paper uses Alberts's theorem for the coefficient estimate; Lean retains the direct proof.
+Let $d_n$ be the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$ (Theorem~\ref{thm:heightZetaFunctionFormula}), and for $f=t^3-t^2+at+b$ with Galois group $C_3$ write $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$, the toric height of its points (Lemma~\ref{lemma:rootVsToric}). By Equation~\ref{eqn:dSummatoryForGeneralTrace}, $\sum_{n\leq X}d_n=XQ(\tfrac12\log X)+O_\varepsilon(X^{1/2+\varepsilon})$, where $Q$ is the polynomial of Corollary~\ref{cor:integralPointCount}; the main term is the residue of $Z_0(z)X^z/z$ at the double pole $z=1$ of $Z_0(z)=\sum_{n\geq1}d_nn^{-z}$ (Proposition~\ref{prop:leadingTerms}). Lemma~\ref{lemma:reducibles} removes the points of split polynomials, which are a third of the lattice points in an ellipse of area $\frac{2\pi}{3\sqrt3}X$, and halves the rest, since each polynomial with Galois group $C_3$ gives two points. This gives Equation~\ref{eqn:irrPolys}. By Lemma~\ref{lemma:rootVsToric}, $H(f)\leq H$ is equivalent to $H_{\mathrm{tor}}(f)\leq\sqrt X$ with $X=3H^2+1$. Then $\tfrac12\log X=\log H+\log\sqrt3+O(H^{-2})$, and since $Q$ is linear the main term is $\tfrac32H^2Q(\log H+\log\sqrt3)-\frac{\pi}{3\sqrt3}H^2=H^2P_1(\log H)$, with error $O_\varepsilon(H^{1+\varepsilon})$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -90,7 +90,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 
 
- For any $H \geq 1$ let $E_H \subset \RR^2$ be the ellipse defined by $E_{H} : x^2+y^2+xy-x-y = \tfrac{1}{3}(H^2-1)$. If $t^3-t^2+at+b\in\ZZ[t]$ has Galois group $C_3$, then $a\leq0$. Fix $a \in \ZZ_{\leq 0}$. The number of polynomials of the form $t^3 -t^2 + at + b \in \ZZ[t]$ with Galois group $C_3$ is equal to \begin{equation*} \frac12\sum_{d|(1-3a)} 3^{\omega(Q_1(d))} (-1)^{\Omega(Q_2(d))} -\frac16 \#E_{\sqrt{1-3a}}(\ZZ) \end{equation*} where $Q_j(d)$ denotes the largest divisor of $d$ only divisible by primes $\equiv j \pmod 3$, and $\omega(n)$ (resp.~$\Omega(n)$) denotes the number of prime factors of a positive integer $n$ counted without (resp.~with) multiplicity. 
+ For $m\geq1$ let $a_E(m)$ denote the number of ideals of norm $m$ in the ring of integers $\mcO_E$ of $E$. If $t^3-t^2+at+b\in\ZZ[t]$ has Galois group $C_3$, then $a\leq0$. Fix $a \in \ZZ_{\leq 0}$ and put $n=1-3a$. The number of polynomials of the form $t^3 -t^2 + at + b \in \ZZ[t]$ with Galois group $C_3$ is equal to \begin{equation*} \tfrac{1}{2}\big(a_E(n^3)-a_E(n)\big). \end{equation*} 
 
 \end{theorem}
 
@@ -100,7 +100,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:heightZetaFunctionFormula}
 
-For $n=1-3a$, the torus points are counted by $d_n$. The split points are the free cyclic orbits of $E_{\sqrt n}(\ZZ)$, and each irreducible polynomial contributes two points. Thus the answer is $d_n/2-\#E_{\sqrt n}(\ZZ)/6$.
+Let $d_n$ be the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$ (Theorem~\ref{thm:heightZetaFunctionFormula}), and let $\zeta\in E$ be a primitive cube root of unity. If $f=t^3-t^2+at+b$ has Galois group $C_3$, its roots are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$; so $f$ comes from an integral point of $T$ (Proposition~\ref{prop:canonicalHeight}), and Lemma~\ref{lemma:rootVsToric} gives $a\leq0$. Fix $a$ and $n=1-3a$, so that $3\nmid n$. The $d_n$ points of height $\sqrt n$ are two points for each such $f$ (Equation~\ref{eqn:polynomialWeights}) together with the split points. A split point is a triple $(x,y,z)\in\ZZ^3$ with $x+y+z=1$ and $xy+yz+zx=a$, up to cyclic permutation. Its element $\theta=x+y\zeta+z\zeta^2\in\mcO_E$ has norm $(x+y+z)^2-3(xy+yz+zx)=n$ and is congruent to $1$ modulo $1-\zeta$. Conversely, each $u+v\zeta$ with $u+v\equiv1\pmod3$ comes from exactly one triple, and a cyclic permutation multiplies $\theta$ by a power of $\zeta$. An ideal of norm $n$ has six generators $\pm\zeta^j\theta$, and exactly three of them are congruent to $1$ modulo $1-\zeta$. Hence there are $a_E(n)$ split points, and the number of polynomials is $\frac12(d_n-a_E(n))$. It remains to show $d_n=a_E(n^3)$. By Remark~\ref{rem:heightCoefficients}, $d_n$ is the product of $3k+1$ over $p^k\parallel n$ with $p\equiv1\pmod3$ if every prime $q\equiv2\pmod3$ divides $n$ to an even power, and $d_n=0$ otherwise. The paper matches this with the ideals of norm $n^3$: there are $3k+1$ of norm $p^{3k}$, and one or none of norm $q^{3k}$ according as $k$ is even or odd. Lean instead compares Dirichlet coefficients in $\xi(s)=\zeta(s)L(s,\chi)$, where $\zeta(s)$ is the Riemann zeta function and $\chi$ is the nontrivial character modulo $3$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -114,7 +114,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+Over $\QQ$ the surface $S$ has the equation $x_0(x_1^2+3x_2^2)=x_3^3$ (Equation~\ref{eqn:surfaceNormCubic}). Over $E$ it becomes the split form
 
 \begin{equation*} x_0x_1x_2=x_3^3. \end{equation*}
 
@@ -126,7 +126,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{eqn:surfaceCoordinateChange, helper:splittingCoordinates}
 
-The linked Lean proof establishes this statement.
+By Proposition~\ref{prop:surfaceRationalForm}, the coordinate change of Equation~\ref{eqn:surfaceCoordinateChange} identifies $S$ with the cubic $x_0(x_1^2+3x_2^2)=x_3^3$. Over $E$ put $x_1'=x_1+\sqrt{-3}\,x_2$ and $x_2'=x_1-\sqrt{-3}\,x_2$. Then $x_1'x_2'=x_1^2+3x_2^2$, so the equation becomes $x_0x_1'x_2'=x_3^3$. The substitution is invertible, with $x_1=(x_1'+x_2')/2$ and $x_2=(x_1'-x_2')/(2\sqrt{-3})$ (Supporting lemma~\ref{helper:splittingCoordinates} with $r=\sqrt{-3}$).
 
 \end{proof}
 
@@ -138,7 +138,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+The split form $x_0x_1x_2=x_3^3$ (Equation~\ref{eqn:splitForm}) has the involution exchanging $x_1$ and $x_2$. For a nonsquare $d\in\QQ^\times$, its quadratic twist by $\QQ(\sqrt d)$ through this involution is
 
 \begin{equation*} S^{(d)}\colon x_0(x_1^2-dx_2^2)=x_3^3. \end{equation*}
 
@@ -150,7 +150,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:splittingCoordinates}
 
-The linked Lean proof establishes this statement.
+Let $r=\sqrt d\in\QQ(\sqrt d)$. Over $\QQ(\sqrt d)$ put $x_1'=x_1+rx_2$ and $x_2'=x_1-rx_2$; this substitution is invertible since $r\neq0$ (Supporting lemma~\ref{helper:splittingCoordinates}). Then $x_1'x_2'=x_1^2-dx_2^2$, so $x_0x_1'x_2'=x_3^3$ becomes $x_0(x_1^2-dx_2^2)=x_3^3$. The nontrivial automorphism $r\mapsto-r$ of $\QQ(\sqrt d)$ exchanges $x_1'$ and $x_2'$, which is the involution of the split form, and the split cubic is invariant under it. So $S^{(d)}$ is the twist of the split form by $\QQ(\sqrt d)$ through this involution. In particular $S=S^{(-3)}$.
 
 \end{proof}
 
@@ -162,9 +162,9 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
+Let $\DDD_0=\{X+Y+Z=0\}\subset\SSS$. The toric height functions $H(-,s)$ of Batyrev--Tschinkel \cite{MR1369408} are indexed by $s\in\mathrm{Pic}(S)\otimes\CC$. Since $S$ has Picard rank one, we regard $s$ as a complex number, with $s=3$ corresponding to the ample generator. Then $H(-,s)=H(-)^s$, where $H(-)=H(-,1)$.
 
-
- \begin{equation*} \sum_{P \in (\SSS\setminus\DDD_0)(\ZZ)} H(P)^{-s} = \left(1-\frac{1}{3^{s/2}}\right)^2 \xi\left(\frac s2\right)^2 \prod_{q\equiv2\pmod{3}}\left(1-\frac{1}{q^{s}}\right) \prod_{p\equiv1\pmod{3}}\left(1-\frac{3}{p^{s}}+\frac{2}{p^{3s/2}}\right) \end{equation*} where $\xi$ is the Dedekind zeta function of $E$. This height zeta function can be meromorphically continued to the half-plane $\mathrm{Re}(s)>1$ and its only pole in this region is at $s = 2$ with order $2$. 
+ For $\mathrm{Re}(s)>2$ the series below converges absolutely, and \begin{equation*} \sum_{P \in (\SSS\setminus\DDD_0)(\ZZ)} H(P)^{-s} = \left(1-\frac{1}{3^{s/2}}\right)^2 \xi\left(\frac s2\right)^2 \prod_{q\equiv2\pmod{3}}\left(1-\frac{1}{q^{s}}\right) \prod_{p\equiv1\pmod{3}}\left(1-\frac{3}{p^{s}}+\frac{2}{p^{3s/2}}\right) \end{equation*} where $\xi$ is the Dedekind zeta function of $E$. This height zeta function can be meromorphically continued to the half-plane $\mathrm{Re}(s)>1$ and its only pole in this region is at $s = 2$ with order $2$. 
 
 \end{theorem}
 
@@ -174,7 +174,7 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:correctionProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
-Restrict the multivariate formula to the height under consideration and identify its Euler factors with those of $\xi$. The correction product is holomorphic in the required half-plane; the Laurent expansion gives the unique double pole.
+Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in the open torus $T$: on this affine chart $T$ is defined by $1-3e_2\neq0$, and $e_2(P)\in\ZZ$ by Lemma~\ref{lemma:affineIntegrality}. Hence the series is $Z_0(s/2)$, where $Z_0(z)=Z(2z,0,0)$ is the multivariate height zeta function $Z$ of Theorem~\ref{thm:heightZetaFunctionFormula2} on the line spanned by $D_0$; that theorem gives absolute convergence for $\operatorname{Re}(s)>2$. Lemma~\ref{lemma:simplifiedZ-s} rewrites its Euler product as $(1-3^{-z})^2\xi(z)^2R(z)$, with $R$ as in Equation~\ref{eqn:eulerCorrectionFactor}, using the Euler product of $\xi$ and the identity $(1+2x)(1-x)^2=1-3x^2+2x^3$; with $z=s/2$ this is the displayed product. The product $R(z)$ converges absolutely and locally uniformly for $\operatorname{Re}(z)>1/2$, which gives the continuation to $\operatorname{Re}(s)>1$. Since $\xi$ has only a simple pole at $1$ and $R(1)>0$, Proposition~\ref{prop:leadingTerms} shows that the only pole is a double pole at $s=2$. Finally, $3D_0$ is linearly equivalent to $D_0+D_1+D_2=-K$ (Equation~\ref{eqn:normCharacterDivisor}), so $\mathcal O(D_0)$ corresponds to $s=1$ and $H(P)$ is the toric height $H(P,\mathcal O(D_0))$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -200,7 +200,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:affineC3invariants, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
-The coefficient sum counts the integral points with the prescribed height. Insert its asymptotic formula and the Laurent coefficients of $Z_0$.
+Let $d_n$ be the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$. The count is $\sum_{n\leq H^2}d_n$, and by Theorem~\ref{thm:heightZetaFunctionFormula} the series $Z_0(z)=\sum_{n\geq1}d_nn^{-z}$ is the height zeta function at $s=2z$. By Proposition~\ref{prop:leadingTerms}, $Z_0$ has only a double pole at $z=1$ in $\operatorname{Re}(z)>1/2$, and its Laurent expansion there shows that the residue of $Z_0(z)X^z/z$ at $z=1$ is $XQ(\tfrac12\log X)$. Equation~\ref{eqn:dSummatoryForGeneralTrace} gives $\sum_{n\leq X}d_n=XQ(\tfrac12\log X)+O_\varepsilon(X^{1/2+\varepsilon})$. Taking $X=H^2$ gives $H^2Q(\log H)+O_\varepsilon(H^{1+2\varepsilon})$, and replacing $\varepsilon$ by $\varepsilon/2$ proves the corollary.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -216,7 +216,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 
 
- We prompted GPT-$6.1$ with the contents of an earlier version of this paper and asked it to identify the Dirichlet series in Theorem~\ref{thm:heightZetaFunctionFormula}. Using our Eisenstein parametrization (\S\ref{sec:quadraticParametrization}) it proved that \[ \sum_{P \in (\SSS\setminus\DDD_0)(\ZZ)} H(P)^{-s} = \sum_{\substack{0\ne J\subseteq\mcO_E\\ J+3\mcO_E=\mcO_E\\ \mathrm N J\text{ a cube}}} N^E_\QQ(J)^{-s/6} \] where $J \subset \mcO_E$ runs over integral nonzero ideals. With the help of this description using ideals, we found another result in the literature \cite{kuehleitnerNowak2004} that we previously missed. After translating the $C_3$-polynomial counting problem into an integral Diophantine problem on $S^{(-3)}$ (explained in the next section), K\"uhleitner--Nowak's~\cite[Corollary~2]{kuehleitnerNowak2004} can be used to obtain an alternative proof of Corollary~\ref{cor:integralPointCount} and Theorem~\ref{thm:asymptoticPolynomialCount} without using toric harmonic analysis, and with an error term $O\bigl(H(\log H)^3(\log\log H)^2\bigr)$. We did not incorporate this argument as the toric approach of this paper has the merit of generalizing readily to other abelian groups where there is no analogue of \cite{kuehleitnerNowak2004}. 
+ We prompted GPT-$6.1$ with the contents of an earlier version of this paper and asked it to identify the Dirichlet series in Theorem~\ref{thm:heightZetaFunctionFormula}. Using our Eisenstein parametrization (\S\ref{sec:quadraticParametrization}) it proved that \[ \sum_{P \in (\SSS\setminus\DDD_0)(\ZZ)} H(P)^{-s} = \sum_{\substack{0\ne J\subseteq\mcO_E\\ J+3\mcO_E=\mcO_E\\ \mathrm N J\text{ a cube}}} N^E_\QQ(J)^{-s/6} \] where $J \subset \mcO_E$ runs over integral nonzero ideals. It also found a result in the literature \cite{kuehleitnerNowak2004} that we previously missed. After translating the $C_3$-polynomial counting problem into an integral Diophantine problem on $S^{(-3)}$ (explained in the next section), K\"uhleitner--Nowak's~\cite[Corollary~2]{kuehleitnerNowak2004} can be used to obtain an shorter proof of Corollary~\ref{cor:integralPointCount} and Theorem~\ref{thm:asymptoticPolynomialCount} without using the toric method, and with an error term $O\bigl(H(\log H)^3(\log\log H)^2\bigr)$. We did not incorporate this argument as the toric approach has the merit of generalizing readily to other abelian groups where there is no analogue of \cite{kuehleitnerNowak2004}. 
 
 \end{remarknode}
 
@@ -226,7 +226,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{cite:kuehleitnerNowak2004-cor2, eqn:affineC3invariants, eqn:weightedPolynomialCount, helper:adelicLogarithm, helper:correctionProduct, helper:cubicCharacters, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight}
 
-The Eisenstein parametrization identifies integral torus points with ideals of cube norm prime to $3$. Apply the cube-ideal summatory estimate, remove the Euler factor at $3$, and compare the constants and heights.
+Every $P\in(\SSS\setminus\DDD_0)(\ZZ)$ lies in $T$; let $\nu\in E^\times$ be the element attached to $P$ by Proposition~\ref{prop:cyclotomicParametrization}, so that $\mathrm N\nu=1-3a=H(P)^2$. The element $\beta=\mathrm N(\nu)\nu$ has norm $H(P)^6$. Integrality of $P$ (Lemma~\ref{lemma:affineIntegrality}) makes $\beta$ an Eisenstein integer congruent to $1$ modulo $3\mcO_E$. Conversely, the congruences of Equation~\ref{eqn:integralityConditionsUsingCyclo} recover an integral point from each such $\beta$ of cube norm. The six units of $\mcO_E$ map bijectively onto $(\mcO_E/3\mcO_E)^\times$, so every ideal $J$ with $J+3\mcO_E=\mcO_E$, equivalently $3\nmid\mathrm NJ$, has exactly one generator congruent to $1$ modulo $3\mcO_E$. Hence $P\mapsto\beta\mcO_E$ is a bijection onto the ideals in the sum, with $\mathrm NJ=H(P)^6$, and the two series agree for $\operatorname{Re}(s)>2$. For the counts, let $A(X)=\sum_{n\leq X}a_E(n^3)$, where $a_E(m)$ is the number of ideals of norm $m$. The prime above $3$ is ramified of norm $3$, so $a_E((3n)^3)=a_E(n^3)$ and the sum over $n\leq X$ with $3\nmid n$ is $A(X)-A(X/3)$. Apply the K\"uhleitner--Nowak estimate to $A$, with $F(s)=(s-1)^2Z_0(s)/(1-3^{-s})$, where $Z_0(z)=\sum_{3\nmid n}a_E(n^3)n^{-z}$ is the height zeta function at $s=2z$; the Laurent expansion in Proposition~\ref{prop:leadingTerms} gives $F(1)$ and $F'(1)$. The result is $\sum_{n\leq X,\,3\nmid n}a_E(n^3)=XQ(\tfrac12\log X)+O(\sqrt X(\log X)^3(\log\log X)^2)$. Taking $X=H^2$ gives Corollary~\ref{cor:integralPointCount} with error $O(H(\log H)^3(\log\log H)^2)$. Combining this with Lemma~\ref{lemma:reducibles} and taking $X=3H^2+1$, as in the proof of Theorem~\ref{thm:asymptoticPolynomialCount}, gives that theorem with the same error.
 
 The proof assumes the K\"uhleitner--Nowak estimate (Cited theorem~\ref{cite:kuehleitnerNowak2004-cor2}).
 
@@ -240,7 +240,7 @@ The proof assumes the K\"uhleitner--Nowak estimate (Cited theorem~\ref{cite:kueh
 
 \leanok
 
-
+By Theorem~\ref{thm:modularInterpretation}, rational points of $T$ correspond to equivalence classes of pairs $(K,x)$ of a $C_3$-algebra $K$ and a trace-one normal element $x$. Taking the characteristic polynomial of $x$ gives a map from $T(\QQ)$ to polynomials $t^3-t^2+at+b\in\QQ[t]$. Its image consists of the polynomials that have Galois group $C_3$ or split over $\QQ$ with at most two equal roots. For such $f$, the number of rational points of $T$ above $f$ is given below, where $(K_f,x_f)$ is any pair above $f$ and $\mathrm{Aut}(K_f,x_f)$ is the group of $\QQ$-algebra automorphisms of $K_f$ fixing $x_f$.
 
 \begin{equation*} w_f=\frac{|\mathrm{Aut}(C_3)|}{|\mathrm{Aut}(K_f,x_f)|}= \begin{cases} 1 &\text{if $f$ has a double root,}\\ 2 &\text{otherwise,} \end{cases} \end{equation*}
 
@@ -252,7 +252,7 @@ The proof assumes the K\"uhleitner--Nowak estimate (Cited theorem~\ref{cite:kueh
 
 \uses{helper:polynomialFibres}
 
-The linked Lean proof establishes this statement.
+We count equivalence classes of pairs above $f$. The roots $r_1,r_2,r_3$ of $f$ are not all equal, so $1-3a=\frac12\sum_{i<j}(r_i-r_j)^2\neq0$ and each root is normal by Lemma~\ref{lemma:normalityCriterion}. If $f$ has Galois group $C_3$, then $K_f=\QQ(x_f)$ is a cyclic cubic field. The two identifications of $C_3$ with its Galois group give inequivalent pairs (Example~\ref{example:twoRationalPointsSamePoly}). For a fixed identification the three roots give equivalent pairs, related by Galois automorphisms. So there are two classes. If $f$ splits, then $K_f=\QQ^3$ and $x_f$ is an ordering of the roots. The $C_3$-equivariant automorphisms of $\QQ^3$ form the centralizer of $C_3$ in $S_3$, which is $C_3$, so the classes are the orderings modulo cyclic permutation. The six orderings of three distinct roots form two classes, and the three orderings of a double root form one. In each case the count is $2/|\mathrm{Aut}(K_f,x_f)|$: an automorphism fixing $x_f$ is trivial unless $f$ has a double root, when the transposition of the two equal coordinates also fixes $x_f$.
 
 \end{proof}
 
@@ -280,11 +280,11 @@ There is a bijection between rational points of $T$ and equivalence classes of $
 
 \uses{helper:moduliFibres}
 
-Construct the algebra and normal element from a rational quotient point, and recover the quotient point from the conjugates of the normal element. These constructions are inverse on isomorphism classes. This node states the rational-point part of the paper's theorem.
+Let $\mathcal G_1$ be the torus of augmentation-one units of the group algebra of $C_3$, so that $T=\mathcal G_1/C_3$, and let $A$ and $A^{C_3}$ be the coordinate rings of $\mathcal G_1$ and $T$. We follow \cite[\S2]{odesky2023moduli}. A pair $(K,x)$ gives the element $u=\sum_{g\in C_3}(g^{-1}x)[g]$ of the group algebra $K[C_3]$. Its augmentation is $\operatorname{Tr}(x)=1$, and $u$ is a unit if and only if $x$ is normal. Thus $u$ is a $K$-point of $\mathcal G_1$; its image in $T$ is fixed by the action of $C_3$ on $K$, so it is a rational point, and its characteristic polynomial is that of $x$. Conversely, a rational point $P$ of $T$ gives the fibre algebra $A\otimes_{A^{C_3},P}\QQ$ with its $C_3$-action. It is a $C_3$-algebra, and the image of the first coordinate is a trace-one normal element. If $(K,x)$ maps to $P$, the equivariant map from the fibre algebra to $K$ sending the first coordinate to $x$ carries the coordinate basis to the basis of conjugates of $x$. So it is an isomorphism of pairs, and pairs with the same point are equivalent. Equivalent pairs give the same point, and the fibre pair of $P$ maps to $P$, so the map is a bijection. Lean formalizes this rational-point correspondence, not the moduli statement over general bases.
 
 \end{proof}
 
-\begin{example}
+\begin{example}[A cyclic cubic field and its twist]
 
 \label{example:twoRationalPointsSamePoly}
 
@@ -302,11 +302,11 @@ Construct the algebra and normal element from a rational quotient point, and rec
 
 \leanok
 
-The Galois group of a cyclic cubic field is abelian. An isomorphism to the inverse-action twist would therefore force a generator to equal its inverse, a contradiction. The cocycles describe the two rational points.
+Since $K/\QQ$ is Galois of degree $3$, an identification of $C_3$ with $\mathrm{Gal}(K/\QQ)$ makes $K$ a $C_3$-algebra. Suppose $\tau:K\to K'$ is an isomorphism of $C_3$-algebras. Then $\tau$ is a field automorphism of $K$ with $\tau(gy)=g^{-1}\tau(y)$ for all $g\in C_3$ and $y\in K$. But $\tau$ lies in the abelian group $\mathrm{Gal}(K/\QQ)$, so it commutes with $g$, and hence $g$ and $g^{-1}$ act in the same way. This fails for a generator, since the action is faithful. For the footnote, the cocycle of $K$ is the surjective homomorphism $c:\mathrm{Gal}(\overline\QQ/\QQ)\to C_3$ given by restriction to $K$, and the cocycle of $K'$ is $c^{-1}$. Since $C_3$ is abelian, cohomologous cocycles are equal, and $c\neq c^{-1}$ because $c$ is surjective. Embedding $C_3$ in $S_3$ by its action on itself, inversion on $C_3$ is conjugation by a transposition, so the images in $H^1(\QQ,S_3)$ agree.
 
 \end{proof}
 
-\begin{example}
+\begin{example}[The split algebra and its twist]
 
 \label{example:splitAlgebra}
 
@@ -324,11 +324,11 @@ The Galois group of a cyclic cubic field is abelian. An isomorphism to the inver
 
 \leanok
 
-Every algebra automorphism of $\QQ^3$ permutes its three coordinate idempotents. A transposition conjugates cyclic translation to its inverse, giving the asserted isomorphism with the twist.
+A $\QQ$-algebra automorphism of $\QQ^3$ permutes its three primitive idempotents, so $\mathrm{Aut}_{\QQ\text{-alg}}(\QQ^3)=S_3$, acting by permuting coordinates. The cyclic permutations form $C_3$, whose fixed algebra is $\QQ$, so $K_{\text{spl}}$ is a $C_3$-algebra. Index the coordinates by $\ZZ/3\ZZ$, with $g\in C_3$ acting by translation. A transposition is a reflection $h\mapsto c-h$, and it turns translation by $g$ into translation by $-g$. Hence permuting the coordinates by a transposition is an isomorphism $K_{\text{spl}}\to K_{\text{spl}}'$ that intertwines $g$ with $g^{-1}$.
 
 \end{proof}
 
-\begin{example}
+\begin{example}[Normal elements of the split algebra]
 
 \label{example:splitAlgebraNormalElement}
 
@@ -348,7 +348,7 @@ Every algebra automorphism of $\QQ^3$ permutes its three coordinate idempotents.
 
 \uses{example:splitAlgebra, helper:moduliFibres}
 
-Evaluate the explicit algebra and cyclic action, then compute the characteristic polynomial and the normality condition.
+The conjugates of $x=(x_0,x_1,x_2)$ are its cyclic shifts. With $e_1=x_0+x_1+x_2=1$ and $e_2=x_0x_1+x_1x_2+x_2x_0$, we have $e_1^2-3e_2=\frac12\sum_{i<j}(x_i-x_j)^2$. By Lemma~\ref{lemma:normalityCriterion}, $x$ is normal exactly when its coordinates are not all equal, that is, when they are distinct or exactly two agree. The twist has the same conjugates of $x$, so $x$ is also a trace-one normal element of $K_{\text{spl}}'$. An equivalence $(K_{\text{spl}},x)\to(K_{\text{spl}}',x)$ is an automorphism $e$ of $\QQ^3$ with $e(gy)=g^{-1}e(y)$ and $e(x)=x$. Composing $e$ with the reflection $h\mapsto-h$ of the coordinates gives a $C_3$-equivariant automorphism of $K_{\text{spl}}$, which is a cyclic shift, since the centralizer of $C_3$ in $S_3$ is $C_3$. So $e$ is a reflection $h\mapsto c-h$, which swaps two coordinates and fixes the third, and $e(x)=x$ exactly when the two swapped coordinates of $x$ agree. Conversely, if two coordinates agree, the transposition swapping them is an isomorphism to the twist (Example~\ref{example:splitAlgebra}) and fixes $x$. If $x$ has distinct coordinates, the two pairs are inequivalent, so they give different rational points by Theorem~\ref{thm:modularInterpretation}, while $K_{\text{spl}}\cong K_{\text{spl}}'$ by Example~\ref{example:splitAlgebra}.
 
 \end{proof}
 
@@ -364,7 +364,7 @@ The height is defined from the fan of $S$. We retain the paper's notation: $v_0,
 
 \leanok
 
-
+Let $\Gamma=\{1,\gamma\}$ be the Galois group of $E=\QQ(\zeta)$ over $\QQ$, and for a place $w$ of $E$ over $v$ let $\Gamma(w/v)\subseteq\Gamma$ be its decomposition group and $\mcO_w$ the ring of integers of $E_w$. Let $\mathcal G_1\cong R^E_\QQ\GG_m$ be the torus of units of augmentation one in the group algebra of $C_3$, so that $T=\mathcal G_1/C_3$. The characters of $\mathcal G_{1,E}$ form a lattice $M_E'$ with basis $(v_1^\vee,v_2^\vee)$, given by the eigenvalues of multiplication on the two nontrivial idempotents of $E[C_3]$; $\gamma$ swaps $v_1^\vee$ and $v_2^\vee$. Let $N_E'$ be the dual lattice, with dual basis $(v_1,v_2)$, and put $\omega=\tfrac13(2v_1+v_2)$. The cocharacter lattice of $T_E$ is $X_\ast(T_E)=N_E=N_E'+\ZZ\omega=\ZZ\langle\omega,\gamma\omega\rangle$, and its character lattice $M_E$ is the dual of $N_E$. Put $\mathfrak t_E=N_E\otimes\RR$ and $\mathfrak t_w=\mathfrak t_E^{\Gamma(w/v)}$. For $x\in T(\QQ_v)$, $\ell_w(x)\in\mathfrak t_E$ is the cocharacter $\chi\mapsto\ord_w(\chi(x))$ on $\chi\in M_E$, and $K_v^{\mathrm{max}}$ is the maximal compact subgroup of $T(\QQ_v)$.
 
  Let $w$ be a place of $E$ lying over a place $v$ of $\QQ$. There is an exact sequence \begin{equation*} 1 \longrightarrow K_v^{\mathrm{max}} \longrightarrow T(\QQ_v) \xlongrightarrow{\ell_w} \mathfrak t_w. \end{equation*} If $w$ is infinite then $\ell_w$ is surjective, and if $w$ is finite then the image of $\ell_w$ is the lattice $X_\ast(T_{E})^{\Gamma(w/v)}$. 
 
@@ -376,7 +376,7 @@ The height is defined from the fan of $S$. We retain the paper's notation: $v_0,
 
 \uses{eqn:isoCocharLattices}
 
-Express torus points by characters over the splitting field. Applying the normalized valuation gives the finite-place image lattice and compact kernel. The logarithmic absolute value gives the analogous statement at infinity.
+Evaluating characters identifies $T(\QQ_v)$ with $\mathrm{Hom}_{\Gamma(w/v)}(M_E,E_w^\times)$. Under this identification $\ell_w$ is composition with $\ord_w$, with values in $\mathrm{Hom}_{\Gamma(w/v)}(M_E,\ZZ)=X_\ast(T_E)^{\Gamma(w/v)}$, and for finite $v$ its kernel $\mathrm{Hom}_{\Gamma(w/v)}(M_E,\mcO_w^\times)$ is $K_v^{\mathrm{max}}$. By \cite[(1.3), p.~449]{MR291099} this gives the exact sequence and the asserted image, except that at the ramified place $w$ over $3$ it only shows that the image has finite index. At that place we pass to $\mathcal G_1$. The transpose of the $\Gamma$-isomorphism $N_E\to N_E'$ of Equation~\ref{eqn:isoCocharLattices} gives a commutative diagram identifying the sequence $\mathrm{Hom}_{\Gamma(w/v)}(M_E',\mcO_w^\times)\to\mathrm{Hom}_{\Gamma(w/v)}(M_E',E_w^\times)\to\mathrm{Hom}_{\Gamma(w/v)}(M_E',\ZZ)$ for $\mathcal G_1$ with the corresponding sequence for $T$, so it suffices to show that $\ell_w$ is surjective for $\mathcal G_1$. Since $M_E'$ is free, applying $\mathrm{Hom}(M_E',-)$ to $1\to\mcO_w^\times\to E_w^\times\xrightarrow{\ord_w}\ZZ\to0$ gives a short exact sequence of $\Gamma(w/v)$-modules, so the cokernel of $\ell_w$ embeds in $H^1(\Gamma(w/v),\mathrm{Hom}(M_E',\mcO_w^\times))$. Evaluation at $(v_1^\vee,v_2^\vee)$ identifies this module with $\mcO_w^\times\times\mcO_w^\times$, on which $\gamma(x,y)=(\gamma y,\gamma x)$. The map $(x,y)\mapsto(x,\gamma y)$ carries it isomorphically onto $\mcO_w^\times\times\mcO_w^\times$ with $\gamma$ swapping the two factors. This module is coinduced from the trivial subgroup, so its $H^1$ vanishes by Shapiro's lemma.
 
 \end{proof}
 
@@ -388,7 +388,7 @@ Express torus points by characters over the splitting field. Applying the normal
 
 \leanok
 
-
+A support function is a continuous $\Gamma$-invariant function $\varphi\colon\mathfrak t_E\to\CC$ that is linear on each cone of the fan of $S$. For $x=(x_w)_w\in T(\AA_E)$ the toric height is $H(x,\varphi)=\prod_{w\in Pl_E}\bigl(q_w^{-\varphi(\ell_w(x_w))}\bigr)^{1/[E:\QQ]}$, where $Pl_E$ is the set of places of $E$, $q_w=N(w)$ for finite $w$, and $q_w=e^2$ at the complex place. For a place $v$ of $\QQ$ let $q_v=p$ if $v=p$ and $q_\infty=e$, and let $e_v$ be the ramification index of a place of $E$ over $v$ ($e_\infty=1$). If $x=(x_v)_v\in T(\AA)$ is embedded diagonally in $T(\AA_E)$, then $\varphi(\ell_w(x_v))$ does not depend on the place $w$ over $v$, and the following holds.
 
 \begin{equation*} H(x,\varphi) = \prod_{v \in Pl_\QQ} q_v^{-\frac{1}{e_v}\varphi(\ell_w(x_v)) } \end{equation*}
 
@@ -400,7 +400,7 @@ Express torus points by characters over the splitting field. Applying the normal
 
 \uses{helper:supportFunctionSymmetry}
 
-The linked Lean proof establishes this statement.
+If $v$ splits in $E$, its two places are $w$ and $\gamma w$, and $\ell_{\gamma w}(x_v)=\gamma\,\ell_w(x_v)$. Since $\varphi$ is $\Gamma$-invariant (Supporting lemma~\ref{helper:supportFunctionSymmetry}), both places give the same value $\varphi(\ell_w(x_v))$. Grouping the factors of $H(x,\varphi)$ by the place $v$ below $w$, the factors over $v$ multiply to $q_v^{-\varphi(\ell_w(x_v))\,f_vg_v/[E:\QQ]}$, because $\prod_{w\mid v}q_w=q_v^{f_vg_v}$, where $f_v$ is the residue degree and $g_v$ the number of places over $v$. As $e_vf_vg_v=[E:\QQ]=2$, this is $q_v^{-\varphi(\ell_w(x_v))/e_v}$. Concretely, a split prime $p$ contributes two factors $p^{-\varphi/2}$, an inert prime one factor $(p^2)^{-\varphi/2}$, the ramified prime one factor $3^{-\varphi/2}$, and the complex place one factor $(e^2)^{-\varphi/2}$.
 
 \end{proof}
 
@@ -412,7 +412,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+We use the lattices of Proposition~\ref{prop:basicfacts}. For $m\in M_E$ we write $\chi^m$ for the corresponding character of $T_E$, so $\chi^{m+n}=\chi^m\chi^n$. The coordinates $X,Y,Z$ on $\PP^2$ are those of the group algebra element $X+Y\sigma+Z\sigma^2$, where $\sigma$ generates $C_3$, and $\sqrt{-27}$ denotes $3(1+2\zeta)$.
 
  Let $\mathbf 1$ denote the global section in $H^0(S_E,\mathcal O(3D_0))$ associated to the effective Cartier divisor $3D_0$, namely the image of $1$ under the natural inclusion $\mathcal O_{S_E}\hookrightarrow\mathcal O_{S_E}(3D_0)$. The space $H^0(S_E,\mathcal O(3D_0))$ is spanned over $E$ by the following four weight vectors: \begin{align*} &\mathbf 1,\qquad (1-3e_2e_1^{-2})\mathbf 1, \\ &(e_1^3-\tfrac 92 e_1 e_2+ \tfrac{27}{2} e_3 + \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf 1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac{27}{2} e_3 - \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf 1 \end{align*} where $\sqrt{\mathrm{disc}} \coloneq (X-Z)(Y-X)(Z-Y)$. The associated characters of $T_E$ are, respectively, \begin{equation*} 1,\quad \chi^{a'+b'},\quad \chi^{2a'+b'},\quad\chi^{2b'+a'} \end{equation*} where $a' = 2v_1^\vee - v_2^\vee$ and $b' = 2v_2^\vee - v_1^\vee$ in the character lattice $M_E = X^\ast T_E$ and $(v_1^\vee,v_2^\vee)$ is the dual basis to $(v_1,v_2)$. 
 
@@ -424,7 +424,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:cubicCharacters, helper:weightCharacters}
 
-Compute the invariant cubic forms, divide by $e_1^3$, and diagonalize the torus action. The four displayed forms and their characters give the required basis of sections.
+Let $\varphi_0$ be the support function of $D_0$. In the coordinates $n=n_1v_1+n_2v_2$ on $\mathfrak t_E$ it is $\varphi_0(n)=\min(0,n_1,n_2)$: it equals $0$, $v_2^\vee$ and $v_1^\vee$ on the cones spanned by $\{v_1,v_2\}$, $\{v_1,v_0\}$ and $\{v_2,v_0\}$, where $v_0=-v_1-v_2$. By the weight decomposition \cite[\S3.4, p.~66]{MR1234037}, $H^0(S_E,\mathcal O(3D_0))\cong\bigoplus_{m\in P\cap M_E}E\chi^m$, where $P=\{m\in M_E\otimes\RR: m\geq3\varphi_0\}$. Writing $m=m_1v_1^\vee+m_2v_2^\vee$, $P$ is the triangle $m_1,m_2\geq0$, $m_1+m_2\leq3$, and $m\in M_E$ exactly when $m_1,m_2\in\ZZ$ and $m(\omega)=(2m_1+m_2)/3\in\ZZ$, that is, $m_1\equiv m_2\pmod 3$. So $P\cap M_E$ consists of $0$, $v_1^\vee+v_2^\vee=a'+b'$, $3v_1^\vee=2a'+b'$ and $3v_2^\vee=a'+2b'$, and $h^0(S_E,\mathcal O(3D_0))=4$. The weight vectors are the twists $\chi^m\mathbf 1$. Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} express $\chi^{a'+b'}$ and $\chi^{a'+2b'}$ through $e_1,e_2,e_3$ and $\sqrt{\mathrm{disc}}$, and $\chi^{2a'+b'}=\gamma\chi^{a'+2b'}$ is obtained by changing the sign of $\sqrt{-27}$.
 
 \end{proof}
 
@@ -436,7 +436,7 @@ Compute the invariant cubic forms, divide by $e_1^3$, and diagonalize the torus 
 
 \leanok
 
-
+With $\mathbf 1$, $\sqrt{\mathrm{disc}}$ and $\sqrt{-27}$ as in Lemma~\ref{lemma:heightformula}, the following four sections span $H^0(S_E,\mathcal O(3D_0))$ and are weight vectors for the characters $1$, $\chi^{a'+b'}$, $\chi^{2a'+b'}$ and $\chi^{a'+2b'}$.
 
 \begin{align*} &\mathbf 1,\qquad (1-3e_2e_1^{-2})\mathbf 1, \\ &(e_1^3-\tfrac 92 e_1 e_2+ \tfrac{27}{2} e_3 + \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf 1,\qquad (e_1^3-\tfrac 92 e_1 e_2+ \tfrac{27}{2} e_3 - \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}) e_1^{-3}\mathbf 1 \end{align*}
 
@@ -448,7 +448,7 @@ Compute the invariant cubic forms, divide by $e_1^3$, and diagonalize the torus 
 
 \uses{helper:cubicCharacters, helper:weightCharacters}
 
-The linked Lean proof establishes this statement.
+These are the twists $\chi^m\mathbf 1$ for the four weights $m=0,a'+b',2a'+b',a'+2b'$ found in the proof of Lemma~\ref{lemma:heightformula}. The coefficient of $\mathbf 1$ in each is the value of $\chi^m$ given by Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} and its conjugate (Supporting lemma~\ref{helper:weightCharacters}).
 
 \end{proof}
 
@@ -460,7 +460,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Let $\sigma$ generate $C_3$ and let $\mathcal G$ be the torus of units in the group algebra of $C_3$. Over $E$ write elements of the group algebra as $uv_0'+vv_1'+wv_2'$ in the basis of idempotents $v_0'=\tfrac13(1+\sigma+\sigma^2)$, $v_1'=\tfrac13(1+\zeta^2\sigma+\zeta\sigma^2)$, $v_2'=\tfrac13(1+\zeta\sigma+\zeta^2\sigma^2)$, and let $\chi_i$ be the character with $g v_i'=\chi_i(g)v_i'$. Characters $\chi^m$ of $T_E$ ($m\in M_E$, Proposition~\ref{prop:basicfacts}) are evaluated on $\mathcal G$ by pulling back along $\mathcal G\to\mathcal G_1\to T$, where the first map is $g\mapsto\chi_0(g)^{-1}g$; the pullbacks of $\chi^{v_1^\vee}$ and $\chi^{v_2^\vee}$ are $\chi_1/\chi_0$ and $\chi_2/\chi_0$. The point $uv_0'+vv_1'+wv_2'$ is the element $X+Y\sigma+Z\sigma^2$.
 
 \begin{equation*} \chi^{a'+b'}(uv_0' + vv_1'+wv_2') = \frac{vw}{u^2} = \frac{(X+\zeta Y+\zeta^2 Z)(X+\zeta^2 Y+\zeta Z)}{(X+Y+Z)^2} = \frac{e_1^2-3e_2}{e_1^2} \end{equation*}
 
@@ -472,7 +472,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:characterCoordinates}
 
-The linked Lean proof establishes this statement.
+Since $a'+b'=v_1^\vee+v_2^\vee$, the character $\chi^{a'+b'}$ pulls back to $\chi_1\chi_2/\chi_0^2$, whose value at $uv_0'+vv_1'+wv_2'$ is $vw/u^2$. For $X+Y\sigma+Z\sigma^2$ one has $u=X+Y+Z$, $v=X+\zeta Y+\zeta^2Z$ and $w=X+\zeta^2Y+\zeta Z$ (Supporting lemma~\ref{helper:characterCoordinates}). Expanding with $1+\zeta+\zeta^2=0$ gives $vw=X^2+Y^2+Z^2-XY-YZ-ZX=e_1^2-3e_2$.
 
 \end{proof}
 
@@ -484,7 +484,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Notation is as in Equation~\ref{eqn:formulaForNormCharacter}, with $\sqrt{\mathrm{disc}}=(X-Z)(Y-X)(Z-Y)$ and $\sqrt{-27}=3(1+2\zeta)$.
 
 \begin{equation*} \chi^{2b'+a'}(uv_0' + vv_1'+wv_2') =\frac{w^3}{u^3} = \frac{e_1^3-\tfrac 92 e_1 e_2+ \tfrac{27}{2} e_3 - \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}}{e_1^3} \end{equation*}
 
@@ -496,7 +496,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:characterCoordinates, helper:cubicCharacters}
 
-The linked Lean proof establishes this statement.
+Since $a'+2b'=3v_2^\vee$, the character $\chi^{a'+2b'}$ pulls back to $(\chi_2/\chi_0)^3$, whose value is $w^3/u^3$ with $u,v,w$ as in Equation~\ref{eqn:formulaForNormCharacter}. The sum $v^3+w^3$ is symmetric in $X,Y,Z$ and equals $2e_1^3-9e_1e_2+27e_3$. The difference is $v^3-w^3=3(1+2\zeta)(X-Z)(Y-X)(Z-Y)=\sqrt{-27}\sqrt{\mathrm{disc}}$ (Supporting lemma~\ref{helper:cubicCharacters}). Hence $w^3=\tfrac12\bigl((v^3+w^3)-(v^3-w^3)\bigr)$ is the displayed numerator, and $u^3=e_1^3$.
 
 \end{proof}
 
@@ -508,7 +508,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Let $C_3$ permute $X,Y,Z$ cyclically. The complement of $\DDD_0$ in the integral model $\SSS$ is $\operatorname{Spec}\ZZ[X/\varepsilon,Y/\varepsilon]^{C_3}$, and a rational point $P$ of $S\setminus D_0$ is integral if every element of $\ZZ[X/\varepsilon,Y/\varepsilon]^{C_3}$ takes an integer value at $P$.
 
  Write $e_2,e_3,\delta$ for the dehomogenized invariants \[ e_2=\frac{XY+YZ+ZX}{\varepsilon^2},\qquad e_3=\frac{XYZ}{\varepsilon^3},\qquad \delta=\frac{X^2Y+Y^2Z+Z^2X}{\varepsilon^3}. \] Then \begin{equation*} \ZZ[X/\varepsilon,Y/\varepsilon]^{C_3} =\ZZ[e_2,e_3,\delta]. \end{equation*} A rational point $P$ of $S\setminus D_0$ is integral if and only if $e_2(P),e_3(P)\in\ZZ$. 
 
@@ -520,7 +520,7 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:affineC3invariants}
 
-Compute the cyclic invariants in the affine chart. The invariant relation makes $\delta$ integral over $\ZZ[e_2,e_3]$, so integral values of $e_2,e_3$ force the rational value of $\delta$ to be integral.
+The equality of rings is Equation~\ref{eqn:affineC3invariants}. Put $\delta'=(XY^2+YZ^2+ZX^2)/\varepsilon^3$. Then $\delta+\delta'=e_2-3e_3$ and $\delta\delta'=e_2^3+e_3-6e_2e_3+9e_3^2$, so $\delta$ is a root of the monic quadratic $t^2-(e_2-3e_3)t+(e_2^3+e_3-6e_2e_3+9e_3^2)$ over $\ZZ[e_2,e_3]$. If $e_2(P),e_3(P)\in\ZZ$, then $\delta(P)$ is a rational number integral over $\ZZ$, hence an integer. By the equality of rings every invariant is an integer polynomial in $e_2,e_3,\delta$, so it takes an integer value at $P$. The converse holds because $e_2$ and $e_3$ are invariants.
 
 \end{proof}
 
@@ -532,7 +532,7 @@ Compute the cyclic invariants in the affine chart. The invariant relation makes 
 
 \leanok
 
-
+Notation is as in Lemma~\ref{lemma:affineIntegrality}: $e_2=(XY+YZ+ZX)/\varepsilon^2$, $e_3=XYZ/\varepsilon^3$ and $\delta=(X^2Y+Y^2Z+Z^2X)/\varepsilon^3$.
 
 \begin{equation*} \ZZ[X/\varepsilon,Y/\varepsilon]^{C_3} =\ZZ[e_2,e_3,\delta]. \end{equation*}
 
@@ -544,7 +544,7 @@ Compute the cyclic invariants in the affine chart. The invariant relation makes 
 
 \uses{eqn:C3invariants}
 
-The linked Lean proof establishes this statement.
+Each $f\in\ZZ[X/\varepsilon,Y/\varepsilon]$ equals $F/\varepsilon^d$ for a form $F\in\ZZ[X,Y,Z]$ of some degree $d$. Since $\varepsilon$ is invariant, $f$ is $C_3$-invariant exactly when $F$ is. By Equation~\ref{eqn:C3invariants}, $F$ is then a $\ZZ$-linear combination of products $e_1^ie_2^je_3^k(X^2Y+Y^2Z+Z^2X)^l$ with homogeneous $e_i$ and $i+2j+3k+3l=d$. Dividing each product by $\varepsilon^d=e_1^d$ gives $e_2^je_3^k\delta^l$ in the dehomogenized notation, so $f\in\ZZ[e_2,e_3,\delta]$. The reverse inclusion holds because $e_2$, $e_3$ and $\delta$ are invariant.
 
 \end{proof}
 
@@ -556,7 +556,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Here $C_3$ permutes $X,Y,Z$ cyclically, and $e_1,e_2,e_3$ are the elementary symmetric polynomials in $X,Y,Z$.
 
 \begin{equation*} \ZZ[X,Y,Z]^{C_3} =\ZZ[e_1,e_2,e_3,X^2Y+Y^2Z+Z^2X] \end{equation*}
 
@@ -566,7 +566,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The linked Lean proof establishes this statement.
+We follow \cite[Example~4.6]{campbell2023permutation}. Put $q=X^2Y+Y^2Z+Z^2X$ and let $\tau$ swap $X$ and $Y$, so that $\tau q=XY^2+YZ^2+ZX^2$ and $q-\tau q=-(X-Y)(Y-Z)(Z-X)$. Let $f$ be $C_3$-invariant. Then $f-\tau f$ changes sign under every transposition, so it vanishes when two variables are equal and is divisible in $\ZZ[X,Y,Z]$ by $(X-Y)(Y-Z)(Z-X)$. Hence $B=(f-\tau f)/(q-\tau q)$ is a symmetric polynomial with integer coefficients. The polynomial $S=f-Bq$ is $C_3$-invariant and satisfies $S-\tau S=(f-\tau f)-B(q-\tau q)=0$, so it is symmetric as well. By the fundamental theorem on symmetric polynomials over $\ZZ$, $S$ and $B$ lie in $\ZZ[e_1,e_2,e_3]$, so $f=S+Bq$ lies in $\ZZ[e_1,e_2,e_3,q]$. The four generators are invariant, which gives the reverse inclusion.
 
 \end{proof}
 
@@ -578,7 +578,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+The characteristic polynomial of $(K/\QQ,x)$ is $\prod_{g\in C_3}(t-gx)$; its $t^2$-coefficient is $-1$ because $x$ has trace one. A rational point of $T$ is integral if it is integral as a point of $S\setminus D_0$ in the sense of Lemma~\ref{lemma:affineIntegrality}. Since $3D_0$ is Cartier, $H(\cdot,\mathcal O(D_0))=H(\cdot,\mathcal O(3D_0))^{1/3}$, where $H(\cdot,\mathcal O(3D_0))$ is the toric height (Equation~\ref{eqn:heightforrationaladeles}) for the support function of $3D_0$.
 
  The characteristic polynomial $f = t^3-t^2+at+b \in \QQ[t]$ of a rational point $(K/\mathbb Q,x) \in T(\mathbb Q)$ has integer coefficients if and only if $(K/\mathbb Q,x)$ is integral. For any integral rational point $(K/\QQ,x)$ on $T$, \begin{equation*} H((K/\mathbb Q,x),\mathcal O(D_0)) = \sqrt{1-3a}. \end{equation*} 
 
@@ -590,7 +590,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:cubicCharacters, helper:integralLocalHeight, helper:supportFunctionSymmetry}
 
-Apply the invariant-ring criterion to the characteristic polynomial. Evaluate the local height factors; their product reduces to $\sqrt{1-3a}$.
+By \cite[Prop.~2.5]{odesky2023moduli} the unit $x+(\sigma^2x)\sigma+(\sigma x)\sigma^2$ of the group algebra over $K$ maps to $P=(K/\QQ,x)$, so $X/\varepsilon$, $Y/\varepsilon$ and $Z/\varepsilon$ take the values $x$, $\sigma^2x$ and $\sigma x$ at $P$. Hence $e_2(P)=a$ and $e_3(P)=-b$, and Lemma~\ref{lemma:affineIntegrality} gives the first assertion. For the height, Equation~\ref{eqn:localHeight} writes each local factor of $H(P,\mathcal O(3D_0))$ as a maximum over the four weight vectors of Lemma~\ref{lemma:heightformula}. At an integral point every finite factor is $1$, and Equation~\ref{eqn:heightExtraFactor} gives the factor at the complex place. Let $z_\pm=1-\tfrac92e_2+\tfrac{27}2e_3\pm\tfrac{\sqrt{-27}}2\sqrt{\mathrm{disc}}$, evaluated at $P$; these are the values of $\chi^{2a'+b'}$ and $\chi^{a'+2b'}$. Since $(2a'+b')+(a'+2b')=3(a'+b')$ and $z_-=\overline{z_+}$, we get $|z_+|^2=z_+z_-=(1-3a)^3$. So $1-3a\geq0$; as $1-3a$ is an integer congruent to $1$ modulo $3$, in fact $1-3a\geq1$, and the maximum in Equation~\ref{eqn:heightExtraFactor} is $(1-3a)^3$. Thus $H(P,\mathcal O(3D_0))=(1-3a)^{3/2}$ and $H(P,\mathcal O(D_0))=\sqrt{1-3a}$.
 
 \end{proof}
 
@@ -602,7 +602,7 @@ Apply the invariant-ring criterion to the characteristic polynomial. Evaluate th
 
 \leanok
 
-
+Let $P\in T(\QQ)$ and let $w$ be a place of $E$. Here $e_2,e_3$ and $\sqrt{\mathrm{disc}}$ denote the values at $P$ of $e_2/e_1^2$, $e_3/e_1^3$ and $\sqrt{\mathrm{disc}}/e_1^3$ (notation of Lemma~\ref{lemma:heightformula}), and $|\cdot|_w=q_w^{-\ord_w(\cdot)}$ for finite $w$, $|\cdot|_w=|\cdot|^2$ at the complex place. The local factor at $w$ of $H(P,\mathcal O(3D_0))$ (Equation~\ref{eqn:heightforrationaladeles}) is the following.
 
 \begin{align*} \max\Bigg( 1, |1-3e_2|_w, &\left| 1-\tfrac{9}{2} e_2+ \tfrac{27}{2} e_3 - \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w, \\ &\left| 1-\tfrac{9}{2} e_2+ \tfrac{27}{2} e_3 + \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}} \right|_w \Bigg)^{\frac{1}{[E:\QQ]}} \end{align*}
 
@@ -614,7 +614,7 @@ Apply the invariant-ring criterion to the characteristic polynomial. Evaluate th
 
 \uses{helper:cubicCharacters, helper:localWeightHeight}
 
-The linked Lean proof establishes this statement.
+Let $\varphi_0$ be the support function of $D_0$, so that $\varphi_0(n)=\min(0,n_1,n_2)$ for $n=n_1v_1+n_2v_2$. Following \cite[p.~68]{MR1234037}, the support function $3\varphi_0$ of $3D_0$ is the minimum of the pairings $\langle m,\cdot\rangle$ over the four weights $m\in\{0,a'+b',2a'+b',a'+2b'\}$ of Lemma~\ref{lemma:heightformula}; this is checked on each of the three cones. Since $\langle m,\ell_w(P)\rangle=\ord_w\chi^m(P)$, we have $|\chi^m(P)|_w=q_w^{-\langle m,\ell_w(P)\rangle}$, so $q_w^{-3\varphi_0(\ell_w(P))}=\max_m|\chi^m(P)|_w$ (Supporting lemma~\ref{helper:localWeightHeight}). On the chart $e_1=1$, Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} give $\chi^{a'+b'}(P)=1-3e_2$ and give $\chi^{a'+2b'}(P)$ and its conjugate $\chi^{2a'+b'}(P)$ as the third and fourth entries. Raising to the power $1/[E:\QQ]$ gives the display.
 
 \end{proof}
 
@@ -626,7 +626,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Notation is as in Equation~\ref{eqn:localHeight}. If $P\in T(\QQ)$ is integral, then every finite local factor of $H(P,\mathcal O(3D_0))$ equals $1$, and the factor at the complex place is the following.
 
 \begin{align*} \max\left( 1, |1-3e_2|^2, \left|1-\tfrac 92 e_2+ \tfrac{27}{2} e_3 + \tfrac{\sqrt{-27}}{2} \sqrt{\mathrm{disc}}\right|^2 \right)^{1/2}. \end{align*}
 
@@ -638,7 +638,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:cubicCharacters, helper:integralLocalHeight}
 
-The linked Lean proof establishes this statement.
+Write $z_\pm=1-\tfrac92e_2+\tfrac{27}2e_3\pm\tfrac{\sqrt{-27}}2\sqrt{\mathrm{disc}}$. By Lemma~\ref{lemma:affineIntegrality}, $e_2,e_3\in\ZZ$ at the integral point $P$. Then $z_++z_-=2-9e_2+27e_3$ and $z_+z_-=(1-3e_2)^3$ are integers, the latter because $(2a'+b')+(a'+2b')=3(a'+b')$. So $z_\pm$ are roots of a monic quadratic over $\ZZ$ and are integral at every finite place; together with $1-3e_2\in\ZZ$ this makes every finite factor in Equation~\ref{eqn:localHeight} equal to $1$ (Supporting lemma~\ref{helper:integralLocalHeight}). At the complex place $|\cdot|_w=|\cdot|^2$ and $[E:\QQ]=2$. The value of $\sqrt{\mathrm{disc}}$ at $P$ is fixed by $C_3$, hence rational, while $\sqrt{-27}$ is purely imaginary; so $z_-=\overline{z_+}$, and the last two entries of Equation~\ref{eqn:localHeight} coincide.
 
 \end{proof}
 
@@ -652,7 +652,7 @@ The linked Lean proof establishes this statement.
 
 
 
- Let $P=(K/\QQ,x)$ be an integral rational point of $T$ with characteristic polynomial $f=t^3-t^2+at+b\in\ZZ[t]$. Write $H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))$ for its toric height and set $h(f)=\max(|a|^{1/2},|b|^{1/3})$, so that $H(f)=\max\{1,h(f)\}$. Then $a\leq0$ and \begin{equation*} h(f)^2=-a, \qquad H_{\mathrm{tor}}(f)^2=1+3h(f)^2, \end{equation*} so for every $B\geq0$, \begin{equation*} h(f)\leq B \quad\Longleftrightarrow\quad H_{\mathrm{tor}}(f)\leq\sqrt{1+3B^2}. \end{equation*} In particular, $H_{\mathrm{tor}}(f)\asymp H(f)$. The only polynomial here with $h(f)=0$ is $t^3-t^2$, for which $H_{\mathrm{tor}}(f)=1$. 
+ Let $P=(K/\QQ,x)$ be an integral rational point of $T$ with characteristic polynomial $f=t^3-t^2+at+b\in\ZZ[t]$. Write $H_{\mathrm{tor}}(f)=H(P,\mathcal O(D_0))$ for its toric height and set $h(f)=\max(|a|^{1/2},|b|^{1/3})$, so that $H(f)=\max\{1,h(f)\}$. Then $a\leq0$ and $h(f)^2=-a, H_{\mathrm{tor}}(f)^2=1+3h(f)^2$ so for every $B\geq0$, \begin{equation*} h(f)\leq B \quad\Longleftrightarrow\quad H_{\mathrm{tor}}(f)\leq\sqrt{1+3B^2}. \end{equation*} In particular, $H_{\mathrm{tor}}(f)\asymp H(f)$. The only polynomial here with $h(f)=0$ is $t^3-t^2$, for which $H_{\mathrm{tor}}(f)=1$. 
 
 \end{lemma}
 
@@ -662,7 +662,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:cubicCharacters, prop:canonicalHeight}
 
-The three roots are real. The resulting coefficient inequalities give $a\leq0$ and $|b|^{2/3}\leq-a$. Substitute this into the root-height definition and use the toric-height formula.
+Proposition~\ref{prop:canonicalHeight} gives $H_{\mathrm{tor}}(f)^2=1-3a>0$, so $a\leq0$ because $a\in\ZZ$. The algebra $K$ is $\QQ^3$ or a cyclic cubic field; in the second case complex conjugation is trivial on $K$ because $C_3$ has no element of order two. So the roots $r_1,r_2,r_3$ of $f$ are real. Write $A=-a$. Then $r_1^2+r_2^2+r_3^2=(r_1+r_2+r_3)^2-2a=1+2A$ and $r_1r_2r_3=-b$, so AM--GM applied to the $r_i^2$ gives $b^2\leq((1+2A)/3)^3$. If $A\geq1$, then $1+2A\leq3A$, so $|b|^{2/3}\leq A$; if $A=0$, then $b^2\leq1/27$, so $b=0$. In both cases $h(f)^2=-a$. Substituting into $H_{\mathrm{tor}}(f)^2=1-3a$ gives $H_{\mathrm{tor}}(f)^2=1+3h(f)^2$, from which the equivalence follows; $h(f)=0$ forces $a=b=0$.
 
 \end{proof}
 
@@ -680,7 +680,7 @@ Write $E=\QQ(\zeta)$, where $\zeta$ is a primitive cube root of unity. The isomo
 
 \leanok
 
-
+Let $\gamma$ generate $\mathrm{Gal}(E/\QQ)$, and let $\mathcal G_1\cong R^E_\QQ\GG_m$ be the torus of units of augmentation one in the group algebra of $C_3$, so that $T=\mathcal G_1/C_3$. The cocharacter lattice of $\mathcal G_{1,E}$ is $N_E'=\ZZ\langle v_1,v_2\rangle$, and $\gamma$ swaps $v_1$ and $v_2$. Put $\omega=\tfrac13(2v_1+v_2)$; the cocharacter lattice of $T_E$ is $N_E=N_E'+\ZZ\omega$. The following $\Gamma$-equivariant isomorphism sends $\omega$ to $v_1$ and $\gamma\omega$ to $v_2$.
 
 \begin{equation*} N_E=\ZZ\langle\omega,\gamma\omega \rangle \to N_E'=\ZZ\langle v_1,v_2\rangle \end{equation*}
 
@@ -690,7 +690,7 @@ Write $E=\QQ(\zeta)$, where $\zeta$ is a primitive cube root of unity. The isomo
 
 \leanok
 
-The linked Lean proof establishes this statement.
+We have $\gamma\omega=\tfrac13(v_1+2v_2)=v_1+v_2-\omega\in N_E$, and $v_1=2\omega-\gamma\omega$, $v_2=-\omega+2\gamma\omega$. So $(\omega,\gamma\omega)$ is a basis of $N_E$, and the map sending it to the basis $(v_1,v_2)$ of $N_E'$ is an isomorphism of lattices. It commutes with $\gamma$, which swaps $\omega$ and $\gamma\omega$ and swaps $v_1$ and $v_2$.
 
 \end{proof}
 
@@ -714,7 +714,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:integralCoefficients, helper:polynomialFibres, prop:canonicalHeight}
 
-Identify the character lattices, then evaluate the invariant functions in $u+v\zeta$. The norm and trace determine the cubic coefficients. Solving the displayed quadratic gives the fibers, including the repeated-root case, and the coefficient formulas give the integral conditions.
+A torus over $\QQ$ is determined up to isomorphism by its character lattice with the Galois action \cite[Theorem~12.23]{milne}, so the $\Gamma$-isomorphism of Equation~\ref{eqn:isoCocharLattices} gives $T\cong\mathcal G_1$, unique up to $\mathrm{Aut}(\mathcal G_1)$. On characters it sends $\chi^{v_1^\vee},\chi^{v_2^\vee}$ of $\mathcal G_{1,E}$ to $\chi^{a'},\chi^{b'}$ of $T_E$, and at $\alpha\in E^\times=\mathcal G_1(\QQ)$ the characters $\chi^{v_1^\vee},\chi^{v_2^\vee}$ take the values $\alpha$ and $\gamma\alpha$ in some order. On the chart $e_1=1$, Equations~\ref{eqn:formulaForNormCharacter} and~\ref{eqn:formulaForNormCharacter2} give $\chi^{a'+b'}=1-3e_2$ and $\chi^{2a'+b'}+\chi^{a'+2b'}=2-9e_2+27e_3$. At the point given by $\alpha$, where $e_2=a$ and $e_3=-b$, these become $N=\alpha\cdot\gamma\alpha=1-3a$ and $NT=N(\alpha+\gamma\alpha)=2-9a-27b$; solving for $a,b$ gives the formula for $f$. At integral points Lemma~\ref{lemma:rootVsToric} gives $H_{\mathrm{tor}}(f)^2=1-3a=N$. Since $N\neq0$, $T=3-(1+27b)/N$, so every $\alpha$ giving $f$ is a root of $g=t^2-Tt+N$. The polynomial $f$ has Galois group $C_3$ or splits, without a triple root, because $K$ is a cyclic cubic field or $\QQ^3$ and $x$ is normal (Theorem~\ref{thm:modularInterpretation}). For the converse, the roots $\theta_i$ of $f$ are real and not all equal, so $N=1-3a=\tfrac12\sum_{i<j}(\theta_i-\theta_j)^2>0$. Write $\mathrm{disc}(f)=r^2$ with $r\in\QQ$. Then $T^2-4N=-27\,\mathrm{disc}(f)/N^2=-3(3r/N)^2$, so the roots $\alpha_\pm=\tfrac12\bigl(T\pm\tfrac{3r}{N}\sqrt{-3}\bigr)$ of $g$ lie in $E^\times$, are swapped by $\gamma$, and have trace $T$ and norm $N$. By the coefficient formula they give points with characteristic polynomial $f$, and they are distinct exactly when $r\neq0$; this gives two points for separable $f$ and one when $f$ has a double root (Supporting lemma~\ref{helper:polynomialFibres}). Finally, $u+v\zeta$ has norm $u^2+v^2-uv$ and trace $2u-v$, and substituting into $a=(1-N)/3$ and $b=(N(3-T)-1)/27$ gives Equation~\ref{eqn:integralityConditionsUsingCyclo}.
 
 \end{proof}
 
@@ -726,7 +726,7 @@ Identify the character lattices, then evaluate the invariant functions in $u+v\z
 
 \leanok
 
-
+Let $u+v\zeta\in E^\times$ correspond, as in Proposition~\ref{prop:cyclotomicParametrization}, to a rational point of $T$ with characteristic polynomial $f=t^3-t^2+at+b$. Then $f\in\ZZ[t]$ if and only if the following holds.
 
 \begin{equation*} \begin{cases} u^2+v^2-uv \in 1+3 \ZZ \text{ and }\\ (u^2+v^2-uv)(3-2u+v) \in 1+27 \ZZ. \end{cases} \end{equation*}
 
@@ -738,7 +738,7 @@ Identify the character lattices, then evaluate the invariant functions in $u+v\z
 
 \uses{helper:integralCoefficients}
 
-The linked Lean proof establishes this statement.
+By Proposition~\ref{prop:cyclotomicParametrization}, $a=(1-N)/3$ and $b=(N(3-T)-1)/27$, where $N=(u+v\zeta)(u+v\zeta^2)=u^2+v^2-uv$ and $T=2u-v$. So $a\in\ZZ$ exactly when $N\in1+3\ZZ$, and $b\in\ZZ$ exactly when $N(3-2u+v)\in1+27\ZZ$ (Supporting lemma~\ref{helper:integralCoefficients}).
 
 \end{proof}
 
@@ -766,7 +766,7 @@ For $s=(s_0,s_1,s_2)$ invariant under Galois, let $H(P,s)$ be the toric height a
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:archimedeanIntegral, helper:correctionProduct, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:poissonIntegral}
 
-Compute the local Fourier transforms, apply Poisson summation, and evaluate the resulting real integral by residues. Shift the height parameters to obtain the full convergence region, then identify the continued Euler product.
+Write $s_1=s_2=\sigma$ and $z=s_0/2+\sigma$, and first assume $\operatorname{Re}(s_0)>0$ and $\operatorname{Re}(\sigma)>1$. Lemma~\ref{lemma:poissonIntegral} writes $Z(s)$ as $6\int_\RR$ of the product of the archimedean factor \eqref{eqn:archimedeanSpectralFactor} and the finite Euler product \eqref{eqn:finiteSpectralProduct}, as functions of $t$. For $\operatorname{Im}(t)\geq0$ we have $\operatorname{Re}(\lambda)\geq\operatorname{Re}(\sigma)>1$, so the finite factor is holomorphic and bounded in the upper half-plane (Lemma~\ref{lemma:finiteFourierProduct}), while the archimedean factor is $O(|t|^{-2})$. Closing the contour upwards picks up only the pole $t_0=-s_0/(2\pi i)$ of the archimedean factor, with residue $1/(2\pi i)$; there $\lambda=z$, so $Z(s)$ is $6$ times the finite product at $\lambda=z$, namely $\prod_{q\equiv2\Mod{3}}(1-q^{-2z})^{-1}\prod_{p\equiv1\Mod{3}}(1+2p^{-z})(1-p^{-z})^{-2}$. Pulling out a factor $(1-p^{-z})^{-1}$ at every prime $p\neq3$ gives the stated product. To reach every $z$ with $\operatorname{Re}(z)>1$, note that by the product formula $H(P,s)$ for $P\in T(\QQ)$ depends only on $s$ modulo complex multiples of principal toric divisors, and $-2D_0+D_1+D_2$ is principal (Equation~\ref{eqn:normCharacterDivisor}). So $Z(s)$ depends only on $z$, and the representative $s_0=z-1$, $\sigma=(z+1)/2$ satisfies the initial hypotheses. The meromorphic continuation comes from Lemma~\ref{lemma:simplifiedZ-s}.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -780,7 +780,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+For a finite place $v$ of $\QQ$, let $1_v^{D_0}$ be the indicator function of the set of $x\in T(\QQ_v)$ at which the functions $e_2$, $e_3$ and $\delta$ of Equation~\ref{eqn:affineC3invariants} take values in $\ZZ_v$, and let $K_v^{D_0}$ be the subgroup of $K_v^{\mathrm{max}}$ fixing $1_v^{D_0}$. Write $\iota:T\to R^E_\QQ\GG_m$ for the isomorphism induced by Equation~\ref{eqn:isoCocharLattices}, and let $\zeta\in E$ be a primitive cube root of unity.
 
  Let $v$ be a finite place of $\QQ$ and let $w$ be a place of $E$ lying over $v$. \begin{enumerate} \item If $v \neq 3$, then $1_v^{D_0}(x) = 1$ if and only if $\ell_w(x) \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2$. In particular $K_v^{D_0}=K_v^{\mathrm{max}}$. \item Let $v = 3$, let $w$ be the unique place of $E$ over $3$, and let $\mathfrak w = (1-\zeta)O_{E,w}$ be the maximal ideal of $O_{E,w}$, so that $3O_{E,w} = \mathfrak w^2$. The support of $1_3^{D_0}$ is the subgroup \begin{equation*} K_{3,2}\coloneqq\iota^{-1}(1+\mathfrak w^2) =\iota^{-1}(1+3O_{E,w})\subset K_3^{\mathrm{max}}. \end{equation*} \item Let $K^{\mathrm{max}}=\prod_v K_v^{\mathrm{max}}$ and $K^{D_0}=\prod_v K_v^{D_0}\subset K^{\mathrm{max}}$. The latter is the subgroup which fixes the characteristic function $1^{D_0}=\otimes_v1_v^{D_0}$ for integral points in $T(\AA)$, with $1_\infty^{D_0}=1$. Then \[ K_3^{D_0}=K_{3,2},\qquad K^{D_0}=K_{3,2}\times\prod_{v\neq3}K_v^{\mathrm{max}}. \] \end{enumerate} 
 
@@ -792,7 +792,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{prop:basicfacts}
 
-Away from $3$, evaluate the invariant functions in local coordinates to obtain the cone condition. At $3$, the same computation gives the subgroup $1+3O_{E,w}$. Its stabilizer determines the global compact level.
+Let $v\neq3$. Since $\delta$ is integral over $\ZZ[e_2,e_3]$, the argument of Lemma~\ref{lemma:affineIntegrality} shows $1_v^{D_0}(x)=1$ exactly when $e_2(x),e_3(x)\in\ZZ_v$. Put $r=\chi^{v_1^\vee+v_2^\vee}(x)$, $y_1=\chi^{3v_1^\vee}(x)$ and $y_2=\chi^{3v_2^\vee}(x)$ in $E_w$; the character formulas of Lemma~\ref{lemma:heightformula} give $r=1-3e_2$, $y_1+y_2=2-9e_2+27e_3$ and $y_1y_2=r^3$. If $e_2,e_3\in\ZZ_v$, then $y_1,y_2$ are roots of $U^2-(y_1+y_2)U+r^3\in\ZZ_v[U]$ and so lie in $O_{E,w}$. Conversely, if $y_1,y_2\in O_{E,w}$ then $r\in O_{E,w}$, and $e_2=(1-r)/3$, $e_3=(y_1+y_2+1-3r)/27$ lie in $O_{E,w}\cap\QQ_v=\ZZ_v$ because $3$ is a unit. Since $\ord_w(y_1)=3\langle v_1^\vee,\ell_w(x)\rangle$ and $\ord_w(y_2)=3\langle v_2^\vee,\ell_w(x)\rangle$, this is the cone condition; it depends only on $\ell_w(x)$, which vanishes on $K_v^{\mathrm{max}}$ (Proposition~\ref{prop:basicfacts}). At $v=3$, let $u=\iota(P)$ have norm $N$ and trace $T$; by Equation~\ref{eqn:integralityConditionsUsingCyclo}, read over $\ZZ_3$, $P$ is integral exactly when $N\in1+3\ZZ_3$ and $N(3-T)\in1+27\ZZ_3$. If these hold, then $u$ is a unit, and writing $N=1+3n$ gives $T\equiv2+3n-9n^2\pmod{27}$, so $\ord_{\mathfrak w}(T-2)\geq2$ and $\ord_{\mathfrak w}(1-T+N)\geq4$. The Newton polygon of $(U-1)^2-(T-2)(U-1)+(1-T+N)$, the characteristic polynomial of $u$, then gives $u\in1+\mathfrak w^2$. Conversely, for $u=1+3x$ with $x=c+d\zeta$ and $c,d\in\ZZ_3$, one computes $\mathrm N(u)\in1+3\ZZ_3$ and $\mathrm N(u)(3-\mathrm{Tr}(u))=1+9(\mathrm N(x)-\mathrm{Tr}(x)^2)-27\mathrm N(x)\mathrm{Tr}(x)$, which lies in $1+27\ZZ_3$ because $\mathrm{Tr}(x)^2-\mathrm N(x)=3c(c-d)$. Part (3) follows: $1_3^{D_0}$ is the indicator function of the subgroup $K_{3,2}$, whose stabilizer in $K_3^{\mathrm{max}}$ is $K_{3,2}$ itself.
 
 \end{proof}
 
@@ -804,7 +804,7 @@ Away from $3$, evaluate the invariant functions in local coordinates to obtain t
 
 \leanok
 
-Let $f\in L^1(T(\AA))$ and suppose $\widehat f|_{T(\QQ)^\perp}\in L^1(T(\QQ)^\perp)$. With counting measure on $T(\QQ)$ and the normalized dual measure, the following equality holds for almost every $y\in T(\AA)$.
+Let $T(\QQ)^\perp$ be the group of unitary characters of $T(\AA)$ that are trivial on $T(\QQ)$; it is the dual group of $T(\QQ)\backslash T(\AA)$. Give $T(\QQ)$ counting measure, $T(\QQ)\backslash T(\AA)$ the quotient of the Haar measure $d^\times x$, and $T(\QQ)^\perp$ the dual measure $d\chi$, for which Fourier inversion holds on $T(\QQ)\backslash T(\AA)$. For $f\in L^1(T(\AA))$ put $\widehat f(\chi)=\int_{T(\AA)}f(x)\chi(x)^{-1}\,d^\times x$, and suppose $\widehat f|_{T(\QQ)^\perp}\in L^1(T(\QQ)^\perp)$. The Poisson summation formula \cite[Theorem~4.42]{MR1397028} states that the following equality holds for almost every $y\in T(\AA)$.
 
 \begin{equation*} \int_{T(\QQ)} f(xy)\, dx = \int_{T(\QQ)^\perp} \widehat{f}(\chi) \chi(y) \,d\chi \end{equation*}
 
@@ -820,7 +820,7 @@ This is an explicit hypothesis in the formalization.
 
 \leanok
 
-
+For a place $v$ of $\QQ$ put $H_v(x,-s,D_0)=H_v(x,s)^{-1}1_v^{D_0}(x)$ for $x\in T(\QQ_v)$, where $H_v(x,s)$ is the local factor of the height in Equation~\ref{eqn:heightforrationaladeles} and $1_\infty^{D_0}=1$. Its Fourier transform is $\widehat{H_v}(\chi,-s,D_0)=\int_{T(\QQ_v)}H_v(x,-s,D_0)\chi(x)^{-1}\,d^\times x_v$. At a finite place $d^\times x_v$ gives $K_v^{\mathrm{max}}$ measure one; at infinity it is chosen so that $\ZZ v_0$ is unimodular for its pushforward to $\mathfrak t$ under $\ell_w$. A character of $T(\QQ_v)$ is unramified if it is trivial on $K_v^{\mathrm{max}}$, and ramified otherwise. The subgroup $K_{3,2}$ is defined in Proposition~\ref{prop:localIntegrality}.
 
  Let $s \in (\CC^{\Sigma(1)})^{\Gamma}$ and assume $\mathrm{Re}(s_e)>0$ for each $e \in\{0,1,2\}$. Let $w$ be the infinite place of $E$. Let $\chi\in T(\RR)^\vee$ be a unitary character. If $\chi$ is ramified then $\widehat{H_\infty}(\chi,-s,D_0)$ is identically zero. If $\chi$ is unramified, then $\chi(x)= e(\langle \ell_w(x) ,m\rangle)$ for all $x \in T(\RR)$ for a unique $m \in \mathfrak t^\vee$, and \begin{equation*} \widehat{H_\infty}(\chi,-s,D_0) = \left(\frac{-1}{2\pi i}\right) \frac{s_0+s_1+s_2}{2\pi i} \frac{1}{(m(v_0)+\frac{s_0}{2\pi i})(m(v_0)-\frac{s_1+s_2}{2\pi i})}. \end{equation*} Next let $v$ be a finite place of $\QQ$. For any unitary character $\chi\in T(\QQ_v)^\vee$, the integral defining $\widehat{H_v}(\chi,-s,D_0)$ converges absolutely to a holomorphic function of $s$ in the region $$\{s \in (\CC^{\Sigma(1)})^\Gamma : \mathrm{Re}(s_1),\mathrm{Re}(s_2)>0 \}.$$ Assume $v \neq 3$. Let $w$ be any place of $E$ lying over $v$. The local characteristic function $1_v^{D_0}$ is $K_v^{\mathrm{max}}$-invariant. If $\chi$ is ramified, then $\widehat{H_v}(\chi,-s,D_0)$ is identically zero. If $\chi$ is unramified then we may regard $\chi$ as a character on $X_\ast(T_{E})^{\Gamma(w/v)}$ (Proposition~\ref{prop:basicfacts}) and \begin{equation*} \widehat{H_v}(\chi,-s,D_0) = \sum_{\substack{n \in X_\ast(T_{E})^{\Gamma(w/v)}\\ n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2} } \chi(n)^{-1} q_v^{\varphi(n)} . \end{equation*} If $v = 3$ then the support of $x \mapsto H_3(x,-s,D_0)$ is the congruence subgroup $K_{3,2}$ of $K_3^{\mathrm{max}}$ of index six. Under the isomorphism $\iota:T(\QQ_3)\to E_w^\times$ the support corresponds to the subgroup $1+3O_{E,w}$ of $O_{E,w}^\times$ where $w$ is the unique place of $E$ lying over $3$. 
 
@@ -832,7 +832,7 @@ This is an explicit hypothesis in the formalization.
 
 \uses{eqn:finiteHeightFourierTransform, eqn:infiniteHeightFourierTransform, helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
-At infinity and at finite places other than $3$, ramified characters vanish after integration over the maximal compact subgroup. For unramified characters, integrate the archimedean support function on its two cones and sum the finite valuation lattices. At $3$, integrate over the congruence subgroup of index six.
+At infinity $1_\infty^{D_0}=1$ and the height is $K_\infty^{\mathrm{max}}$-invariant, so a ramified character integrates to zero over $K_\infty^{\mathrm{max}}$. For unramified $\chi$, push the integral forward by $\ell_w$ to $\mathfrak t_w$, where the integrand is $e^{\varphi(y)}e(-\langle y,m\rangle)$. On the half-lines $\RR_{\geq0}v_0$ and $\RR_{\geq0}(-v_0)$ the support function $\varphi$ has slopes $-s_0$ and $-(s_1+s_2)$, since $-v_0=v_1+v_2$; integrating the two exponentials gives $(s_0+2\pi im(v_0))^{-1}+(s_1+s_2-2\pi im(v_0))^{-1}$, which rearranges to \eqref{eqn:infiniteHeightFourierTransform}. At a finite place $v\neq3$, Proposition~\ref{prop:localIntegrality} shows that $1_v^{D_0}$ is $K_v^{\mathrm{max}}$-invariant and is the indicator of the cone $\RR_{\geq0}v_1+\RR_{\geq0}v_2$ in the $\ell_w$-coordinate; the height is also $K_v^{\mathrm{max}}$-invariant. So ramified characters give zero, and for unramified $\chi$ the integral becomes the lattice sum \eqref{eqn:localfourierassumovern} over the image $X_\ast(T_E)^{\Gamma(w/v)}$ of $\ell_w$ (Proposition~\ref{prop:basicfacts}). On the cone $\operatorname{Re}\varphi(n_1v_1+n_2v_2)=-\operatorname{Re}(s_1)n_1-\operatorname{Re}(s_2)n_2$, so the sum converges absolutely and locally uniformly when $\operatorname{Re}(s_1),\operatorname{Re}(s_2)>0$. At $v=3$, Proposition~\ref{prop:localIntegrality} identifies the support with $K_{3,2}$, whose index in $K_3^{\mathrm{max}}$ is $\#(O_{E,w}/3O_{E,w})^\times=6$; the local height is one there, so $\widehat{H_3}(\chi,-s,D_0)$ is $1/6$ if $\chi$ is trivial on $K_{3,2}$ and $0$ otherwise.
 
 \end{proof}
 
@@ -856,7 +856,7 @@ At infinity and at finite places other than $3$, ramified characters vanish afte
 
 \uses{helper:archimedeanIntegral}
 
-The linked Lean proof establishes this statement.
+Push the integral forward by $\ell_w$ to $\mathfrak t_w=\RR v_0$ and split it over $\RR_{\geq0}v_0$, where $\varphi(yv_0)=-ys_0$, and $\RR_{\geq0}(-v_0)$, where $\varphi(-yv_0)=-y(s_1+s_2)$. The two exponential integrals give $(s_0+2\pi im(v_0))^{-1}+(s_1+s_2-2\pi im(v_0))^{-1}$, and combining the fractions gives the display.
 
 \end{proof}
 
@@ -880,7 +880,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
-The linked Lean proof establishes this statement.
+The integrand is invariant under $K_v^{\mathrm{max}}$, which has measure one, so the integral is a sum over $T(\QQ_v)/K_v^{\mathrm{max}}\cong X_\ast(T_E)^{\Gamma(w/v)}$ (Proposition~\ref{prop:basicfacts}). By Proposition~\ref{prop:localIntegrality}, $1_v^{D_0}$ keeps exactly the lattice points in the cone $\RR_{\geq0}v_1+\RR_{\geq0}v_2$; this is Equation~\ref{eqn:localfourierassumovern}.
 
 \end{proof}
 
@@ -904,7 +904,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
-Along a boundary ray where a height exponent vanishes, the local valuation series has terms of constant absolute value. It therefore fails to converge.
+Since $s$ is Galois-invariant, $s_1=s_2$, so if one vanishes both do. Let $v\neq3$ be finite. As in \eqref{eqn:localfourierassumovern}, the integral of $|H_v(\cdot,-s,D_0)|$ over $T(\QQ_v)$ is the sum of $q_v^{\operatorname{Re}\varphi(n)}$ over the points $n$ of $X_\ast(T_E)^{\Gamma(w/v)}$ in the cone $\RR_{\geq0}v_1+\RR_{\geq0}v_2$. On this cone $\varphi$ is linear with $\varphi(v_1)=-s_1$ and $\varphi(v_2)=-s_2$; it does not involve $s_0$ and vanishes when $s_1=s_2=0$. The cone contains the infinitely many invariant lattice points $k(v_1+v_2)$, $k\geq0$, each contributing $1$, so the integral diverges.
 
 \end{proof}
 
@@ -916,7 +916,7 @@ Along a boundary ray where a height exponent vanishes, the local valuation serie
 
 \leanok
 
-
+Let $v\neq3$ be a finite place, $w$ a place of $E$ over $v$, $e_v$ its ramification index (here $e_v=1$), and $N_w=X_\ast(T_E)^{\Gamma(w/v)}$. Let $\chi$ be an unramified character of $T(\QQ_v)$, regarded as a character of $N_w$ through $\ell_w$, and evaluate $1_v^{D_0}$ at a lattice point $n$ through any $x$ with $\ell_w(x)=n$.
 
 \begin{equation*} \int_{T(\QQ_v)} H_v(x,s)^{-1}1_v^{D_0}(x)\chi(x)^{-1}\,d^\times x_v =\sum_{n \in N_w} q_v^{\frac{1}{e_v}\varphi(n)} 1_v^{D_0}(n) \chi(n)^{-1} = \sum_{\substack{n \in X_\ast(T_{E})^{\Gamma(w/v)}\\ n \in \mathbb R_{\geq 0}v_1+\mathbb R_{\geq 0}v_2} } \chi(n)^{-1} q_v^{\varphi(n)} . \end{equation*}
 
@@ -928,7 +928,7 @@ Along a boundary ray where a height exponent vanishes, the local valuation serie
 
 \uses{helper:supportFunctionSymmetry, prop:basicfacts, prop:localIntegrality}
 
-The linked Lean proof establishes this statement.
+The integrand is $K_v^{\mathrm{max}}$-invariant by Proposition~\ref{prop:localIntegrality}, and $K_v^{\mathrm{max}}$ has measure one. Since $\ell_w$ identifies $T(\QQ_v)/K_v^{\mathrm{max}}$ with $N_w$ (Proposition~\ref{prop:basicfacts}) and the local height on the coset of $n$ is $q_v^{-\varphi(n)/e_v}$ by Equation~\ref{eqn:heightforrationaladeles}, the integral is the first sum. Proposition~\ref{prop:localIntegrality} says $1_v^{D_0}(n)=1$ exactly when $n$ lies in the cone $\RR_{\geq0}v_1+\RR_{\geq0}v_2$, and $e_v=1$; this gives the second sum.
 
 \end{proof}
 
@@ -940,7 +940,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+For $x=(x_w)_w\in T(\AA)\subset T(\AA_E)$ put $\ell(x)=\tfrac12\sum_w\ell_w(x_w)\log q_w$, the sum over all places $w$ of $E$, where $q_w$ is the size of the residue field at a finite place and $q_w=e^2$ at the complex place. Let $\mathrm N:T\to\GG_m$ be the norm character, obtained by composing the isomorphism $\iota:T\to R^E_\QQ\GG_m$ with the norm, and let $\mathrm N(x)\in\AA^\times$ be its adelic value.
 
 \begin{equation*} \ell(x)(\mathrm{N}) = -\log |\mathrm{N}(x)|_{\AA} \end{equation*}
 
@@ -952,7 +952,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:adelicLogarithm}
 
-The linked Lean proof establishes this statement.
+For a character $\chi$, $\langle\chi,\ell_w(x_w)\rangle$ is the normalized valuation $\ord_w(\chi(x_w))$, so $\langle\chi,\ell_w(x_w)\rangle\log q_w=-\log|\chi(x_w)|_w$ for the normalized absolute value $|\cdot|_w=q_w^{-\ord_w(\cdot)}$. Taking $\chi=\mathrm N$ and summing over $w$ gives $-\tfrac12\log\prod_w|\mathrm N(x)|_w$. Since $\mathrm N(x)\in\AA^\times$ and $[E:\QQ]=2$, this product is $|\mathrm N(x)|_\AA^2$.
 
 \end{proof}
 
@@ -964,7 +964,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Here $\ell$ is the adelic logarithm of Equation~\ref{eqn:LAsNorm}.
 
  There is an exact sequence \begin{equation*} 1 \longrightarrow K^{\mathrm{max}}/\mu^{\mathrm{max}} \longrightarrow T(\mathbb Q)\backslash T(\AA) \xlongrightarrow{\ell} \mathfrak t \longrightarrow 0 \end{equation*} where $K^{\mathrm{max}}$ is the maximal compact subgroup of $T(\AA)$ and $\mu^{\mathrm{max}} = T(\QQ) \cap K^{\mathrm{max}}$. 
 
@@ -974,7 +974,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The product formula makes the logarithm descend to the adelic quotient. Principalize the finite valuations to identify its kernel with the compact quotient; the infinite component supplies surjectivity.
+Under $\iota$, the quotient $T(\QQ)\backslash T(\AA)$ is the id\`ele class group $E^\times\backslash\AA_E^\times$. By Equation~\ref{eqn:LAsNorm}, $\ell$ depends only on $|\mathrm N(x)|_\AA$; it is trivial on $T(\QQ)$ by the product formula, and its kernel is the group of id\`ele classes of norm one. Since $E$ has class number one, every id\`ele class has a representative that is a unit at every finite place; if the class has norm one, the infinite component also has absolute value one, so the representative lies in $K^{\mathrm{max}}$. Two elements of $K^{\mathrm{max}}$ give the same class exactly when they differ by an element of $T(\QQ)\cap K^{\mathrm{max}}=\mu^{\mathrm{max}}$, so the kernel is $K^{\mathrm{max}}/\mu^{\mathrm{max}}$. Finally $\ell$ is surjective because $\ell_w$ is surjective at the complex place $w$ of $E$ (Proposition~\ref{prop:basicfacts}).
 
 \end{proof}
 
@@ -998,7 +998,7 @@ The product formula makes the logarithm descend to the adelic quotient. Principa
 
 \uses{prop:Lmap}
 
-The six Eisenstein units represent the residue classes at the ramified place. They identify the quotient by the integral level with the logarithm line. Tracking the normalized Haar measure gives $du/6$.
+The map $\ell$ vanishes on $K^{D_0}$, so it descends to the double quotient, and by Proposition~\ref{prop:Lmap} the descended map is surjective with kernel $K^{\mathrm{max}}/(\mu^{\mathrm{max}}K^{D_0})$. A point of $T(\QQ)$ lies in $K^{\mathrm{max}}$ exactly when its image under $\iota$ is a unit at every finite place, so $\iota(\mu^{\mathrm{max}})=O_E^\times=\{\pm1,\pm\zeta,\pm\zeta^2\}$, where $\zeta$ is a primitive cube root of unity. Projecting to the place $3$ and reducing modulo $3$ identifies $K^{\mathrm{max}}/K^{D_0}$ with $K_3^{\mathrm{max}}/K_{3,2}\cong(O_{E,w}/3O_{E,w})^\times$, a group of order six. No sixth root of unity other than $1$ is congruent to $1$ modulo $3$, so $\mu^{\mathrm{max}}$ maps bijectively onto this group. Hence $K^{\mathrm{max}}=\mu^{\mathrm{max}}K^{D_0}$, which gives the isomorphism, and $T(\QQ)\cap K^{D_0}=\{1\}$, so every class has a unique representative in $a(\RR)K^{D_0}$. In this representative the infinite factor contributes $du$ times an angular measure of total mass one, and the finite part of $K^{D_0}$ has measure $[K_3^{\mathrm{max}}:K_{3,2}]^{-1}=1/6$.
 
 \end{proof}
 
@@ -1010,7 +1010,7 @@ The six Eisenstein units represent the residue classes at the ramified place. Th
 
 \leanok
 
-
+The automorphic characters trivial on $K^{D_0}$ are described as follows.
 
 \begin{equation*} \chi_m(x)=e(\langle m,\ell(x)\rangle), \qquad m\in\mathfrak t^\vee. \end{equation*}
 
@@ -1022,7 +1022,7 @@ The six Eisenstein units represent the residue classes at the ramified place. Th
 
 \uses{prop:Lmap}
 
-The linked Lean proof establishes this statement.
+A character of $T(\QQ)\backslash T(\AA)$ trivial on $K^{D_0}$ factors through the isomorphism $\ell$ onto the line $\mathfrak t$ (Lemma~\ref{lemma:KprimeGroup}), and the unitary characters of $\mathfrak t$ are $y\mapsto e(\langle m,y\rangle)$ with $m\in\mathfrak t^\vee$.
 
 \end{proof}
 
@@ -1034,7 +1034,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Here $s=(s_0,\sigma,\sigma)$, $\chi_m$ is the character of Equation~\ref{eqn:chimdefn} with $t=m(v_0)$, and $\widehat{H_{\mathrm{fin}}}(\chi,-s,D_0)=\prod_{v<\infty}\widehat{H_v}(\chi_v,-s,D_0)$, where $\chi_v$ is the restriction of $\chi$ to $T(\QQ_v)$ and $\widehat{H_v}$ is the local Fourier transform of Proposition~\ref{prop:heightFourierTransform}.
 
  For $\operatorname{Re}(\sigma)>1$ and $t\in\RR$, put $\lambda=\sigma-\pi it$. Then \begin{equation*} \widehat{H_{\mathrm{fin}}}(\chi_m,-s,D_0) =\frac16 \prod_{q\equiv2\pmod3}(1-q^{-2\lambda})^{-1} \prod_{p\equiv1\pmod3} \frac{1+2p^{-\lambda}}{(1-p^{-\lambda})^2} \end{equation*} and \begin{equation*} \left|\widehat{H_{\mathrm{fin}}}(\chi_m,-s,D_0)\right| \leq\widehat{H_{\mathrm{fin}}}(\chi_0,{-\operatorname{Re}(s)},D_0)<\infty. \end{equation*} Here $\chi_0$ is the trivial character, corresponding to $m=0$. The Euler product converges absolutely and locally uniformly for $\operatorname{Re}(\lambda)>1$ and is bounded on every half-plane $\operatorname{Re}(\lambda)\geq\tau>1$. 
 
@@ -1046,7 +1046,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:finiteIntegralProduct, helper:supportFunctionSymmetry}
 
-Sum the local valuation series separately at split and inert primes and include the factor $1/6$ at $3$. A convergent positive Euler product bounds the absolute values and proves locally uniform convergence.
+Fix a finite place $v\neq3$, a place $w$ of $E$ over $v$, and $x_v\in T(\QQ_v)$ with $n=\ell_w(x_v)$. The local component is $\chi_{m,v}(x_v)=e(\langle m,\ell(x^{(v)})\rangle)$, where $x^{(v)}$ is the adele equal to $x_v$ at $v$ and $1$ elsewhere. If $v$ splits, the two places over $v$ have valuation vectors $n$ and its Galois conjugate, with the same pairing against the invariant $m$, and residue fields of size $q_v$; if $v$ is inert, there is one place, with residue field of size $q_v^2$. In both cases $\chi_{m,v}(x_v)=q_v^{2\pi i\langle m,n\rangle}$. Since $m(v_1)=m(v_2)=-t/2$ and $\varphi(n)=-\sigma(n_1+n_2)$ for $n=n_1v_1+n_2v_2$ in the cone, each term of \eqref{eqn:finiteHeightFourierTransform} is $q_v^{-\lambda(n_1+n_2)}$. For inert $q\equiv2\Mod{3}$ the invariant lattice points in the cone are $k(v_1+v_2)$, $k\geq0$, giving $\sum_kq^{-2k\lambda}=(1-q^{-2\lambda})^{-1}$. For split $p\equiv1\Mod{3}$ the lattice is $\ZZ v_1+\ZZ\omega$ with $\omega=\tfrac13(2v_1+v_2)$; writing $n=av_1+b\omega$, the points of the cone with $n_1+n_2=k$ are those with $0\leq b\leq3k$, so there are $3k+1$ of them, and $\sum_k(3k+1)p^{-k\lambda}=(1+2p^{-\lambda})(1-p^{-\lambda})^{-2}$. At $3$ the character $\chi_{m,3}$ is trivial on $K_3^{\mathrm{max}}$, so the factor is $1/6$ by Proposition~\ref{prop:heightFourierTransform}. The factors away from $3$ are $1+O(p^{-\tau})$ on $\operatorname{Re}(\lambda)\geq\tau>1$, which gives absolute, locally uniform convergence and boundedness. Each local series has terms of absolute value $q_v^{-\operatorname{Re}(\sigma)(n_1+n_2)}$, which are the terms for $m=0$ and $\operatorname{Re}(s)$; this gives \eqref{eqn:finiteEulerBound}.
 
 \end{proof}
 
@@ -1070,7 +1070,7 @@ Sum the local valuation series separately at split and inert primes and include 
 
 \uses{lemma:finiteFourierProduct}
 
-The linked Lean proof establishes this statement.
+Multiply the local factors computed in Lemma~\ref{lemma:finiteFourierProduct}: $(1-q^{-2\lambda})^{-1}$ at inert primes $q\equiv2\Mod{3}$, $(1+2p^{-\lambda})(1-p^{-\lambda})^{-2}$ at split primes $p\equiv1\Mod{3}$, and $1/6$ at $3$.
 
 \end{proof}
 
@@ -1094,7 +1094,7 @@ The linked Lean proof establishes this statement.
 
 \uses{lemma:finiteFourierProduct}
 
-The linked Lean proof establishes this statement.
+In each local series of Lemma~\ref{lemma:finiteFourierProduct}, the term indexed by $n=n_1v_1+n_2v_2$ has absolute value $q_v^{-\operatorname{Re}(\sigma)(n_1+n_2)}$, which is the corresponding term for the trivial character and parameter $\operatorname{Re}(s)$. Apply the triangle inequality to each factor and multiply; the right side is finite because the Euler product converges at $\lambda=\operatorname{Re}(\sigma)>1$.
 
 \end{proof}
 
@@ -1118,7 +1118,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:adelicLogarithm, helper:archimedeanIntegral, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, prop:Lmap}
 
-The positive local factors give spatial integrability. The finite Euler-product bound and quadratic decay of the archimedean factor give integrability on the annihilator of $T(\QQ)$.
+By Equation~\ref{eqn:heightforrationaladeles}, $|f|$ is the product over $v$ of $1_v^{D_0}(x_v)q_v^{\operatorname{Re}\varphi(\ell_w(x_v))/e_v}$. For a finite set $S$ of places containing $3$ and $\infty$, the factors outside $S$ equal $1$ on $K_v^{\mathrm{max}}$, which has measure one, so monotone convergence gives $\int_{T(\AA)}|f|=\sup_S\prod_{v\in S}\int_{T(\QQ_v)}|H_v(\cdot,-s,D_0)|$. Put $\tau=\operatorname{Re}(\sigma)$. By Lemma~\ref{lemma:finiteFourierProduct} each local integral at $v\neq3$ is at most $(1+2q_v^{-\tau})(1-q_v^{-\tau})^{-2}\leq(1-q_v^{-\tau})^{-4}$, since $(1+2x)(1-x)^2=1-3x^2+2x^3\leq1$; the integral at $3$ is $1/6$, and the one at $\infty$ is finite by Proposition~\ref{prop:heightFourierTransform}. Hence $\int|f|\leq\tfrac16\zeta(\tau)^4\int_{T(\RR)}|H_\infty(\cdot,-s,D_0)|<\infty$. Since $f$ is $K^{D_0}$-invariant, $\widehat f$ on $T(\QQ)^\perp$ is supported on the characters $\chi_m$ of Equation~\ref{eqn:chimdefn}. There the finite factor is bounded by \eqref{eqn:finiteEulerBound} and the archimedean factor \eqref{eqn:archimedeanSpectralFactor} is $O_s((1+|t|)^{-2})$. The dual measure is $6\,dt$ because the quotient measure is $du/6$ (Lemma~\ref{lemma:KprimeGroup}), so $\widehat f$ is integrable on $T(\QQ)^\perp$.
 
 \end{proof}
 
@@ -1142,7 +1142,7 @@ The positive local factors give spatial integrability. The finite Euler-product 
 
 \uses{helper:archimedeanIntegral, helper:supportFunctionSymmetry}
 
-The linked Lean proof establishes this statement.
+At the infinite place $q_w=e^2$, so the infinite component of $\chi_m$ is $x\mapsto e(\langle\ell_w(x),m\rangle)$, the unramified character with the same $m$. Substitute $s_1=s_2=\sigma$ and $t=m(v_0)$ into $(s_0+2\pi it)^{-1}+(s_1+s_2-2\pi it)^{-1}$, the form of \eqref{eqn:infiniteHeightFourierTransform} obtained by integrating over the two half-lines, and combine the fractions.
 
 \end{proof}
 
@@ -1154,7 +1154,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Here $\chi_{m,\infty}$ is the infinite component of the character $\chi_m$ of Equation~\ref{eqn:chimdefn}, $t=m(v_0)$, and $\widehat{H_{\mathrm{fin}}}$ is the product of the finite local transforms, as in Lemma~\ref{lemma:finiteFourierProduct}.
 
  For $s$ as in Lemma~\ref{lemma:heightZetaConvergence}, we have \begin{equation*} Z(s)=6\int_\RR \widehat{H_\infty}(\chi_{m,\infty},-s,D_0) \widehat{H_{\mathrm{fin}}}(\chi_m,-s,D_0)\,dt, \end{equation*} where both the series defining $Z(s)$ and the integral converge absolutely. 
 
@@ -1166,7 +1166,7 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:archimedeanIntegral, helper:finiteIntegralProduct, helper:supportFunctionSymmetry, prop:Lmap}
 
-Apply the general Poisson formula with the normalized quotient measure. Identify the characters trivial on the integral level with the real logarithm coordinate; the dual measure contributes the factor six.
+By Lemma~\ref{lemma:heightZetaConvergence}, $f=H(\cdot,-s,D_0)$ satisfies the hypotheses of the Poisson formula \eqref{eqn:poissonae}, so it holds for almost every $y$; its left side at $y=1$ is $\sum_{P\in T(\QQ)}H(P,s)^{-1}1^{D_0}(P)=Z(s)$. To evaluate at $y=1$, use $a(u)$ from Lemma~\ref{lemma:KprimeGroup}: by that lemma, $\int|f|=\tfrac16\int_\RR\sum_{\gamma\in T(\QQ)}|f(\gamma a(u))|\,du<\infty$, so the series converges at some $u_0$. The function $r\mapsto\operatorname{Re}\varphi(rv_0)$ is Lipschitz with constant $M=\max\{\operatorname{Re}(s_0),2\operatorname{Re}(\sigma)\}$, and multiplying by $a(u)$ shifts the infinite valuation by $uv_0$. Hence $|f(\gamma a(u))|\leq e^{M|u-u_0|}|f(\gamma a(u_0))|$, so the series converges absolutely and locally uniformly in $u$ and is continuous; at $u=0$ this is the absolute convergence of $Z(s)$. The right side at $a(u)$ is continuous in $u$ by dominated convergence, since $|\widehat f|$ is integrable on $T(\QQ)^\perp$. Both sides are $K^{D_0}$-invariant, so they are continuous functions of $u$ that agree almost everywhere, hence at $u=0$. Finally, the dual measure is $6\,dt$ on the characters $\chi_m$, and $\widehat f$ factors into its archimedean and finite parts.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1192,7 +1192,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{eqn:poissonae, lemma:poissonIntegral}
 
-The linked Lean proof establishes this statement.
+This is the conclusion of Lemma~\ref{lemma:poissonIntegral}: evaluate the Poisson formula \eqref{eqn:poissonae} at the identity, use that $\widehat{H}$ is supported on the characters $\chi_m$ with dual measure $6\,dt$, and factor $\widehat H$ into its archimedean and finite parts.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1206,7 +1206,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+Here $a'=2v_1^\vee-v_2^\vee$ and $b'=2v_2^\vee-v_1^\vee$ are as in Lemma~\ref{lemma:heightformula}, so $a'+b'=v_1^\vee+v_2^\vee$ is Galois-invariant and $\chi^{a'+b'}$ is defined over $\QQ$. The divisors $D_0,D_1,D_2$ correspond to the rays $v_0,v_1,v_2$, and $v_0=-v_1-v_2$.
 
 \begin{equation*} \operatorname{div}(\chi^{a'+b'}) =\sum_{i=0}^2\langle a'+b',v_i\rangle D_i =-2D_0+D_1+D_2. \end{equation*}
 
@@ -1216,7 +1216,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-The linked Lean proof establishes this statement.
+The divisor of a character $\chi^m$ on a toric variety is $\sum_i\langle m,v_i\rangle D_i$ \cite[\S3.3]{MR1234037}. Since $a'+b'=v_1^\vee+v_2^\vee$ and $v_0=-v_1-v_2$, the pairings with $v_0,v_1,v_2$ are $-2,1,1$.
 
 \end{proof}
 
@@ -1240,7 +1240,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:correctionProduct}
 
-The linked Lean proof establishes this statement.
+This defines $R(z)$ for $\operatorname{Re}(z)>1/2$. Each factor differs from $1$ by at most $5\ell^{-2\operatorname{Re}(z)}$, where $\ell$ is its prime, so the product converges absolutely and locally uniformly there (Supporting lemma~\ref{helper:correctionProduct}).
 
 \end{proof}
 
@@ -1264,7 +1264,7 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:poissonae, helper:correctionProduct, thm:heightZetaFunctionFormula2}
 
-Compare the Euler factors with $\xi(z)^2$ and the correction product $R(z)$. The factorization and convergence of the correction product give the continuation.
+For $\operatorname{Re}(z)>1$, the Euler product of $\xi$ is $(1-3^{-z})^{-1}\prod_{q\equiv2\Mod{3}}(1-q^{-2z})^{-1}\prod_{p\equiv1\Mod{3}}(1-p^{-z})^{-2}$. By Theorem~\ref{thm:heightZetaFunctionFormula2}, $Z(s)=\prod_{q\equiv2\Mod{3}}(1-q^{-2z})^{-1}\prod_{p\equiv1\Mod{3}}(1+2p^{-z})(1-p^{-z})^{-2}$. Dividing by $(1-3^{-z})^2\xi(z)^2$ leaves $1-q^{-2z}$ at each $q$ and $(1+2p^{-z})(1-p^{-z})^2=1-3p^{-2z}+2p^{-3z}$ at each $p$, which is the product $R(z)$ of Equation~\ref{eqn:eulerCorrectionFactor}. Each factor of $R$ differs from $1$ by at most $5\ell^{-2\operatorname{Re}(z)}$, so $R$ is holomorphic on $\operatorname{Re}(z)>1/2$. The meromorphic continuation of $\xi$ then continues $Z$ to $\operatorname{Re}(z)>1/2$, that is, to $\operatorname{Re}(s_0+s_1+s_2)>1$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1278,7 +1278,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+Write $Z_0(z)=Z(2zD_0)$, the value at $s=(2z,0,0)$. Since $H(P,2zD_0)=H(P)^{2z}$, where $H(P)=H(P,D_0)$, this is the Dirichlet series $Z_0(z)=\sum_{n\geq1}d_nn^{-z}$, where $d_n$ is the number of $P\in(\SSS\setminus\DDD_0)(\ZZ)$ with $H(P)^2=n$.
 
 \begin{equation*} Z_0(z)=\left(1-3^{-z}\right)^2\xi(z)^2R(z). \end{equation*}
 
@@ -1290,7 +1290,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{eqn:poissonae, lemma:simplifiedZ-s}
 
-The linked Lean proof establishes this statement.
+Take $s=(2z,0,0)$ in Lemma~\ref{lemma:simplifiedZ-s}; then $\tfrac12(s_0+s_1+s_2)=z$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1316,7 +1316,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
-Expand the split, inert, and ramified Euler factors and multiply the prime-power coefficients.
+By \eqref{eqn:Z0factorization} and Theorem~\ref{thm:heightZetaFunctionFormula2}, $Z_0(z)$ is the Euler product $(1-3^{-z})\zeta(z)\prod_{q\equiv2\Mod{3}}(1+q^{-z})^{-1}\prod_{p\equiv1\Mod{3}}(1+3p^{-z}(1-p^{-z})^{-1})$ for $\operatorname{Re}(z)>1$. The factor at $3$ is $(1-3^{-z})(1-3^{-z})^{-1}=1$, so $d_n=0$ when $3\mid n$. Away from $3$, $\zeta(z)$ contributes the sum over divisors $d$, the coefficient of $p^{-kz}$ in $1+3p^{-z}(1-p^{-z})^{-1}$ is $3$ for $k\geq1$, and that of $q^{-kz}$ in $(1+q^{-z})^{-1}$ is $(-1)^k$; this gives the divisor-sum formula. For the product form, the full local factors are $(1-q^{-2z})^{-1}=\sum_kq^{-2kz}$ and $(1+2p^{-z})(1-p^{-z})^{-2}=\sum_k(3k+1)p^{-kz}$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1342,7 +1342,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{eqn:Z0Laurent, eqn:poissonae, helper:correctionProduct, thm:heightZetaFunctionFormula2}
 
-Expand the Dedekind zeta factor at $1$ and logarithmically differentiate the convergent correction product. Simplifying the prime factors yields $\alpha$, $\beta$, and the Euler--Kronecker constant $\mu$.
+The product $R(z)$ of Equation~\ref{eqn:eulerCorrectionFactor} is holomorphic on $\operatorname{Re}(z)>1/2$ with $R(1)>0$, and $\xi$ has a simple pole at $z=1$ and no other pole, so \eqref{eqn:Z0factorization} gives a double pole at $z=1$ and no other pole. The class number formula gives $r=\operatorname{Res}_{z=1}\xi(z)=\pi/(3\sqrt3)$, and the definition of $\mu$ in Equation~\ref{eqn:introConstants} gives $\xi(z)=r/(z-1)+r\mu+O(z-1)$. Since $(1-3^{-z})^2$ equals $4/9$ at $z=1$ with logarithmic derivative $\log3$, expanding the factorization gives \eqref{eqn:Z0LaurentR}. To evaluate $R(1)$ and $R'(1)$, use $(1-3p^{-2z}+2p^{-3z})/(1-p^{-2z})=1-2/(p^z(p^z+1))$ and the Euler product of $\zeta(2z)$ to write $R(z)=((1-3^{-2z})\zeta(2z))^{-1}\prod_{p\equiv1\Mod{3}}(1-2/(p^z(p^z+1)))$. With $\zeta(2)=\pi^2/6$ this gives $R(1)=27\alpha/(4\pi^2)$, so $\tfrac49r^2R(1)=\alpha/9$. Logarithmic differentiation gives $R'(1)/(2R(1))=\beta-\zeta'(2)/\zeta(2)-\tfrac18\log3$, and substituting into \eqref{eqn:Z0LaurentR} gives \eqref{eqn:Z0Laurent}.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1356,7 +1356,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+Here $\alpha$, $\beta$ and $\mu$ are the constants of Equation~\ref{eqn:introConstants}.
 
 \begin{equation*} Z_0(z)=\frac{\alpha}{9(z-1)^2} +\frac{2\alpha}{9}\left(\mu-\frac{\zeta'(2)}{\zeta(2)}+\beta +\frac38\log3\right)\frac{1}{z-1}+O(1), \end{equation*}
 
@@ -1368,7 +1368,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{helper:laurentRescaling}
 
-The linked Lean proof establishes this statement.
+Substitute $R(1)=27\alpha/(4\pi^2)$ and $R'(1)/(2R(1))=\beta-\zeta'(2)/\zeta(2)-\tfrac18\log3$, computed in the proof of Proposition~\ref{prop:leadingTerms}, into Equation~\ref{eqn:Z0LaurentR}; with $r=\pi/(3\sqrt3)$ the leading coefficient becomes $\tfrac49r^2R(1)=\alpha/9$.
 
 \end{proof}
 
@@ -1380,7 +1380,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-Here $r=\operatorname{Res}_{z=1}\xi(z)=\pi/(3\sqrt3)$ and $\mu$ is the Euler--Kronecker constant defined above.
+Here $r=\operatorname{Res}_{z=1}\xi(z)=\pi/(3\sqrt3)$ by the class number formula, $\mu$ is the Euler--Kronecker constant of Equation~\ref{eqn:introConstants}, and $R(z)$ is the product of Equation~\ref{eqn:eulerCorrectionFactor}.
 
 \begin{equation*} Z_0(z)=\frac{a}{(z-1)^2} +2a\left(\mu+\frac12\log3+\frac{R'(1)}{2R(1)}\right)\frac{1}{z-1} +O(1), \qquad a=\frac49r^2R(1). \end{equation*}
 
@@ -1392,7 +1392,7 @@ Here $r=\operatorname{Res}_{z=1}\xi(z)=\pi/(3\sqrt3)$ and $\mu$ is the Euler--Kr
 
 \uses{helper:correctionProduct, helper:laurentRescaling}
 
-The linked Lean proof establishes this statement.
+Expand the three factors of \eqref{eqn:Z0factorization} at $z=1$: $\xi(z)^2=r^2(z-1)^{-2}+2r^2\mu(z-1)^{-1}+O(1)$, $(1-3^{-z})^2=\tfrac49(1+(z-1)\log3)+O((z-1)^2)$ and $R(z)=R(1)+R'(1)(z-1)+O((z-1)^2)$. Multiplying, the coefficient of $(z-1)^{-2}$ is $a=\tfrac49r^2R(1)$ and that of $(z-1)^{-1}$ is $a(2\mu+\log3+R'(1)/R(1))$.
 
 \end{proof}
 
@@ -1418,7 +1418,7 @@ Let $F=F_1$ consist of the monic integral trace-one cubics with Galois group $C_
 
 \leanok
 
-The Gram determinant of the trace pairing on the conjugates of $x$ is the square of the group determinant. Use its factorization $\Delta=e_1(e_1^2-3e_2)$ and nondegeneracy of the trace form.
+Let $\sigma$ generate $C_3$ and put $x_i=\sigma^{i-1}x$ for $i=1,2,3$. Since $K/\QQ$ is separable, the trace pairing $(u,v)\mapsto\operatorname{Tr}_{K/\QQ}(uv)$ is nondegenerate, so $x_1,x_2,x_3$ form a $\QQ$-basis exactly when the Gram matrix $B=(\operatorname{Tr}_{K/\QQ}(x_ix_j))_{i,j}$ is invertible. Writing $B=M^{\mathsf T}M$ with $M$ the circulant matrix of $x_1,x_2,x_3$ gives $\det B=\Delta^2$, where $\Delta=x_1^3+x_2^3+x_3^3-3x_1x_2x_3$. Finally $\Delta=(x_1+x_2+x_3)(x_1^2+x_2^2+x_3^2-x_1x_2-x_2x_3-x_3x_1)=e_1(e_1^2-3e_2)$.
 
 \end{proof}
 
@@ -1430,7 +1430,7 @@ The Gram determinant of the trace pairing on the conjugates of $x$ is the square
 
 \leanok
 
-
+For $f=t^3-t^2+at+b\in F$, $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$ is the toric height of Lemma~\ref{lemma:rootVsToric}.
 
  Let $d_n$ be the coefficients of $Z_0(z)=\sum_{n\geq1}d_n n^{-z}$. For $X\geq1$, \begin{equation*} \sum_{\substack{f\in F\\H_{\mathrm{tor}}(f)\leq\sqrt X}}1 =\frac12\sum_{n\leq X}d_n -\frac{\pi}{9\sqrt3}X+O(\sqrt X). \end{equation*} 
 
@@ -1442,7 +1442,7 @@ The Gram determinant of the trace pairing on the conjugates of $x$ is the square
 
 \uses{eqn:weightedPolynomialCount}
 
-Use the multiplicities of the characteristic-polynomial map. Count the split points by cyclic orbits of integer triples and compare the corresponding ellipse lattice count with its area.
+Put $H=\sqrt X$. By Theorem~\ref{thm:modularInterpretation} and Proposition~\ref{prop:canonicalHeight}, $\sum_{n\leq X}d_n$ counts equivalence classes of pairs $(K,x)$, with $K$ a $C_3$-algebra and $x$ an integral trace-one normal element, of toric height at most $H$. If $K$ is a field, the characteristic polynomial of $x$ lies in $F$; conversely the roots of $f\in F$ are normal by Lemma~\ref{lemma:normalityCriterion}, since $1-3a\neq0$, and each $f\in F$ gives two classes, one for each identification $C_3\cong\operatorname{Gal}(\QQ(x)/\QQ)$ (Example~\ref{example:twoRationalPointsSamePoly}). If $K=\QQ^3$, the classes are the triples $(\alpha,\beta,\gamma)\in\ZZ^3$ with $\alpha+\beta+\gamma=1$ modulo cyclic permutation, and each orbit has three elements because no such triple has equal coordinates. Substituting $\gamma=1-\alpha-\beta$ gives $H_{\mathrm{tor}}^2=1+3(\alpha^2+\beta^2+\alpha\beta-\alpha-\beta)$, so the split classes number $\frac13\#(\mathcal E_H\cap\ZZ^2)$, where $\mathcal E_H=\{(x,y)\in\RR^2:x^2+y^2+xy-x-y\leq\frac13(H^2-1)\}$. Hence the left-hand side is $\frac12\sum_{n\leq X}d_n-\frac16\#(\mathcal E_H\cap\ZZ^2)$. The ellipse $\mathcal E_H$ has area $\frac{2\pi}{3\sqrt3}H^2$ and boundary length $O(H)$, so its lattice-point count is $\frac{2\pi}{3\sqrt3}X+O(\sqrt X)$.
 
 \end{proof}
 
@@ -1454,7 +1454,7 @@ Use the multiplicities of the characteristic-polynomial map. Count the split poi
 
 \leanok
 
-
+For $f=t^3-t^2+at+b\in F$, $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$ is the toric height of Lemma~\ref{lemma:rootVsToric}.
 
 \begin{equation*} \sum_{\substack{f\in F\\H_{\mathrm{tor}}(f)\leq\sqrt X}}1 =\frac12\sum_{n\leq X}d_n -\frac{\pi}{9\sqrt3}X+O(\sqrt X). \end{equation*}
 
@@ -1466,7 +1466,7 @@ Use the multiplicities of the characteristic-polynomial map. Count the split poi
 
 \uses{helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
 
-The linked Lean proof establishes this statement.
+This is the display of Lemma~\ref{lemma:reducibles}. The sum $\sum_{n\leq X}d_n$ counts classes of $C_3$-algebras with an integral trace-one normal element of toric height at most $\sqrt X$ (Theorem~\ref{thm:modularInterpretation}, Proposition~\ref{prop:canonicalHeight}). Each $f\in F$ accounts for two field classes, and the split classes are the cyclic orbits of $(\alpha,\beta,1-\alpha-\beta)\in\ZZ^3$ with $1+3(\alpha^2+\beta^2+\alpha\beta-\alpha-\beta)\leq X$, each orbit of size three. Counting the lattice points $(\alpha,\beta)$ in this ellipse, of area $\frac{2\pi}{3\sqrt3}X$ and perimeter $O(\sqrt X)$, gives the split contribution $\frac{\pi}{9\sqrt3}X+O(\sqrt X)$ after dividing by $3$ and by $2$.
 
 \end{proof}
 
@@ -1490,7 +1490,7 @@ The linked Lean proof establishes this statement.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:xiMeanBound}
 
-Apply the residue theorem to an exponentially decaying kernel. A reflected kernel keeps the estimate uniform as $\sigma$ approaches $1/2$. Integrate over the height interval and apply the critical-line mean-square bound. The paper instead uses Titchmarsh, \cite[\S7.8, (7.8.3)]{titchmarsh1986}.
+We interpolate between the lines $\operatorname{Re}(z)=1/2$ and $\operatorname{Re}(z)=2$. On the critical line, Equation~\ref{eqn:criticalMeanSquare} gives $\int_0^T|\xi(1/2+it)|^2\,dt\ll_\eta1+T^{1+\eta}$, and absolute convergence gives $\int_0^T|\xi(2+it)|^2\,dt\ll T$. Titchmarsh's convexity theorem for mean values \cite[\S7.8, (7.8.3)]{titchmarsh1986} allows the simple pole of $\xi$ at $1$; its growth hypothesis follows from the polynomial growth of $\xi$ in vertical strips. With exponents $1+\eta$ and $1$ on the two lines and $T=2U$, it gives $\int_U^{2U}|\xi(\sigma+it)|^2\,dt\ll_\eta U^{1+\frac{2(2-\sigma)}{3}\eta}\leq U^{1+\eta}$ for $1/2<\sigma<2$, and the two boundary bounds cover $\sigma=1/2$ and $\sigma=2$. In Lean, the strip bound is proved with the residue theorem and a reflected kernel, uniformly on the closed strip, instead of Titchmarsh's convexity theorem \cite[\S7.8, (7.8.3)]{titchmarsh1986}.
 
 The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1516,7 +1516,7 @@ The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{c
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:criticalMeanSquare}
 
-This is the bound proved in Lemma~\ref{lemma:xiMeanValue}, with the same uniformity in $\sigma$.
+This is the bound of Lemma~\ref{lemma:xiMeanValue}, for $1/2\leq\sigma\leq2$ and $U\geq2$. It follows by convexity in $\sigma$ from the mean-square bound $\ll_\eta T^{1+\eta}$ on $\operatorname{Re}(z)=1/2$ (Equation~\ref{eqn:criticalMeanSquare}) and the bound $\ll T$ on $\operatorname{Re}(z)=2$, where $\xi$ converges absolutely. In Lean, the strip bound is proved with the residue theorem and a reflected kernel, uniformly on the closed strip, instead of Titchmarsh's convexity theorem \cite[\S7.8, (7.8.3)]{titchmarsh1986}.
 
 The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1542,7 +1542,7 @@ The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{c
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4}
 
-The linked Lean proof establishes this statement.
+Multiply the Chandrasekharan--Narasimhan estimate $\frac1T\int_1^T|\xi(1/2+it)|^2\,dt=O((\log T)^2)$ (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}, with $[E:\QQ]=2$ and $\sigma=1/2$) by $T$.
 
 The proof assumes the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1568,7 +1568,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
 
-Apply truncated Perron at a half-integer, move the contour across the double pole at $1$, and estimate the new contour using the strip mean-square bound. The residue supplies the main term. This is the direct argument retained in Lean in place of \cite[Theorem~1.1]{alberts2025}.
+Fix $0<\varepsilon<1$ and put $\eta=\varepsilon/4$. The coefficients $d_n$ are nonnegative, $Z_0$ converges absolutely for $\operatorname{Re}(z)>1$, and by Proposition~\ref{prop:leadingTerms} it continues meromorphically to $\operatorname{Re}(z)>1/2$ with only a double pole at $z=1$. Equation~\ref{eqn:heightMeanBound} and Lemma~\ref{lemma:xiMeanValue} give $\int_U^{2U}|Z_0(\sigma+it)|\,dt\ll_\eta U^{1+\eta}$ for $1/2+\eta\leq\sigma\leq2$ and $U\geq2$, and absolute convergence gives the same for $\sigma\geq2$; this bounds $\int_U^{2U}Z_0(\sigma\pm it)Y^{\pm it}\,dt$. The Tauberian theorem \cite[Theorem~1.1]{alberts2025}, with abscissa $1$ and $\delta=1/2-\eta$, then gives $\sum_{n\leq X}d_n=\operatorname{Res}_{z=1}Z_0(z)X^z/z+O_\varepsilon(X^{1/2+\varepsilon})$. By the Laurent expansion in Equation~\ref{eqn:Z0Laurent}, this residue is $XQ(\frac12\log X)$. Lean uses truncated Perron's formula and contour shifting instead of \cite[Theorem~1.1]{alberts2025}.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1594,7 +1594,7 @@ For each $\eta>0$ there is a constant $A_\eta$, depending only on $\eta$, such t
 
 \uses{helper:correctionBound, helper:correctionProduct}
 
-The linked Lean proof establishes this statement.
+By Equation~\ref{eqn:Z0factorization}, $Z_0(z)=(1-3^{-z})^2\xi(z)^2R(z)$, with $R$ the Euler product of Equation~\ref{eqn:eulerCorrectionFactor}. That product converges absolutely and uniformly on $\operatorname{Re}(z)\geq1/2+\eta$, so $|(1-3^{-z})^2R(z)|\leq A_\eta$ there (Supporting lemma~\ref{helper:correctionBound}). Hence $|Z_0(\sigma+it)|\leq A_\eta|\xi(\sigma+it)|^2$ pointwise, and integrating over $U\leq t\leq2U$ gives the bound.
 
 \end{proof}
 
@@ -1606,7 +1606,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
+For $f=t^3-t^2+at+b\in F$, $H_{\mathrm{tor}}(f)=\sqrt{1-3a}$ is the toric height of Lemma~\ref{lemma:rootVsToric}. For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \begin{equation*} \sum_{\substack{f\in F\\H_{\mathrm{tor}}(f)\leq\sqrt X}}1 =\frac12XQ\left(\tfrac12\log X\right) -\frac{\pi}{9\sqrt3}X +O_\varepsilon(X^{1/2+\varepsilon}). \end{equation*}
 
@@ -1618,7 +1618,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:xiMeanValue, prop:canonicalHeight, thm:heightZetaFunctionFormula2}
 
-The linked Lean proof establishes this statement.
+Insert the asymptotic $\sum_{n\leq X}d_n=XQ(\frac12\log X)+O_\varepsilon(X^{1/2+\varepsilon})$ of Equation~\ref{eqn:dSummatoryForGeneralTrace} into Lemma~\ref{lemma:reducibles}. The error $O(\sqrt X)$ of that lemma is absorbed into $O_\varepsilon(X^{1/2+\varepsilon})$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1626,7 +1626,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \chapter{Counting arbitrary trace}
 
-Let $F_s$ be the monic integral cubics of trace $s$ and Galois group $C_3$, and put $n(f)=a_1^2-3a_2$. We use \[A_1(X)=\#\{t^3-t^2+at+b\in F_1:1-3a\leq X\},\] \[A_0(X)=\#\{t^3-Nt+c\in F_0:1\leq N\leq X\}.\] For $N\geq1$, let $r(N)=\#\{c\in\ZZ:4N^3-27c^2\text{ is a square}\}$. The polynomial $Q$ is as in Corollary~\ref{cor:integralPointCount}. Summing the trace-zero and trace-one counts over $s$ proves Theorem~\ref{thm:generalMonicCount}.
+Let $F_{\mathrm{mon}}$ be the monic integral cubics with Galois group $C_3$, let $F_s$ be those of trace $s$, and put $n(f)=a_1^2-3a_2$. We use \[A_1(X)=\#\{t^3-t^2+at+b\in F_1:1-3a\leq X\},\] \[A_0(X)=\#\{t^3-Nt+c\in F_0:1\leq N\leq X\}.\] For $N\geq1$, let $r(N)=\#\{c\in\ZZ:4N^3-27c^2\text{ is a square}\}$. The polynomial $Q$ is as in Corollary~\ref{cor:integralPointCount}. Summing the trace-zero and trace-one counts over $s$ proves Theorem~\ref{thm:generalMonicCount}.
 
 \begin{lemma}[Reducing the trace]
 
@@ -1636,7 +1636,7 @@ Let $F_s$ be the monic integral cubics of trace $s$ and Galois group $C_3$, and 
 
 \leanok
 
-
+Here $H(f)$ is the root height, and for $g=t^3-t^2+at+b\in F_1$, $H_{\mathrm{tor}}(g)=\sqrt{1-3a}$ is the toric height of Lemma~\ref{lemma:rootVsToric}.
 
  For $s\in\ZZ$, define $\phi_s$ on $F_s$ by \[ \phi_s(f)(t)= \begin{cases} f(t+\tfrac{s}{3}),&s\equiv0\pmod3,\\ f(t+\tfrac{s-1}{3}),&s\equiv1\pmod3,\\ -f(-t+\tfrac{s+1}{3}),&s\equiv-1\pmod3. \end{cases} \] Then $\phi_s$ is a bijection from $F_s$ to $F_0$ if $3\mid s$, and from $F_s$ to $F_1$ if $3\nmid s$, and it preserves $n$. For $f\in F_s$, put $n=n(f)$. Then $n>0$, and \[ H(f)\leq H \quad\Longleftrightarrow\quad |s|\leq H\ \text{ and }\ n\leq s^2+3H^2. \] If $3\nmid s$, then $H_{\mathrm{tor}}(\phi_s(f))^2=n$. If $3\mid s$, then $\phi_s(f)=t^3-\frac n3t+c$ for some $c\in\ZZ$. 
 
@@ -1646,7 +1646,7 @@ Let $F_s$ be the monic integral cubics of trace $s$ and Galois group $C_3$, and 
 
 \leanok
 
-Integer translation, followed by reflection in the third residue class, gives the stated bijections and preserves $n$. The real-root coefficient inequalities reduce the height condition to the two displayed bounds.
+The three substitutions send trace $s$ to $0$, $1$ and $1$. On roots they and their inverses are integer translations and sign changes, so they preserve irreducibility and the Galois group, which gives the bijections. A cyclic cubic field is totally real, so the roots $r_1,r_2,r_3$ of $f$ are real and $n=\frac12\bigl((r_1-r_2)^2+(r_2-r_3)^2+(r_3-r_1)^2\bigr)>0$; the substitutions change root differences only by sign, so they preserve $n$. For $g\in F_1$, $n(g)=1-3a=H_{\mathrm{tor}}(g)^2$ by Lemma~\ref{lemma:rootVsToric}, and for a trace-zero polynomial $n$ is $-3$ times the linear coefficient. For the height, if $|a_1|\leq H$ and $|a_2|\leq H^2$ then $r_1^2+r_2^2+r_3^2=a_1^2-2a_2\leq3H^2$, and the arithmetic--geometric mean inequality gives $|a_3|=|r_1r_2r_3|\leq H^3$, so the bound on $a_3$ is automatic. Since $a_2=(s^2-n)/3$ and $n>0$, the conditions $|s|\leq H$ and $|a_2|\leq H^2$ are equivalent to $|s|\leq H$ and $n\leq s^2+3H^2$.
 
 \end{proof}
 
@@ -1670,7 +1670,7 @@ For every $\varepsilon>0$, the following asymptotic holds as $X\to\infty$.
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:normalityCriterion, lemma:rootVsToric, prop:canonicalHeight, thm:asymptoticPolynomialCount}
 
-The linked Lean proof establishes this statement.
+For $f=t^3-t^2+at+b\in F_1$, Lemma~\ref{lemma:rootVsToric} gives $H_{\mathrm{tor}}(f)^2=1-3a$, so $A_1(X)$ counts the $f\in F_1$ with $H_{\mathrm{tor}}(f)\leq\sqrt X$. This is the left-hand side of Equation~\ref{eqn:irrPolys}, which gives the formula. Equivalently, it is the count of Theorem~\ref{thm:asymptoticPolynomialCount} at root height $H$ with $X=1+3H^2$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1684,7 +1684,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \leanok
 
-
+Here $d_n$ are the coefficients of $Z_0(z)=\sum_{n\geq1}d_nn^{-z}$, given explicitly in Remark~\ref{rem:heightCoefficients}.
 
  Let $e$ be the exponent of $3$ in $N$, and write $N=3^eM$ with $3\nmid M$. Then \[ r(N)= \begin{cases} d_M,&e=0,\\ 3d_M+1,&N=3u^2\text{ for some }u\in\ZZ_{>0},\\ 3d_M,&\text{otherwise}. \end{cases} \] 
 
@@ -1696,7 +1696,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{eqn:poissonae, helper:adelicLogarithm, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, thm:heightZetaFunctionFormula2}
 
-Factor in the Eisenstein integers and separate the valuation at $1-\zeta$. Count the allowed unit multiples. The vanishing-discriminant cases contribute the extra term when $N=3u^2$.
+Let $\zeta$ be a primitive cube root of unity, $\mcO_E=\ZZ[\zeta]$ and $\lambda=1-\zeta$. If $\delta\geq0$ and $\delta^2=4N^3-27c^2$, then $\delta\equiv c\pmod2$ and $\frac{\delta+3c}2+3c\zeta\in\mcO_E$ has norm $N^3$; conversely $a+b\zeta$ of norm $N^3$ with $3\mid b$ gives $c=b/3$ and $\delta=|2a-b|$. A value $c$ with $\delta>0$ has two preimages and one with $\delta=0$ has one. Since $\mcO_E$ has class number one, the principal ideals of norm $N^3$ number $d_M$: $3k+1$ choices at a split prime $p^k\parallel M$, one or none at an inert prime $q^k\parallel M$ as $k$ is even or odd, and one at $\lambda$. If $e=0$, a generator is a unit modulo $3$, the six roots of unity map bijectively onto $(\mcO_E/3\mcO_E)^\times$, and only the classes $\pm1$ have $\zeta$-coefficient divisible by $3$, so two of the six generators qualify and $r(N)=d_M$. If $e\geq1$, every generator is divisible by $\lambda^{3e}$, and $\lambda^3\in3\mcO_E$, so all six qualify. Finally $\delta=0$ occurs exactly when $N=3u^2$, with $c=\pm2u^3$, which gives the extra $1$.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
@@ -1710,7 +1710,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \leanok
 
-
+The constant $\alpha$ is defined in Equation~\ref{eqn:introConstants}.
 
  For every $\varepsilon>0$, \[ A_0(X) =\frac52XQ\left(\tfrac12\log X\right) -\left(\frac{\alpha}{4}\log3+\frac{\pi}{3\sqrt3}\right)X +O_\varepsilon(X^{1/2+\varepsilon}). \] 
 
@@ -1722,7 +1722,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}).
 
 \uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:poissonae, helper:adelicLogarithm, helper:correctionBound, helper:correctionProduct, helper:leadingConstants, helper:supportFunctionSymmetry, lemma:heightZetaConvergence, lemma:traceZeroCoefficients, lemma:xiMeanValue, thm:heightZetaFunctionFormula2}
 
-Sum the coefficient formula over the powers of $3$, apply the asymptotic for the $d_M$, and remove the reducible cubics. The geometric series in the powers of $3$ gives the stated constants.
+The polynomials $t^3-Nt+c$ with square discriminant $4N^3-27c^2$ are counted by $r(N)$. Grouping $N=3^eM$, Lemma~\ref{lemma:traceZeroCoefficients} gives $\sum_{N\leq X}r(N)=\sum_{n\leq X}d_n+3\sum_{e\geq1}\sum_{n\leq X/3^e}d_n+O(X^{1/2})$, the error coming from the $N=3u^2$. Apply Equation~\ref{eqn:dSummatoryForGeneralTrace} to each inner sum. Since $Q$ is linear with leading coefficient $2\alpha/9$, $Q(\frac12\log X-\frac e2\log3)=Q(\frac12\log X)-\frac{\alpha e}9\log3$, and $\sum_{e\geq1}3^{1-e}=\frac32$ and $\sum_{e\geq1}e\,3^{1-e}=\frac94$ give $\frac52XQ(\frac12\log X)-\frac\alpha4(\log3)X+O_\varepsilon(X^{1/2+\varepsilon})$. A reducible cubic with square discriminant splits completely. The split $t^3-Nt+c$ are the $S_3$-orbits of $(x,y)\in\ZZ^2$ with roots $x,y,-x-y$ and $N=x^2+xy+y^2$. The ellipse $x^2+xy+y^2\leq X$ has area $2\pi X/\sqrt3$ and the nonidentity fixed loci contain $O(X^{1/2})$ lattice points, so Burnside's lemma counts $\frac{\pi}{3\sqrt3}X+O(X^{1/2})$ split cubics. Subtracting them gives the proposition.
 
 The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
@@ -1748,7 +1748,7 @@ The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chand
 
 \uses{helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight}
 
-The linked Lean proof establishes this statement.
+Sort $f\in F_{\mathrm{mon}}$ by its trace $s$ and apply Lemma~\ref{lemma:generalHeightReduction}: $H(f)\leq H$ if and only if $|s|\leq H$ and $n(f)\leq s^2+3H^2$. If $3\nmid s$, the bijection $\phi_s:F_s\to F_1$ preserves $n$, and $g=t^3-t^2+at+b\in F_1$ has $n(g)=1-3a$, so trace $s$ contributes $A_1(3H^2+s^2)$. If $3\mid s$, $\phi_s(f)=t^3-Nt+c\in F_0$ with $N=n/3\geq1$, so trace $s$ contributes $A_0(H^2+s^2/3)$.
 
 \end{proof}
 
@@ -1760,7 +1760,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+The main term of Theorem~\ref{thm:generalMonicCount} involves two integrals over the normalized trace $u=s/H\in[-1,1]$.
 
 \begin{equation*} \begin{aligned} \int_{-1}^1(3+u^2)\,du&=\frac{20}{3},\\ \int_{-1}^1(3+u^2)\log(3+u^2)\,du &=\frac{40}{3}\log2+\frac{4\pi\sqrt3}{3}-\frac{76}{9}. \end{aligned} \end{equation*}
 
@@ -1770,7 +1770,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The linked Lean proof establishes this statement.
+The first integral is $[3u+u^3/3]_{-1}^1=20/3$. For the second, integrate by parts with $G(u)=3u+u^3/3$: the boundary term is $\frac{20}3\log4$, and the remaining integrand is $\frac{2uG(u)}{3+u^2}=\frac23(u^2+6)-\frac{12}{u^2+3}$. Its integral over $[-1,1]$ is $\frac{76}9-\frac{4\pi\sqrt3}{3}$, using $\int_{-1}^1\frac{du}{u^2+3}=\frac2{\sqrt3}\arctan\frac1{\sqrt3}=\frac{\pi}{3\sqrt3}$.
 
 \end{proof}
 
@@ -1782,7 +1782,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-
+Summing the main terms of Equation~\ref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic} over the traces in Equation~\ref{eqn:generalTraceDecomposition} gives the main term $H^3P(\log H)$ of Theorem~\ref{thm:generalMonicCount}. In terms of the polynomial $Q$ of Corollary~\ref{cor:integralPointCount} and the constant $\alpha$ of Equation~\ref{eqn:introConstants}, the polynomial $P$ is as follows.
 
 \begin{equation*} P(X) =\frac{110}{27}Q(X) +\frac{220\alpha}{243}\left(\log2-\frac{19}{44}\log3 -\frac{19}{30}+\frac{\pi\sqrt3}{10}\right) -\frac{20\pi\sqrt3}{81}. \end{equation*}
 
@@ -1794,7 +1794,59 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:monicArchimedeanMoments, helper:correctionProduct, helper:leadingConstants}
 
-The linked Lean proof establishes this statement.
+For a residue class $r$ modulo $3$ and a smooth $g$, $\sum_{|s|\leq H,\,s\equiv r\ (3)}g(s/H)=\frac H3\int_{-1}^1g(u)\,du+O_g(1)$. With $u=s/H$, the inputs are $3H^2+s^2=H^2(3+u^2)$ for $A_1$ on two residue classes and $H^2+s^2/3=H^2(3+u^2)/3$ for $A_0$ on one. Since $Q$ is linear with leading coefficient $2\alpha/9$, expanding $Q(\log H+\frac12\log(3+u^2))$ and $Q(\log H+\frac12\log\frac{3+u^2}3)$ gives $P(X)=\bigl(\frac{11}{18}Q(X)-\frac{19\alpha}{324}\log3-\frac{\pi}{9\sqrt3}\bigr)\int_{-1}^1(3+u^2)\,du+\frac{11\alpha}{162}\int_{-1}^1(3+u^2)\log(3+u^2)\,du$. Inserting the two integrals of Equation~\ref{eqn:monicArchimedeanMoments} gives the formula.
+
+\end{proof}
+
+\begin{remarknode}[Translation classes]
+
+\label{rem:translationClasses}
+
+\lean{CubicTargets.Counting.TranslationClasses.Claim, Cubic.Counting.TranslationClasses.«rem:translationClasses»}
+
+\leanok
+
+For $f=t^3+a_1t^2+a_2t+a_3$ put $I=a_1^2-3a_2$, $J=-2a_1^3+9a_1a_2-27a_3$ and $H_{\mathrm{BS}}(f)=\max\{|I|^3,J^2/4\}$. The introduction states that, for every $\varepsilon>0$, the number of translation classes in $F_{\mathrm{mon}}$ with $H_{\mathrm{BS}}(f)\leq H$ is \[H^{1/3}P_{\mathrm{BS}}(\log H)+O_\varepsilon(H^{1/6+\varepsilon}),\] where \[P_{\mathrm{BS}}(X)=\frac{11\alpha}{162}\biggl(X+6\mu-6\frac{\zeta'(2)}{\zeta(2)}+6\beta-3-\frac{15}{44}\log3\biggr)-\frac{\pi}{3\sqrt3}.\] The constants $\alpha$, $\mu$ and $\beta$ are defined in Equation~\ref{eqn:introConstants}.
+
+ We derive the count of translation classes by $H_{\mathrm{BS}}$ stated in the introduction. The invariant $I$ there is $n(f)$. Translating the roots by an integer $k$ changes the trace by $3k$ and preserves $n(f)$, so each translation class in $F_{\mathrm{mon}}$ has exactly one representative with trace in $\{-1,0,1\}$. The map $f(t)\mapsto-f(-t)$ negates the roots, so it matches the classes of trace $1$ with those of trace $-1$ and preserves $n(f)$. A trace-one polynomial $t^3-t^2+at+b$ has $n(f)=1-3a$, and $t^3-Nt+c$ has $n(f)=3N$. Hence the number $C(Y)$ of translation classes with $I\leq Y$ is \[ C(Y)=2A_1(Y)+A_0(Y/3). \] Substituting \eqref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic}, and using that $Q$ is linear with leading coefficient $2\alpha/9$, gives \[ C(Y)=Y\left(\frac{11}{6}Q\left(\tfrac12\log Y\right) -\frac{19\alpha}{108}\log3-\frac{\pi}{3\sqrt3}\right) +O_\varepsilon(Y^{1/2+\varepsilon}). \] Since $f$ has three distinct real roots, $4I^3-J^2=27\operatorname{disc}(f)>0$, so $H_{\mathrm{BS}}(f)=I^3$. Setting $Y=H^{1/3}$ and substituting the formula for $Q$ from Corollary~\ref{cor:integralPointCount} gives the stated polynomial $P_{\mathrm{BS}}$ and error $O_\varepsilon(H^{1/6+\varepsilon})$. 
+
+\end{remarknode}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:A1asymptotic, eqn:poissonae, helper:adelicLogarithm, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight, prop:traceZeroAsymptotic}
+
+The invariant $I$ is $n(f)$. Translating the roots by an integer $k$ changes the trace by $3k$ and preserves $n(f)$, so each translation class has exactly one representative of trace $-1$, $0$ or $1$, and $f(t)\mapsto-f(-t)$ matches the classes of trace $1$ with those of trace $-1$. Since $t^3-t^2+at+b$ has $n(f)=1-3a$ and $t^3-Nt+c$ has $n(f)=3N$, the number of classes with $I\leq Y$ is $C(Y)=2A_1(Y)+A_0(Y/3)$. Equation~\ref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic}, with $Q(\frac12\log\frac Y3)=Q(\frac12\log Y)-\frac\alpha9\log3$, give $C(Y)=Y\bigl(\frac{11}6Q(\frac12\log Y)-\frac{19\alpha}{108}\log3-\frac{\pi}{3\sqrt3}\bigr)+O_\varepsilon(Y^{1/2+\varepsilon})$. The roots are real and distinct, so $4I^3-J^2=27\operatorname{disc}(f)>0$ and $H_{\mathrm{BS}}(f)=I^3$. Setting $Y=H^{1/3}$ and inserting $Q$ from Corollary~\ref{cor:integralPointCount} gives $P_{\mathrm{BS}}$.
+
+The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
+
+\end{proof}
+
+\begin{theorem}[Distribution of the trace]
+
+\label{thm:traceDistribution}
+
+\lean{CubicTargets.Counting.TraceDistribution.Claim, Cubic.Counting.TraceDistribution.«thm:traceDistribution»}
+
+\leanok
+
+For $r\in\{0,1,2\}$ and $-1\leq u_1\leq u_2\leq1$, let \[N_r(H;u_1,u_2)=\#\Bigl\{f\in F_{\mathrm{mon}}:H(f)\leq H,\ \operatorname{Tr}(f)\equiv r\ (\mathrm{mod}\ 3),\ u_1\leq\frac{\operatorname{Tr}(f)}{H}\leq u_2\Bigr\}.\] The constant $\alpha$ is defined in Equation~\ref{eqn:introConstants}.
+
+ Uniformly in $r$, $u_1$ and $u_2$, as $H\to\infty$, \[ N_r(H;u_1,u_2) =c_r\left(\int_{u_1}^{u_2}(3+u^2)\,du\right)H^3\log H+O(H^3), \qquad c_0=\frac{5\alpha}{81},\quad c_1=c_2=\frac{\alpha}{27}. \] Consequently, among the polynomials counted in Theorem~\ref{thm:generalMonicCount}, the proportions with trace congruent to $0$, $1$ and $2$ modulo $3$ tend to $5/11$, $3/11$ and $3/11$. Within each residue class, $\operatorname{Tr}(f)/H$ has limiting density $\frac{3}{20}(3+u^2)$ on $[-1,1]$. 
+
+\end{theorem}
+
+\begin{proof}[Proof in Lean]
+
+\leanok
+
+\uses{cite:chandrasekharanNarasimhan1963-thm4, eqn:A1asymptotic, eqn:poissonae, helper:adelicLogarithm, helper:leadingConstants, helper:moduliFibres, helper:supportFunctionSymmetry, lemma:generalHeightReduction, lemma:heightZetaConvergence, lemma:normalityCriterion, prop:canonicalHeight, prop:traceZeroAsymptotic}
+
+Restricting Equation~\ref{eqn:generalTraceDecomposition} to traces $s\equiv r\pmod3$ with $u_1H\leq s\leq u_2H$ writes $N_r(H;u_1,u_2)$ as a sum of $A_1(3H^2+s^2)$ if $r\neq0$ and of $A_0(H^2+s^2/3)$ if $r=0$. Since $Q$ is linear with leading coefficient $2\alpha/9$, Equation~\ref{eqn:A1asymptotic} and Proposition~\ref{prop:traceZeroAsymptotic} give $A_1(X)=\frac{\alpha}{18}X\log X+O(X)$ and $A_0(X)=\frac{5\alpha}{18}X\log X+O(X)$. With $u=s/H$, both inputs are $H^2(3+u^2)$ up to the factor $1/3$, so trace $s$ contributes $\frac\alpha9(3+u^2)H^2\log H+O(H^2)$ if $r\neq0$ and $\frac{5\alpha}{27}(3+u^2)H^2\log H+O(H^2)$ if $r=0$. The Riemann sum $\sum_{u_1H\leq s\leq u_2H,\ s\equiv r\ (3)}(3+s^2/H^2)=\frac H3\int_{u_1}^{u_2}(3+u^2)\,du+O(1)$, uniform in $u_1$, $u_2$ and $r$, together with the $O(H)$ traces, gives the formula. Since $\int_{-1}^1(3+u^2)\,du=\frac{20}3$, the three classes together give $\frac{220\alpha}{243}H^3\log H$, the leading term of Theorem~\ref{thm:generalMonicCount}; dividing gives the proportions $5/11$, $3/11$, $3/11$ and the density $\frac3{20}(3+u^2)$. In Lean, the limiting density means that $N_r(H;u_1,u_2)/N_r(H;-1,1)$ tends to $\int_{u_1}^{u_2}\frac{3}{20}(3+u^2)\,du$.
+
+The proof assumes Poisson summation (Equation~\ref{eqn:poissonae}) and the Chandrasekharan--Narasimhan estimate (Cited theorem~\ref{cite:chandrasekharanNarasimhan1963-thm4}).
 
 \end{proof}
 
@@ -1822,7 +1874,7 @@ Let $e_1,e_2,e_3$ be the elementary symmetric polynomials in $X,Y,Z$, and put $\
 
 \uses{eqn:surfaceAnticanonical, eqn:surfaceIntegralCubic, eqn:surfaceInvariantRelation}
 
-Compute the cyclic invariant ring and its third Veronese. The resulting cubic relation gives the embedding. Adjunction gives the anticanonical class, and the hyperplane intersection has degree three.
+Let $R=\ZZ[X,Y,Z]^{C_3}$. It is generated by $e_1,e_2,e_3,\delta$, and Equation~\ref{eqn:surfaceInvariantRelation} generates all relations among them. Since $\operatorname{Proj}R$ equals $\operatorname{Proj}$ of its third Veronese subring, we pass to that subring. The cubic $F=0$ of Equation~\ref{eqn:surfaceIntegralCubic} is then the only relation among $A,B,C,D$, which gives the embedding. Setting $e_1=0$ leaves the ring $\ZZ[C,D]$, so $\DDD_0$ is the line $A=B=0$. On the generic fiber, the hyperplane section $A=0$ is $3D_0$, and adjunction gives $\mcO(K)\cong\mcO(-1)$; this proves Equation~\ref{eqn:surfaceAnticanonical}.
 
 \end{proof}
 
@@ -1846,7 +1898,7 @@ Compute the cyclic invariant ring and its third Veronese. The resulting cubic re
 
 \uses{eqn:surfaceInvariantRelation}
 
-The linked Lean proof establishes this statement.
+The third Veronese subring of $\ZZ[e_1,e_2,e_3]$ is spanned by the monomials $e_1^ie_2^je_3^k$ with $i\equiv j\pmod 3$. Writing $i=3p+r$ and $j=3q+r$ with $0\le r<3$ gives $e_1^ie_2^je_3^k=A^pB^rh^qC^k$, where $h=e_2^3$. These monomials with $r<3$ are distinct, so $B^3=Ah$ generates all relations among $A,B,C,h$. Adjoining $D=\delta$, Equation~\ref{eqn:surfaceInvariantRelation} reads $D^2-(B-3C)D+h+AC-6BC+9C^2=0$. Solving it for $h$ and substituting into $B^3=Ah$ gives $F=0$.
 
 \end{proof}
 
@@ -1868,7 +1920,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The linked Lean proof establishes this statement.
+On the generic fiber the hyperplane $A=0$ cuts out $B^3=0$, whose support is the line $D_0=\{A=B=0\}$. In the chart $C=1$, its local ring at the generic point of $D_0$ is $\QQ(D)[B]/(B^3)$, of length $3$, so the hyperplane class is $3D_0$. Adjunction for a cubic surface in $\PP^3$ gives $\mcO(K)\cong(\mcO_{\PP^3}(-4)\otimes\mcO_{\PP^3}(3))|_S=\mcO(-1)$, so $3D_0\sim-K$. Two general hyperplanes meet in a line, which meets the cubic in three points, so $(-K)^2=3$.
 
 \end{proof}
 
@@ -1890,7 +1942,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The linked Lean proof establishes this statement.
+Put $\delta'=XY^2+YZ^2+ZX^2$. Expanding gives $\delta+\delta'=e_1e_2-3e_3$ and $\delta\delta'=e_2^3+e_1^3e_3-6e_1e_2e_3+9e_3^2$, so $\delta$ is a root of $t^2-(\delta+\delta')t+\delta\delta'$. To show that this relation generates all others, use it to reduce any relation to the form $a+b\delta=0$ with $a,b\in\ZZ[e_1,e_2,e_3]$. The transposition $X\leftrightarrow Y$ fixes $a,b$ and exchanges $\delta,\delta'$, so $b(\delta-\delta')=0$. Since $\delta\neq\delta'$, we get $b=0$ and then $a=0$.
 
 \end{proof}
 
@@ -1914,7 +1966,7 @@ The linked Lean proof establishes this statement.
 
 \uses{eqn:surfaceCoordinateChange, eqn:surfaceNormCubic, helper:splittingCoordinates, prop:surfaceIntegralCubic}
 
-Apply the explicit change of coordinates over $\ZZ[1/6]$. Split the norm over $E$, and compute the singular points and their local equations. The toric lattice gives the Picard rank.
+Apply the linear change of coordinates of Equation~\ref{eqn:surfaceCoordinateChange} to the cubic $F$ of Proposition~\ref{prop:surfaceIntegralCubic}. Its determinant is $-3^5/2$, a unit in $\ZZ[1/6]$, and it transforms $27F$ into $x_0(x_1^2+3x_2^2)-x_3^3$. Over $E$, factoring $x_1^2+3x_2^2=x_1'x_2'$ gives $x_0x_1'x_2'=x_3^3$. Its singular points are the three coordinate vertices $[1:0:0:0]$ and $[0:\pm\sqrt{-3}:1:0]$, each with local equation $xy=z^3$, which is an $\mathbf A_2$ singularity. The anticanonical class is ample by Proposition~\ref{prop:surfaceIntegralCubic}. The fan of $S_E$ has three rays in a lattice of rank $2$, so the geometric Picard rank is $3-2=1$. The equations of $D_0$ follow from $x_0=A$ and $x_3=A-3B$. In Lean, the coordinate isomorphism is proved over $\ZZ[1/6]$ and the remaining assertions on the rational fiber.
 
 \end{proof}
 
@@ -1936,7 +1988,7 @@ Apply the explicit change of coordinates over $\ZZ[1/6]$. Split the norm over $E
 
 \leanok
 
-The linked Lean proof establishes this statement.
+Substituting Equation~\ref{eqn:surfaceCoordinateChange} into $x_0(x_1^2+3x_2^2)-x_3^3$ gives $27F$, where $F$ is the cubic of Equation~\ref{eqn:surfaceIntegralCubic}. Since $27$ is a unit in $\ZZ[1/6]$, the two equations define the same hypersurface. In Lean, the coordinate isomorphism is proved over $\ZZ[1/6]$ and the remaining assertions on the rational fiber.
 
 \end{proof}
 
@@ -1958,7 +2010,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-The linked Lean proof establishes this statement.
+This display defines the coordinates $x_0,\dots,x_3$ as linear forms in $A,B,C,D$. The matrix has determinant $-3^5/2$, a unit in $\ZZ[1/6]$, so the substitution is invertible over $\ZZ[1/6]$. In Lean, the coordinate isomorphism is proved over $\ZZ[1/6]$ and the remaining assertions on the rational fiber.
 
 \end{proof}
 
@@ -1982,7 +2034,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:boundaryChain, helper:boundaryIntersection}
 
-Subdivide the three singular cones to obtain the minimal smooth fan. Compute the exceptional chain, divisor classes, and intersections in that fan. The intersection numbers establish the assertions about $L$.
+Over $E$, $S$ is the toric surface whose fan has rays $v_0=(-1,-1)$, $v_1=(2,-1)$, $v_2=(-1,2)$. Insert the rays $(0,-1),(1,-1)$ between $v_0$ and $v_1$, $(1,0),(0,1)$ between $v_1$ and $v_2$, and $(-1,1),(-1,0)$ between $v_2$ and $v_0$ \cite[\S2.6]{MR1234037}. Consecutive rays have determinant $1$, so the new toric surface $X$ is smooth and projective. The subdivision is Galois-stable, so $\pi$ is defined over $\QQ$. The neighbors of each inserted ray sum to twice that ray, so every exceptional curve is a $(-2)$-curve; hence $\pi$ is minimal \cite[Theorems~V.5.4 and~V.5.7]{hartshorne1977}. The inserted rays lie on the segments joining the original rays, so $\pi$ is crepant and $-K_X=\pi^*(-K_S)$ is nef and big with square $3$. The nine rays give Picard rank $9-2=7$. Equations~\ref{eqn:surfaceBoundaryChain} and~\ref{eqn:surfaceLogIntersections} give the boundary chain and the intersection numbers. Since all nine toric divisors sum to $-K_X$, $L$ is linearly equivalent to the complementary chain $D_{v_1},D_{(1,0)},D_{(0,1)},D_{v_2}$, with self-intersections $-1,-2,-2,-1$. It meets each of its own components in $0$, each end of $D_{\mathrm{red}}$ in $1$, and the other three components of $D_{\mathrm{red}}$ in $0$. Torus-invariant curves generate the cone of curves, so $L$ is nef and not numerically zero. A nef divisor is big exactly when its square is positive, and $L^2=0$.
 
 \end{proof}
 
@@ -2006,7 +2058,7 @@ Subdivide the three singular cones to obtain the minimal smooth fan. Compute the
 
 \uses{helper:boundaryChain}
 
-The linked Lean proof establishes this statement.
+In the fan of Proposition~\ref{prop:surfaceResolvedBoundary}, the line $D_0$ contains the two singular points whose cones are adjacent to $v_0$, and its strict transform is the divisor of $v_0$. The components of $D_{\mathrm{red}}$ are the divisors of the consecutive rays $(-1,1),(-1,0),v_0,(0,-1),(1,-1)$. For a ray $\rho$ with neighbors $\rho_-$ and $\rho_+$, $\rho_-+\rho_+=k\rho$ gives $D_\rho^2=-k$. Here $k=2$ for the four inserted rays, and $(-1,0)+(0,-1)=v_0$ gives $k=1$ for $v_0$.
 
 \end{proof}
 
@@ -2030,7 +2082,7 @@ The linked Lean proof establishes this statement.
 
 \uses{helper:boundaryIntersection}
 
-The linked Lean proof establishes this statement.
+Each component $C$ of $D_{\mathrm{red}}$ is a smooth rational curve, so adjunction gives $K_X\cdot C=-2-C^2$. By Equation~\ref{eqn:surfaceBoundaryChain}, this is $0$ for the four $(-2)$-curves and $-1$ for the middle curve, so $K_X\cdot D_{\mathrm{red}}=-1$. The chain has four adjacent pairs, each meeting once, so $D_{\mathrm{red}}^2=-9+2\cdot4=-1$. Finally $L^2=K_X^2+2K_X\cdot D_{\mathrm{red}}+D_{\mathrm{red}}^2=3-2-1=0$, using $K_X^2=3$.
 
 \end{proof}
 
@@ -2046,7 +2098,7 @@ We use the minimal resolution $\pi:X\to S$ of the preceding chapter. The proposi
 
 \leanok
 
-
+For $s\in\CC$, write $H(P,s)$ for the toric height of $P$ with respect to $sD_0$ and $H_v(P,s)$ for its local factor at a place $v$. Thus $H(P,1)=H(P)$ is the height of Corollary~\ref{cor:integralPointCount}, which equals $\sqrt{1-3a}$ at an integral point with characteristic polynomial $t^3-t^2+at+b$ (Proposition~\ref{prop:canonicalHeight}). The constant $\alpha$ is defined in Equation~\ref{eqn:introConstants}.
 
  Let $\pi\colon X\to S$ be the minimal resolution, let $D\subset X$ be the reduced preimage of $D_0$, and put $U=X\setminus D$. The coordinate ring of the affine chart $\SSS\setminus\DDD_0$ pulls back to a finitely generated $\ZZ$-subalgebra \[ A:=\pi^*\Gamma(\SSS\setminus\DDD_0,\mathcal O) \subset\Gamma(U,\mathcal O). \] A point $P\in U(\QQ)$ is integral if $g(P)\in\ZZ$ for every $g\in A$. With this integral condition and the height $H(\pi(-),1)$, \cite[Theorem~8.7]{santens2023integral} gives \[ \#\{P\in(\SSS\setminus\DDD_0)(\ZZ):H(P,1)\leq B\} \sim cB^2\log B,\qquad c=\frac{2\alpha}{9}. \] 
 
@@ -2058,7 +2110,13 @@ We use the minimal resolution $\pi:X\to S$ of the preceding chapter. The proposi
 
 \uses{cite:santens2023integral-toric-counting, eqn:affineC3invariants, helper:correctionProduct, helper:supportFunctionSymmetry, prop:surfaceResolvedBoundary}
 
-Use the pullback of the affine coordinate ring to express the integral condition. Verify the fan, divisor, and positivity hypotheses, then evaluate the dual-cone volume and the normalized local integrals. Their product is $2\alpha/9$.
+Santens's formula has the shape $cB^a(\log B)^{b-1}$; we check his hypotheses, find $a=b=2$, and compute $c$. Every integral point of $\SSS\setminus\DDD_0$ lies in the torus $T$, over which $\pi$ is an isomorphism, so the integral points of $U$ correspond to $(\SSS\setminus\DDD_0)(\ZZ)$. In the fan of Proposition~\ref{prop:surfaceResolvedBoundary}, the toric divisors in $U$ belong to $v_1,v_2,(1,0),(0,1)$; a character with order $0$ along all of them is trivial, so $U$ has only constant units. The four exceptional components of $D$ have no real points, so the only real boundary component is the strict transform $D_0'$ of $D_0$. Removing the four exceptional components from $X$ leaves an open set whose real points form the compact set $X(\RR)$ and whose regular functions are constant, because $v_0+v_1+v_2=0$. The integral condition is encoded by local indicator functions $f_p$ of $\pi^{-1}((\SSS\setminus\DDD_0)(\ZZ_p))$, which have compact open support by properness.
+
+In Santens's group $\operatorname{Pic}(X;\{D_0'\})$, write $R=D_{v_1}+D_{v_2}$ and $H'=D_{(1,0)}+D_{(0,1)}$. The divisor of $n=\nu\overline\nu$ (with $\nu$ the image of $P$ under the isomorphism $\iota$ of Proposition~\ref{prop:cyclotomicParametrization}) gives the single relation $R+H'=2[D_0']$, and the effective cone is spanned by $R$ and $H'$. The height $H(\cdot,1)$ is a height for $L=[D_0']$, and $-K_{(X;\{D_0'\})}=R+H'=2L$ with rank $2$, so $a=b=2$.
+
+Santens requires local norms with values in $p^{\ZZ}\cup\{0\}$ at each prime \cite[Definition~4.1]{santens2023integral}, and $H(\cdot,1)$ does not satisfy this. We therefore apply his theorem to the height with the trivial metric on $L$ at every prime (the canonical section of $\mcO(D_0')$ has norm $1$) and the metric of $H(\cdot,1)$ at the real place. At every point where some $f_p$ is nonzero, $n$ and $\nu^2\overline\nu$ are integral, so $H_p(P,1)=1$ by Equation~\ref{eqn:santensLocalHeight}; the two heights agree on the support of the weight and give the same count and constant.
+
+The dual-cone factor is $\theta=\int_0^\infty\int_0^{2p}e^{-p}\,dq\,dp=2$. Since $\operatorname{Pic}U_{\overline\QQ}\cong\ZZ[\operatorname{Gal}(E/\QQ)]$, its $L$-function is $\xi$ and its first Galois cohomology vanishes by Shapiro's lemma, so the Brauer factor is $1$. Equation~\ref{eqn:santensTau} then gives $c=2\rho_E\prod_v\tau'_v$. The local factors are $1-3p^{-2}+2p^{-3}$ for $p\equiv1\pmod 3$ (there are $3k+1$ valuation pairs with $v_p(n)=k$), $1-p^{-2}$ for $p\equiv2\pmod3$, $2/(27\sqrt3)$ at $3$ (where integrality means $\nu\in1+3\mcO_{E,3}$ by Proposition~\ref{prop:localIntegrality}), and $2\pi$ at the real place (the residue measure on the circle $D_0'(\RR)$). Using $\prod_{p\neq3}\tau'_p=27\alpha/(4\pi^2)$ and $\rho_E=\pi/(3\sqrt3)$ gives $c=2\alpha/9$. This is nonzero, which is the last hypothesis of Santens's theorem.
 
 The proof assumes Santens's theorem (Cited theorem~\ref{cite:santens2023integral-toric-counting}).
 
@@ -2072,7 +2130,7 @@ The proof assumes Santens's theorem (Cited theorem~\ref{cite:santens2023integral
 
 \leanok
 
-For this surface the exponents are $a=b=2$ and the dual-cone factor is $\theta=2$. Write $\rho_E=\operatorname{Res}_{s=1}\xi(s)$. For a finite prime $p$, $\tau_p^\prime$ is the local volume of the integral points multiplied by $L_p(1,\operatorname{Pic}U_{\overline\QQ})^{-1}$; $\tau_\infty^\prime$ is the residue volume of the real boundary component. The Brauer factor is one.
+In the proof of Proposition~\ref{prop:santensConstant}, Santens's exponents are $a=b=2$ and the dual-cone factor is $\theta=2$. Write $\rho_E=\operatorname{Res}_{s=1}\xi(s)$. For a finite prime $p$, $\tau_p^\prime$ is the local volume of the integral points multiplied by $L_p(1,\operatorname{Pic}U_{\overline\QQ})^{-1}$; $\tau_\infty^\prime$ is the residue volume of the real boundary component. The Brauer factor is one.
 
 \begin{equation*} c=\frac{\theta}{a(b-1)!}\,\tau=\tau,\qquad \tau=2\rho_E\prod_v\tau'_v, \end{equation*}
 
@@ -2084,7 +2142,7 @@ For this surface the exponents are $a=b=2$ and the dual-cone factor is $\theta=2
 
 \uses{eqn:affineC3invariants, helper:correctionProduct, helper:supportFunctionSymmetry}
 
-The linked Lean proof establishes this statement.
+With Brauer factor $1$, \cite[Theorem~6.9, Lemma~5.24]{santens2023integral} gives $c=\theta\tau/(a(b-1)!)$, and $\theta=2$, $a=b=2$ make the prefactor $1$. The Tamagawa number $\tau$ has the factor $c_{\mathbf A}=2$ from the single real boundary component \cite[Definition~4.21]{santens2023integral}, the residue $\rho_E$ of $L(s,\operatorname{Pic}U_{\overline\QQ})=\xi(s)$, and the local factors $\tau'_v$. We use Peyre's convergence factors $L_p(1,\operatorname{Pic}U_{\overline\QQ})^{-1}$ \cite[\S2]{peyre1995hauteurs}; with the reciprocal factors printed in version~2 of Santens's Definition~4.21, the product over split primes would diverge.
 
 \end{proof}
 
@@ -2096,7 +2154,7 @@ The linked Lean proof establishes this statement.
 
 \leanok
 
-For $P\in T(\QQ_v)$, put $\nu=\iota(P)\in(E\otimes_\QQ\QQ_v)^\times$ and $n=\nu\overline\nu$. Each $|\cdot|_w$ is applied to the $w$-component. The height for $3D_0$ is given by the following formula.
+For $P\in T(\QQ_v)$, put $\nu=\iota(P)\in(E\otimes_\QQ\QQ_v)^\times$, with $\iota$ the isomorphism of Proposition~\ref{prop:cyclotomicParametrization}, and $n=\nu\overline\nu$. Each $|\cdot|_w$ is applied to the $w$-component, as in Equation~\ref{eqn:localHeight}. The local height of $P$ for $3D_0$ is given by the following formula.
 
 \begin{equation*} H_v(P,3)=\prod_{w\mid v} \max\bigl(1,|n|_w,|\nu^2\overline\nu|_w, |\nu\overline\nu^2|_w\bigr)^{1/2}. \end{equation*}
 
@@ -2108,7 +2166,7 @@ For $P\in T(\QQ_v)$, put $\nu=\iota(P)\in(E\otimes_\QQ\QQ_v)^\times$ and $n=\nu\
 
 \uses{helper:localWeightHeight}
 
-The linked Lean proof establishes this statement.
+Start from the local height of Equation~\ref{eqn:localHeight} with $e_2=a$ and $e_3=-b$, where $t^3-t^2+at+b$ is the characteristic polynomial of $P$. By Proposition~\ref{prop:cyclotomicParametrization}, $n=1-3a$, which is the second entry. The last two entries have sum $2-9a-27b=\operatorname{Tr}_{E/\QQ}(\nu^2\overline\nu)$ and product $n^3=\operatorname{Nm}(\nu^2\overline\nu)$, so they are $\nu^2\overline\nu$ and $\nu\overline\nu^2$. Taking the product over the places $w\mid v$ gives the formula.
 
 \end{proof}
 
@@ -2518,7 +2576,7 @@ The following inputs are stated in Lean and assumed by the results that use them
 
 \leanok
 
-The integral-point counting theorem \cite[Theorem~8.7]{santens2023integral}, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and compatible metrics. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input.
+The integral-point counting theorem \cite[Theorem~8.7]{santens2023integral}, with its measure normalizations and auxiliary results, is used in the rank-two permutation-Picard setting. The Lean input is a general computational corollary for smooth complete Galois fans, integral subalgebras, and heights from Santens's metrics, whose local norms at each prime lie in $p^{\ZZ}\cup\{0\}$. Its hypotheses include the geometric positivity conditions and the conditions on integral points; its constant is the dual-cone volume times the normalized local integrals. Appendix B verifies those hypotheses and evaluates the constant for this surface. The linked proposition gives the full quantified input.
 
 \end{citedtheorem}
 

@@ -365,6 +365,16 @@
     "chapter_title": "Counting arbitrary trace"
   },
   {
+    "label": "rem:translationClasses",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
+    "label": "thm:traceDistribution",
+    "chapter": "general",
+    "chapter_title": "Counting arbitrary trace"
+  },
+  {
     "label": "prop:surfaceIntegralCubic",
     "chapter": "surface",
     "chapter_title": "Geometry of the quotient surface"

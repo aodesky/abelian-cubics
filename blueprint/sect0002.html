@@ -136,9 +136,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/ModularInterpretation.lean#L26" class="lean_decl">CubicTargets.OrbitParametrization.ModularInterpretation.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/OrbitParametrization/ModularInterpretation.lean#L26" class="lean_decl">CubicTargets.OrbitParametrization.ModularInterpretation.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/ModularInterpretation.lean#L137" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«thm:modularInterpretation»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/OrbitParametrization/ModularInterpretation.lean#L137" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«thm:modularInterpretation»</a></li>
           
         </ul>
     
@@ -166,7 +166,14 @@
   <div class="proof_content">
   
 
-<p>Construct the algebra and normal element from a rational quotient point, and recover the quotient point from the conjugates of the normal element. These constructions are inverse on isomorphism classes. This node states the rational-point part of the paper’s theorem. </p>
+<p>Let \(\mathcal G_1\) be the torus of augmentation-one units of the group algebra of \(C_3\), so that \(T=\mathcal G_1/C_3\), and let \(A\) and \(A^{C_3}\) be the coordinate rings of \(\mathcal G_1\) and \(T\). We follow <span class="cite">
+	[
+	<a href="sect0010.html#odesky2023moduli" >26</a>
+	, 
+	§
+	2
+	]
+</span>. A pair \((K,x)\) gives the element \(u=\sum _{g\in C_3}(g^{-1}x)[g]\) of the group algebra \(K[C_3]\). Its augmentation is \(\operatorname {Tr}(x)=1\), and \(u\) is a unit if and only if \(x\) is normal. Thus \(u\) is a \(K\)-point of \(\mathcal G_1\); its image in \(T\) is fixed by the action of \(C_3\) on \(K\), so it is a rational point, and its characteristic polynomial is that of \(x\). Conversely, a rational point \(P\) of \(T\) gives the fibre algebra \(A\otimes _{A^{C_3},P}\mathbb {Q}\) with its \(C_3\)-action. It is a \(C_3\)-algebra, and the image of the first coordinate is a trace-one normal element. If \((K,x)\) maps to \(P\), the equivariant map from the fibre algebra to \(K\) sending the first coordinate to \(x\) carries the coordinate basis to the basis of conjugates of \(x\). So it is an isomorphism of pairs, and pairs with the same point are equivalent. Equivalent pairs give the same point, and the fibre pair of \(P\) maps to \(P\), so the map is a bijection. Lean formalizes this rational-point correspondence, not the moduli statement over general bases. </p>
 
   </div>
 </div>
@@ -176,6 +183,7 @@
     Example
     </span>
     <span class="example_thmlabel">1</span>
+    <span class="example_thmtitle">A cyclic cubic field and its twist</span>
     <div class="thm_header_extras">
 
     
@@ -201,9 +209,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/TwistedCubicField.lean#L42" class="lean_decl">CubicTargets.OrbitParametrization.TwistedCubicField.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/OrbitParametrization/TwistedCubicField.lean#L42" class="lean_decl">CubicTargets.OrbitParametrization.TwistedCubicField.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/TwistedCubicField.lean#L63" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:twoRationalPointsSamePoly»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/OrbitParametrization/TwistedCubicField.lean#L63" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:twoRationalPointsSamePoly»</a></li>
           
         </ul>
     
@@ -232,7 +240,7 @@
   </div>
   <div class="proof_content">
   
-<p>The Galois group of a cyclic cubic field is abelian. An isomorphism to the inverse-action twist would therefore force a generator to equal its inverse, a contradiction. The cocycles describe the two rational points. </p>
+<p>Since \(K/\mathbb {Q}\) is Galois of degree \(3\), an identification of \(C_3\) with \(\mathrm{Gal}(K/\mathbb {Q})\) makes \(K\) a \(C_3\)-algebra. Suppose \(\tau :K\to K'\) is an isomorphism of \(C_3\)-algebras. Then \(\tau \) is a field automorphism of \(K\) with \(\tau (gy)=g^{-1}\tau (y)\) for all \(g\in C_3\) and \(y\in K\). But \(\tau \) lies in the abelian group \(\mathrm{Gal}(K/\mathbb {Q})\), so it commutes with \(g\), and hence \(g\) and \(g^{-1}\) act in the same way. This fails for a generator, since the action is faithful. For the footnote, the cocycle of \(K\) is the surjective homomorphism \(c:\mathrm{Gal}(\overline{\mathbb {Q}}/\mathbb {Q})\to C_3\) given by restriction to \(K\), and the cocycle of \(K'\) is \(c^{-1}\). Since \(C_3\) is abelian, cohomologous cocycles are equal, and \(c\neq c^{-1}\) because \(c\) is surjective. Embedding \(C_3\) in \(S_3\) by its action on itself, inversion on \(C_3\) is conjugation by a transposition, so the images in \(H^1(\mathbb {Q},S_3)\) agree. </p>
 
   </div>
 </div>
@@ -242,6 +250,7 @@
     Example
     </span>
     <span class="example_thmlabel">2</span>
+    <span class="example_thmtitle">The split algebra and its twist</span>
     <div class="thm_header_extras">
 
     
@@ -267,9 +276,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitAlgebraTwist.lean#L29" class="lean_decl">CubicTargets.OrbitParametrization.SplitAlgebraTwist.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/OrbitParametrization/SplitAlgebraTwist.lean#L29" class="lean_decl">CubicTargets.OrbitParametrization.SplitAlgebraTwist.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitAlgebraTwist.lean#L81" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebra»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/OrbitParametrization/SplitAlgebraTwist.lean#L81" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebra»</a></li>
           
         </ul>
     
@@ -296,7 +305,7 @@
   </div>
   <div class="proof_content">
   
-<p>Every algebra automorphism of \(\mathbb {Q}^3\) permutes its three coordinate idempotents. A transposition conjugates cyclic translation to its inverse, giving the asserted isomorphism with the twist. </p>
+<p>A \(\mathbb {Q}\)-algebra automorphism of \(\mathbb {Q}^3\) permutes its three primitive idempotents, so \(\mathrm{Aut}_{\mathbb {Q}\text{-alg}}(\mathbb {Q}^3)=S_3\), acting by permuting coordinates. The cyclic permutations form \(C_3\), whose fixed algebra is \(\mathbb {Q}\), so \(K_{\text{spl}}\) is a \(C_3\)-algebra. Index the coordinates by \(\mathbb {Z}/3\mathbb {Z}\), with \(g\in C_3\) acting by translation. A transposition is a reflection \(h\mapsto c-h\), and it turns translation by \(g\) into translation by \(-g\). Hence permuting the coordinates by a transposition is an isomorphism \(K_{\text{spl}}\to K_{\text{spl}}'\) that intertwines \(g\) with \(g^{-1}\). </p>
 
   </div>
 </div>
@@ -306,6 +315,7 @@
     Example
     </span>
     <span class="example_thmlabel">3</span>
+    <span class="example_thmtitle">Normal elements of the split algebra</span>
     <div class="thm_header_extras">
 
     
@@ -331,9 +341,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/CubicTargets/OrbitParametrization/SplitNormalElements.lean#L48" class="lean_decl">CubicTargets.OrbitParametrization.SplitNormalElements.Claim</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/CubicTargets/OrbitParametrization/SplitNormalElements.lean#L48" class="lean_decl">CubicTargets.OrbitParametrization.SplitNormalElements.Claim</a></li>
           
-          <li><a href="https://github.com/aodesky/abelian-cubics/blob/0ac720cb3d66fa60a9261815c62042d9c81d4c33/formalization/Cubic/OrbitParametrization/SplitNormalElements.lean#L206" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebraNormalElement»</a></li>
+          <li><a href="https://github.com/aodesky/abelian-cubics/blob/7bb74d40f672189a73fd80103e3bac9cedb67f81/formalization/Cubic/OrbitParametrization/SplitNormalElements.lean#L206" class="lean_decl">Cubic.OrbitParametrization.C3Algebra.«example:splitAlgebraNormalElement»</a></li>
           
         </ul>
     
@@ -361,7 +371,7 @@
   <div class="proof_content">
   
 
-<p>Evaluate the explicit algebra and cyclic action, then compute the characteristic polynomial and the normality condition. </p>
+<p>The conjugates of \(x=(x_0,x_1,x_2)\) are its cyclic shifts. With \(e_1=x_0+x_1+x_2=1\) and \(e_2=x_0x_1+x_1x_2+x_2x_0\), we have \(e_1^2-3e_2=\frac12\sum _{i{\lt}j}(x_i-x_j)^2\). By Lemma&#160;<a href="sect0005.html#lemma:normalityCriterion">9</a>, \(x\) is normal exactly when its coordinates are not all equal, that is, when they are distinct or exactly two agree. The twist has the same conjugates of \(x\), so \(x\) is also a trace-one normal element of \(K_{\text{spl}}'\). An equivalence \((K_{\text{spl}},x)\to (K_{\text{spl}}',x)\) is an automorphism \(e\) of \(\mathbb {Q}^3\) with \(e(gy)=g^{-1}e(y)\) and \(e(x)=x\). Composing \(e\) with the reflection \(h\mapsto -h\) of the coordinates gives a \(C_3\)-equivariant automorphism of \(K_{\text{spl}}\), which is a cyclic shift, since the centralizer of \(C_3\) in \(S_3\) is \(C_3\). So \(e\) is a reflection \(h\mapsto c-h\), which swaps two coordinates and fixes the third, and \(e(x)=x\) exactly when the two swapped coordinates of \(x\) agree. Conversely, if two coordinates agree, the transposition swapping them is an isomorphism to the twist (Example&#160;<a href="sect0002.html#example:splitAlgebra">2</a>) and fixes \(x\). If \(x\) has distinct coordinates, the two pairs are inequivalent, so they give different rational points by Theorem&#160;<a href="sect0002.html#thm:modularInterpretation">5</a>, while \(K_{\text{spl}}\cong K_{\text{spl}}'\) by Example&#160;<a href="sect0002.html#example:splitAlgebra">2</a>. </p>
 
   </div>
 </div>
