@@ -105,11 +105,13 @@
         "Cubic.Counting.ExactFormula.a_nonpos",
         "Cubic.Counting.ExactFormula.count_eq",
         "Cubic.Counting.ExactFormula.tripleEquiv",
-        "Cubic.Counting.ExactFormula.card_split",
+        "Cubic.Counting.ExactFormula.theta_shift",
+        "Cubic.Counting.ExactFormula.idealOf_eq_iff",
+        "Cubic.Counting.ExactFormula.splitIdealEquiv",
         "Cubic.Counting.ExactFormula.card_cyclic",
-        "Cubic.Counting.ExactFormula.fibre_card_of_invariant"
+        "Cubic.Counting.ExactFormula.aE_cube"
       ],
-      "statement": "\\begin{theorem}\\label{thm:exactFormula} For $m\\geq1$ let $a_E(m)$ denote the number of ideals of norm $m$ in the ring of integers $\\mcO_E$ of $E$. If $t^3-t^2+at+b\\in\\ZZ[t]$ has Galois group $C_3$, then $a\\leq0$. Fix $a \\in \\ZZ_{\\leq 0}$ and put $n=1-3a$. The number of polynomials of the form $t^3 -t^2 + at + b \\in \\ZZ[t]$ with Galois group $C_3$ is equal to \\begin{equation} \\tfrac{1}{2}\\big(a_E(n^3)-a_E(n)\\big). \\end{equation} \\end{theorem}",
+      "statement": "\\begin{theorem}\\label{thm:exactFormula} For $m\\geq1$ let $a_E(m)$ denote the number of ideals of norm $m$ in the ring of integers $\\mcO_E$ of $E$. If $t^3-t^2+at+b\\in\\ZZ[t]$ has Galois group $C_3$, then $a\\leq0$. Fix $a \\in \\ZZ_{\\leq 0}$ and put $n=1-3a$. The number of polynomials of the form $t^3 -t^2 + at + b \\in \\ZZ[t]$ with Galois group $C_3$ is equal to $\\tfrac{1}{2}\\big(a_E(n^3)-a_E(n)\\big)$. \\end{theorem}",
       "proof_file": "Cubic/Counting/ExactFormula.lean",
       "supporting_declarations": [
         "Cubic.Counting.AsymptoticPolynomialCount.exists_point",
@@ -117,12 +119,16 @@
         "Cubic.Counting.CyclicFibre.fibre_card",
         "Cubic.Counting.SplitPoints.exists_triple",
         "Cubic.Counting.SplitPoints.triplePoint_eq_iff",
-        "Cubic.PoissonSummation.«thm:heightZetaFunctionFormula»",
+        "Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients»",
         "Cubic.ToricHeights.«lemma:rootVsToric»",
-        "Cubic.Counting.EisensteinIdealCount.idealCount_cube",
-        "Cubic.Counting.EisensteinNormCount.card_normSet",
+        "Cubic.Counting.PrimePowerIdealCount.aE_mul",
+        "Cubic.Counting.PrimePowerIdealCount.aE_split",
+        "Cubic.Counting.PrimePowerIdealCount.aE_inert",
+        "Cubic.BoxAsymptotic.IdealNormFibers.mulEquiv",
+        "Cubic.PoissonSummation.CyclotomicIntegerUnits.units_exhaustive",
         "Cubic.Counting.SplitCount.ofPair_val",
-        "Cubic.Counting.PrimaryNormCount.card_primarySet"
+        "Cubic.Counting.PrimaryNormCount.primary_generator_iff",
+        "Cubic.Counting.PrimaryNormCount.exists_primary_generator"
       ],
       "target": {
         "kind": "concrete",

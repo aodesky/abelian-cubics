@@ -2,28 +2,50 @@ import Cubic.Counting.AsymptoticPolynomialCount
 import Cubic.PoissonSummation.HeightZetaCountingFormula
 import CubicTargets.Counting.ExactFormula
 import Cubic.Counting.PrimaryNormCount
-import Cubic.Counting.EisensteinIdealCount
+import Cubic.Counting.PrimePowerIdealCount
+import Cubic.PoissonSummation.HeightCoefficients
 
 /-!
 # Proof of `thm:exactFormula`
 
-The paper: "Every `f ∈ F` arises from an integral point of `T`, so
-Lemma `lemma:rootVsToric` gives `a ≤ 0`. Fix `a` and put `n = 1−3a`, so `3 ∤ n`.
-The split points of height `√n` are represented by triples `(x,y,z) ∈ ℤ³` with
-`x+y+z = 1` and `xy+yz+zx = a`, modulo cyclic permutation. To such a triple attach
-`θ = x+yζ+zζ²`; then `Nθ = n` and `θ ≡ 1 (mod 1−ζ)`, and conversely every such `θ`
-comes from exactly one triple. An ideal of norm `n` has six generators `±ζʲθ`, exactly
-three of which are congruent to `1`. Hence the split points of height `√n` correspond
-to the ideals of norm `n`, and there are `a_E(n)` of them. Each irreducible polynomial
-contributes two points; hence their number is `½(d_n − a_E(n))`. Finally `d_n = a_E(n³)`."
+The paper: "Since the roots of every `f ∈ F` are normal, Proposition
+`prop:canonicalHeight` shows that every `f ∈ F` arises from an integral point of `T`.
+Lemma `lemma:rootVsToric` therefore gives `a ≤ 0`. Now fix `a ∈ ℤ_{≤0}` and put
+`n = 1−3a`, so that `3 ∤ n`. The split points of height `√n` are represented by triples
+`(x,y,z) ∈ ℤ³` with `x+y+z = 1` and `xy+yz+zx = a`, modulo cyclic permutation. To such a
+triple attach `θ = x+yζ+zζ² ∈ 𝓞_E`. Then `Nθ = (x+y+z)² − 3(xy+yz+zx) = n` and
+`θ ≡ x+y+z = 1 (mod 1−ζ)`. Conversely, if `θ = u+vζ` satisfies `θ ≡ 1 (mod 1−ζ)`, that
+is, `u+v ≡ 1 (mod 3)`, then `θ` comes from exactly one triple, namely `z = (1−u−v)/3`,
+`x = u+z`, `y = v+z`. Cyclically permuting the triple multiplies `θ` by a power of `ζ`.
+Since `3 ∤ n`, an ideal of norm `n` has six generators `±ζʲθ`, and since
+`ζ ≡ 1 (mod 1−ζ)`, exactly three of them, `θ, ζθ, ζ²θ`, are congruent to `1`. Hence the
+split points of height `√n` correspond bijectively to the ideals of norm `n`, and there
+are `a_E(n)` of them. Each irreducible polynomial contributes two points; hence their
+number is `½(d_n − a_E(n))`.
 
-The count is organized as in the paper: `card_split` gives three triples per split
-point (the cyclic permutations), `tripleEquiv` is the bijection `(x,y,z) ↦ θ` written in
-the coordinates `θ = (x−z) + (y−z)ζ`, and `PrimaryNormCount.card_primarySet` gives
-three primary generators per ideal. Hence `#split points = a_E(n)`. For `d_n`,
-`thm:heightZetaFunctionFormula` gives the divisor sum of
-Remark `rem:heightCoefficients`, and `EisensteinIdealCount.idealCount_cube` identifies it
-with `a_E(n³)`.
+It remains to show that `d_n = a_E(n³)`. An ideal of norm `p^{3k}` with `p ≡ 1 (mod 3)` is
+`𝔭^i 𝔭̄^{3k−i}` for some `0 ≤ i ≤ 3k`, which gives `3k+1` choices. An ideal of norm
+`q^{3k}` with `q ≡ 2 (mod 3)` exists only if `3k` is even, that is, `k` is even, and is
+then unique. Comparing with Remark `rem:heightCoefficients` gives `d_n = a_E(n³)`."
+
+The bijection is `splitIdealEquiv`. The split points are the triples modulo the relation
+`pointOf v = pointOf w`, which is cyclic permutation (`pointOf_surjective`,
+`pointOf_eq_iff`). The triple gives `θ` (`theta`, `residue_theta`, `norm_theta`), and
+`tripleEquiv` (in the coordinates `θ = (x−z) + (y−z)ζ`, `theta_eq_coord`) with
+`theta_injective` is the converse. `theta_shift` says a cyclic permutation multiplies `θ`
+by a power of `ζ`, and `PrimaryNormCount.primary_generator_iff` says the generators of
+`(θ)` congruent to `1` are `θ, ζθ, ζ²θ`; together they show that two triples give the same
+ideal `(θ)` exactly when they are cyclic permutations of each other (`idealOf_eq_iff`).
+Every ideal of norm `n` arises (`idealOf_surjective`, via
+`PrimaryNormCount.exists_primary_generator`). So both maps identify the same quotient of
+the triples, with the split points and with the ideals of norm `n`.
+
+For `d_n = a_E(n³)` (`aE_cube`): `a_E` is multiplicative on coprime arguments
+(`PrimePowerIdealCount.aE_mul`), so `a_E(n³) = ∏_{p^k ∥ n} a_E(p^{3k})`. Since `3 ∤ n`,
+each `p` is split or inert; `PrimePowerIdealCount.aE_split` (`𝔭^i 𝔭̄^{m−i}`, `m+1`
+choices) and `PrimePowerIdealCount.aE_inert` (`(q)^{m/2}` when `m` is even, none
+otherwise) give the local factors, and the product is the formula for `d_n` in
+`rem:heightCoefficients`.
 -/
 
 noncomputable section
@@ -95,8 +117,74 @@ theorem IPa_finite (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) : (IPa a).Finite := by
 def exactTriples (a : ℤ) : Set Triple :=
   {v | Cubic.OrbitParametrization.secondCoeff (v.val 0) (v.val 1) (v.val 2) = a}
 
-/-- `(x, y, z) ↦ θ = x + yζ + zζ² = (x−z) + (y−z)ζ`: the triples with
-`xy + yz + zx = a` are the `θ` of norm `n = 1−3a` with `θ ≡ 1 (mod 1−ζ)`. -/
+theorem triplePoint_mem_IPs (v : Triple) (hv : v ∈ exactTriples a) : triplePoint v ∈ IPs a := by
+  refine ⟨⟨triplePoint_integral v, ?_⟩, ?_⟩
+  · rw [triplePoint_linear]
+    exact_mod_cast hv
+  · rw [triple_charPoly]
+    exact ((Splits.X_sub_C _).mul (Splits.X_sub_C _)).mul (Splits.X_sub_C _)
+
+theorem image_exact : triplePoint '' exactTriples a = IPs a := by
+  ext P
+  constructor
+  · rintro ⟨v, hv, rfl⟩
+    exact triplePoint_mem_IPs v hv
+  · rintro ⟨⟨hint, hlin⟩, hs⟩
+    obtain ⟨v, rfl⟩ := exists_triple P hint hs
+    refine ⟨v, ?_, rfl⟩
+    rw [triplePoint_linear] at hlin
+    change Cubic.OrbitParametrization.secondCoeff _ _ _ = a
+    exact_mod_cast hlin
+
+/-- A triple's split point. -/
+def pointOf (v : exactTriples a) : IPs a := ⟨triplePoint v.val, triplePoint_mem_IPs v.val v.property⟩
+
+/-- The split points of height `√n` are represented by triples with `xy+yz+zx = a`. -/
+theorem pointOf_surjective : Function.Surjective (pointOf (a := a)) := by
+  rintro ⟨P, hP⟩
+  rw [← image_exact] at hP
+  obtain ⟨v, hv, rfl⟩ := hP
+  exact ⟨⟨v, hv⟩, rfl⟩
+
+/-- Two triples represent the same split point exactly when they differ by a cyclic
+permutation. -/
+theorem pointOf_eq_iff (v w : exactTriples a) :
+    pointOf v = pointOf w ↔ ∃ c : ZMod 3, w.val = shift c v.val := by
+  rw [Subtype.ext_iff]
+  change triplePoint v.val = triplePoint w.val ↔ _
+  rw [triplePoint_eq_iff]
+  constructor
+  · rintro ⟨c, hc⟩
+    exact ⟨c, Subtype.ext (funext hc)⟩
+  · rintro ⟨c, hc⟩
+    exact ⟨c, fun h => by rw [hc]; rfl⟩
+
+/-! ### The element `θ = x + yζ + zζ²` of a triple -/
+
+open Cubic.PoissonSummation.CyclotomicIntegerUnits Cubic.Counting.EisensteinNormCount
+  Cubic.Counting.PrimaryNormCount
+
+/-- `θ = x + yζ + zζ² ∈ 𝓞_E` attached to the triple `(x, y, z)`. -/
+def theta (v : Triple) : Integers :=
+  v.val 0 + v.val 1 * zetaInteger + v.val 2 * zetaInteger ^ 2
+
+/-- `θ = x + yζ + zζ² = (x−z) + (y−z)ζ`, since `ζ² = −1−ζ`. -/
+theorem theta_eq_coord (v : Triple) : theta v = coord (v.val 0 - v.val 2, v.val 1 - v.val 2) := by
+  rw [theta, coord, zetaInteger_sq]
+  push_cast
+  ring
+
+/-- `θ ≡ x + y + z = 1 (mod 1−ζ)`, since `ζ ≡ 1`. -/
+theorem residue_theta (v : Triple) : residue (theta v) = 1 := by
+  have h := congrArg (Int.cast : ℤ → ZMod 3) v.property
+  push_cast at h
+  simp only [theta, map_add, map_mul, map_pow, map_intCast, residue_zeta, one_pow, mul_one]
+  exact h
+
+/-- `θ` in the coordinates `θ = u + vζ = (x−z) + (y−z)ζ` (`theta_eq_coord`): it has
+`Nθ = u² − uv + v² = n` and `u + v ≡ 1 (mod 3)`, that is `θ ≡ 1 (mod 1−ζ)`
+(`PrimaryNormCount.dvd_iff_residue`). Conversely, if `θ = u + vζ` satisfies these, it comes
+from the triple `z = (1−u−v)/3`, `x = u + z`, `y = v + z`, and from no other. -/
 def tripleEquiv (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) :
     exactTriples a ≃ PrimaryNormCount.primarySet n where
   toFun v := ⟨(v.val.val 0 - v.val.val 2, v.val.val 1 - v.val.val 2), by
@@ -144,63 +232,93 @@ def tripleEquiv (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) :
     rw [hz]
     ext <;> simp <;> omega
 
-/-- The fibre of a triple's point in a shift-invariant set of triples is its orbit. -/
-theorem fibre_card_of_invariant (S : Set Triple)
-    (hS : ∀ c v, v ∈ S → shift c v ∈ S) (v : S) :
-    Nat.card {w : S // triplePoint w.val = triplePoint v.val} = 3 := by
-  have hset : {w : S | triplePoint w.val = triplePoint v.val} =
-      Set.range (fun c : ZMod 3 => (⟨shift c v.val, hS c v.val v.property⟩ : S)) := by
-    ext w
-    simp only [Set.mem_setOf_eq, Set.mem_range]
-    constructor
-    · intro hw
-      obtain ⟨c, hc⟩ := (triplePoint_eq_iff v.val w.val).mp hw.symm
-      exact ⟨c, Subtype.ext (Subtype.ext (funext fun h => (hc h).symm))⟩
-    · rintro ⟨c, rfl⟩
-      exact ((triplePoint_eq_iff v.val _).mpr ⟨c, fun h => rfl⟩).symm
-  change Set.ncard {w : S | triplePoint w.val = triplePoint v.val} = 3
-  rw [hset, Set.ncard_range_of_injective (fun c d hcd => shift_injective v.val
-    (congrArg Subtype.val hcd))]
-  rw [Nat.card_eq_fintype_card, ZMod.card]
+/-- `Nθ = (x+y+z)² − 3(xy+yz+zx) = n`. -/
+theorem norm_theta (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) (v : exactTriples a) :
+    Algebra.norm ℤ (theta v.val) = n := by
+  rw [theta_eq_coord, norm_coord]
+  exact (tripleEquiv n hn v).property.1
 
-theorem exact_invariant : ∀ c v, v ∈ exactTriples a → shift c v ∈ exactTriples a := by
-  intro c v hv
-  change Cubic.OrbitParametrization.secondCoeff _ _ _ = a
-  rw [secondCoeff_shift]
-  exact hv
+/-- The triple that `tripleEquiv` attaches to `u + vζ` has `θ = u + vζ`. -/
+theorem theta_tripleEquiv_symm (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a)
+    (p : PrimaryNormCount.primarySet n) : theta ((tripleEquiv n hn).symm p).val = coord p.val := by
+  rw [theta_eq_coord]
+  exact congrArg coord (congrArg Subtype.val ((tripleEquiv n hn).apply_symm_apply p))
 
-theorem triplePoint_mem_IPs (v : Triple) (hv : v ∈ exactTriples a) : triplePoint v ∈ IPs a := by
-  refine ⟨⟨triplePoint_integral v, ?_⟩, ?_⟩
-  · rw [triplePoint_linear]
-    exact_mod_cast hv
-  · rw [triple_charPoly]
-    exact ((Splits.X_sub_C _).mul (Splits.X_sub_C _)).mul (Splits.X_sub_C _)
+/-- `θ` comes from exactly one triple. -/
+theorem theta_injective : Function.Injective theta := by
+  intro v w h
+  rw [theta_eq_coord, theta_eq_coord] at h
+  have h' := coord_injective h
+  simp only [Prod.mk.injEq] at h'
+  have hv := v.property
+  have hw := w.property
+  apply Subtype.ext
+  funext i
+  rcases (show ∀ i : ZMod 3, i = 0 ∨ i = 1 ∨ i = 2 by decide) i with rfl | rfl | rfl <;> omega
 
-theorem image_exact : triplePoint '' exactTriples a = IPs a := by
-  ext P
+/-- Cyclically permuting the triple multiplies `θ` by a power of `ζ`: the shift
+`(x, y, z) ↦ (y, z, x)` multiplies `θ` by `ζ² = ζ⁻¹`. -/
+theorem theta_shift (c : ZMod 3) (v : Triple) :
+    theta (shift c v) = zetaInteger ^ (-c).val * theta v := by
+  have h3 : zetaInteger ^ 3 = 1 := by
+    rw [← coe_zetaUnit, ← Units.val_pow_eq_pow_val, zetaUnit_cube, Units.val_one]
+  simp only [theta, shift]
+  rcases (show ∀ c : ZMod 3, c = 0 ∨ c = 1 ∨ c = 2 by decide) c with rfl | rfl | rfl
+  · simp
+  · simp only [zero_add, show (1 : ZMod 3) + 1 = 2 by decide,
+      show (2 : ZMod 3) + 1 = 0 by decide, show (-1 : ZMod 3).val = 2 from rfl]
+    linear_combination (-(v.val 1 : Integers) - v.val 2 * zetaInteger) * h3
+  · simp only [zero_add, show (1 : ZMod 3) + 2 = 0 by decide,
+      show (2 : ZMod 3) + 2 = 1 by decide, show (-2 : ZMod 3).val = 1 from rfl]
+    linear_combination (-(v.val 2 : Integers)) * h3
+
+/-! ### The bijection between split points and ideals of norm `n` -/
+
+/-- The ideal `(θ)` of norm `n` attached to a triple. -/
+def idealOf (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) (v : exactTriples a) : normIdeals n :=
+  ⟨Ideal.span {theta v.val}, by
+    change Ideal.absNorm _ = n
+    rw [Ideal.absNorm_span_singleton, norm_theta n hn v, Int.natAbs_natCast]⟩
+
+/-- Every ideal of norm `n` is `(θ)` for a triple: since `3 ∤ n` it has a generator
+`θ = u + vζ ≡ 1`, which comes from a triple. -/
+theorem idealOf_surjective (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) (h3 : ¬ 3 ∣ n) :
+    Function.Surjective (idealOf n hn) := by
+  intro I
+  obtain ⟨θ, hθI, hθ⟩ := exists_primary_generator ⟨I.1, I.2⟩ h3
+  obtain ⟨p, rfl⟩ := coord_surjective θ
+  have hp : p ∈ PrimaryNormCount.primarySet n := by
+    refine ⟨?_, (dvd_iff_residue p).mpr hθ⟩
+    have h : Ideal.absNorm I.1 = n := I.2
+    rw [← hθI, Ideal.absNorm_span_singleton, norm_coord] at h
+    rw [← Int.natAbs_of_nonneg (normForm_nonneg _ _), h]
+  refine ⟨(tripleEquiv n hn).symm ⟨p, hp⟩, Subtype.ext ?_⟩
+  change Ideal.span {theta _} = I.1
+  rw [theta_tripleEquiv_symm, hθI]
+
+/-- Two triples give the same ideal exactly when they differ by a cyclic permutation: the
+generators of `(θ)` congruent to `1` are `θ, ζθ, ζ²θ`, and these are the `θ` of the
+cyclic permutations of the triple. -/
+theorem idealOf_eq_iff (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) (v w : exactTriples a) :
+    idealOf n hn v = idealOf n hn w ↔ ∃ c : ZMod 3, w.val = shift c v.val := by
+  rw [Subtype.ext_iff]
+  change Ideal.span {theta v.val} = Ideal.span {theta w.val} ↔ _
+  rw [eq_comm, primary_generator_iff (residue_theta _) (residue_theta _)]
   constructor
-  · rintro ⟨v, hv, rfl⟩
-    exact triplePoint_mem_IPs v hv
-  · rintro ⟨⟨hint, hlin⟩, hs⟩
-    obtain ⟨v, rfl⟩ := exists_triple P hint hs
-    refine ⟨v, ?_, rfl⟩
-    rw [triplePoint_linear] at hlin
-    change Cubic.OrbitParametrization.secondCoeff _ _ _ = a
-    exact_mod_cast hlin
+  · rintro ⟨j, hj⟩
+    exact ⟨-j, theta_injective (by rw [hj, theta_shift, neg_neg])⟩
+  · rintro ⟨c, hc⟩
+    exact ⟨-c, by rw [hc, theta_shift]⟩
 
-theorem card_split (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) :
-    Nat.card (exactTriples a) = Nat.card (IPs a) * 3 := by
-  haveI := ((IPa_finite n hn).subset fun P (hP : P ∈ IPs a) => hP.1).to_subtype
-  let f : exactTriples a → IPs a := fun w => ⟨triplePoint w.val, triplePoint_mem_IPs w.val w.property⟩
-  apply card_eq_mul_of_fibres f 3 (by norm_num)
-  intro b
-  have hb : b.val ∈ triplePoint '' exactTriples a := by rw [image_exact]; exact b.property
-  obtain ⟨v, hv, hvb⟩ := hb
-  rw [← fibre_card_of_invariant _ exact_invariant ⟨v, hv⟩]
-  apply Nat.card_congr
-  apply Equiv.subtypeEquivRight
-  intro w
-  simp only [f, Subtype.ext_iff, hvb]
+/-- The paper's bijection between the split points of height `√n` and the ideals of
+norm `n`: split points are triples modulo cyclic permutation (`pointOf`), and a triple
+modulo cyclic permutation is `θ` modulo `⟨ζ⟩`, which is the ideal `(θ)` (`idealOf`). -/
+def splitIdealEquiv (n : ℕ) (hn : (n : ℤ) = 1 - 3 * a) (h3 : ¬ 3 ∣ n) :
+    IPs a ≃ normIdeals n :=
+  (Setoid.quotientKerEquivOfSurjective _ pointOf_surjective).symm.trans
+    ((Quotient.congrRight fun v w =>
+        (pointOf_eq_iff v w).trans (idealOf_eq_iff n hn v w).symm).trans
+      (Setoid.quotientKerEquivOfSurjective _ (idealOf_surjective n hn h3)))
 
 /-! ### Each polynomial of `F` contributes two points -/
 
@@ -284,9 +402,53 @@ theorem IPa_disjoint : Disjoint (IPc a) (IPs a) := by
 
 end Fixed
 
+/-! ### `d_n = a_E(n³)` -/
+
+/-- `a_E(n³)` for `3 ∤ n` is the product formula of `rem:heightCoefficients`: `3k+1` for
+each `p^k ∥ n` with `p ≡ 1 (mod 3)`, and `0` unless every `q ≡ 2 (mod 3)` divides `n` to
+an even power. -/
+theorem aE_cube {n : ℕ} (hn : 0 < n) (h3 : ¬ 3 ∣ n) :
+    (aE (n ^ 3) : ℤ) = if ∀ p ∈ n.primeFactors, p % 3 = 2 → Even (n.factorization p)
+      then ∏ p ∈ n.primeFactors.filter (fun p => p % 3 = 1),
+        (3 * (n.factorization p : ℤ) + 1) else 0 := by
+  classical
+  open PrimePowerIdealCount in
+  -- `a_E` is multiplicative, so `a_E(n³) = ∏_{p^k ∥ n} a_E(p^{3k})`
+  rw [Nat.multiplicative_factorization (fun m => (aE (m ^ 3) : ℤ))
+    (fun x y hxy => by simp only [mul_pow, aE_mul (hxy.pow 3 3), Nat.cast_mul])
+    (by simp [aE_one]) hn.ne']
+  simp only [Finsupp.prod, Nat.support_factorization, ← pow_mul]
+  -- `3 ∤ n`, so every prime factor of `n` is split or inert
+  have hres : ∀ p ∈ n.primeFactors, p % 3 = 1 ∨ p % 3 = 2 := by
+    intro p hp
+    have hp3 : p ≠ 3 := fun he => h3 (he ▸ Nat.dvd_of_mem_primeFactors hp)
+    have hnd : ¬ 3 ∣ p := fun h => hp3 (((Nat.prime_of_mem_primeFactors hp).dvd_iff_eq
+      (by decide)).mp h)
+    omega
+  split_ifs with hall
+  · rw [Finset.prod_filter]
+    refine Finset.prod_congr rfl fun p hp => ?_
+    have hpr := Nat.prime_of_mem_primeFactors hp
+    rcases hres p hp with hr | hr
+    · -- `p ≡ 1`: `3k+1` ideals `𝔭^i 𝔭̄^{3k−i}`
+      rw [if_pos hr, PrimePowerIdealCount.aE_split ⟨⟨p, hpr⟩, hr⟩]
+      push_cast
+      ring
+    · -- `q ≡ 2` with `k` even: the unique ideal `(q)^{3k/2}`
+      rw [if_neg (by omega), PrimePowerIdealCount.aE_inert ⟨⟨p, hpr⟩, hr⟩,
+        if_pos ((hall p hp hr).mul_right 3), Nat.cast_one]
+  · -- some `q ≡ 2` with `k` odd: no ideal of norm `q^{3k}`
+    push_neg at hall
+    obtain ⟨p, hp, hr, hk⟩ := hall
+    refine Finset.prod_eq_zero hp ?_
+    have hodd : ¬ Even (n.factorization p * 3) := by
+      rw [Nat.even_mul]; exact fun h => h.elim hk (by decide)
+    rw [PrimePowerIdealCount.aE_inert ⟨⟨p, Nat.prime_of_mem_primeFactors hp⟩, hr⟩,
+      if_neg hodd, Nat.cast_zero]
+
 /-- `thm:exactFormula`, relative to the Poisson summation input
-`PoissonWithDualMeasure.BlackBox`, which enters through `thm:heightZetaFunctionFormula`
-(the divisor sum for `d_n`). -/
+`PoissonWithDualMeasure.BlackBox`, which enters through `rem:heightCoefficients`
+(the product formula for `d_n`). -/
 theorem «thm:exactFormula»
     (hPoisson : CubicTargets.PoissonSummation.PoissonWithDualMeasure.BlackBox) :
     CubicTargets.Counting.ExactFormula.Claim := by
@@ -297,23 +459,13 @@ theorem «thm:exactFormula»
   have hn3 : ¬ 3 ∣ n := by omega
   obtain ⟨hfin, hcyc⟩ := card_cyclic n hn
   refine ⟨hfin, Ideal.finite_setOf_absNorm_eq n, Ideal.finite_setOf_absNorm_eq (n ^ 3), ?_⟩
-  -- split points of height `√n`: three triples each, three primary generators per ideal
-  have hsplit := card_split n hn
-  rw [Nat.card_congr (tripleEquiv n hn), PrimaryNormCount.card_primarySet n hn3] at hsplit
-  have hs : Nat.card (IPs a) = aE n := by
-    have h : Nat.card (IPs a) = EisensteinIdealCount.idealCount n := by omega
-    exact h
-  -- `d_n = a_E(n³)`
-  have hcount := count_eq n hn
-  have hd := (Cubic.PoissonSummation.«thm:heightZetaFunctionFormula» hPoisson).point_count n hn0 hn3
-  rw [hcount] at hd
-  have hcube := EisensteinIdealCount.idealCount_cube 0 n hn0 hn3
-  rw [pow_zero, one_mul, Cubic.PoissonSummation.HeightCountingCoefficients.away_three n hn3] at hcube
-  have hdn : (Nat.card (IPa a) : ℝ) = aE (n ^ 3) := by
-    have h1 : ((Nat.card (IPa a) : ℤ) : ℂ) = (EisensteinIdealCount.idealCount (n ^ 3) : ℂ) := by
-      rw [hcube, hd]
-    have h2 : Nat.card (IPa a) = EisensteinIdealCount.idealCount (n ^ 3) := by exact_mod_cast h1
-    exact_mod_cast h2
+  -- the split points of height `√n` correspond bijectively to the ideals of norm `n`
+  have hs : Nat.card (IPs a) = aE n := Nat.card_congr (splitIdealEquiv n hn hn3)
+  -- `d_n = a_E(n³)`: compare `aE_cube` with `rem:heightCoefficients`
+  have hd := (Cubic.PoissonSummation.HeightCoefficients.«rem:heightCoefficients» hPoisson).2.2
+    n hn0 hn3
+  rw [count_eq n hn, ← aE_cube hn0 hn3] at hd
+  have hdn : (Nat.card (IPa a) : ℝ) = aE (n ^ 3) := by exact_mod_cast hd
   have hunion : Nat.card (IPa a) = Nat.card (IPc a) + Nat.card (IPs a) := by
     have hfa := IPa_finite n hn
     rw [Nat.card_coe_set_eq, Nat.card_coe_set_eq, Nat.card_coe_set_eq, IPa_union,

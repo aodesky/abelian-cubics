@@ -1,6 +1,5 @@
 import Cubic.Counting.EisensteinNormCount
 import Cubic.PoissonSummation.CyclotomicIntegerUnits
-import Cubic.Counting.WeightedCount
 
 /-!
 # Generators congruent to one modulo `1 - ζ`
@@ -11,8 +10,10 @@ norm `n` has six generators `±ζʲθ`, and since `ζ ≡ 1 (mod 1-ζ)`, exactly
 
 Reduction modulo `1 - ζ` is the ring map `residue : 𝓞_E → ℤ/3` sending `ζ ↦ 1`, so
 `residue (u + vζ) = u + v`. Since `(u+v)² ≡ u² - uv + v² (mod 3)`, a generator of an
-ideal of norm prime to `3` has residue `±1`. The residue of a unit `±ζʲ` is `±1`, so
-for each ideal exactly three of its six generators have residue `1`.
+ideal of norm prime to `3` has residue `±1`, so `±` of it is congruent to one
+(`exists_primary_generator`). The six generators of `(θ)` are `±ζʲθ`; since
+`residue (-1) = -1` and `residue ζ = 1`, the ones congruent to one when `θ` is are
+`θ, ζθ, ζ²θ` (`primary_generator_iff`).
 -/
 
 noncomputable section
@@ -54,34 +55,6 @@ theorem residue_ne_zero_of_norm (p : ℤ × ℤ) {K : ℕ} (hK : ¬ 3 ∣ K)
 theorem eq_one_or_neg_one (t : ZMod 3) (ht : t ≠ 0) : t = 1 ∨ t = -1 := by
   revert t; decide
 
-/-- The six units `±ζʲ` have residue `±1`. -/
-theorem residue_unit (u : Integersˣ) : residue u = 1 ∨ residue u = -1 := by
-  rcases units_exhaustive u with rfl | rfl | rfl | rfl | rfl | rfl <;>
-    simp [coe_zetaUnit, residue_zeta]
-
-/-- Exactly three units have each residue `±1`: negation exchanges the two classes. -/
-theorem card_units_residue (t : ZMod 3) (ht : t = 1 ∨ t = -1) :
-    Nat.card {u : Integersˣ // residue u = t} = 3 := by
-  have hneg : ∀ u : Integersˣ, residue ((-u : Integersˣ) : Integers) = -residue u := by
-    intro u; simp
-  let e : {u : Integersˣ // residue u = 1} ≃ {u : Integersˣ // residue u = -1} :=
-    { toFun := fun u => ⟨-u.1, by rw [hneg, u.2]⟩
-      invFun := fun u => ⟨-u.1, by rw [hneg, u.2]; decide⟩
-      left_inv := fun u => by simp
-      right_inv := fun u => by simp }
-  have hcompl : ∀ u : Integersˣ, ¬ residue u = 1 ↔ residue u = -1 := by
-    intro u
-    rcases residue_unit u with h | h <;> simp [h] <;> decide
-  have hsum : Nat.card {u : Integersˣ // residue u = 1} +
-      Nat.card {u : Integersˣ // residue u = -1} = 6 := by
-    rw [← card_units, ← Nat.card_congr (Equiv.sumCompl fun u : Integersˣ => residue u = 1),
-      Nat.card_sum, Nat.card_congr (Equiv.subtypeEquivRight hcompl)]
-  have h1 : Nat.card {u : Integersˣ // residue u = 1} = 3 := by
-    rw [Nat.card_congr e] at hsum ⊢; omega
-  rcases ht with rfl | rfl
-  · exact h1
-  · rw [← Nat.card_congr e, h1]
-
 /-- The integer pairs `(u, v)` with `u² - uv + v² = K` and `u + v ≡ 1 (mod 3)`,
 i.e. the elements `θ = u + vζ` of norm `K` with `θ ≡ 1 (mod 1 - ζ)`. -/
 def primarySet (K : ℤ) : Set (ℤ × ℤ) :=
@@ -104,53 +77,35 @@ theorem residue_gen {K : ℕ} (I : {I : Ideal Integers // Ideal.absNorm I = K}) 
   rw [← hp]
   exact eq_one_or_neg_one _ (residue_ne_zero_of_norm p hK hp')
 
-/-- Each ideal of norm `K` with `3 ∤ K` has exactly three generators congruent to one. -/
-theorem card_primarySet (K : ℕ) (hK : ¬ 3 ∣ K) :
-    Nat.card (primarySet K) = 3 * idealCount K := by
-  have hK0 : K ≠ 0 := fun h => hK (h ▸ dvd_zero 3)
-  let e := (normSetEquiv K).trans (generatorEquiv K hK0)
-  have he : ∀ p : normSet K,
-      residue (gen (e p).1.1 * (e p).2) = residue (coord p.1) := by
-    intro p
-    change residue (gen (Ideal.span {coord p.1}) * unitOf (coord p.1)) = _
-    rw [gen_mul_unitOf]
-  let e₁ : primarySet K ≃ {p : normSet K // (3 : ℤ) ∣ 1 - p.1.1 - p.1.2} :=
-    { toFun := fun p => ⟨⟨p.1, p.2.1⟩, p.2.2⟩
-      invFun := fun p => ⟨p.1.1, p.1.2, p.2⟩
-      left_inv := fun _ => rfl
-      right_inv := fun _ => rfl }
-  let e₂ : {p : normSet K // (3 : ℤ) ∣ 1 - p.1.1 - p.1.2} ≃
-      {x : {I : Ideal Integers // Ideal.absNorm I = K} × Integersˣ //
-        residue (gen x.1.1 * x.2) = 1} :=
-    e.subtypeEquiv fun p => by rw [dvd_iff_residue, he]
-  haveI : Finite {I : Ideal Integers // Ideal.absNorm I = K} :=
-    (Ideal.finite_setOf_absNorm_eq K).to_subtype
-  rw [Nat.card_congr (e₁.trans e₂), idealCount, mul_comm]
-  apply WeightedCount.card_eq_mul_of_fibres (fun x => x.1.1) 3 (by norm_num)
-  intro I
-  have hs := residue_gen I hK
-  let t := residue (gen I.1)
-  have ht : t * t = 1 := by rcases hs with h | h <;> simp [t, h]
-  have hfwd : ∀ x : {x : {x : {I : Ideal Integers // Ideal.absNorm I = K} × Integersˣ //
-      residue (gen x.1.1 * x.2) = 1} // x.1.1 = I}, residue (x.1.1.2 : Integers) = t := by
-    intro x
-    have h := x.1.2
-    rw [x.2, map_mul] at h
-    change t * residue (x.1.1.2 : Integers) = 1 at h
-    calc residue (x.1.1.2 : Integers) = t * t * residue (x.1.1.2 : Integers) := by
-          rw [ht, one_mul]
-      _ = t := by rw [mul_assoc, h, mul_one]
-  have hbwd : ∀ u : {u : Integersˣ // residue u = t}, residue (gen I.1 * u.1) = 1 := by
-    intro u
-    rw [map_mul, u.2]
-    exact ht
-  refine (Nat.card_congr
-    { toFun := fun x => ⟨x.1.1.2, hfwd x⟩
-      invFun := fun u => ⟨⟨(I, u.1), hbwd u⟩, rfl⟩
-      left_inv := fun x => ?_
-      right_inv := fun _ => rfl }).trans (card_units_residue t hs)
-  obtain ⟨⟨⟨J, v⟩, hv⟩, hJ⟩ := x
-  subst hJ
-  rfl
+/-- Since `3 ∤ K`, some generator of an ideal of norm `K` is congruent to one. -/
+theorem exists_primary_generator {K : ℕ} (I : {I : Ideal Integers // Ideal.absNorm I = K})
+    (hK : ¬ 3 ∣ K) : ∃ θ : Integers, Ideal.span {θ} = I.1 ∧ residue θ = 1 := by
+  rcases residue_gen I hK with h | h
+  · exact ⟨gen I.1, span_gen I.1, h⟩
+  · exact ⟨-gen I.1, by rw [Ideal.span_singleton_neg, span_gen], by rw [map_neg, h, neg_neg]⟩
+
+/-- The paper: "an ideal of norm `n` has six generators `±ζʲθ`, and since `ζ ≡ 1`,
+exactly three of them, `θ, ζθ, ζ²θ`, are congruent to `1`." For `θ ≡ 1`, a generator
+`θ'` of `(θ)` with `θ' ≡ 1` is `ζʲθ`. -/
+theorem primary_generator_iff {θ θ' : Integers} (hθ : residue θ = 1) (hθ' : residue θ' = 1) :
+    Ideal.span {θ'} = Ideal.span {θ} ↔ ∃ j : ZMod 3, θ' = zetaInteger ^ j.val * θ := by
+  constructor
+  · intro h
+    -- the six generators of `(θ)` are `θu` for the six units `u = ±ζʲ`
+    obtain ⟨u, hu⟩ := (Ideal.span_singleton_eq_span_singleton.mp h).symm
+    have hres : residue u = 1 := by
+      have := congrArg residue hu
+      rwa [map_mul, hθ, hθ', one_mul] at this
+    have h3 : (-1 : ZMod 3) ≠ 1 := by decide
+    rcases units_exhaustive u with rfl | rfl | rfl | rfl | rfl | rfl
+    · exact ⟨0, by rw [← hu]; simp⟩
+    · simp at hres; exact absurd hres h3
+    · exact ⟨1, by rw [← hu, coe_zetaUnit, mul_comm, show (1 : ZMod 3).val = 1 from rfl, pow_one]⟩
+    · simp [coe_zetaUnit, residue_zeta] at hres; exact absurd hres h3
+    · exact ⟨2, by rw [← hu, Units.val_pow_eq_pow_val, coe_zetaUnit, mul_comm]; rfl⟩
+    · simp [coe_zetaUnit, residue_zeta] at hres; exact absurd hres h3
+  · rintro ⟨j, rfl⟩
+    rw [mul_comm, ← coe_zetaUnit, ← Units.val_pow_eq_pow_val,
+      Ideal.span_singleton_mul_right_unit (zetaUnit ^ j.val).isUnit]
 
 end Cubic.Counting.PrimaryNormCount
