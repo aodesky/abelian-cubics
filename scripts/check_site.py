@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check a generated site's inputs, declaration links, and local resources."""
+"""Check a generated site's inputs, declaration links, local resources, and math."""
 
 import hashlib
 from html.parser import HTMLParser
@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
 from blueprint_dependencies import blueprint_roots, hashes_digest, validate_graph
+import check_math
 from render_content import safe_label
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,10 +118,13 @@ def main():
     for name, url in manifest['source_links'].items():
         if f'/blob/{revision}/formalization/' not in url:
             errors.append(f'Unpinned source link: {name}')
+    math_errors, expressions, _ = check_math.check(ROOT)
+    errors += math_errors
     if errors:
         raise SystemExit('\n'.join(errors))
     print(f'Checked {len(html_files)} pages, {count} local links, '
-          f'{len(manifest["source_links"])} declaration links, and source hashes.')
+          f'{len(manifest["source_links"])} declaration links, source hashes, '
+          f'and {expressions} math expressions.')
 
 
 if __name__ == '__main__':

@@ -37,8 +37,8 @@ maintained separately.
 
 ## Rebuild the blueprint
 
-Install Graphviz and the Python packages in `blueprint/requirements.txt`, then
-run from the repository root:
+Install Graphviz, Node.js, the Python packages in `blueprint/requirements.txt`,
+and the pinned MathJax (`npm ci`), then run from the repository root:
 
 ```sh
 python3 scripts/blueprint_dependencies.py
@@ -46,9 +46,13 @@ python3 scripts/build_blueprint.py
 python3 scripts/check_site.py
 ```
 
+The site check includes `scripts/check_math.py`, which typesets every formula
+with the MathJax version and configuration the pages load and fails on TeX
+errors or TeX left in the text. Keep `package.json` at the version the pages load.
+
 Commit changed Lean sources before rebuilding: links to Lean declarations are
 pinned to the source commit. The generated website is committed, and GitHub
-Pages checks its manifest and local links before deploying it. Lean changes
+Pages checks its manifest, local links, and math before deploying it. Lean changes
 also trigger the build and axiom checks in CI.
 
 ## Source

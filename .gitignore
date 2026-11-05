@@ -17,3 +17,6 @@ _site/
 .env.*
 *.pem
 *.key
+
+# MathJax for scripts/check_math.py (npm ci)
+node_modules/
